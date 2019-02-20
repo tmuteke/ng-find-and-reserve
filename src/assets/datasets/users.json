@@ -1,227 +1,2353 @@
 [
 	{
-	  "id": "5c6aa667ec041ecdadc7cd03",
+	  "id": "5c6d2424ce481a9ba87bf28b",
 	  "landlord": {
-		 "name": {
-			"first": "Cassie",
-			"last": "Mack"
-		 },
-		 "email": "cassie.mack@undefined.com",
-		 "phone": "+263 (847) 514-3959",
-		 "avatar": "http://i.pravatar.cc/300"
+		"name": {
+		  "first": "Best",
+		  "last": "Zamora"
+		},
+		"email": "best.zamora@undefined.org",
+		"phone": "+263 (908) 600-3104",
+		"avatar": "http://i.pravatar.cc/300"
 	  },
 	  "address": {
-		 "houseNumber": 790,
-		 "street": "Newport Street",
-		 "city": "Alleghenyville",
-		 "state": "Puerto Rico",
-		 "geo": {
-			"lat": "85.78027",
-			"lng": "38.417971"
-		 }
+		"houseNumber": 468,
+		"street": "Vanderveer Place",
+		"city": "Biddle",
+		"state": "Arkansas",
+		"geo": {
+		  "lat": "52.1739",
+		  "lng": "7.010398"
+		}
 	  },
-	  "rent": "$224",
-	  "rating": "3.9",
-	  "reviews": 680
+	  "rent": "$155",
+	  "rating": "2.7",
+	  "reviews": 914
 	},
 	{
-	  "id": "5c6aa6671acdd956365f2d41",
+	  "id": "5c6d2424951be5c421a5fefb",
 	  "landlord": {
-		 "name": {
-			"first": "Lakeisha",
-			"last": "Woods"
-		 },
-		 "email": "lakeisha.woods@undefined.info",
-		 "phone": "+263 (967) 407-3154",
-		 "avatar": "http://i.pravatar.cc/300"
+		"name": {
+		  "first": "Hart",
+		  "last": "Travis"
+		},
+		"email": "hart.travis@undefined.co.uk",
+		"phone": "+263 (864) 450-2577",
+		"avatar": "http://i.pravatar.cc/300"
 	  },
 	  "address": {
-		 "houseNumber": 936,
-		 "street": "Newkirk Placez",
-		 "city": "Brambleton",
-		 "state": "Delaware",
-		 "geo": {
-			"lat": "63.840812",
-			"lng": "-64.803701"
-		 }
+		"houseNumber": 799,
+		"street": "Taylor Street",
+		"city": "Taft",
+		"state": "North Dakota",
+		"geo": {
+		  "lat": "17.088835",
+		  "lng": "59.153387"
+		}
 	  },
-	  "rent": "$270",
+	  "rent": "$218",
 	  "rating": "3.6",
-	  "reviews": 798
+	  "reviews": 233
 	},
 	{
-	  "id": "5c6aa66777244c3f73841322",
+	  "id": "5c6d2424df24054e75a7b942",
 	  "landlord": {
-		 "name": {
-			"first": "Margo",
-			"last": "Oconnor"
-		 },
-		 "email": "margo.oconnor@undefined.tv",
-		 "phone": "+263 (962) 485-3395",
-		 "avatar": "http://i.pravatar.cc/300"
+		"name": {
+		  "first": "Turner",
+		  "last": "Horn"
+		},
+		"email": "turner.horn@undefined.us",
+		"phone": "+263 (877) 557-3637",
+		"avatar": "http://i.pravatar.cc/300"
 	  },
 	  "address": {
-		 "houseNumber": 528,
-		 "street": "Bancroft Place",
-		 "city": "Omar",
-		 "state": "Hawaii",
-		 "geo": {
-			"lat": "-64.437013",
-			"lng": "155.491509"
-		 }
+		"houseNumber": 470,
+		"street": "Lorimer Street",
+		"city": "Westboro",
+		"state": "Indiana",
+		"geo": {
+		  "lat": "21.319059",
+		  "lng": "-44.136067"
+		}
 	  },
-	  "rent": "$115",
-	  "rating": "1.1",
-	  "reviews": 311
+	  "rent": "$265",
+	  "rating": "3.3",
+	  "reviews": 666
 	},
 	{
-	  "id": "5c6aa667a6e75d6e3bb0a7d2",
+	  "id": "5c6d242434e9602bbec6f234",
 	  "landlord": {
-		 "name": {
-			"first": "Berta",
-			"last": "Skinner"
-		 },
-		 "email": "berta.skinner@undefined.org",
-		 "phone": "+263 (807) 421-3198",
-		 "avatar": "http://i.pravatar.cc/300"
+		"name": {
+		  "first": "Hale",
+		  "last": "Clements"
+		},
+		"email": "hale.clements@undefined.biz",
+		"phone": "+263 (822) 559-2911",
+		"avatar": "http://i.pravatar.cc/300"
 	  },
 	  "address": {
-		 "houseNumber": 582,
-		 "street": "Coleridge Street",
-		 "city": "Bedias",
-		 "state": "Washington",
-		 "geo": {
-			"lat": "56.995179",
-			"lng": "-57.590738"
-		 }
+		"houseNumber": 535,
+		"street": "Nassau Avenue",
+		"city": "Fairmount",
+		"state": "Delaware",
+		"geo": {
+		  "lat": "15.56236",
+		  "lng": "71.446346"
+		}
 	  },
 	  "rent": "$162",
-	  "rating": "2.3",
-	  "reviews": 287
+	  "rating": "3.0",
+	  "reviews": 361
 	},
 	{
-	  "id": "5c6aa66712e75de442af4bf0",
+	  "id": "5c6d2424c7e33e4d9b55dd97",
 	  "landlord": {
-		 "name": {
-			"first": "Tameka",
-			"last": "Guy"
-		 },
-		 "email": "tameka.guy@undefined.biz",
-		 "phone": "+263 (975) 402-3241",
-		 "avatar": "http://i.pravatar.cc/300"
+		"name": {
+		  "first": "Becker",
+		  "last": "Roth"
+		},
+		"email": "becker.roth@undefined.me",
+		"phone": "+263 (825) 428-3648",
+		"avatar": "http://i.pravatar.cc/300"
 	  },
 	  "address": {
-		 "houseNumber": 271,
-		 "street": "Coleman Street",
-		 "city": "Morgandale",
-		 "state": "Minnesota",
-		 "geo": {
-			"lat": "-60.478817",
-			"lng": "160.682173"
-		 }
+		"houseNumber": 967,
+		"street": "Neptune Court",
+		"city": "Tooleville",
+		"state": "New Hampshire",
+		"geo": {
+		  "lat": "-84.519518",
+		  "lng": "-71.901366"
+		}
 	  },
-	  "rent": "$285",
+	  "rent": "$218",
+	  "rating": "2.4",
+	  "reviews": 374
+	},
+	{
+	  "id": "5c6d24245154fb70861759a1",
+	  "landlord": {
+		"name": {
+		  "first": "Gladys",
+		  "last": "Stuart"
+		},
+		"email": "gladys.stuart@undefined.tv",
+		"phone": "+263 (912) 474-2577",
+		"avatar": "http://i.pravatar.cc/300"
+	  },
+	  "address": {
+		"houseNumber": 648,
+		"street": "Stoddard Place",
+		"city": "Stockdale",
+		"state": "Alabama",
+		"geo": {
+		  "lat": "-69.041675",
+		  "lng": "129.023108"
+		}
+	  },
+	  "rent": "$121",
+	  "rating": "4.8",
+	  "reviews": 888
+	},
+	{
+	  "id": "5c6d24240ad4a5046f3dfec8",
+	  "landlord": {
+		"name": {
+		  "first": "David",
+		  "last": "Madden"
+		},
+		"email": "david.madden@undefined.info",
+		"phone": "+263 (891) 454-2952",
+		"avatar": "http://i.pravatar.cc/300"
+	  },
+	  "address": {
+		"houseNumber": 685,
+		"street": "Tapscott Street",
+		"city": "Chapin",
+		"state": "Montana",
+		"geo": {
+		  "lat": "-10.804973",
+		  "lng": "47.136426"
+		}
+	  },
+	  "rent": "$247",
+	  "rating": "2.2",
+	  "reviews": 47
+	},
+	{
+	  "id": "5c6d24244769399e3ed92190",
+	  "landlord": {
+		"name": {
+		  "first": "Eula",
+		  "last": "Mcdowell"
+		},
+		"email": "eula.mcdowell@undefined.ca",
+		"phone": "+263 (962) 522-3108",
+		"avatar": "http://i.pravatar.cc/300"
+	  },
+	  "address": {
+		"houseNumber": 204,
+		"street": "Matthews Court",
+		"city": "Roulette",
+		"state": "Washington",
+		"geo": {
+		  "lat": "-65.554162",
+		  "lng": "-99.381457"
+		}
+	  },
+	  "rent": "$221",
+	  "rating": "2.7",
+	  "reviews": 484
+	},
+	{
+	  "id": "5c6d24244f4e282c554e634d",
+	  "landlord": {
+		"name": {
+		  "first": "Lane",
+		  "last": "Lang"
+		},
+		"email": "lane.lang@undefined.biz",
+		"phone": "+263 (934) 539-2585",
+		"avatar": "http://i.pravatar.cc/300"
+	  },
+	  "address": {
+		"houseNumber": 931,
+		"street": "Newel Street",
+		"city": "Troy",
+		"state": "Missouri",
+		"geo": {
+		  "lat": "69.40844",
+		  "lng": "147.733448"
+		}
+	  },
+	  "rent": "$190",
+	  "rating": "4.3",
+	  "reviews": 643
+	},
+	{
+	  "id": "5c6d242471fdafb460c6ac31",
+	  "landlord": {
+		"name": {
+		  "first": "Cannon",
+		  "last": "Stephens"
+		},
+		"email": "cannon.stephens@undefined.net",
+		"phone": "+263 (833) 600-3713",
+		"avatar": "http://i.pravatar.cc/300"
+	  },
+	  "address": {
+		"houseNumber": 606,
+		"street": "Merit Court",
+		"city": "Manila",
+		"state": "West Virginia",
+		"geo": {
+		  "lat": "-89.477838",
+		  "lng": "35.97687"
+		}
+	  },
+	  "rent": "$254",
+	  "rating": "3.6",
+	  "reviews": 364
+	},
+	{
+	  "id": "5c6d2424e12f6221d4e74824",
+	  "landlord": {
+		"name": {
+		  "first": "Jordan",
+		  "last": "Alexander"
+		},
+		"email": "jordan.alexander@undefined.name",
+		"phone": "+263 (858) 416-2720",
+		"avatar": "http://i.pravatar.cc/300"
+	  },
+	  "address": {
+		"houseNumber": 537,
+		"street": "Carlton Avenue",
+		"city": "Utting",
+		"state": "Rhode Island",
+		"geo": {
+		  "lat": "71.9355",
+		  "lng": "108.042636"
+		}
+	  },
+	  "rent": "$212",
+	  "rating": "1.0",
+	  "reviews": 397
+	},
+	{
+	  "id": "5c6d2424793cb304e846884d",
+	  "landlord": {
+		"name": {
+		  "first": "Bond",
+		  "last": "Andrews"
+		},
+		"email": "bond.andrews@undefined.com",
+		"phone": "+263 (815) 476-3871",
+		"avatar": "http://i.pravatar.cc/300"
+	  },
+	  "address": {
+		"houseNumber": 111,
+		"street": "Scott Avenue",
+		"city": "Mulino",
+		"state": "Maine",
+		"geo": {
+		  "lat": "-47.506797",
+		  "lng": "125.351273"
+		}
+	  },
+	  "rent": "$280",
+	  "rating": "2.3",
+	  "reviews": 11
+	},
+	{
+	  "id": "5c6d24241e52733bbdaea3db",
+	  "landlord": {
+		"name": {
+		  "first": "Gutierrez",
+		  "last": "Ray"
+		},
+		"email": "gutierrez.ray@undefined.org",
+		"phone": "+263 (954) 524-2122",
+		"avatar": "http://i.pravatar.cc/300"
+	  },
+	  "address": {
+		"houseNumber": 557,
+		"street": "Strong Place",
+		"city": "Bawcomville",
+		"state": "North Carolina",
+		"geo": {
+		  "lat": "73.711226",
+		  "lng": "-126.295512"
+		}
+	  },
+	  "rent": "$215",
+	  "rating": "1.1",
+	  "reviews": 686
+	},
+	{
+	  "id": "5c6d2424ed0c64fbbcbe36f4",
+	  "landlord": {
+		"name": {
+		  "first": "Nona",
+		  "last": "Morales"
+		},
+		"email": "nona.morales@undefined.co.uk",
+		"phone": "+263 (944) 458-2743",
+		"avatar": "http://i.pravatar.cc/300"
+	  },
+	  "address": {
+		"houseNumber": 155,
+		"street": "Falmouth Street",
+		"city": "Chestnut",
+		"state": "Iowa",
+		"geo": {
+		  "lat": "-56.123111",
+		  "lng": "-148.983193"
+		}
+	  },
+	  "rent": "$196",
+	  "rating": "1.2",
+	  "reviews": 838
+	},
+	{
+	  "id": "5c6d24244c268c43e8119aed",
+	  "landlord": {
+		"name": {
+		  "first": "Isabella",
+		  "last": "Merritt"
+		},
+		"email": "isabella.merritt@undefined.us",
+		"phone": "+263 (891) 589-3454",
+		"avatar": "http://i.pravatar.cc/300"
+	  },
+	  "address": {
+		"houseNumber": 394,
+		"street": "Montieth Street",
+		"city": "Riner",
+		"state": "Georgia",
+		"geo": {
+		  "lat": "58.367827",
+		  "lng": "-73.076647"
+		}
+	  },
+	  "rent": "$93",
+	  "rating": "1.6",
+	  "reviews": 862
+	},
+	{
+	  "id": "5c6d2424904cbda876fa6c43",
+	  "landlord": {
+		"name": {
+		  "first": "Joan",
+		  "last": "Reese"
+		},
+		"email": "joan.reese@undefined.biz",
+		"phone": "+263 (897) 529-2241",
+		"avatar": "http://i.pravatar.cc/300"
+	  },
+	  "address": {
+		"houseNumber": 849,
+		"street": "Monaco Place",
+		"city": "Snowville",
+		"state": "Connecticut",
+		"geo": {
+		  "lat": "17.309671",
+		  "lng": "-104.771149"
+		}
+	  },
+	  "rent": "$247",
+	  "rating": "1.8",
+	  "reviews": 102
+	},
+	{
+	  "id": "5c6d2424d27ba45f1d76a4fe",
+	  "landlord": {
+		"name": {
+		  "first": "Vincent",
+		  "last": "Huff"
+		},
+		"email": "vincent.huff@undefined.me",
+		"phone": "+263 (990) 515-3250",
+		"avatar": "http://i.pravatar.cc/300"
+	  },
+	  "address": {
+		"houseNumber": 190,
+		"street": "Sapphire Street",
+		"city": "Aurora",
+		"state": "Texas",
+		"geo": {
+		  "lat": "-25.987787",
+		  "lng": "92.974012"
+		}
+	  },
+	  "rent": "$217",
+	  "rating": "4.2",
+	  "reviews": 968
+	},
+	{
+	  "id": "5c6d242428103e9c3c46c516",
+	  "landlord": {
+		"name": {
+		  "first": "Lidia",
+		  "last": "Carr"
+		},
+		"email": "lidia.carr@undefined.tv",
+		"phone": "+263 (853) 595-2083",
+		"avatar": "http://i.pravatar.cc/300"
+	  },
+	  "address": {
+		"houseNumber": 398,
+		"street": "Oak Street",
+		"city": "Farmers",
+		"state": "Massachusetts",
+		"geo": {
+		  "lat": "78.81875",
+		  "lng": "-32.027236"
+		}
+	  },
+	  "rent": "$276",
+	  "rating": "4.9",
+	  "reviews": 228
+	},
+	{
+	  "id": "5c6d2424d745401f1281510c",
+	  "landlord": {
+		"name": {
+		  "first": "Nina",
+		  "last": "Huber"
+		},
+		"email": "nina.huber@undefined.info",
+		"phone": "+263 (810) 572-3526",
+		"avatar": "http://i.pravatar.cc/300"
+	  },
+	  "address": {
+		"houseNumber": 471,
+		"street": "Anna Court",
+		"city": "Tryon",
+		"state": "Wyoming",
+		"geo": {
+		  "lat": "-43.925301",
+		  "lng": "-46.794101"
+		}
+	  },
+	  "rent": "$158",
+	  "rating": "3.0",
+	  "reviews": 57
+	},
+	{
+	  "id": "5c6d24249ebbce0ce965c923",
+	  "landlord": {
+		"name": {
+		  "first": "Norris",
+		  "last": "Witt"
+		},
+		"email": "norris.witt@undefined.ca",
+		"phone": "+263 (939) 535-2255",
+		"avatar": "http://i.pravatar.cc/300"
+	  },
+	  "address": {
+		"houseNumber": 979,
+		"street": "Garden Street",
+		"city": "Kenvil",
+		"state": "South Dakota",
+		"geo": {
+		  "lat": "-76.145646",
+		  "lng": "128.901548"
+		}
+	  },
+	  "rent": "$96",
 	  "rating": "4.0",
+	  "reviews": 305
+	},
+	{
+	  "id": "5c6d242423fbba48a854a726",
+	  "landlord": {
+		"name": {
+		  "first": "Nixon",
+		  "last": "May"
+		},
+		"email": "nixon.may@undefined.biz",
+		"phone": "+263 (830) 439-3923",
+		"avatar": "http://i.pravatar.cc/300"
+	  },
+	  "address": {
+		"houseNumber": 452,
+		"street": "Division Place",
+		"city": "Kent",
+		"state": "Idaho",
+		"geo": {
+		  "lat": "-21.064079",
+		  "lng": "-136.826281"
+		}
+	  },
+	  "rent": "$273",
+	  "rating": "2.2",
+	  "reviews": 716
+	},
+	{
+	  "id": "5c6d242401c71ee9f0e0ef36",
+	  "landlord": {
+		"name": {
+		  "first": "Todd",
+		  "last": "Potts"
+		},
+		"email": "todd.potts@undefined.net",
+		"phone": "+263 (846) 591-2291",
+		"avatar": "http://i.pravatar.cc/300"
+	  },
+	  "address": {
+		"houseNumber": 760,
+		"street": "Irvington Place",
+		"city": "Welch",
+		"state": "Oklahoma",
+		"geo": {
+		  "lat": "80.260537",
+		  "lng": "80.463287"
+		}
+	  },
+	  "rent": "$207",
+	  "rating": "2.6",
+	  "reviews": 934
+	},
+	{
+	  "id": "5c6d2424c64b827966432070",
+	  "landlord": {
+		"name": {
+		  "first": "Iris",
+		  "last": "Rose"
+		},
+		"email": "iris.rose@undefined.name",
+		"phone": "+263 (862) 592-2400",
+		"avatar": "http://i.pravatar.cc/300"
+	  },
+	  "address": {
+		"houseNumber": 551,
+		"street": "Bushwick Avenue",
+		"city": "Bonanza",
+		"state": "District Of Columbia",
+		"geo": {
+		  "lat": "61.860032",
+		  "lng": "20.915311"
+		}
+	  },
+	  "rent": "$276",
+	  "rating": "1.5",
+	  "reviews": 228
+	},
+	{
+	  "id": "5c6d2424d130751d7723e156",
+	  "landlord": {
+		"name": {
+		  "first": "Rhonda",
+		  "last": "Buckley"
+		},
+		"email": "rhonda.buckley@undefined.com",
+		"phone": "+263 (863) 427-3650",
+		"avatar": "http://i.pravatar.cc/300"
+	  },
+	  "address": {
+		"houseNumber": 515,
+		"street": "Gerry Street",
+		"city": "Veguita",
+		"state": "Arizona",
+		"geo": {
+		  "lat": "9.803879",
+		  "lng": "-143.665211"
+		}
+	  },
+	  "rent": "$166",
+	  "rating": "3.6",
+	  "reviews": 603
+	},
+	{
+	  "id": "5c6d2424cd9e99b1deb6aa7b",
+	  "landlord": {
+		"name": {
+		  "first": "Trisha",
+		  "last": "Freeman"
+		},
+		"email": "trisha.freeman@undefined.org",
+		"phone": "+263 (889) 593-3305",
+		"avatar": "http://i.pravatar.cc/300"
+	  },
+	  "address": {
+		"houseNumber": 675,
+		"street": "Boulevard Court",
+		"city": "Breinigsville",
+		"state": "Illinois",
+		"geo": {
+		  "lat": "42.865461",
+		  "lng": "-148.305174"
+		}
+	  },
+	  "rent": "$253",
+	  "rating": "4.1",
+	  "reviews": 380
+	},
+	{
+	  "id": "5c6d24247e25ae831d951533",
+	  "landlord": {
+		"name": {
+		  "first": "Mary",
+		  "last": "Booker"
+		},
+		"email": "mary.booker@undefined.co.uk",
+		"phone": "+263 (953) 419-3669",
+		"avatar": "http://i.pravatar.cc/300"
+	  },
+	  "address": {
+		"houseNumber": 818,
+		"street": "Dearborn Court",
+		"city": "Basye",
+		"state": "Palau",
+		"geo": {
+		  "lat": "-66.47527",
+		  "lng": "-91.153528"
+		}
+	  },
+	  "rent": "$266",
+	  "rating": "3.9",
+	  "reviews": 467
+	},
+	{
+	  "id": "5c6d24240ce3da4b02c83136",
+	  "landlord": {
+		"name": {
+		  "first": "Leonard",
+		  "last": "Abbott"
+		},
+		"email": "leonard.abbott@undefined.us",
+		"phone": "+263 (834) 432-3695",
+		"avatar": "http://i.pravatar.cc/300"
+	  },
+	  "address": {
+		"houseNumber": 802,
+		"street": "Folsom Place",
+		"city": "Robinson",
+		"state": "Northern Mariana Islands",
+		"geo": {
+		  "lat": "83.945268",
+		  "lng": "173.690899"
+		}
+	  },
+	  "rent": "$171",
+	  "rating": "3.4",
+	  "reviews": 300
+	},
+	{
+	  "id": "5c6d2424e3799c5484cc29d5",
+	  "landlord": {
+		"name": {
+		  "first": "Conrad",
+		  "last": "Pearson"
+		},
+		"email": "conrad.pearson@undefined.biz",
+		"phone": "+263 (808) 428-3518",
+		"avatar": "http://i.pravatar.cc/300"
+	  },
+	  "address": {
+		"houseNumber": 274,
+		"street": "Montgomery Place",
+		"city": "Indio",
+		"state": "Louisiana",
+		"geo": {
+		  "lat": "-14.181505",
+		  "lng": "30.64704"
+		}
+	  },
+	  "rent": "$241",
+	  "rating": "4.5",
+	  "reviews": 595
+	},
+	{
+	  "id": "5c6d242454b077072ceb16fb",
+	  "landlord": {
+		"name": {
+		  "first": "Freda",
+		  "last": "Bullock"
+		},
+		"email": "freda.bullock@undefined.me",
+		"phone": "+263 (892) 575-2494",
+		"avatar": "http://i.pravatar.cc/300"
+	  },
+	  "address": {
+		"houseNumber": 403,
+		"street": "Quentin Street",
+		"city": "Fairhaven",
+		"state": "Virginia",
+		"geo": {
+		  "lat": "-28.062618",
+		  "lng": "-101.057988"
+		}
+	  },
+	  "rent": "$222",
+	  "rating": "3.7",
+	  "reviews": 320
+	},
+	{
+	  "id": "5c6d2424390c1321b0a29be9",
+	  "landlord": {
+		"name": {
+		  "first": "Rivera",
+		  "last": "Nguyen"
+		},
+		"email": "rivera.nguyen@undefined.tv",
+		"phone": "+263 (997) 464-2439",
+		"avatar": "http://i.pravatar.cc/300"
+	  },
+	  "address": {
+		"houseNumber": 592,
+		"street": "Lynch Street",
+		"city": "Santel",
+		"state": "Alaska",
+		"geo": {
+		  "lat": "-79.850535",
+		  "lng": "-1.916728"
+		}
+	  },
+	  "rent": "$188",
+	  "rating": "1.0",
+	  "reviews": 75
+	},
+	{
+	  "id": "5c6d2424352fc5dd51863ef9",
+	  "landlord": {
+		"name": {
+		  "first": "Natalia",
+		  "last": "Humphrey"
+		},
+		"email": "natalia.humphrey@undefined.info",
+		"phone": "+263 (986) 482-3415",
+		"avatar": "http://i.pravatar.cc/300"
+	  },
+	  "address": {
+		"houseNumber": 813,
+		"street": "Montague Street",
+		"city": "Whitewater",
+		"state": "Kansas",
+		"geo": {
+		  "lat": "50.675708",
+		  "lng": "-158.812586"
+		}
+	  },
+	  "rent": "$102",
+	  "rating": "1.4",
+	  "reviews": 559
+	},
+	{
+	  "id": "5c6d24249b7442a9add6ba68",
+	  "landlord": {
+		"name": {
+		  "first": "Augusta",
+		  "last": "Clayton"
+		},
+		"email": "augusta.clayton@undefined.ca",
+		"phone": "+263 (905) 412-2527",
+		"avatar": "http://i.pravatar.cc/300"
+	  },
+	  "address": {
+		"houseNumber": 502,
+		"street": "Flatlands Avenue",
+		"city": "Warren",
+		"state": "Guam",
+		"geo": {
+		  "lat": "-49.736615",
+		  "lng": "148.962631"
+		}
+	  },
+	  "rent": "$98",
+	  "rating": "4.0",
+	  "reviews": 712
+	},
+	{
+	  "id": "5c6d242459cec3eb649655bd",
+	  "landlord": {
+		"name": {
+		  "first": "Carpenter",
+		  "last": "Fry"
+		},
+		"email": "carpenter.fry@undefined.biz",
+		"phone": "+263 (859) 488-2793",
+		"avatar": "http://i.pravatar.cc/300"
+	  },
+	  "address": {
+		"houseNumber": 455,
+		"street": "Joval Court",
+		"city": "Kidder",
+		"state": "Wisconsin",
+		"geo": {
+		  "lat": "23.187002",
+		  "lng": "156.468327"
+		}
+	  },
+	  "rent": "$98",
+	  "rating": "4.1",
+	  "reviews": 781
+	},
+	{
+	  "id": "5c6d24249184e8e80ecaebd3",
+	  "landlord": {
+		"name": {
+		  "first": "Sadie",
+		  "last": "Harvey"
+		},
+		"email": "sadie.harvey@undefined.net",
+		"phone": "+263 (922) 529-2394",
+		"avatar": "http://i.pravatar.cc/300"
+	  },
+	  "address": {
+		"houseNumber": 353,
+		"street": "Monument Walk",
+		"city": "Klondike",
+		"state": "Kentucky",
+		"geo": {
+		  "lat": "81.7681",
+		  "lng": "50.360683"
+		}
+	  },
+	  "rent": "$131",
+	  "rating": "3.0",
+	  "reviews": 155
+	},
+	{
+	  "id": "5c6d2424cbb7b129875a3d89",
+	  "landlord": {
+		"name": {
+		  "first": "Karla",
+		  "last": "Weaver"
+		},
+		"email": "karla.weaver@undefined.name",
+		"phone": "+263 (954) 441-2849",
+		"avatar": "http://i.pravatar.cc/300"
+	  },
+	  "address": {
+		"houseNumber": 816,
+		"street": "Ivan Court",
+		"city": "Summerfield",
+		"state": "Puerto Rico",
+		"geo": {
+		  "lat": "64.648479",
+		  "lng": "-175.51681"
+		}
+	  },
+	  "rent": "$179",
+	  "rating": "4.9",
+	  "reviews": 496
+	},
+	{
+	  "id": "5c6d242453d34b2c17302f13",
+	  "landlord": {
+		"name": {
+		  "first": "Hays",
+		  "last": "Wells"
+		},
+		"email": "hays.wells@undefined.com",
+		"phone": "+263 (922) 501-3240",
+		"avatar": "http://i.pravatar.cc/300"
+	  },
+	  "address": {
+		"houseNumber": 193,
+		"street": "Dobbin Street",
+		"city": "Swartzville",
+		"state": "Hawaii",
+		"geo": {
+		  "lat": "19.348857",
+		  "lng": "-67.316396"
+		}
+	  },
+	  "rent": "$141",
+	  "rating": "3.9",
 	  "reviews": 194
 	},
 	{
-	  "id": "5c6aa667a90f068498e0ede4",
+	  "id": "5c6d24241e515fd5e197a8d2",
 	  "landlord": {
-		 "name": {
-			"first": "Page",
-			"last": "Holder"
-		 },
-		 "email": "page.holder@undefined.biz",
-		 "phone": "+263 (982) 551-2012",
-		 "avatar": "http://i.pravatar.cc/300"
+		"name": {
+		  "first": "Callie",
+		  "last": "Lyons"
+		},
+		"email": "callie.lyons@undefined.org",
+		"phone": "+263 (834) 477-2373",
+		"avatar": "http://i.pravatar.cc/300"
 	  },
 	  "address": {
-		 "houseNumber": 337,
-		 "street": "Lott Street",
-		 "city": "Efland",
-		 "state": "Indiana",
-		 "geo": {
-			"lat": "-32.48062",
-			"lng": "178.952283"
-		 }
+		"houseNumber": 303,
+		"street": "Columbus Place",
+		"city": "Canby",
+		"state": "California",
+		"geo": {
+		  "lat": "0.759525",
+		  "lng": "-144.373133"
+		}
 	  },
-	  "rent": "$128",
-	  "rating": "0.0",
-	  "reviews": 318
+	  "rent": "$205",
+	  "rating": "3.6",
+	  "reviews": 693
 	},
 	{
-	  "id": "5c6aa6677e8661764b0d2a9c",
+	  "id": "5c6d24244dc319f068ffb779",
 	  "landlord": {
-		 "name": {
-			"first": "Hopper",
-			"last": "Gregory"
-		 },
-		 "email": "hopper.gregory@undefined.name",
-		 "phone": "+263 (996) 442-2571",
-		 "avatar": "http://i.pravatar.cc/300"
+		"name": {
+		  "first": "Bird",
+		  "last": "Rivers"
+		},
+		"email": "bird.rivers@undefined.co.uk",
+		"phone": "+263 (849) 450-3233",
+		"avatar": "http://i.pravatar.cc/300"
 	  },
 	  "address": {
-		 "houseNumber": 409,
-		 "street": "Mermaid Avenue",
-		 "city": "Wyano",
-		 "state": "Arkansas",
-		 "geo": {
-			"lat": "46.718837",
-			"lng": "164.912786"
-		 }
+		"houseNumber": 268,
+		"street": "Albemarle Road",
+		"city": "Colton",
+		"state": "Utah",
+		"geo": {
+		  "lat": "-2.527651",
+		  "lng": "-29.847798"
+		}
 	  },
-	  "rent": "$171",
-	  "rating": "0.1",
-	  "reviews": 391
+	  "rent": "$217",
+	  "rating": "1.5",
+	  "reviews": 414
 	},
 	{
-	  "id": "5c6aa66767ca37f6668ed972",
+	  "id": "5c6d24249400bdcbdbe92d57",
 	  "landlord": {
-		 "name": {
-			"first": "Sweeney",
-			"last": "Lynn"
-		 },
-		 "email": "sweeney.lynn@undefined.io",
-		 "phone": "+263 (987) 410-3284",
-		 "avatar": "http://i.pravatar.cc/300"
+		"name": {
+		  "first": "Melisa",
+		  "last": "Knapp"
+		},
+		"email": "melisa.knapp@undefined.us",
+		"phone": "+263 (942) 446-2222",
+		"avatar": "http://i.pravatar.cc/300"
 	  },
 	  "address": {
-		 "houseNumber": 522,
-		 "street": "Opal Court",
-		 "city": "Elrama",
-		 "state": "Connecticut",
-		 "geo": {
-			"lat": "-72.110747",
-			"lng": "100.721639"
-		 }
+		"houseNumber": 429,
+		"street": "Midwood Street",
+		"city": "Hatteras",
+		"state": "Michigan",
+		"geo": {
+		  "lat": "40.994143",
+		  "lng": "-56.382651"
+		}
 	  },
-	  "rent": "$275",
+	  "rent": "$256",
+	  "rating": "1.5",
+	  "reviews": 331
+	},
+	{
+	  "id": "5c6d2424bdd2d6ff48a20aaa",
+	  "landlord": {
+		"name": {
+		  "first": "Noble",
+		  "last": "Tillman"
+		},
+		"email": "noble.tillman@undefined.biz",
+		"phone": "+263 (863) 494-3270",
+		"avatar": "http://i.pravatar.cc/300"
+	  },
+	  "address": {
+		"houseNumber": 261,
+		"street": "Furman Street",
+		"city": "Drytown",
+		"state": "New Jersey",
+		"geo": {
+		  "lat": "2.310004",
+		  "lng": "122.509637"
+		}
+	  },
+	  "rent": "$211",
+	  "rating": "4.8",
+	  "reviews": 298
+	},
+	{
+	  "id": "5c6d2424c0d7faa8369f3e2d",
+	  "landlord": {
+		"name": {
+		  "first": "Rhea",
+		  "last": "Kirk"
+		},
+		"email": "rhea.kirk@undefined.me",
+		"phone": "+263 (884) 561-3986",
+		"avatar": "http://i.pravatar.cc/300"
+	  },
+	  "address": {
+		"houseNumber": 523,
+		"street": "Erasmus Street",
+		"city": "Innsbrook",
+		"state": "American Samoa",
+		"geo": {
+		  "lat": "-65.28157",
+		  "lng": "103.913289"
+		}
+	  },
+	  "rent": "$160",
+	  "rating": "1.1",
+	  "reviews": 517
+	},
+	{
+	  "id": "5c6d2424f01e0676ca69860d",
+	  "landlord": {
+		"name": {
+		  "first": "Mclean",
+		  "last": "Norris"
+		},
+		"email": "mclean.norris@undefined.tv",
+		"phone": "+263 (937) 448-3730",
+		"avatar": "http://i.pravatar.cc/300"
+	  },
+	  "address": {
+		"houseNumber": 425,
+		"street": "Utica Avenue",
+		"city": "Blue",
+		"state": "Federated States Of Micronesia",
+		"geo": {
+		  "lat": "77.575548",
+		  "lng": "162.696088"
+		}
+	  },
+	  "rent": "$256",
+	  "rating": "2.6",
+	  "reviews": 452
+	},
+	{
+	  "id": "5c6d2424571854c17eedf641",
+	  "landlord": {
+		"name": {
+		  "first": "Lee",
+		  "last": "Nash"
+		},
+		"email": "lee.nash@undefined.info",
+		"phone": "+263 (864) 471-3619",
+		"avatar": "http://i.pravatar.cc/300"
+	  },
+	  "address": {
+		"houseNumber": 328,
+		"street": "Ashford Street",
+		"city": "Hondah",
+		"state": "Nevada",
+		"geo": {
+		  "lat": "-77.745227",
+		  "lng": "57.180746"
+		}
+	  },
+	  "rent": "$94",
+	  "rating": "1.5",
+	  "reviews": 427
+	},
+	{
+	  "id": "5c6d2424b375236af0222a57",
+	  "landlord": {
+		"name": {
+		  "first": "England",
+		  "last": "Osborne"
+		},
+		"email": "england.osborne@undefined.ca",
+		"phone": "+263 (921) 507-2909",
+		"avatar": "http://i.pravatar.cc/300"
+	  },
+	  "address": {
+		"houseNumber": 383,
+		"street": "Hinckley Place",
+		"city": "Glenbrook",
+		"state": "Marshall Islands",
+		"geo": {
+		  "lat": "29.352748",
+		  "lng": "-95.073997"
+		}
+	  },
+	  "rent": "$231",
+	  "rating": "1.3",
+	  "reviews": 693
+	},
+	{
+	  "id": "5c6d242463663d75ffc72895",
+	  "landlord": {
+		"name": {
+		  "first": "Sophia",
+		  "last": "Marshall"
+		},
+		"email": "sophia.marshall@undefined.biz",
+		"phone": "+263 (874) 514-2363",
+		"avatar": "http://i.pravatar.cc/300"
+	  },
+	  "address": {
+		"houseNumber": 994,
+		"street": "Myrtle Avenue",
+		"city": "Salvo",
+		"state": "Nebraska",
+		"geo": {
+		  "lat": "30.15625",
+		  "lng": "-60.871784"
+		}
+	  },
+	  "rent": "$210",
+	  "rating": "2.1",
+	  "reviews": 93
+	},
+	{
+	  "id": "5c6d2424c596b273fe79a29d",
+	  "landlord": {
+		"name": {
+		  "first": "Santana",
+		  "last": "Stone"
+		},
+		"email": "santana.stone@undefined.net",
+		"phone": "+263 (935) 586-2077",
+		"avatar": "http://i.pravatar.cc/300"
+	  },
+	  "address": {
+		"houseNumber": 289,
+		"street": "Irving Place",
+		"city": "Titanic",
+		"state": "Florida",
+		"geo": {
+		  "lat": "-33.367382",
+		  "lng": "-109.440435"
+		}
+	  },
+	  "rent": "$91",
+	  "rating": "1.6",
+	  "reviews": 948
+	},
+	{
+	  "id": "5c6d2424de92865026401f08",
+	  "landlord": {
+		"name": {
+		  "first": "Gwen",
+		  "last": "Waters"
+		},
+		"email": "gwen.waters@undefined.name",
+		"phone": "+263 (843) 600-3468",
+		"avatar": "http://i.pravatar.cc/300"
+	  },
+	  "address": {
+		"houseNumber": 502,
+		"street": "Fleet Street",
+		"city": "Northridge",
+		"state": "Pennsylvania",
+		"geo": {
+		  "lat": "75.746337",
+		  "lng": "-60.069218"
+		}
+	  },
+	  "rent": "$244",
+	  "rating": "3.6",
+	  "reviews": 475
+	},
+	{
+	  "id": "5c6d2424846b783d7e061528",
+	  "landlord": {
+		"name": {
+		  "first": "Bauer",
+		  "last": "Haney"
+		},
+		"email": "bauer.haney@undefined.com",
+		"phone": "+263 (888) 578-2776",
+		"avatar": "http://i.pravatar.cc/300"
+	  },
+	  "address": {
+		"houseNumber": 417,
+		"street": "Livingston Street",
+		"city": "Hemlock",
+		"state": "Oregon",
+		"geo": {
+		  "lat": "25.35912",
+		  "lng": "97.870824"
+		}
+	  },
+	  "rent": "$214",
+	  "rating": "1.0",
+	  "reviews": 114
+	},
+	{
+	  "id": "5c6d2424e3f34c272cb8249c",
+	  "landlord": {
+		"name": {
+		  "first": "Becky",
+		  "last": "Eaton"
+		},
+		"email": "becky.eaton@undefined.org",
+		"phone": "+263 (949) 554-2652",
+		"avatar": "http://i.pravatar.cc/300"
+	  },
+	  "address": {
+		"houseNumber": 844,
+		"street": "Imlay Street",
+		"city": "Verdi",
+		"state": "Ohio",
+		"geo": {
+		  "lat": "0.457864",
+		  "lng": "26.362472"
+		}
+	  },
+	  "rent": "$115",
+	  "rating": "1.3",
+	  "reviews": 991
+	},
+	{
+	  "id": "5c6d2424a1868359dd95d16c",
+	  "landlord": {
+		"name": {
+		  "first": "Simmons",
+		  "last": "Rojas"
+		},
+		"email": "simmons.rojas@undefined.co.uk",
+		"phone": "+263 (884) 475-2901",
+		"avatar": "http://i.pravatar.cc/300"
+	  },
+	  "address": {
+		"houseNumber": 840,
+		"street": "Lefferts Place",
+		"city": "Brandermill",
+		"state": "Vermont",
+		"geo": {
+		  "lat": "-1.79225",
+		  "lng": "122.940997"
+		}
+	  },
+	  "rent": "$91",
+	  "rating": "3.1",
+	  "reviews": 130
+	},
+	{
+	  "id": "5c6d2424c4e29ae0794c4e43",
+	  "landlord": {
+		"name": {
+		  "first": "Monica",
+		  "last": "Oneill"
+		},
+		"email": "monica.oneill@undefined.us",
+		"phone": "+263 (870) 559-3617",
+		"avatar": "http://i.pravatar.cc/300"
+	  },
+	  "address": {
+		"houseNumber": 372,
+		"street": "Brooklyn Avenue",
+		"city": "Elliott",
+		"state": "Colorado",
+		"geo": {
+		  "lat": "55.652711",
+		  "lng": "-152.676743"
+		}
+	  },
+	  "rent": "$148",
+	  "rating": "3.3",
+	  "reviews": 225
+	},
+	{
+	  "id": "5c6d2424a0b89b854f83b70e",
+	  "landlord": {
+		"name": {
+		  "first": "Stark",
+		  "last": "Cox"
+		},
+		"email": "stark.cox@undefined.biz",
+		"phone": "+263 (866) 560-3791",
+		"avatar": "http://i.pravatar.cc/300"
+	  },
+	  "address": {
+		"houseNumber": 557,
+		"street": "Perry Terrace",
+		"city": "Williston",
+		"state": "Virgin Islands",
+		"geo": {
+		  "lat": "74.096383",
+		  "lng": "-155.514119"
+		}
+	  },
+	  "rent": "$160",
+	  "rating": "4.8",
+	  "reviews": 525
+	},
+	{
+	  "id": "5c6d2424c7b19eeaa9212db5",
+	  "landlord": {
+		"name": {
+		  "first": "Snider",
+		  "last": "Beasley"
+		},
+		"email": "snider.beasley@undefined.me",
+		"phone": "+263 (927) 549-3297",
+		"avatar": "http://i.pravatar.cc/300"
+	  },
+	  "address": {
+		"houseNumber": 525,
+		"street": "Elliott Place",
+		"city": "Gerber",
+		"state": "South Carolina",
+		"geo": {
+		  "lat": "-52.006175",
+		  "lng": "-30.185423"
+		}
+	  },
+	  "rent": "$278",
+	  "rating": "4.9",
+	  "reviews": 136
+	},
+	{
+	  "id": "5c6d2424db1a2336deb0d6e3",
+	  "landlord": {
+		"name": {
+		  "first": "Ilene",
+		  "last": "Sharpe"
+		},
+		"email": "ilene.sharpe@undefined.tv",
+		"phone": "+263 (951) 521-3837",
+		"avatar": "http://i.pravatar.cc/300"
+	  },
+	  "address": {
+		"houseNumber": 789,
+		"street": "Greene Avenue",
+		"city": "Fruitdale",
+		"state": "New York",
+		"geo": {
+		  "lat": "23.340899",
+		  "lng": "-23.084961"
+		}
+	  },
+	  "rent": "$177",
+	  "rating": "2.6",
+	  "reviews": 51
+	},
+	{
+	  "id": "5c6d24240eb3fc2ce59c4fbc",
+	  "landlord": {
+		"name": {
+		  "first": "Hogan",
+		  "last": "Cline"
+		},
+		"email": "hogan.cline@undefined.info",
+		"phone": "+263 (978) 447-2709",
+		"avatar": "http://i.pravatar.cc/300"
+	  },
+	  "address": {
+		"houseNumber": 884,
+		"street": "Carroll Street",
+		"city": "Suitland",
+		"state": "New Mexico",
+		"geo": {
+		  "lat": "88.606829",
+		  "lng": "-173.64711"
+		}
+	  },
+	  "rent": "$248",
+	  "rating": "2.8",
+	  "reviews": 961
+	},
+	{
+	  "id": "5c6d242422c635df36ae99e5",
+	  "landlord": {
+		"name": {
+		  "first": "Rosella",
+		  "last": "Christensen"
+		},
+		"email": "rosella.christensen@undefined.ca",
+		"phone": "+263 (995) 491-3956",
+		"avatar": "http://i.pravatar.cc/300"
+	  },
+	  "address": {
+		"houseNumber": 400,
+		"street": "Kensington Street",
+		"city": "Woodlands",
+		"state": "Tennessee",
+		"geo": {
+		  "lat": "38.576717",
+		  "lng": "150.775403"
+		}
+	  },
+	  "rent": "$191",
+	  "rating": "1.7",
+	  "reviews": 523
+	},
+	{
+	  "id": "5c6d242419eefe0369c463c4",
+	  "landlord": {
+		"name": {
+		  "first": "Howe",
+		  "last": "Kerr"
+		},
+		"email": "howe.kerr@undefined.biz",
+		"phone": "+263 (995) 400-3752",
+		"avatar": "http://i.pravatar.cc/300"
+	  },
+	  "address": {
+		"houseNumber": 444,
+		"street": "McClancy Place",
+		"city": "Weedville",
+		"state": "Mississippi",
+		"geo": {
+		  "lat": "-3.189232",
+		  "lng": "-143.599892"
+		}
+	  },
+	  "rent": "$265",
+	  "rating": "2.2",
+	  "reviews": 124
+	},
+	{
+	  "id": "5c6d242425a19deb0d8ad8cd",
+	  "landlord": {
+		"name": {
+		  "first": "Elise",
+		  "last": "Lucas"
+		},
+		"email": "elise.lucas@undefined.net",
+		"phone": "+263 (802) 585-3036",
+		"avatar": "http://i.pravatar.cc/300"
+	  },
+	  "address": {
+		"houseNumber": 610,
+		"street": "Highland Boulevard",
+		"city": "Beechmont",
+		"state": "Maryland",
+		"geo": {
+		  "lat": "-3.252931",
+		  "lng": "-73.615721"
+		}
+	  },
+	  "rent": "$181",
+	  "rating": "4.0",
+	  "reviews": 853
+	},
+	{
+	  "id": "5c6d24244a9fc0313e49a0a1",
+	  "landlord": {
+		"name": {
+		  "first": "Paulette",
+		  "last": "Jarvis"
+		},
+		"email": "paulette.jarvis@undefined.name",
+		"phone": "+263 (805) 584-2062",
+		"avatar": "http://i.pravatar.cc/300"
+	  },
+	  "address": {
+		"houseNumber": 380,
+		"street": "Green Street",
+		"city": "Camas",
+		"state": "Arkansas",
+		"geo": {
+		  "lat": "-82.845375",
+		  "lng": "53.60324"
+		}
+	  },
+	  "rent": "$109",
+	  "rating": "4.8",
+	  "reviews": 519
+	},
+	{
+	  "id": "5c6d24245f71f0feeb7500d7",
+	  "landlord": {
+		"name": {
+		  "first": "Carole",
+		  "last": "Rivas"
+		},
+		"email": "carole.rivas@undefined.com",
+		"phone": "+263 (916) 404-2978",
+		"avatar": "http://i.pravatar.cc/300"
+	  },
+	  "address": {
+		"houseNumber": 525,
+		"street": "Onderdonk Avenue",
+		"city": "Ruffin",
+		"state": "North Dakota",
+		"geo": {
+		  "lat": "-67.534384",
+		  "lng": "-15.353062"
+		}
+	  },
+	  "rent": "$267",
+	  "rating": "4.5",
+	  "reviews": 438
+	},
+	{
+	  "id": "5c6d242489d6bca9cc0f126e",
+	  "landlord": {
+		"name": {
+		  "first": "King",
+		  "last": "Rich"
+		},
+		"email": "king.rich@undefined.org",
+		"phone": "+263 (844) 526-3706",
+		"avatar": "http://i.pravatar.cc/300"
+	  },
+	  "address": {
+		"houseNumber": 756,
+		"street": "Cedar Street",
+		"city": "Groveville",
+		"state": "Indiana",
+		"geo": {
+		  "lat": "-16.784097",
+		  "lng": "-86.107297"
+		}
+	  },
+	  "rent": "$155",
+	  "rating": "4.9",
+	  "reviews": 276
+	},
+	{
+	  "id": "5c6d2424f72767d89d1bb1cf",
+	  "landlord": {
+		"name": {
+		  "first": "Melanie",
+		  "last": "Norman"
+		},
+		"email": "melanie.norman@undefined.co.uk",
+		"phone": "+263 (973) 434-2653",
+		"avatar": "http://i.pravatar.cc/300"
+	  },
+	  "address": {
+		"houseNumber": 340,
+		"street": "Liberty Avenue",
+		"city": "Corriganville",
+		"state": "Delaware",
+		"geo": {
+		  "lat": "33.99914",
+		  "lng": "22.201733"
+		}
+	  },
+	  "rent": "$166",
+	  "rating": "1.5",
+	  "reviews": 664
+	},
+	{
+	  "id": "5c6d2424e59b1310a9965eab",
+	  "landlord": {
+		"name": {
+		  "first": "Francisca",
+		  "last": "Munoz"
+		},
+		"email": "francisca.munoz@undefined.us",
+		"phone": "+263 (969) 599-3647",
+		"avatar": "http://i.pravatar.cc/300"
+	  },
+	  "address": {
+		"houseNumber": 408,
+		"street": "Kimball Street",
+		"city": "Whitehaven",
+		"state": "New Hampshire",
+		"geo": {
+		  "lat": "-10.934658",
+		  "lng": "-145.114333"
+		}
+	  },
+	  "rent": "$285",
+	  "rating": "3.1",
+	  "reviews": 398
+	},
+	{
+	  "id": "5c6d2424ffb1fbe40d401109",
+	  "landlord": {
+		"name": {
+		  "first": "Justine",
+		  "last": "Galloway"
+		},
+		"email": "justine.galloway@undefined.biz",
+		"phone": "+263 (841) 523-3771",
+		"avatar": "http://i.pravatar.cc/300"
+	  },
+	  "address": {
+		"houseNumber": 942,
+		"street": "Dinsmore Place",
+		"city": "Adelino",
+		"state": "Alabama",
+		"geo": {
+		  "lat": "57.393967",
+		  "lng": "104.170634"
+		}
+	  },
+	  "rent": "$186",
+	  "rating": "1.5",
+	  "reviews": 742
+	},
+	{
+	  "id": "5c6d24248d44b53223636273",
+	  "landlord": {
+		"name": {
+		  "first": "Rosie",
+		  "last": "Higgins"
+		},
+		"email": "rosie.higgins@undefined.me",
+		"phone": "+263 (937) 507-2813",
+		"avatar": "http://i.pravatar.cc/300"
+	  },
+	  "address": {
+		"houseNumber": 597,
+		"street": "Fuller Place",
+		"city": "Vicksburg",
+		"state": "Montana",
+		"geo": {
+		  "lat": "18.530491",
+		  "lng": "177.672447"
+		}
+	  },
+	  "rent": "$219",
+	  "rating": "1.1",
+	  "reviews": 58
+	},
+	{
+	  "id": "5c6d2424a0f8c0dc1d3d0bf2",
+	  "landlord": {
+		"name": {
+		  "first": "Lakeisha",
+		  "last": "Santana"
+		},
+		"email": "lakeisha.santana@undefined.tv",
+		"phone": "+263 (869) 426-2167",
+		"avatar": "http://i.pravatar.cc/300"
+	  },
+	  "address": {
+		"houseNumber": 521,
+		"street": "Euclid Avenue",
+		"city": "Gwynn",
+		"state": "Washington",
+		"geo": {
+		  "lat": "-58.144645",
+		  "lng": "-168.488118"
+		}
+	  },
+	  "rent": "$146",
 	  "rating": "2.4",
-	  "reviews": 721
+	  "reviews": 10
 	},
 	{
-	  "id": "5c6aa667e637e1da32b5e553",
+	  "id": "5c6d24249d5085f308eddfbc",
 	  "landlord": {
-		 "name": {
-			"first": "Jeannine",
-			"last": "Nguyen"
-		 },
-		 "email": "jeannine.nguyen@undefined.me",
-		 "phone": "+263 (895) 463-3049",
-		 "avatar": "http://i.pravatar.cc/300"
+		"name": {
+		  "first": "Bonita",
+		  "last": "Moreno"
+		},
+		"email": "bonita.moreno@undefined.info",
+		"phone": "+263 (808) 431-2850",
+		"avatar": "http://i.pravatar.cc/300"
 	  },
 	  "address": {
-		 "houseNumber": 180,
-		 "street": "Wythe Avenue",
-		 "city": "Maplewood",
-		 "state": "Idaho",
-		 "geo": {
-			"lat": "37.950381",
-			"lng": "85.493745"
-		 }
+		"houseNumber": 229,
+		"street": "Lancaster Avenue",
+		"city": "Grenelefe",
+		"state": "Missouri",
+		"geo": {
+		  "lat": "81.466203",
+		  "lng": "131.313961"
+		}
 	  },
-	  "rent": "$97",
-	  "rating": "0.0",
-	  "reviews": 936
+	  "rent": "$135",
+	  "rating": "2.1",
+	  "reviews": 595
+	},
+	{
+	  "id": "5c6d2424b6ffe50cf196b70e",
+	  "landlord": {
+		"name": {
+		  "first": "Vivian",
+		  "last": "Hale"
+		},
+		"email": "vivian.hale@undefined.ca",
+		"phone": "+263 (906) 581-2874",
+		"avatar": "http://i.pravatar.cc/300"
+	  },
+	  "address": {
+		"houseNumber": 960,
+		"street": "Ryerson Street",
+		"city": "Cashtown",
+		"state": "West Virginia",
+		"geo": {
+		  "lat": "-53.697446",
+		  "lng": "-49.630603"
+		}
+	  },
+	  "rent": "$193",
+	  "rating": "2.0",
+	  "reviews": 649
+	},
+	{
+	  "id": "5c6d24241073ceee16565113",
+	  "landlord": {
+		"name": {
+		  "first": "Casandra",
+		  "last": "Ellison"
+		},
+		"email": "casandra.ellison@undefined.biz",
+		"phone": "+263 (831) 460-2450",
+		"avatar": "http://i.pravatar.cc/300"
+	  },
+	  "address": {
+		"houseNumber": 248,
+		"street": "Nova Court",
+		"city": "Neahkahnie",
+		"state": "Rhode Island",
+		"geo": {
+		  "lat": "10.564795",
+		  "lng": "-61.787616"
+		}
+	  },
+	  "rent": "$244",
+	  "rating": "2.8",
+	  "reviews": 872
+	},
+	{
+	  "id": "5c6d24247101057548e0fee1",
+	  "landlord": {
+		"name": {
+		  "first": "Farley",
+		  "last": "Simmons"
+		},
+		"email": "farley.simmons@undefined.net",
+		"phone": "+263 (927) 478-2428",
+		"avatar": "http://i.pravatar.cc/300"
+	  },
+	  "address": {
+		"houseNumber": 622,
+		"street": "Morton Street",
+		"city": "Bagtown",
+		"state": "Maine",
+		"geo": {
+		  "lat": "-60.5987",
+		  "lng": "66.353363"
+		}
+	  },
+	  "rent": "$150",
+	  "rating": "1.4",
+	  "reviews": 367
+	},
+	{
+	  "id": "5c6d2424d8f080bd00b491f0",
+	  "landlord": {
+		"name": {
+		  "first": "Alexis",
+		  "last": "Levy"
+		},
+		"email": "alexis.levy@undefined.name",
+		"phone": "+263 (816) 539-2932",
+		"avatar": "http://i.pravatar.cc/300"
+	  },
+	  "address": {
+		"houseNumber": 217,
+		"street": "Lake Place",
+		"city": "Deseret",
+		"state": "North Carolina",
+		"geo": {
+		  "lat": "-15.530554",
+		  "lng": "-32.497779"
+		}
+	  },
+	  "rent": "$201",
+	  "rating": "2.2",
+	  "reviews": 565
+	},
+	{
+	  "id": "5c6d2424dedd6968adb4e728",
+	  "landlord": {
+		"name": {
+		  "first": "Richards",
+		  "last": "Mays"
+		},
+		"email": "richards.mays@undefined.com",
+		"phone": "+263 (976) 560-3360",
+		"avatar": "http://i.pravatar.cc/300"
+	  },
+	  "address": {
+		"houseNumber": 602,
+		"street": "Tiffany Place",
+		"city": "Bannock",
+		"state": "Iowa",
+		"geo": {
+		  "lat": "-59.845217",
+		  "lng": "99.016282"
+		}
+	  },
+	  "rent": "$261",
+	  "rating": "1.3",
+	  "reviews": 802
+	},
+	{
+	  "id": "5c6d242450ff83ad48142e5d",
+	  "landlord": {
+		"name": {
+		  "first": "Carlene",
+		  "last": "Shannon"
+		},
+		"email": "carlene.shannon@undefined.org",
+		"phone": "+263 (942) 531-2814",
+		"avatar": "http://i.pravatar.cc/300"
+	  },
+	  "address": {
+		"houseNumber": 314,
+		"street": "Karweg Place",
+		"city": "Brandywine",
+		"state": "Georgia",
+		"geo": {
+		  "lat": "-20.755568",
+		  "lng": "-79.318076"
+		}
+	  },
+	  "rent": "$93",
+	  "rating": "4.5",
+	  "reviews": 420
+	},
+	{
+	  "id": "5c6d2424528a6f86222939e5",
+	  "landlord": {
+		"name": {
+		  "first": "Jordan",
+		  "last": "Joseph"
+		},
+		"email": "jordan.joseph@undefined.co.uk",
+		"phone": "+263 (875) 484-3394",
+		"avatar": "http://i.pravatar.cc/300"
+	  },
+	  "address": {
+		"houseNumber": 960,
+		"street": "Morgan Avenue",
+		"city": "Nile",
+		"state": "Connecticut",
+		"geo": {
+		  "lat": "-36.436781",
+		  "lng": "18.175413"
+		}
+	  },
+	  "rent": "$189",
+	  "rating": "2.5",
+	  "reviews": 905
+	},
+	{
+	  "id": "5c6d242427b629ccde811732",
+	  "landlord": {
+		"name": {
+		  "first": "Joanne",
+		  "last": "English"
+		},
+		"email": "joanne.english@undefined.us",
+		"phone": "+263 (807) 405-2558",
+		"avatar": "http://i.pravatar.cc/300"
+	  },
+	  "address": {
+		"houseNumber": 331,
+		"street": "Beadel Street",
+		"city": "Tibbie",
+		"state": "Texas",
+		"geo": {
+		  "lat": "41.560936",
+		  "lng": "-28.844719"
+		}
+	  },
+	  "rent": "$277",
+	  "rating": "2.0",
+	  "reviews": 823
+	},
+	{
+	  "id": "5c6d242423a6d67289a48459",
+	  "landlord": {
+		"name": {
+		  "first": "Osborne",
+		  "last": "Gray"
+		},
+		"email": "osborne.gray@undefined.biz",
+		"phone": "+263 (827) 495-2487",
+		"avatar": "http://i.pravatar.cc/300"
+	  },
+	  "address": {
+		"houseNumber": 586,
+		"street": "Kent Avenue",
+		"city": "Linwood",
+		"state": "Massachusetts",
+		"geo": {
+		  "lat": "59.209497",
+		  "lng": "140.758161"
+		}
+	  },
+	  "rent": "$298",
+	  "rating": "4.6",
+	  "reviews": 492
+	},
+	{
+	  "id": "5c6d2424ad2865d131b974fb",
+	  "landlord": {
+		"name": {
+		  "first": "Sofia",
+		  "last": "Coffey"
+		},
+		"email": "sofia.coffey@undefined.me",
+		"phone": "+263 (931) 578-2884",
+		"avatar": "http://i.pravatar.cc/300"
+	  },
+	  "address": {
+		"houseNumber": 594,
+		"street": "Henderson Walk",
+		"city": "National",
+		"state": "Wyoming",
+		"geo": {
+		  "lat": "-70.944902",
+		  "lng": "-130.137034"
+		}
+	  },
+	  "rent": "$94",
+	  "rating": "3.0",
+	  "reviews": 37
+	},
+	{
+	  "id": "5c6d24247ca5fc2c60667eec",
+	  "landlord": {
+		"name": {
+		  "first": "Cora",
+		  "last": "Manning"
+		},
+		"email": "cora.manning@undefined.tv",
+		"phone": "+263 (863) 407-3690",
+		"avatar": "http://i.pravatar.cc/300"
+	  },
+	  "address": {
+		"houseNumber": 612,
+		"street": "Lewis Place",
+		"city": "Belvoir",
+		"state": "South Dakota",
+		"geo": {
+		  "lat": "85.287396",
+		  "lng": "-111.92914"
+		}
+	  },
+	  "rent": "$227",
+	  "rating": "1.4",
+	  "reviews": 784
+	},
+	{
+	  "id": "5c6d242488ec42f8b3704c38",
+	  "landlord": {
+		"name": {
+		  "first": "Lester",
+		  "last": "Head"
+		},
+		"email": "lester.head@undefined.info",
+		"phone": "+263 (969) 440-2259",
+		"avatar": "http://i.pravatar.cc/300"
+	  },
+	  "address": {
+		"houseNumber": 445,
+		"street": "Lawton Street",
+		"city": "Rosine",
+		"state": "Idaho",
+		"geo": {
+		  "lat": "-81.097486",
+		  "lng": "-121.331657"
+		}
+	  },
+	  "rent": "$258",
+	  "rating": "4.6",
+	  "reviews": 336
+	},
+	{
+	  "id": "5c6d242493e7b75553232c84",
+	  "landlord": {
+		"name": {
+		  "first": "Graciela",
+		  "last": "Conway"
+		},
+		"email": "graciela.conway@undefined.ca",
+		"phone": "+263 (855) 594-3733",
+		"avatar": "http://i.pravatar.cc/300"
+	  },
+	  "address": {
+		"houseNumber": 963,
+		"street": "Rutland Road",
+		"city": "Charco",
+		"state": "Oklahoma",
+		"geo": {
+		  "lat": "-16.296423",
+		  "lng": "-76.688291"
+		}
+	  },
+	  "rent": "$164",
+	  "rating": "3.6",
+	  "reviews": 634
+	},
+	{
+	  "id": "5c6d242453f557ac939b02e6",
+	  "landlord": {
+		"name": {
+		  "first": "Manuela",
+		  "last": "Barton"
+		},
+		"email": "manuela.barton@undefined.biz",
+		"phone": "+263 (917) 570-3245",
+		"avatar": "http://i.pravatar.cc/300"
+	  },
+	  "address": {
+		"houseNumber": 297,
+		"street": "Rock Street",
+		"city": "Vaughn",
+		"state": "District Of Columbia",
+		"geo": {
+		  "lat": "52.873867",
+		  "lng": "-88.578272"
+		}
+	  },
+	  "rent": "$226",
+	  "rating": "2.0",
+	  "reviews": 240
+	},
+	{
+	  "id": "5c6d24244b6b742d3c301795",
+	  "landlord": {
+		"name": {
+		  "first": "Lucinda",
+		  "last": "Mckee"
+		},
+		"email": "lucinda.mckee@undefined.net",
+		"phone": "+263 (931) 411-2088",
+		"avatar": "http://i.pravatar.cc/300"
+	  },
+	  "address": {
+		"houseNumber": 718,
+		"street": "Doone Court",
+		"city": "Cawood",
+		"state": "Arizona",
+		"geo": {
+		  "lat": "-4.570682",
+		  "lng": "99.44382"
+		}
+	  },
+	  "rent": "$246",
+	  "rating": "2.8",
+	  "reviews": 549
+	},
+	{
+	  "id": "5c6d2424835d54bd572d9015",
+	  "landlord": {
+		"name": {
+		  "first": "Cain",
+		  "last": "Fleming"
+		},
+		"email": "cain.fleming@undefined.name",
+		"phone": "+263 (821) 501-3062",
+		"avatar": "http://i.pravatar.cc/300"
+	  },
+	  "address": {
+		"houseNumber": 634,
+		"street": "Boerum Street",
+		"city": "Harrison",
+		"state": "Illinois",
+		"geo": {
+		  "lat": "-24.993643",
+		  "lng": "0.324945"
+		}
+	  },
+	  "rent": "$99",
+	  "rating": "4.3",
+	  "reviews": 74
+	},
+	{
+	  "id": "5c6d242498ccdb4af139fd78",
+	  "landlord": {
+		"name": {
+		  "first": "Shelley",
+		  "last": "Mccormick"
+		},
+		"email": "shelley.mccormick@undefined.com",
+		"phone": "+263 (942) 480-3801",
+		"avatar": "http://i.pravatar.cc/300"
+	  },
+	  "address": {
+		"houseNumber": 757,
+		"street": "Roebling Street",
+		"city": "Toftrees",
+		"state": "Palau",
+		"geo": {
+		  "lat": "-15.285665",
+		  "lng": "73.111951"
+		}
+	  },
+	  "rent": "$256",
+	  "rating": "2.3",
+	  "reviews": 128
+	},
+	{
+	  "id": "5c6d2424f24183659132e94d",
+	  "landlord": {
+		"name": {
+		  "first": "Josefa",
+		  "last": "Greer"
+		},
+		"email": "josefa.greer@undefined.org",
+		"phone": "+263 (821) 400-3869",
+		"avatar": "http://i.pravatar.cc/300"
+	  },
+	  "address": {
+		"houseNumber": 360,
+		"street": "Beekman Place",
+		"city": "Sultana",
+		"state": "Northern Mariana Islands",
+		"geo": {
+		  "lat": "-39.396745",
+		  "lng": "-124.255376"
+		}
+	  },
+	  "rent": "$237",
+	  "rating": "4.9",
+	  "reviews": 473
+	},
+	{
+	  "id": "5c6d2424d591c2324e282450",
+	  "landlord": {
+		"name": {
+		  "first": "Galloway",
+		  "last": "Callahan"
+		},
+		"email": "galloway.callahan@undefined.co.uk",
+		"phone": "+263 (842) 596-3115",
+		"avatar": "http://i.pravatar.cc/300"
+	  },
+	  "address": {
+		"houseNumber": 938,
+		"street": "Wyckoff Avenue",
+		"city": "Allendale",
+		"state": "Louisiana",
+		"geo": {
+		  "lat": "19.749035",
+		  "lng": "-131.964371"
+		}
+	  },
+	  "rent": "$259",
+	  "rating": "1.9",
+	  "reviews": 202
+	},
+	{
+	  "id": "5c6d2424b0be5d7799b8a9fa",
+	  "landlord": {
+		"name": {
+		  "first": "Guerrero",
+		  "last": "Carney"
+		},
+		"email": "guerrero.carney@undefined.us",
+		"phone": "+263 (983) 532-3222",
+		"avatar": "http://i.pravatar.cc/300"
+	  },
+	  "address": {
+		"houseNumber": 766,
+		"street": "Wythe Place",
+		"city": "Kapowsin",
+		"state": "Virginia",
+		"geo": {
+		  "lat": "87.330797",
+		  "lng": "138.235488"
+		}
+	  },
+	  "rent": "$106",
+	  "rating": "4.2",
+	  "reviews": 537
+	},
+	{
+	  "id": "5c6d2424abba3331afcafff8",
+	  "landlord": {
+		"name": {
+		  "first": "Lessie",
+		  "last": "Dale"
+		},
+		"email": "lessie.dale@undefined.biz",
+		"phone": "+263 (897) 483-3426",
+		"avatar": "http://i.pravatar.cc/300"
+	  },
+	  "address": {
+		"houseNumber": 650,
+		"street": "Fulton Street",
+		"city": "Berlin",
+		"state": "Alaska",
+		"geo": {
+		  "lat": "59.631817",
+		  "lng": "-115.016087"
+		}
+	  },
+	  "rent": "$253",
+	  "rating": "3.4",
+	  "reviews": 301
+	},
+	{
+	  "id": "5c6d24242c5481dc9f3d572a",
+	  "landlord": {
+		"name": {
+		  "first": "Francis",
+		  "last": "Wyatt"
+		},
+		"email": "francis.wyatt@undefined.me",
+		"phone": "+263 (804) 404-3615",
+		"avatar": "http://i.pravatar.cc/300"
+	  },
+	  "address": {
+		"houseNumber": 158,
+		"street": "Louisa Street",
+		"city": "Concho",
+		"state": "Kansas",
+		"geo": {
+		  "lat": "-26.495205",
+		  "lng": "160.356269"
+		}
+	  },
+	  "rent": "$206",
+	  "rating": "1.9",
+	  "reviews": 322
+	},
+	{
+	  "id": "5c6d2424e784b1fa7a17c3e2",
+	  "landlord": {
+		"name": {
+		  "first": "Audra",
+		  "last": "Shaw"
+		},
+		"email": "audra.shaw@undefined.tv",
+		"phone": "+263 (982) 428-2466",
+		"avatar": "http://i.pravatar.cc/300"
+	  },
+	  "address": {
+		"houseNumber": 958,
+		"street": "Jardine Place",
+		"city": "Fidelis",
+		"state": "Guam",
+		"geo": {
+		  "lat": "19.036992",
+		  "lng": "13.44185"
+		}
+	  },
+	  "rent": "$265",
+	  "rating": "1.6",
+	  "reviews": 81
+	},
+	{
+	  "id": "5c6d24243a901d50366d2e50",
+	  "landlord": {
+		"name": {
+		  "first": "Prince",
+		  "last": "Carrillo"
+		},
+		"email": "prince.carrillo@undefined.info",
+		"phone": "+263 (950) 432-3146",
+		"avatar": "http://i.pravatar.cc/300"
+	  },
+	  "address": {
+		"houseNumber": 927,
+		"street": "Fountain Avenue",
+		"city": "Cetronia",
+		"state": "Wisconsin",
+		"geo": {
+		  "lat": "-0.566094",
+		  "lng": "-31.269787"
+		}
+	  },
+	  "rent": "$136",
+	  "rating": "1.1",
+	  "reviews": 96
+	},
+	{
+	  "id": "5c6d242470a2651b889cb9c9",
+	  "landlord": {
+		"name": {
+		  "first": "Eileen",
+		  "last": "Curry"
+		},
+		"email": "eileen.curry@undefined.ca",
+		"phone": "+263 (887) 504-3467",
+		"avatar": "http://i.pravatar.cc/300"
+	  },
+	  "address": {
+		"houseNumber": 125,
+		"street": "Havens Place",
+		"city": "Trail",
+		"state": "Kentucky",
+		"geo": {
+		  "lat": "-61.725159",
+		  "lng": "-136.180731"
+		}
+	  },
+	  "rent": "$299",
+	  "rating": "4.5",
+	  "reviews": 206
+	},
+	{
+	  "id": "5c6d2424a27f860ca5ac5a40",
+	  "landlord": {
+		"name": {
+		  "first": "Wolfe",
+		  "last": "Frye"
+		},
+		"email": "wolfe.frye@undefined.biz",
+		"phone": "+263 (984) 419-2326",
+		"avatar": "http://i.pravatar.cc/300"
+	  },
+	  "address": {
+		"houseNumber": 745,
+		"street": "Colonial Court",
+		"city": "Hiseville",
+		"state": "Puerto Rico",
+		"geo": {
+		  "lat": "-71.020166",
+		  "lng": "6.835942"
+		}
+	  },
+	  "rent": "$150",
+	  "rating": "2.7",
+	  "reviews": 891
+	},
+	{
+	  "id": "5c6d24249a6a3ae51d4975fb",
+	  "landlord": {
+		"name": {
+		  "first": "Stevens",
+		  "last": "Harmon"
+		},
+		"email": "stevens.harmon@undefined.net",
+		"phone": "+263 (889) 420-3997",
+		"avatar": "http://i.pravatar.cc/300"
+	  },
+	  "address": {
+		"houseNumber": 252,
+		"street": "Ryder Avenue",
+		"city": "Loomis",
+		"state": "Hawaii",
+		"geo": {
+		  "lat": "-82.39326",
+		  "lng": "-152.394199"
+		}
+	  },
+	  "rent": "$92",
+	  "rating": "1.2",
+	  "reviews": 618
 	}
- ]
+  ]
+  

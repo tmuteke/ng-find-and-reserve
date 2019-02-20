@@ -1,0 +1,70 @@
+@import './colours';
+
+header {
+	box-sizing: border-box;
+	padding: 1rem;
+	background-color: $teal400;
+
+	nav {
+
+		#logo {
+			float: left;
+			font-size: 24px;
+
+			a {
+				color: $white;
+			}
+
+			&:hover {
+				background-color: transparent;
+			}
+		}
+
+		div {
+			float: right;
+
+			span, h6 {
+				display: inline;
+				box-sizing: border-box;
+				border-radius: 3px;
+				padding: .8rem .1rem;
+				transition: background-color .1s ease-in;
+
+				a {
+					box-sizing: border-box;
+					display: inline-block;
+					padding: .6rem;
+					color: $teal200;
+					cursor: pointer;
+					text-transform: uppercase;
+
+					&:hover {
+						color: white;
+					}
+
+					&.active {
+						color: white;
+					}
+				}
+
+				&.hover-white-bg {
+					&:hover {
+						background-color: $white;
+
+						a {
+							color: $teal400;
+						}
+					}
+				}
+
+				&.white-bg {
+					background-color: $white;
+
+					a {
+						color: $teal400;
+					}
+				}
+			}
+		}
+	}
+}

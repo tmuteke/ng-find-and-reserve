@@ -1,0 +1,153 @@
+@import './colours';
+
+.control-container {
+    margin-bottom: 10px;
+
+	.control {
+		display: table;
+		position: relative;
+		padding-left: 1.4rem;
+		margin: .325rem 0;
+		cursor: pointer !important;
+		font-size: 18px;
+
+		.label-text {
+			display: inline;
+
+			span {
+				font-size: .95rem;
+			}
+		}
+
+		&.control-checkbox {
+			.control-indicator {
+				&:after {
+					left: 5px;
+					top: 1px;
+					width: 4px;
+					height: 10px;
+					border: solid #fff;
+					border-width: 0 2px 2px 0;
+					transform: rotate(45deg);
+				}
+			}
+
+			input {
+				&:disabled {
+					&~.control-indicator {
+						&:after {
+                            left: 4px;
+                            top: 0px;
+						}
+					}
+				}
+			}
+		}
+
+		&.control-radio {
+			.control-indicator {
+				border-radius: 50%;
+
+				&:after {
+					left: 4px;
+					top: 4px;
+					height: 6px;
+					width: 6px;
+					border-radius: 50%;
+					background: #fff;
+				}
+			}
+
+			input {
+				&:disabled {
+					&~.control-indicator {
+						&:after {
+                            top: 3px;
+                            left: 3px;
+						}
+					}
+				}
+			}
+		}
+
+		input {
+			position: absolute;
+			z-index: -1;
+			opacity: 0;
+
+			&~.control-indicator {
+				transition: background-color 150ms;
+			}
+
+			&:focus {
+				&~.control-indicator {
+					// background: #ccc;
+				}
+			}
+
+			&:checked {
+				&~.control-indicator {
+					background: $blue_gray700;
+					border: 1px solid $blue_gray700;
+
+					&:after {
+                        display: block;
+					}
+				}
+
+				&:focus {
+					&~.control-indicator {
+						background: $blue_gray700;
+					}
+                }
+
+                &:disabled {
+                    &~.control-indicator {
+                        background-color: $blue_gray100;
+                    }
+                }
+			}
+
+			&:disabled {
+				&~.control-indicator {
+					border: 2px solid $blue_gray100;
+					opacity: 0.6;
+					pointer-events: none;
+				}
+			}
+		}
+
+		.control-indicator {
+			position: absolute;
+			top: 4px;
+			left: 0;
+			height: 16px;
+			width: 16px;
+			border: 2px solid $blue_gray700;
+			border-radius: 2px;
+			// background: #e6e6e6;
+
+			&:after {
+				content: '';
+				position: absolute;
+				display: none;
+			}
+		}
+
+		&:hover {
+			input {
+				&~.control-indicator {
+					// background: #ccc;
+				}
+
+				&:not([disabled]) {
+					&:checked {
+						&~.control-indicator {
+							background: $blue_gray700;
+						}
+					}
+				}
+			}
+		}
+	}
+}

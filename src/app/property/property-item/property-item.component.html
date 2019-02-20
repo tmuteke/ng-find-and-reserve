@@ -1,0 +1,25 @@
+<a [routerLink]="['/property', property.id, 'details']" class="item-container">
+	<!--<img [src]="imageUrl" alt="property image">-->
+	<div class="item-image"></div>
+	<div class="item-details">
+		<span class="item-address">
+			{{ property.address.houseNumber }} {{ property.address.street }}
+		</span>
+		<span class="item-location" appRating [rating]="property.rating">
+			{{ property.address.city }} · {{ property.address.state }}
+		</span>
+		<span class="line line-75"></span>
+		<span class="item-rent">
+			<i>{{ property.rent }}</i> per month
+		</span>
+		<div class="item-rating-container">
+			<span class="item-rating">{{property.rating}}</span>
+			<span class="item-star"><i class="fa" appRating [rating1]="property.rating"></i></span>
+			<span class="item-star"><i class="fa" appRating [rating2]="property.rating"></i></span>
+			<span class="item-star"><i class="fa" appRating [rating3]="property.rating"></i></span>
+			<span class="item-star"><i class="fa" appRating [rating4]="property.rating"></i></span>
+			<span class="item-star"><i class="fa" appRating [rating5]="property.rating"></i></span>
+			<span class="item-reviews">({{property.reviews}} reviews)</span>
+		</div>
+	</div>
+</a>

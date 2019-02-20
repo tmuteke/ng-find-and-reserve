@@ -1,0 +1,227 @@
+[
+	{
+	  "id": "5c6aa667ec041ecdadc7cd03",
+	  "landlord": {
+		 "name": {
+			"first": "Cassie",
+			"last": "Mack"
+		 },
+		 "email": "cassie.mack@undefined.com",
+		 "phone": "+263 (847) 514-3959",
+		 "avatar": "http://i.pravatar.cc/300"
+	  },
+	  "address": {
+		 "houseNumber": 790,
+		 "street": "Newport Street",
+		 "city": "Alleghenyville",
+		 "state": "Puerto Rico",
+		 "geo": {
+			"lat": "85.78027",
+			"lng": "38.417971"
+		 }
+	  },
+	  "rent": "$224",
+	  "rating": "3.9",
+	  "reviews": 680
+	},
+	{
+	  "id": "5c6aa6671acdd956365f2d41",
+	  "landlord": {
+		 "name": {
+			"first": "Lakeisha",
+			"last": "Woods"
+		 },
+		 "email": "lakeisha.woods@undefined.info",
+		 "phone": "+263 (967) 407-3154",
+		 "avatar": "http://i.pravatar.cc/300"
+	  },
+	  "address": {
+		 "houseNumber": 936,
+		 "street": "Newkirk Placez",
+		 "city": "Brambleton",
+		 "state": "Delaware",
+		 "geo": {
+			"lat": "63.840812",
+			"lng": "-64.803701"
+		 }
+	  },
+	  "rent": "$270",
+	  "rating": "3.6",
+	  "reviews": 798
+	},
+	{
+	  "id": "5c6aa66777244c3f73841322",
+	  "landlord": {
+		 "name": {
+			"first": "Margo",
+			"last": "Oconnor"
+		 },
+		 "email": "margo.oconnor@undefined.tv",
+		 "phone": "+263 (962) 485-3395",
+		 "avatar": "http://i.pravatar.cc/300"
+	  },
+	  "address": {
+		 "houseNumber": 528,
+		 "street": "Bancroft Place",
+		 "city": "Omar",
+		 "state": "Hawaii",
+		 "geo": {
+			"lat": "-64.437013",
+			"lng": "155.491509"
+		 }
+	  },
+	  "rent": "$115",
+	  "rating": "1.1",
+	  "reviews": 311
+	},
+	{
+	  "id": "5c6aa667a6e75d6e3bb0a7d2",
+	  "landlord": {
+		 "name": {
+			"first": "Berta",
+			"last": "Skinner"
+		 },
+		 "email": "berta.skinner@undefined.org",
+		 "phone": "+263 (807) 421-3198",
+		 "avatar": "http://i.pravatar.cc/300"
+	  },
+	  "address": {
+		 "houseNumber": 582,
+		 "street": "Coleridge Street",
+		 "city": "Bedias",
+		 "state": "Washington",
+		 "geo": {
+			"lat": "56.995179",
+			"lng": "-57.590738"
+		 }
+	  },
+	  "rent": "$162",
+	  "rating": "2.3",
+	  "reviews": 287
+	},
+	{
+	  "id": "5c6aa66712e75de442af4bf0",
+	  "landlord": {
+		 "name": {
+			"first": "Tameka",
+			"last": "Guy"
+		 },
+		 "email": "tameka.guy@undefined.biz",
+		 "phone": "+263 (975) 402-3241",
+		 "avatar": "http://i.pravatar.cc/300"
+	  },
+	  "address": {
+		 "houseNumber": 271,
+		 "street": "Coleman Street",
+		 "city": "Morgandale",
+		 "state": "Minnesota",
+		 "geo": {
+			"lat": "-60.478817",
+			"lng": "160.682173"
+		 }
+	  },
+	  "rent": "$285",
+	  "rating": "4.0",
+	  "reviews": 194
+	},
+	{
+	  "id": "5c6aa667a90f068498e0ede4",
+	  "landlord": {
+		 "name": {
+			"first": "Page",
+			"last": "Holder"
+		 },
+		 "email": "page.holder@undefined.biz",
+		 "phone": "+263 (982) 551-2012",
+		 "avatar": "http://i.pravatar.cc/300"
+	  },
+	  "address": {
+		 "houseNumber": 337,
+		 "street": "Lott Street",
+		 "city": "Efland",
+		 "state": "Indiana",
+		 "geo": {
+			"lat": "-32.48062",
+			"lng": "178.952283"
+		 }
+	  },
+	  "rent": "$128",
+	  "rating": "0.0",
+	  "reviews": 318
+	},
+	{
+	  "id": "5c6aa6677e8661764b0d2a9c",
+	  "landlord": {
+		 "name": {
+			"first": "Hopper",
+			"last": "Gregory"
+		 },
+		 "email": "hopper.gregory@undefined.name",
+		 "phone": "+263 (996) 442-2571",
+		 "avatar": "http://i.pravatar.cc/300"
+	  },
+	  "address": {
+		 "houseNumber": 409,
+		 "street": "Mermaid Avenue",
+		 "city": "Wyano",
+		 "state": "Arkansas",
+		 "geo": {
+			"lat": "46.718837",
+			"lng": "164.912786"
+		 }
+	  },
+	  "rent": "$171",
+	  "rating": "0.1",
+	  "reviews": 391
+	},
+	{
+	  "id": "5c6aa66767ca37f6668ed972",
+	  "landlord": {
+		 "name": {
+			"first": "Sweeney",
+			"last": "Lynn"
+		 },
+		 "email": "sweeney.lynn@undefined.io",
+		 "phone": "+263 (987) 410-3284",
+		 "avatar": "http://i.pravatar.cc/300"
+	  },
+	  "address": {
+		 "houseNumber": 522,
+		 "street": "Opal Court",
+		 "city": "Elrama",
+		 "state": "Connecticut",
+		 "geo": {
+			"lat": "-72.110747",
+			"lng": "100.721639"
+		 }
+	  },
+	  "rent": "$275",
+	  "rating": "2.4",
+	  "reviews": 721
+	},
+	{
+	  "id": "5c6aa667e637e1da32b5e553",
+	  "landlord": {
+		 "name": {
+			"first": "Jeannine",
+			"last": "Nguyen"
+		 },
+		 "email": "jeannine.nguyen@undefined.me",
+		 "phone": "+263 (895) 463-3049",
+		 "avatar": "http://i.pravatar.cc/300"
+	  },
+	  "address": {
+		 "houseNumber": 180,
+		 "street": "Wythe Avenue",
+		 "city": "Maplewood",
+		 "state": "Idaho",
+		 "geo": {
+			"lat": "37.950381",
+			"lng": "85.493745"
+		 }
+	  },
+	  "rent": "$97",
+	  "rating": "0.0",
+	  "reviews": 936
+	}
+ ]

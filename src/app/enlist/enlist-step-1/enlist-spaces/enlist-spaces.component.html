@@ -1,0 +1,41 @@
+
+<div class="container">
+	<div class="row">
+		<div class="col-lg-1"></div>
+		<div class="col-lg-6 col-md-8 col-xs-4">
+			<div class="details">
+				<h4>What other spaces can students use</h4>
+				<section>
+					<h6>Usable spaces</h6>
+					<div class="control-container" *ngFor="let space of spaces">
+						<label [for]="space.value" class="control control-checkbox">
+							<div class="label-text"><span>{{ space.name }}</span></div>
+							<input type="checkbox" [id]="space.value" [value]="space.value">
+							<div class="control-indicator"></div>
+						</label>
+					</div>
+				</section>
+			</div>
+			<nav>
+				<div class="container">
+					<div class="row">
+						<div class="col-lg-1"></div>
+						<div class="col-lg-6">
+							<span class="line"></span>
+							<section>
+								<div class="back">
+									<a [routerLink]="['/enlist', '089083', 'amenities']"><i class="fa fa-angle-left"></i> Back</a>
+								</div>
+								<div class="finish">
+									<a [routerLink]="['/enlist', '089083']" class="button button-dark-outline">Finish</a>
+								</div>
+							</section>
+						</div>
+					</div>
+				</div>
+			</nav>
+		</div>
+	</div>
+</div>
+
+

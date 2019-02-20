@@ -1,0 +1,26 @@
+
+@import '../../../assets/global-sass-files/forms';
+
+.form-container {
+	background: url(../../../assets/images/image_08.jpg) no-repeat center;
+	background-size: cover;
+
+	button {
+		margin: 1.5rem auto !important;
+	}
+
+	.line {
+		//margin-top: 1.5rem !important;
+		width: 85%;
+	}
+
+	.already-have-account {
+		font-size: .85rem;
+
+		.button {
+			width: 100px;
+			margin-left: auto;
+			margin-right: auto;
+		}
+	}
+}

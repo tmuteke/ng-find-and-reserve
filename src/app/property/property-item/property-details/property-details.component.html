@@ -1,0 +1,140 @@
+<!-- <div class="property-hero"></div> -->
+<app-header></app-header>
+
+<div class="property-hero"></div>
+
+<div class="container">
+	<div class="row">
+		<div class="col-lg-7">
+			<div class="property-details-container">
+				<section>
+					<span class="address">{{ property.address.houseNumber }} {{ property.address.street }}</span>
+					<span class="location">{{property.address.city }} · {{ property.address.state }}</span>
+				</section>
+				<span class="line"></span>
+				<section class="essential-info">
+					<p><i class="fa fa-home"></i>Full house with shared rooms</p>
+					<p><i class="fa fa-venus-mars"></i>Accommodates both female and male students</p>
+					<p><i class="fa fa-group"></i>10 students and 5 rooms</p>
+					<p><i class="fa fa-bathtub"></i>2 bathrooms</p>
+				</section>
+				<span class="line"></span>
+				<section class="usable-spaces">
+					<span class="heading heading-ter">Usable spaces</span>
+					<span>Gym</span>
+					<span>Parking</span>
+					<span>Laundry - washing, line, ironing</span>
+					<span>Kitchen</span>
+				</section>
+				<span class="line"></span>
+				<section>
+					<span class="heading heading-ter">Amenities</span>
+					<div class="row amenities">
+						<span class="col-lg-3 col-md-2 col-xs-6"><i class="fa fa-wifi"></i>WiFi</span>
+						<span class="col-lg-3 col-md-2 col-xs-6"><i class="fa fa-tv"></i>TV</span>
+						<span class="col-lg-3 col-md-2 col-xs-6"><i class="fa fa-book"></i>Study Room</span>
+						<span class="col-lg-3 col-md-2 col-xs-6"><i class="fa fa-bicycle"></i>Recreation</span>
+						<span class="col-lg-3 col-md-2 col-xs-6"><i class="fa fa-gamepad"></i>Gaming</span>
+					</div>
+				</section>
+				<span class="line"></span>
+				<section>
+					<span class="heading heading-ter">From the landlord</span>
+					<span class="from-the-landlord">Lorem ipsum dolor sit amet consectetur adipisicing elit. Voluptatibus, nesciunt
+						voluptatem? Odio
+						reiciendis ipsa itaque libero est quibusdam hic eum, saepe velit eveniet quisquam, ipsam aliquid fugit ex! Eum,
+						magnam? Lorem ipsum dolor sit amet consectetur adipisicing elit. Voluptatibus, nesciunt voluptatem? Odio
+						reiciendis ipsa itaque libero est quibusdam hic eum, saepe velit eveniet quisquam, ipsam aliquid fugit ex! Eum,
+						magnam?</span>
+				</section>
+				<span class="line"></span>
+				<section class="map">
+					<span class="heading heading-ter">Location</span>
+					<img [src]="imgGoogleMaps" alt="map view">
+					<div class="map-feed">
+					</div>
+				</section>
+				<span class="line"></span>
+				<section class="host-info">
+					<span class="heading heading-ter">Your Host</span>
+					<div>
+						<img [src]="property.landlord.avatar" alt="host avatar">
+					</div>
+					<div>
+						<span class="host-name">{{ property.landlord.name.first }} {{ property.landlord.name.last }}</span>
+						<span class="host-address">{{ property.address.houseNumber }} {{ property.address.street }}, {{
+							property.address.city }}, {{ property.address.state }}</span>
+						<span class="host-email">{{ property.landlord.email }}</span>
+						<span class="host-phone">{{ property.landlord.phone }}</span>
+					</div>
+				</section>
+				<span class="line"></span>
+				<section class="reviews">
+					<span class="heading stars">
+						{{property.reviews}} Reviews
+						<i class="fa" appRating [rating1]="property.rating"></i>
+						<i class="fa" appRating [rating2]="property.rating"></i>
+						<i class="fa" appRating [rating3]="property.rating"></i>
+						<i class="fa" appRating [rating4]="property.rating"></i>
+						<i class="fa" appRating [rating5]="property.rating"></i>
+					</span>
+					<div *ngFor="let review of reviews" class="review">
+						<div class="row">
+							<div class="avatar col-lg-2">
+								<img [src]="review.reviewerAvatar" alt="reviwer avatar">
+							</div>
+							<div class="col-lg-9">
+								<span class="username heading">{{review.reviewerEmail}}</span>
+								<span class="date heading heading-ter">{{review.reviewDate}}</span>
+								<p>{{review.reviewBody}}</p>
+								<span class="line"></span>
+							</div>
+							<div class="like-review col-lg-1">
+								<span>
+									<i appLike class="bg-300 fa fa-heart-o"></i>
+								</span>
+							</div>
+						</div>
+					</div>
+					<div class="load-reviews">
+						<a class="button button-dark-outline">See more reviews <i class="fa fa-angle-right left"></i></a>
+					</div>
+				</section>
+			</div>
+		</div>
+		<div class="col-lg-5">
+			<div class="booking-form-container">
+				<div class="booking-form">
+					<div class="rent-like row">
+						<div class="inline col-xs-10 col-md-10 col-lg-10">
+							<span class="rent"><i class="inline">{{property.rent}}</i> per month</span>
+						</div>
+						<div class="inline col-xs-1 col-md-1 col-lg-1">
+							<span><i appLike class="fa"></i></span>
+						</div>
+					</div>
+					<div class="property-rating-container">
+						<span class="property-realtime-rating">{{property.rating}}</span>
+						<span class="property-rating"><i class="fa" appRating [rating1]="property.rating"></i></span>
+						<span class="property-rating"><i class="fa" appRating [rating2]="property.rating"></i></span>
+						<span class="property-rating"><i class="fa" appRating [rating3]="property.rating"></i></span>
+						<span class="property-rating"><i class="fa" appRating [rating4]="property.rating"></i></span>
+						<span class="property-rating"><i class="fa" appRating [rating5]="property.rating"></i></span>
+						<span class="property-total-rating">{{property.reviews}} reviews</span>
+					</div>
+					<div class="recommendation-container">
+						<span href="" class="recommended">Property recommended<i class="fa fa-thumbs-o-up"></i></span>
+						<p>Lorem ipsum dolor, sit amet consectetur adipisicing elit. Reiciendis asperiores expedita nesciunt optio ea
+							explicabo, voluptas perferendis maxime adipisci magnam voluptatum, aut architecto tenetur ipsa dignissimos minus
+							labore laudantium pariatur.</p>
+					</div>
+					<div>
+						<a class="button button-primary-outline" href=""><i class="fa fa-bookmark-o right"></i>Place Reservation</a>
+					</div>
+					<span class="line line-75 line-75-c"></span>
+					<a href="" class="report">Report this property<i class="fa fa-flag-o"></i></a>
+				</div>
+			</div>
+		</div>
+	</div>
+</div>

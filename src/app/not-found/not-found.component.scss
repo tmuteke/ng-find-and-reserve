@@ -1,0 +1,19 @@
+@import '../../assets/global-sass-files/colours';
+
+.container {
+	padding-top: 4em;
+	text-align: center;
+
+	.fa-frown-o {
+		font-size: 1000%;
+	}
+
+	p {
+		padding-top: 1rem;
+		font-size: 1.2rem;
+	}
+}
+
+footer {
+	position: absolute !important;
+}

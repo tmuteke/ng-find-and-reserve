@@ -1,0 +1,24 @@
+<app-header></app-header>
+
+<div class="hero">
+	<div class="container-fluid">
+		<span>Easy accommodation.</span>
+		<p>
+			Get student accommodation for as little as $70/month
+			<br>
+			Or, enlist your property and start earning today!
+		</p>
+		<div>
+			<a class="button button-primary" href="#explore">Explore Accommodation</a>
+			<a class="button button-light-outline" [routerLink]="['/enlist', '089083']">Enlist to Accommodate</a>
+		</div>
+	</div>
+</div>
+
+<div id="explore" class="container">
+	<h3>Explore off-campus accommodation</h3>
+</div>
+
+<app-property-list></app-property-list>
+
+<app-footer></app-footer>

@@ -1,0 +1,129 @@
+
+@import './colours';
+
+.button {
+	display: inline-block;
+	min-width: 90px;
+	font-family: "Gotham Medium", sans-serif;
+	font-size: 16px;
+	padding: 0.550em 1.4em;
+	line-height: 1.7;
+	margin: 10px;
+	text-align: center;
+	-webkit-border-radius: 3px;
+	-moz-border-radius: 3px;
+	border-radius: 3px;
+	transition: all 0.155s;
+	cursor: pointer;
+
+	&.button-awesome-light {
+		color: $blue_gray700;
+		background-color: $white;
+		border: 2px solid $white;
+
+		&:hover {
+			box-shadow: 2px 2px 10px $blue_gray100;
+		}
+	}
+
+	&.button-light {
+		color: $blue_gray700;
+		background-color: $white;
+		border: 2px solid $white;
+	}
+
+	&.button-light-outline {
+		color: $white;
+		background-color: transparent;
+		border: 2px solid $white;
+
+		&:hover {
+			color: $blue_gray700;
+			background-color: $white;
+		}
+	}
+
+	&.button-primary, &.button-success {
+		color: $white;
+		background-color: $tealA700;
+		border: 2px solid $tealA700;
+	}
+
+	&.button-primary-outline, &.button-success-outline {
+		color: $teal400;
+		background-color: transparent;
+		border: 2px solid $tealA700;
+
+		&:hover {
+			color: $white;
+			background-color: $tealA700;
+		}
+	}
+
+	&.button-warn {
+		color: $white;
+		background-color: $amber700;
+		border: 2px solid $amber700;
+	}
+
+	&.button-warn-outline {
+		color: $amber700;
+		background-color: transparent;
+		border: 2px solid $amber700;
+
+		&:hover {
+			color: $white;
+			background-color: $amber700;
+		}
+	}
+
+	&.button-danger {
+		color: $white;
+		background-color: $red400;
+		border: 2px solid $red400;
+	}
+
+	&.button-danger-outline {
+		color: $red400;
+		background-color: transparent;
+		border: 2px solid $red400;
+
+		&:hover {
+			color: $white;
+			background-color: $red400;
+		}
+	}
+
+	&.button-dark {
+		color: $white;
+		background-color: $blue_gray700;
+		border: 2px solid $blue_gray700;
+	}
+
+	&.button-dark-outline {
+		color: $blue_gray700;
+		background-color: transparent;
+		border: 2px solid $blue_gray700;
+
+		&:hover {
+			color: $white;
+			background-color: $blue_gray700;
+		}
+	}
+
+	i {
+		&.fa {
+			display: inline !important;
+			font-weight: 700;
+			font-size: 18px;
+
+			&.right {
+				margin-right: .5rem;
+			}
+
+			&.left {
+				margin-left: .5rem;
+			}
+		}
+	}
+}

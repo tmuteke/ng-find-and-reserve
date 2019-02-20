@@ -1,0 +1,14 @@
+@import '../../assets/global-sass-files/colours';
+
+footer {
+	position: relative;
+	box-sizing: border-box;
+	left: 0;
+	bottom: 0;
+	padding: 1.6rem;
+	width: 100%;
+	overflow: hidden;
+	text-align: center !important;
+	background-color: $teal400;
+	color: $white;
+}

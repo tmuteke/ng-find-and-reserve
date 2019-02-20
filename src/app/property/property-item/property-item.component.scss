@@ -1,0 +1,105 @@
+
+@import '../../../assets/global-sass-files/colours';
+
+.item-container {
+	background-color: $white;
+	margin-top: 1rem;
+	margin-bottom: 1rem;
+	margin-right: 9px;
+	border-radius: 3px;
+	padding-bottom: 0.5rem;
+	cursor: pointer;
+	font-family: "Gotham Medium";
+
+	.item-image {
+		height: 175px;
+		border-top-left-radius: 3px;
+		border-top-right-radius: 3px;
+		background-image: url("../../../assets/images/image_03.jpg");
+		background-color: $teal50;
+		background-repeat: no-repeat;
+		background-size: cover;
+		background-position: 50% 50%;
+	}
+
+	.item-details {
+		padding: 7px;
+		background-color: $gray50;
+		border-bottom-left-radius: 3px;
+		border-bottom-right-radius: 3px;
+
+		span {
+			display: block;
+			color: $blue_gray300;
+
+			&.item-location {
+				color: $tealA700;
+				text-transform: uppercase;
+				font-size: 14px;
+			}
+
+			&.item-address {
+				font-size: 20px;
+				color: $blue_gray700;
+
+				.fa {
+					color: $tealA700;
+					font-size: 14px;
+				}
+			}
+
+			&.item-star {
+				position: relative;
+				font-size: 12px;
+				display: inline-block;
+				padding: 0;
+
+				svg {
+					color: $tealA700;
+				}
+			}
+
+			&.item-rent {
+				i {
+					font-style: normal;
+					font-size: 20px;
+					color: $blue_gray700;
+				}
+			}
+
+			&.item-flag {
+				text-align: center;
+				font-size: 1.5rem;
+
+				.green {
+					color: $teal400;
+				}
+
+				.amber {
+					color: orange;
+				}
+
+				.red {
+					color: red
+				}
+			}
+		}
+	}
+
+	.item-rating-container {
+
+		span {
+			display: inline-block;
+			font-size: 14px;
+
+			&.item-rating {
+				margin-right: 5px;
+			}
+
+			&.item-reviews {
+				margin-left: 5px;
+			}
+		}
+	}
+}
+

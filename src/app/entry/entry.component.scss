@@ -1,0 +1,29 @@
+@import '../../assets/global-sass-files/colours';
+
+.hero {
+	width: 100%;
+	box-sizing: border-box;
+	padding: 10rem 0 15rem;
+	margin-bottom: 3rem;
+	text-align: center;
+	color: #fff;
+	background: url(../../assets/images/image_04.jpg) no-repeat center;
+	background-size: cover;
+
+	.container-fluid {
+
+		span {
+			font-size: 4.5rem;
+			font-family: "Gotham Medium", sans-serif;
+			font-weight: 700;
+			line-height: 1.2;
+			letter-spacing: -1px;
+		}
+
+		p {
+			font-size: 2rem;
+			margin-top: 2.5rem;
+			line-height: 1.3;
+		}
+	}
+}

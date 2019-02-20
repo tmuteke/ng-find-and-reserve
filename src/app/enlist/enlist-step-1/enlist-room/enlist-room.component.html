@@ -1,0 +1,89 @@
+<div class="container">
+	<div class="row">
+		<div class="col-lg-1"></div>
+		<div class="col-lg-6 col-md-8 col-xs-4">
+			<form [formGroup]="roomForm" (ngSubmit)="onNext()">
+				<div class="details">
+					<h4>What are you offering students?</h4>
+					<section>
+						<h6>Select your property type</h6>
+						<select formControlName="propertyType">
+							<option value="apartment">Apartment</option>
+							<option value="fullHouse">Full House</option>
+							<option value="rooms">Rooms</option>
+						</select>
+					</section>
+					<section>
+						<h6>What is the student getting?</h6>
+						<select formControlName="roomType">
+							<option value="entirePlace">Entire Place</option>
+							<option value="privateRoom">Private Room</option>
+							<option value="sharedRoom">Shared Room</option>
+						</select>
+					</section>
+					<section>
+						<h6>Is this set up as a dedicated student accommodation space?</h6>
+						<div class="control-container">
+							<label class="control control-radio" for="yes">
+								<div class="label-text"><span>Yes, it's very much dedicated for student accommodation</span></div>
+								<input type="radio" id="yes" value="yes" name="isDedicatedSetup" checked formControlName="isDedicatedSetup">
+								<div class="control-indicator"></div>
+							</label>
+						</div>
+						<div class="control-container">
+							<label class="control control-radio" for="no">
+								<div class="label-text"><span>No, this space is for other personal business</span></div>
+								<input type="radio" id="no" value="no" name="isDedicatedSetup" formControlName="isDedicatedSetup">
+								<div class="control-indicator"></div>
+							</label>
+						</div>
+					</section>
+					<section>
+						<h6>Gender accommodated</h6>
+						<div class="control-container">
+							<label class="control control-radio" for="both">
+								<div class="label-text"><span>Both females and males</span></div>
+								<input type="radio" id="both" value="both" name="genderAccommodated" formControlName="genderAccommodated">
+								<div class="control-indicator"></div>
+							</label>
+						</div>
+						<div class="control-container">
+							<label class="control control-radio" for="female">
+								<div class="label-text"><span>Females only</span></div>
+								<input type="radio" id="female" value="female" name="genderAccommodated" formControlName="genderAccommodated">
+								<div class="control-indicator"></div>
+							</label>
+						</div>
+						<div class="control-container">
+							<label class="control control-radio" for="male">
+								<div class="label-text"><span>Males only</span></div>
+								<input type="radio" id="male" value="male" name="genderAccommodated" formControlName="genderAccommodated">
+								<div class="control-indicator"></div>
+							</label>
+						</div>
+					</section>
+				</div>
+				<nav>
+					<div class="container">
+						<div class="row">
+							<div class="col-lg-1"></div>
+							<div class="col-lg-6">
+								<span class="line"></span>
+								<section>
+									<div class="back">
+										<a [routerLink]="['089083']"><i class="fa fa-angle-left"></i> Back</a>
+									</div>
+									<div class="next">
+										<button type="submit">
+											<a [routerLink]="['/enlist', '089083', 'students']">Next <i class="fa fa-angle-right"></i></a>
+										</button>
+									</div>
+								</section>
+							</div>
+						</div>
+					</div>
+				</nav>
+			</form>
+		</div>
+	</div>
+</div>

@@ -1,4 +1,6 @@
 import { Component, OnInit } from '@angular/core';
+import { PropertyService } from '../property/property.service';
+import { Property } from '../property/property.model';
 
 @Component({
   selector: 'app-entry',
@@ -6,10 +8,19 @@ import { Component, OnInit } from '@angular/core';
   styleUrls: ['./entry.component.scss']
 })
 export class EntryComponent implements OnInit {
+	private _totalProperties: number;  
 
-  constructor() { }
+  constructor(private _propertyService: PropertyService) { }
 
   ngOnInit() {
+	  this._propertyService.getPropertiesData()
+			.subscribe((properties: Property[]) => {
+				this._totalProperties = properties.length;
+			});
+  }
+
+  get totalProperties(): number {
+	  return this._totalProperties;
   }
 
 }

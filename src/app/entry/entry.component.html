@@ -1,10 +1,9 @@
 <app-header></app-header>
-
 <div class="hero">
 	<div class="container-fluid">
 		<span>Easy accommodation.</span>
 		<p>
-			Get student accommodation for as little as $70/month
+			Get student accommodation for as little as $90/month
 			<br>
 			Or, enlist your property and start earning today!
 		</p>
@@ -14,11 +13,56 @@
 		</div>
 	</div>
 </div>
-
 <div id="explore" class="container">
 	<h3>Explore off-campus accommodation</h3>
 </div>
-
-<app-property-list></app-property-list>
-
+<app-property-list [curate]=true></app-property-list>
+<div class="container">
+	<a [routerLink]="['/houses']" class="show-more">Show all ({{ totalProperties }}+) houses <i class="fa fa-angle-right"></i></a>
+	<div class="curated-section">
+		<section>
+			<a href="" class="top-rated-curate">
+				<span class="heading heading-pri">top rated houses</span>
+				<p>Take a look at the most top rated houses on this site. Lorem ipsum dolor sit amet consectetur adipisicing elit.
+					Cupiditate sed unde possimus fuga iure eveniet.</p>
+				<a href="" class="button button-light">View Houses</a>
+			</a>
+		</section>
+		<section>
+			<span class="heading heading-pri">Low Priced Houses</span>
+			<app-property-list [curate]=true [affordable]=true [price]="150"></app-property-list>
+			<a [routerLink]="['/houses']" class="show-more">Show all ({{ totalProperties }}+) houses <i class="fa fa-angle-right"></i></a>
+		</section>
+		<section>
+			<a href="" class="start-earning">
+				<span class="heading heading-pri">start earning up to $200/month today</span>
+				<p>Enlist your house today on <span appAbril style="text-transform: capitalize;">Find & Reserve</span> and start
+					earning money each month. Lorem, ipsum dolor sit amet consectetur adipisicing elit. Eius est provident ipsa in ab,
+					earum veritatis quibusdam. Dolore, nesciunt! Amet ullam iure, qui eius ut quibusdam excepturi mollitia quis a.</p>
+				<a href="" class="button button-light">Learn How</a>
+			</a>
+		</section>
+	</div>
+</div>
+<section class="on-campus-section">
+	<div class="on-campus-header">
+		<span class="heading heading-pri">Prefer the inside to the outside?</span>
+		<p>You are also able to get on campus accommodation in case Lorem ipsum dolor sit amet consectetur adipisicing elit.
+			Repellendus numquam id sunt cumque impedit culpa doloribus dicta, aspernatur doloremque error molestiae nostrum,
+			minus totam facere explicabo nemo. Sunt, sequi reiciendis.</p>
+		<a href="" class="button button-light">Explore On-campus Accommodation</a>
+	</div>
+	<div class="container clearfix">
+		<div class="hostel hostel-1">
+			<span class="heading heading-pri">hostel 1&mdash;$850/semester</span>
+			<p>This hostel is premium priced; due to it's high quality of service and is more spacious. Consequuntur sint nihil nulla est qui, ducimus expedita voluptate animi officia culpa placeat veniam excepturi doloribus iusto maxime fugit autem ad pariatur.</p>
+			<a href="" class="button button-light">Place Your Application</a>
+		</div>
+		<div class="hostel hostel-2-4">
+			<span class="heading heading-pri">hostels 2 to 4&mdash;$850/semester</span>
+			<p>Hostels 2 to 4 are less priced than Hostel 1. They're for the average student. Eum, laboriosam, unde quibusdam repellat fugiat perferendis id, maiores fugit modi illum ut labore eos impedit officia incidunt natus tenetur esse vero.</p>
+			<a href="" class="button button-light">Place Your Application</a>
+		</div>
+	</div>
+</section>
 <app-footer></app-footer>

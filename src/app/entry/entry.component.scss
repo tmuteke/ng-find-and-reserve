@@ -7,7 +7,8 @@
 	margin-bottom: 3rem;
 	text-align: center;
 	color: #fff;
-	background: url(../../assets/images/image_04.jpg) no-repeat center;
+	background: linear-gradient(rgba(0, 0, 0, .25), rgba(0, 0, 0, .5)),
+		url(../../assets/images/image_04.jpg) no-repeat center;
 	background-size: cover;
 
 	.container-fluid {
@@ -24,6 +25,113 @@
 			font-size: 2rem;
 			margin-top: 2.5rem;
 			line-height: 1.3;
+		}
+	}
+}
+
+.show-more {
+	color: $teal400;
+	font-weight: 600;
+	text-decoration: underline !important;
+
+	i {
+		display: inline-block;
+		padding-left: 4px;
+	}
+}
+
+.curated-section {
+	margin-top: 2rem;
+	margin-bottom: 2rem;
+
+	section {
+		margin-bottom: 4rem;
+
+		.top-rated-curate,
+		.start-earning {
+			display: block;
+			width: 100%;
+			border-radius: 3px;
+			padding: 10% 5% 5%;
+
+			span,
+			p {
+				color: white;
+			}
+
+			span {
+				text-transform: uppercase;
+			}
+
+			p {
+				width: 50%;
+				font-size: 120%;
+			}
+		}
+
+		.top-rated-curate {
+			background: linear-gradient(rgba(0, 0, 0, .5), rgba(0, 0, 0, .5)),
+				url(../../assets/images/image_07.jpg) no-repeat center;
+			background-size: cover;
+		}
+
+		.start-earning {
+			background: linear-gradient(rgba(0, 0, 0, .25), rgba(0, 0, 0, .25)),
+				url(../../assets/images/image_09.jpg) no-repeat center;
+			background-size: cover;
+		}
+	}
+}
+
+.on-campus-section {
+
+	.on-campus-header {
+		padding-top: 5%;
+		padding-bottom: 2.5%;
+		margin-bottom: 3rem;
+		width: 100%;
+		background-color: $amber400;
+		text-align: center;
+
+		span {
+			text-transform: uppercase;
+		}
+
+		p {
+			font-size: 120%;
+			width: 50%;
+			margin: 0 auto 3rem;
+		}
+	}
+
+	.hostel {
+		border-radius: 3px;
+		padding: 4rem 2rem 2rem;
+		text-align: center;
+		float: left;
+		width: 49%;
+
+		span,
+		p {
+			color: white;
+		}
+
+		span {
+			text-transform: uppercase;
+		}
+
+		&.hostel-1 {
+			background: linear-gradient(rgba(0, 0, 0, .25), rgba(0, 0, 0, .25)),
+				url(../../assets/images/property_interior_02.jpg) no-repeat center;
+			background-size: cover;
+			margin-right: 1%;
+		}
+
+		&.hostel-2-4 {
+			background: linear-gradient(rgba(0, 0, 0, .25), rgba(0, 0, 0, .25)),
+				url(../../assets/images/image_02.jpg) no-repeat center;
+			background-size: cover;
+			margin-left: 1%;
 		}
 	}
 }

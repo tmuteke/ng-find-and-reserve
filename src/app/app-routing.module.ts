@@ -14,6 +14,7 @@ import {EnlistLocationComponent} from './enlist/enlist-step-1/enlist-location/en
 import {EnlistAmenitiesComponent} from './enlist/enlist-step-1/enlist-amenities/enlist-amenities.component';
 import {EnlistSpacesComponent} from './enlist/enlist-step-1/enlist-spaces/enlist-spaces.component';
 import {EnlistComponent} from './enlist/enlist.component';
+import { PropertyListAllComponent } from './property/property-list/property-list-all/property-list-all.component';
 
 const routes: Routes = [
 	{
@@ -64,6 +65,10 @@ const routes: Routes = [
 	{
 		path: 'enlist/089083/spaces',
 		component: EnlistSpacesComponent
+	},
+	{
+		path: 'houses',
+		component: PropertyListAllComponent
 	},
 	{
 		path: 'page-not-found',

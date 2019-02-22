@@ -34,16 +34,16 @@ header {
 					box-sizing: border-box;
 					display: inline-block;
 					padding: .6rem;
-					color: $teal200;
+					color: white;
 					cursor: pointer;
 					text-transform: uppercase;
 
 					&:hover {
-						color: white;
+						color: $teal200;
 					}
 
 					&.active {
-						color: white;
+						font-weight: 700;
 					}
 				}
 

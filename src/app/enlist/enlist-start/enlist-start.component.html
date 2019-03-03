@@ -1,35 +1,18 @@
-<div class="container">
-	<div class="steps">
-		<h3>Enlist your place and start earning today</h3>
-		<div class="row">
-			<div class="col-lg-6 col-md-8 col-xs-4">
-				<div class="step">
-					<h6>Step 1</h6>
-					<p>Lorem ipsum, dolor sit amet consectetur adipisicing elit. Impedit, eum sed! Ipsa in nostrum fugit amet quo veritatis iusto, dicta sit eum consequatur non voluptate repellat quisquam dolore veniam culpa.</p>
-					<a [routerLink]="['room']" class="button button-dark">Begin</a>
-					<span class="line"></span>
-				</div>
-			</div>
-		</div>
-		<div class="row">
-			<div class="col-lg-6 col-md-8 col-xs-8">
-				<div class="step">
-					<h6>Step 2</h6>
-					<p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Dolorum aperiam suscipit earum molestias commodi. Facilis, mollitia. Reprehenderit iusto quidem velit ea optio animi maiores quam temporibus. Labore enim consequuntur ab.</p>
-					<a routerLink="" class="button button-dark">Continue</a>
-					<span class="line"></span>
-				</div>
-			</div>
-		</div>
-		<div class="row">
-			<div class="col-lg-6 col-md-8 col-xs-8">
-				<div class="step">
-					<h6>Step 3</h6>
-					<p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Unde nemo suscipit ullam doloribus sed maxime similique adipisci enim provident id magni, vel eaque eius et eos cum accusantium obcaecati ipsa.</p>
-					<a href="" class="button button-dark">Finish</a>
-					<!-- <span class="line"></span> -->
-				</div>
-			</div>
-		</div>
-	</div>
-</div>
+<header>
+	<nav class="container-fluid clearfix">
+		<span id="logo" appAbril><a routerLink="/">Find & Reserve</a></span>
+	</nav>
+</header>
+<nav class="enlist-nav clearfix">
+	<a [routerLink]="['room']" routerLinkActive="active" [routerLinkActiveOptions]="{exact: true}"><span>Room</span></a>
+	<a [routerLink]="['students']" routerLinkActive="active"><span>Students</span></a>
+	<a [routerLink]="['location']" routerLinkActive="active"><span>Location</span></a>
+	<a [routerLink]="['amenities']" routerLinkActive="active"><span>Amenities</span></a>
+	<a [routerLink]="['spaces']" routerLinkActive="active"><span>Spaces</span></a>
+	<a [routerLink]="['pictures']" routerLinkActive="active"><span>Pictures</span></a>
+	<a [routerLink]="['description']" routerLinkActive="active"><span>Description</span></a>
+	<a [routerLink]="['phone']" routerLinkActive="active"><span>Phone</span></a>
+	<a [routerLink]="['policies']" routerLinkActive="active"><span>Policies</span></a>
+</nav>
+<div class="progress-bar"></div>
+<router-outlet></router-outlet>

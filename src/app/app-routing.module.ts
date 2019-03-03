@@ -45,47 +45,50 @@ const routes: Routes = [
 	},
 	{
 		path: 'enlist/089083',
-		component: EnlistStartComponent
-	},
-	{
-		path: 'enlist/089083/room',
-		component: EnlistRoomComponent
-	},
-	{
-		path: 'enlist/089083/students',
-		component: EnlistStudentsComponent
-	},
-	{
-		path: 'enlist/089083/bathrooms',
-		component: EnlistBathroomsComponent
-	},
-	{
-		path: 'enlist/089083/location',
-		component: EnlistLocationComponent
-	},
-	{
-		path: 'enlist/089083/amenities',
-		component: EnlistAmenitiesComponent
-	},
-	{
-		path: 'enlist/089083/spaces',
-		component: EnlistSpacesComponent
-	},
-	{
-		path: 'enlist/089083/pictures',
-		component: EnlistPicturesComponent
-	},
-	{
-		path: 'enlist/089083/description',
-		component: EnlistDescriptionComponent
-	},
-	{
-		path: 'enlist/089083/phone',
-		component: EnlistPhoneComponent
-	},
-	{
-		path: 'enlist/089083/policies',
-		component: EnlistPoliciesComponent
+		component: EnlistStartComponent,
+		children: [
+			{
+				path: 'room',
+				component: EnlistRoomComponent
+			},
+			{
+				path: 'students',
+				component: EnlistStudentsComponent
+			},
+			{
+				path: 'bathrooms',
+				component: EnlistBathroomsComponent
+			},
+			{
+				path: 'location',
+				component: EnlistLocationComponent
+			},
+			{
+				path: 'amenities',
+				component: EnlistAmenitiesComponent
+			},
+			{
+				path: 'spaces',
+				component: EnlistSpacesComponent
+			},
+			{
+				path: 'pictures',
+				component: EnlistPicturesComponent
+			},
+			{
+				path: 'description',
+				component: EnlistDescriptionComponent
+			},
+			{
+				path: 'phone',
+				component: EnlistPhoneComponent
+			},
+			{
+				path: 'policies',
+				component: EnlistPoliciesComponent
+			}
+
+		]
 	},
 	{
 		path: 'enlist/089083/finish',

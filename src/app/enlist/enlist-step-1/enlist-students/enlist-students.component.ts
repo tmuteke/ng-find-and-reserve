@@ -10,8 +10,9 @@ import { EnlistService } from '../../enlist.service';
 export class EnlistStudentsComponent implements OnInit {
 	private _numberOfStudents = 5;
 	private _studentsForm: FormGroup;
+	private _bathrooms = 1;
 
-	constructor(private enlistService: EnlistService) { }
+	constructor(private _enlistService: EnlistService) { }
 
 	ngOnInit() {
 		this._studentsForm = new FormGroup({
@@ -43,13 +44,34 @@ export class EnlistStudentsComponent implements OnInit {
 		}
 	}
 
+	get bathrooms(): number {
+		return this._bathrooms;
+	}
+
+	addBathroom(event) {
+		if (this._bathrooms === 1) {
+			this._bathrooms = 1;
+		} else {
+			this._bathrooms --;
+		}
+	}
+
+	subBathroom(event) {
+		if (this._bathrooms === 10) {
+			this._bathrooms = 10;
+		} else {
+			this._bathrooms ++;
+		}
+	}
+	
 	onNext(): void {
 		if (this._studentsForm.valid) {
 			console.log(this._studentsForm);
 			console.log(this._numberOfStudents);
-			this.enlistService.students.nRooms = this._studentsForm.get('numberOfRooms').value;
-			this.enlistService.students.nStudents = this._numberOfStudents;
-			console.log(this.enlistService);
+			this._enlistService.students.nRooms = this._studentsForm.get('numberOfRooms').value;
+			this._enlistService.students.nStudents = this._numberOfStudents;
+			this._enlistService.bathrooms.nBathrooms = this._bathrooms;
+			console.log(this._enlistService);
 		}
 	}
 }

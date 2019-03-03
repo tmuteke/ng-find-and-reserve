@@ -1,5 +1,6 @@
 import {Component, OnInit} from '@angular/core';
 import {ActivatedRoute, Router} from '@angular/router';
+import { FormGroup, FormControl } from '@angular/forms';
 
 @Component({
 	selector: 'app-enlist',
@@ -8,10 +9,15 @@ import {ActivatedRoute, Router} from '@angular/router';
 })
 export class EnlistComponent implements OnInit {
 	private _beginEnlisting = false;
+	private _form: FormGroup;
+	private _redirectTo: string;
 
 	constructor(private route: ActivatedRoute, private router: Router) {}
 
 	ngOnInit(): void {
+		this._form = new FormGroup({
+			'enlistType': new FormControl('new')
+		});
 	}
 
 	get beginEnlisting(): boolean {
@@ -21,6 +27,23 @@ export class EnlistComponent implements OnInit {
 	onEnlist(): void {
 		this._beginEnlisting = true;
 		this.router.navigate(['089083'], {relativeTo: this.route});
+	}
+
+	get form(): FormGroup {
+		return this._form;
+	}
+
+	get redirectTo(): string {
+		return this._redirectTo;
+	}
+
+	onProceed(): void {
+		const radioValue = this._form.get('enlistType').value;
+		if (radioValue === 'new') {
+			this._redirectTo = 'room';
+			// console.log(radioValue);
+		}
+		this.router.navigate(['089083', this._redirectTo], {relativeTo: this.route});
 	}
 
 }

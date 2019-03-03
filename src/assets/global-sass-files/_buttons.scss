@@ -24,6 +24,10 @@
 		&:hover {
 			box-shadow: 2px 2px 10px $blue_gray100;
 		}
+
+		&:not([href]):not([tabindex]):hover {
+			box-shadow: 2px 2px 10px $blue_gray100;
+		}
 	}
 
 	&.button-light {
@@ -40,6 +44,10 @@
 		&:hover {
 			color: $blue_gray700;
 			background-color: $white;
+		}
+
+		&:not([href]):not([tabindex]):hover {
+			color: $blue_gray700;
 		}
 	}
 
@@ -58,6 +66,10 @@
 			color: $white;
 			background-color: $tealA700;
 		}
+
+		&:not([href]):not([tabindex]):hover {
+			color: $white;
+		}
 	}
 
 	&.button-warn {
@@ -74,6 +86,10 @@
 		&:hover {
 			color: $white;
 			background-color: $amber700;
+		}
+
+		&:not([href]):not([tabindex]):hover {
+			color: $white;
 		}
 	}
 
@@ -92,6 +108,10 @@
 			color: $white;
 			background-color: $red400;
 		}
+
+		&:not([href]):not([tabindex]):hover {
+			color: $white;
+		}
 	}
 
 	&.button-dark {
@@ -109,6 +129,10 @@
 			color: $white;
 			background-color: $blue_gray700;
 		}
+
+		&:not([href]):not([tabindex]):hover {
+			color: $white;
+		}
 	}
 
 	i {
@@ -116,6 +140,7 @@
 			display: inline !important;
 			font-weight: 700;
 			font-size: 18px;
+			color: inherit !important;
 
 			&.right {
 				margin-right: .5rem;

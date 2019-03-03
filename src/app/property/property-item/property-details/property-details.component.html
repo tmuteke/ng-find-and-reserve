@@ -70,6 +70,18 @@
 				</section>
 				<span class="line"></span>
 				<section class="reviews">
+					<!-- <p *ngFor="let user of users">{{user.email}}</p> -->
+					<div class="add-comment-container">
+						<div class="row">
+							<div class="avatar col-lg-2">
+								<img [src]="'http://i.pravatar.cc/300'" alt="user avatar">
+							</div>
+							<div class="col-lg-9">
+								<input type="text" name="comment" id="comment" placeholder="Add Comment...">
+							</div>
+							<!-- <div class="col-lg-1"><a href="" class="button button-dark">Post</a></div> -->
+						</div>
+					</div>
 					<span class="heading stars">
 						{{property.reviews}} Reviews
 						<i class="fa" appRating [rating1]="property.rating"></i>
@@ -81,7 +93,7 @@
 					<div *ngFor="let review of reviews" class="review">
 						<div class="row">
 							<div class="avatar col-lg-2">
-								<img [src]="review.reviewerAvatar" alt="reviwer avatar">
+								<img [src]="review.reviewerAvatar" alt="reviewer avatar">
 							</div>
 							<div class="col-lg-9">
 								<span class="username heading">{{review.reviewerEmail}}</span>
@@ -97,7 +109,7 @@
 						</div>
 					</div>
 					<div class="load-reviews">
-						<a class="button button-dark-outline">See more reviews <i class="fa fa-angle-right left"></i></a>
+						<a class="see-more">See more reviews</a>
 					</div>
 				</section>
 			</div>

@@ -104,23 +104,44 @@ body {
 		}
 	}
 
-	input {
+	textarea {
 		margin-top: .75rem;
 		margin-bottom: .5rem;
 		transition: box-shadow 0.2s;
+		font-family: Ubuntu !important;
+		color: $blue_gray700;
+		width: 400px;
+		border: 1px solid $blue_gray100;
+		border-radius: 2px;
+		padding: 0 0.5rem;
 
 		&:focus {
 			border: 1px solid $teal50 !important;
 			outline: none !important;
 			box-shadow: inset 0 0 2px $tealA100,
-				0 0 2px $tealA100;
+							0 0 2px $tealA100;
+		}
+	}
+
+	input {
+		margin-top: .75rem;
+		margin-bottom: .5rem;
+		transition: box-shadow 0.2s;
+		font-family: Ubuntu !important;
+		color: $blue_gray700;
+
+		&:focus {
+			border: 1px solid $teal50 !important;
+			outline: none !important;
+			box-shadow: inset 0 0 2px $tealA100,
+							0 0 2px $tealA100;
 		}
 
 		&.ng-invalid.ng-dirty {
 			border: 1px solid $red200 !important;
 			outline: none !important;
 			box-shadow: inset 0 0 2px $red400,
-				0 0 2px $red400;
+							0 0 2px $red400;
 		}
 	}
 

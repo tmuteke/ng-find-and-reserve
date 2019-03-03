@@ -21,10 +21,11 @@ export class PropertyDetailsComponent implements OnInit {
 	imgReviewCommentAvatar = require('../../../../assets/images/avatar.jpg')
 	private _reviews: {}[];
 	id: string;
+	users: {}[];
 
 	constructor(private route: ActivatedRoute,
-					private _propertyService: PropertyService,
-					private reviewCommentService: ReviewCommentService) {}
+				private _propertyService: PropertyService,
+				private reviewCommentService: ReviewCommentService) {}
 
 	ngOnInit(): void {
 		this.route.params
@@ -35,6 +36,12 @@ export class PropertyDetailsComponent implements OnInit {
 			.subscribe((reviews: {}[]) => {
 				this._reviews = reviews;
 			});
+		this.reviewCommentService.users
+			.subscribe((users: {}[]) => {
+			this.users = users;
+		});
+		
+		
 	}
 
 	get property(): Property {

@@ -114,11 +114,18 @@
 
 
 	.reviews {
+		.add-comment-container {
+			img {
+				border: 2px solid $blue_gray50;
+				border-radius: 50px;
+			}
+		}
 		span {
 			font-size: 18px;
 
 			&.stars {
-				margin-bottom: 2.5rem;
+				margin-bottom: 1.5rem;
+				margin-top: 1rem;
 
 				i {
 					margin-left: .15rem;
@@ -157,6 +164,11 @@
 
 		.load-reviews {
 			text-align: center;
+
+			.see-more {
+				text-decoration: underline !important;
+				font-weight: 700;
+			}
 		}
 	}
 }

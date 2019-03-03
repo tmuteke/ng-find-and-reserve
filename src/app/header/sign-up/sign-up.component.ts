@@ -1,5 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 import {FormControl, FormGroup, Validators} from '@angular/forms';
+import { AuthService } from '../auth.service';
 
 @Component({
 	selector: 'app-sign-up',
@@ -13,7 +14,7 @@ export class SignUpComponent implements OnInit {
 	private _lastnameFormControl: FormControl;
 	private _passwordFormControl: FormControl;
 
-	constructor() { }
+	constructor(private _authService: AuthService) { }
 
 	ngOnInit() {
 		this._signupForm = new FormGroup({
@@ -39,6 +40,11 @@ export class SignUpComponent implements OnInit {
 	onSignUp(): void {
 		if (this._signupForm.valid) {
 			console.log(this._signupForm);
+			const firstName = this._firstnameFormControl.value;
+			const lastName = this._lastnameFormControl.value;
+			const email = this._emailFormControl.value;
+			const password = this._passwordFormControl.value;
+			this._authService.signUpUser(firstName, lastName, email, password)
 		} else {
 			console.log('enter valid data you bitch!');
 		}

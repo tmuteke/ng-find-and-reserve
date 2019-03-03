@@ -31,6 +31,11 @@ import { EnlistSpacesComponent } from './enlist/enlist-step-1/enlist-spaces/enli
 import { HttpClientModule } from '@angular/common/http';
 import { RatingDirective } from './shared/directives/rating.directive';
 import { PropertyListAllComponent } from './property/property-list/property-list-all/property-list-all.component';
+import { EnlistPicturesComponent } from './enlist/enlist-step-2/enlist-pictures/enlist-pictures.component';
+import { EnlistDescriptionComponent } from './enlist/enlist-step-2/enlist-description/enlist-description.component';
+import { EnlistPhoneComponent } from './enlist/enlist-step-2/enlist-phone/enlist-phone.component';
+import { EnlistPoliciesComponent } from './enlist/enlist-step-2/enlist-policies/enlist-policies.component';
+import { EnlistFinishComponent } from './enlist/enlist-step-2/enlist-finish/enlist-finish.component';
 
 @NgModule({
   declarations: [
@@ -59,7 +64,12 @@ import { PropertyListAllComponent } from './property/property-list/property-list
 	  EnlistAmenitiesComponent,
 	  EnlistSpacesComponent,
 	  RatingDirective,
-	  PropertyListAllComponent
+	  PropertyListAllComponent,
+	  EnlistPicturesComponent,
+	  EnlistDescriptionComponent,
+	  EnlistPhoneComponent,
+	  EnlistPoliciesComponent,
+	  EnlistFinishComponent
   ],
   imports: [
   	  BrowserModule,

@@ -1,6 +1,6 @@
-<app-header></app-header>
 <div class="hero">
-	<div class="container-fluid">
+	<app-header></app-header>
+	<section class="container-fluid">
 		<span>Easy accommodation.</span>
 		<p>
 			Get student accommodation for as little as $90/month
@@ -9,9 +9,9 @@
 		</p>
 		<div>
 			<a class="button button-primary" href="#explore">Explore Accommodation</a>
-			<a class="button button-light-outline" [routerLink]="['/enlist', '089083']">Enlist to Accommodate</a>
+			<a class="button button-light-outline" [routerLink]="['/enlist']">Enlist to Accommodate</a>
 		</div>
-	</div>
+	</section>
 </div>
 <div id="explore" class="container">
 	<h3>Explore off-campus accommodation</h3>

@@ -15,6 +15,11 @@ import {EnlistAmenitiesComponent} from './enlist/enlist-step-1/enlist-amenities/
 import {EnlistSpacesComponent} from './enlist/enlist-step-1/enlist-spaces/enlist-spaces.component';
 import {EnlistComponent} from './enlist/enlist.component';
 import { PropertyListAllComponent } from './property/property-list/property-list-all/property-list-all.component';
+import { EnlistPicturesComponent } from './enlist/enlist-step-2/enlist-pictures/enlist-pictures.component';
+import { EnlistDescriptionComponent } from './enlist/enlist-step-2/enlist-description/enlist-description.component';
+import { EnlistPhoneComponent } from './enlist/enlist-step-2/enlist-phone/enlist-phone.component';
+import { EnlistPoliciesComponent } from './enlist/enlist-step-2/enlist-policies/enlist-policies.component';
+import { EnlistFinishComponent } from './enlist/enlist-step-2/enlist-finish/enlist-finish.component';
 
 const routes: Routes = [
 	{
@@ -65,6 +70,26 @@ const routes: Routes = [
 	{
 		path: 'enlist/089083/spaces',
 		component: EnlistSpacesComponent
+	},
+	{
+		path: 'enlist/089083/pictures',
+		component: EnlistPicturesComponent
+	},
+	{
+		path: 'enlist/089083/description',
+		component: EnlistDescriptionComponent
+	},
+	{
+		path: 'enlist/089083/phone',
+		component: EnlistPhoneComponent
+	},
+	{
+		path: 'enlist/089083/policies',
+		component: EnlistPoliciesComponent
+	},
+	{
+		path: 'enlist/089083/finish',
+		component: EnlistFinishComponent
 	},
 	{
 		path: 'houses',

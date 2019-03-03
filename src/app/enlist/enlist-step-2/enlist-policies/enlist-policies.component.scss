@@ -1,0 +1,19 @@
+@import '../../../../assets/global-sass-files/enlisting';
+
+.details {
+   .policy-container {
+      width: 95%;
+      .policy, .radio-controls-container {
+         display: inline-block;
+      }
+
+      .radio-controls-container {
+         float: right;
+
+         .control-container {
+            display: inline-block;
+            margin-left: 20px;
+         }
+      }
+   }
+}

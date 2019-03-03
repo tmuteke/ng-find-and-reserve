@@ -36,6 +36,11 @@
 							</optgroup>
 						</select>
 					</section>
+					<section>
+						<h6>How many bathrooms are available?</h6>
+						<i (click)="addBathroom($event)" class="fa fa-minus-square-o"></i><span class="number">{{bathrooms}}</span><i
+						 (click)="subBathroom($event)" class="fa fa-plus-square-o"></i>
+					</section>
 				</div>
 				<nav>
 					<div class="container">
@@ -48,7 +53,7 @@
 										<a [routerLink]="['/enlist', '089083', 'room']"><i class="fa fa-angle-left"></i> Back</a>
 									</div>
 									<div class="next">
-										<button type="submit"><a [routerLink]="['/enlist', '089083', 'bathrooms']">Next <i class="fa fa-angle-right"></i></a></button>
+										<button type="submit"><a [routerLink]="['/enlist', '089083', 'location']">Next <i class="fa fa-angle-right"></i></a></button>
 									</div>
 								</section>
 							</div>

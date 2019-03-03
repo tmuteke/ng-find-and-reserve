@@ -1,0 +1,21 @@
+@import '../../../../assets/global-sass-files/enlisting';
+
+.details {
+   .drag-drop-image {
+      height: 300px;
+      border: 2px dashed $blue_gray300;
+      border-radius: 5px;
+      padding: .5rem;
+
+      div {
+         position: relative;
+         text-align: center;
+         top: 50%;
+         transform: translateY(-50%);
+
+         span {
+            display: block;
+         }
+      }
+   }
+}

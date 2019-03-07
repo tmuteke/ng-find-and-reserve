@@ -20,6 +20,10 @@ import { EnlistDescriptionComponent } from './enlist/enlist-step-2/enlist-descri
 import { EnlistPhoneComponent } from './enlist/enlist-step-2/enlist-phone/enlist-phone.component';
 import { EnlistPoliciesComponent } from './enlist/enlist-step-2/enlist-policies/enlist-policies.component';
 import { EnlistFinishComponent } from './enlist/enlist-step-2/enlist-finish/enlist-finish.component';
+import { ReservationComponent } from './reservation/reservation.component';
+import { ReservationDetailsComponent } from './reservation/reservation-details/reservation-details.component';
+import { ReservationPoliciesComponent } from './reservation/reservation-policies/reservation-policies.component';
+import { ReservationPaymentComponent } from './reservation/reservation-payment/reservation-payment.component';
 
 const routes: Routes = [
 	{
@@ -30,6 +34,29 @@ const routes: Routes = [
 	{
 		path: 'property/:id/details',
 		component: PropertyDetailsComponent
+	},
+	{
+		path: 'property/:id/reservation',
+		component: ReservationComponent,
+		children: [
+			{
+				path: 'details',
+				component: ReservationDetailsComponent
+			},
+			{
+				path: 'policies',
+				component: ReservationPoliciesComponent
+			},
+			{
+				path: 'payment',
+				component: ReservationPaymentComponent
+			},
+			{
+				path: '',
+				redirectTo: 'details',
+				pathMatch: 'full'
+			}
+		]
 	},
 	{
 		path: 'login',

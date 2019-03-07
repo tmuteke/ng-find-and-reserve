@@ -141,7 +141,7 @@
 							labore laudantium pariatur.</p>
 					</div>
 					<div>
-						<a class="button button-primary-outline" href=""><i class="fa fa-bookmark-o right"></i>Place Reservation</a>
+						<a class="button button-primary-outline" [routerLink]="['/property', property.id, 'reservation']" (click)="onReserve()"><i class="fa fa-bookmark-o right"></i>Place Reservation</a>
 					</div>
 					<span class="line line-75 line-75-c"></span>
 					<a href="" class="report">Report this property<i class="fa fa-flag-o"></i></a>

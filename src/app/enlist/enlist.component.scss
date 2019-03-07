@@ -1,4 +1,5 @@
 @import '../../assets/global-sass-files/enlisting';
+@import '../../assets/global-sass-files/header';
 
 .control-container {
 	.label-text {
@@ -41,4 +42,5 @@
 
 .finish {
 	float: right !important;
+	color: white;
 }

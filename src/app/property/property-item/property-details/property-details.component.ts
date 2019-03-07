@@ -15,40 +15,35 @@ import {ReviewComment} from './review-comment.model';
 })
 
 export class PropertyDetailsComponent implements OnInit {
-	private _property: Property;
+	property: Property;
 	imgHostAvatar = require('../../../../assets/images/avatar.jpg');
 	imgGoogleMaps = require('../../../../assets/images/google_map.png');
 	imgReviewCommentAvatar = require('../../../../assets/images/avatar.jpg')
-	private _reviews: {}[];
+	reviews: {}[];
 	id: string;
 	users: {}[];
 
 	constructor(private route: ActivatedRoute,
-				private _propertyService: PropertyService,
-				private reviewCommentService: ReviewCommentService) {}
+				private propService: PropertyService,
+				private revComService: ReviewCommentService) {}
 
 	ngOnInit(): void {
 		this.route.params
 			.subscribe((params: Params) => {
-					this._property = this._propertyService.getPropertyById(params['id']);
+					this.property = this.propService.getPropertyById(params['id']);
+					this.id = params['id'];
 				});
-		this.reviewCommentService.comments
+		this.revComService.comments
 			.subscribe((reviews: {}[]) => {
-				this._reviews = reviews;
+				this.reviews = reviews;
 			});
-		this.reviewCommentService.users
+		this.revComService.users
 			.subscribe((users: {}[]) => {
 			this.users = users;
 		});
-		
-		
 	}
 
-	get property(): Property {
-		return this._property;
-	}
-
-	get reviews(): {}[] {
-		return this._reviews;
+	onReserve(): void {
+		this.propService.id.next();
 	}
 }

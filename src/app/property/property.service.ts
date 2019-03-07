@@ -1,13 +1,14 @@
 import { Property } from './property.model';
 import { Injectable } from '@angular/core';
 import { HttpClient } from '@angular/common/http';
-import { Observable } from 'rxjs';
+import { Observable, Subject } from 'rxjs';
 
 @Injectable({
 	providedIn: 'root'
 })
 export class PropertyService {
 	private _properties: Property[];
+	private _id: Subject<string> = new Subject();
 
 	constructor(private _http: HttpClient) {}
 
@@ -17,6 +18,14 @@ export class PropertyService {
 
 	set properties(properties: Property[]) {
 		this._properties = properties;
+	}
+
+	get id(): Subject<string> {
+		return this._id;
+	}
+
+	getPropertySelectedId(): Observable<string> {
+		return this._id;
 	}
 
 	getPropertiesData(): Observable<object> {

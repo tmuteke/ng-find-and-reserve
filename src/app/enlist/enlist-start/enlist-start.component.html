@@ -1,18 +1,20 @@
-<header>
-	<nav class="container-fluid clearfix">
-		<span id="logo" appAbril><a routerLink="/">Find & Reserve</a></span>
+<section>
+	<header>
+		<nav class="container-fluid clearfix">
+			<span id="logo" appAbril><a routerLink="/">Find & Reserve</a></span>
+		</nav>
+	</header>
+	<nav class="enlist-nav clearfix">
+		<a [routerLink]="['room']" routerLinkActive="active" [routerLinkActiveOptions]="{exact: true}"><span>Room</span></a>
+		<a [routerLink]="['students']" routerLinkActive="active"><span>Students</span></a>
+		<a [routerLink]="['location']" routerLinkActive="active"><span>Location</span></a>
+		<a [routerLink]="['amenities']" routerLinkActive="active"><span>Amenities</span></a>
+		<a [routerLink]="['spaces']" routerLinkActive="active"><span>Spaces</span></a>
+		<a [routerLink]="['pictures']" routerLinkActive="active"><span>Pictures</span></a>
+		<a [routerLink]="['description']" routerLinkActive="active"><span>Description</span></a>
+		<a [routerLink]="['phone']" routerLinkActive="active"><span>Phone</span></a>
+		<a [routerLink]="['policies']" routerLinkActive="active"><span>Policies</span></a>
 	</nav>
-</header>
-<nav class="enlist-nav clearfix">
-	<a [routerLink]="['room']" routerLinkActive="active" [routerLinkActiveOptions]="{exact: true}"><span>Room</span></a>
-	<a [routerLink]="['students']" routerLinkActive="active"><span>Students</span></a>
-	<a [routerLink]="['location']" routerLinkActive="active"><span>Location</span></a>
-	<a [routerLink]="['amenities']" routerLinkActive="active"><span>Amenities</span></a>
-	<a [routerLink]="['spaces']" routerLinkActive="active"><span>Spaces</span></a>
-	<a [routerLink]="['pictures']" routerLinkActive="active"><span>Pictures</span></a>
-	<a [routerLink]="['description']" routerLinkActive="active"><span>Description</span></a>
-	<a [routerLink]="['phone']" routerLinkActive="active"><span>Phone</span></a>
-	<a [routerLink]="['policies']" routerLinkActive="active"><span>Policies</span></a>
-</nav>
+</section>
 <div class="progress-bar"></div>
 <router-outlet></router-outlet>

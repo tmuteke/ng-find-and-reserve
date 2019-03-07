@@ -1,5 +1,6 @@
 import { BrowserModule } from '@angular/platform-browser';
 import { NgModule } from '@angular/core';
+import { HttpClientModule } from '@angular/common/http';
 
 import { AppComponent } from './app.component';
 import {HeaderComponent} from './header/header.component';
@@ -28,7 +29,6 @@ import { EnlistBathroomsComponent } from './enlist/enlist-step-1/enlist-bathroom
 import { EnlistLocationComponent } from './enlist/enlist-step-1/enlist-location/enlist-location.component';
 import { EnlistAmenitiesComponent } from './enlist/enlist-step-1/enlist-amenities/enlist-amenities.component';
 import { EnlistSpacesComponent } from './enlist/enlist-step-1/enlist-spaces/enlist-spaces.component';
-import { HttpClientModule } from '@angular/common/http';
 import { RatingDirective } from './shared/directives/rating.directive';
 import { PropertyListAllComponent } from './property/property-list/property-list-all/property-list-all.component';
 import { EnlistPicturesComponent } from './enlist/enlist-step-2/enlist-pictures/enlist-pictures.component';
@@ -36,6 +36,10 @@ import { EnlistDescriptionComponent } from './enlist/enlist-step-2/enlist-descri
 import { EnlistPhoneComponent } from './enlist/enlist-step-2/enlist-phone/enlist-phone.component';
 import { EnlistPoliciesComponent } from './enlist/enlist-step-2/enlist-policies/enlist-policies.component';
 import { EnlistFinishComponent } from './enlist/enlist-step-2/enlist-finish/enlist-finish.component';
+import { ReservationComponent } from './reservation/reservation.component';
+import { ReservationDetailsComponent } from './reservation/reservation-details/reservation-details.component';
+import { ReservationPoliciesComponent } from './reservation/reservation-policies/reservation-policies.component';
+import { ReservationPaymentComponent } from './reservation/reservation-payment/reservation-payment.component';
 
 @NgModule({
   declarations: [
@@ -69,7 +73,11 @@ import { EnlistFinishComponent } from './enlist/enlist-step-2/enlist-finish/enli
 	  EnlistDescriptionComponent,
 	  EnlistPhoneComponent,
 	  EnlistPoliciesComponent,
-	  EnlistFinishComponent
+	  EnlistFinishComponent,
+	  ReservationComponent,
+	  ReservationDetailsComponent,
+	  ReservationPoliciesComponent,
+	  ReservationPaymentComponent
   ],
   imports: [
   	  BrowserModule,

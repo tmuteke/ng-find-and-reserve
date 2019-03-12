@@ -1,3 +1,66 @@
-<p>
-  reservation-payment works!
-</p>
+<div class="container">
+	<div class="row">
+		<div class="col-lg-1"></div>
+		<div class="col-lg-6 col-md-8 col-xs-4">
+			<form [formGroup]="form" (ngSubmit)="onSubmit(id)">
+				<div class="details">
+					<h4>Please provide the basic details about you</h4>
+					<section>
+						<h6>Registration Number</h6>
+						<input type="text" name="regNumber" id="regNumber" formControlName="regNumber">
+					</section>
+					<section>
+						<h6>In which year are you?</h6>
+						<select formControlName="year">
+							<option value="oneOne">1.1</option>
+							<option value="oneTwo">1.2</option>
+							<option value="twoOne">2.1</option>
+							<option value="twoTwo">2.2</option>
+							<option value="threeOne">3.1</option>
+							<option value="threeTwo">3.2</option>
+							<option value="fourOne">4.1</option>
+							<option value="fourTwo">4.2</option>
+						</select>
+					</section>
+					<section>
+						<h6>Gender</h6>
+						<div class="control-container">
+							<label class="control control-radio" for="female">
+								<div class="label-text"><span>Female</span></div>
+								<input type="radio" id="female" value="female" name="gender" formControlName="gender">
+								<div class="control-indicator"></div>
+							</label>
+						</div>
+						<div class="control-container">
+							<label class="control control-radio" for="male">
+								<div class="label-text"><span>Male</span></div>
+								<input type="radio" id="male" value="male" name="gender" formControlName="gender">
+								<div class="control-indicator"></div>
+							</label>
+						</div>
+					</section>
+				</div>
+				<nav>
+					<div class="container">
+						<div class="row">
+							<div class="col-lg-1"></div>
+							<div class="col-lg-6">
+								<span class="line"></span>
+								<section>
+									<div class="back">
+										<a [routerLink]="['../policies']"><i class="fa fa-angle-left"></i> Back</a>
+									</div>
+									<div class="finish">
+										<button type="submit">
+											<a routerLink="/" class="button button-dark">Confirm</a>
+										</button>
+									</div>
+								</section>
+							</div>
+						</div>
+					</div>
+				</nav>
+			</form>
+		</div>
+	</div>
+</div>

@@ -2,7 +2,7 @@
 	<div class="row">
 		<div class="col-lg-1"></div>
 		<div class="col-lg-6 col-md-8 col-xs-4">
-			<form [formGroup]="form" (ngSubmit)="test()">
+			<form [formGroup]="form" (ngSubmit)="onSubmit()">
 				<div class="details">
 					<h4>Please provide the basic details about you</h4>
 					<section>
@@ -48,11 +48,11 @@
 								<span class="line"></span>
 								<section>
 									<div class="back">
-										<a [routerLink]="['/property', id, 'details']"><i class="fa fa-angle-left"></i> Back</a>
+										<a [routerLink]="['../../details']"><i class="fa fa-angle-left"></i> Back</a>
 									</div>
 									<div class="finish">
 										<button type="submit">
-											<a class="button button-dark">Submit</a>
+											<a routerLink="../policies" class="button button-dark">Submit</a>
 										</button>
 									</div>
 								</section>

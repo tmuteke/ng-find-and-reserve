@@ -10,13 +10,12 @@ import { PropertyService } from 'src/app/property/property.service';
 })
 export class ReservationDetailsComponent implements OnInit {
 	form: FormGroup;
-	id: string;
 
 	constructor(private route: ActivatedRoute, private propService: PropertyService) { }
 
 	ngOnInit() {
 		this.onFormInit();
-		this.propService.getPropertySelectedId().subscribe((id: string) => { this.id = id});
+		// this.route.params.subscribe((params: Params) => { console.log(params); });
 	}
 
 	onFormInit(): void {
@@ -27,7 +26,6 @@ export class ReservationDetailsComponent implements OnInit {
 		});
 	}
 
-	test(): void {
-		console.log(this.id);
+	onSubmit(): void {
 	}
 }

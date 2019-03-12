@@ -50,7 +50,7 @@
 				<span class="line"></span>
 				<section class="map">
 					<span class="heading heading-ter">Location</span>
-					<img [src]="imgGoogleMaps" alt="map view">
+					<img [src]="'../../../../assets/images/google_map.png'" alt="map view">
 					<div class="map-feed">
 					</div>
 				</section>
@@ -141,7 +141,7 @@
 							labore laudantium pariatur.</p>
 					</div>
 					<div>
-						<a class="button button-primary-outline" [routerLink]="['/property', property.id, 'reservation']" (click)="onReserve()"><i class="fa fa-bookmark-o right"></i>Place Reservation</a>
+						<a class="button button-primary-outline" [routerLink]="['/property', property.id, 'reservation']"><i class="fa fa-bookmark-o right"></i>Place Reservation</a>
 					</div>
 					<span class="line line-75 line-75-c"></span>
 					<a href="" class="report">Report this property<i class="fa fa-flag-o"></i></a>

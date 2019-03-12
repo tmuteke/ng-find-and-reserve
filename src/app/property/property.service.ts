@@ -7,33 +7,25 @@ import { Observable, Subject } from 'rxjs';
 	providedIn: 'root'
 })
 export class PropertyService {
-	private _properties: Property[];
-	private _id: Subject<string> = new Subject();
+	properties: Property[];
+	private pleaseId = new Subject<any>();
 
-	constructor(private _http: HttpClient) {}
+	constructor(private http: HttpClient) {}
 
-	get properties(): Property[] {
-		return this._properties;
+	postId(id: string) {
+		this.pleaseId.next({text: id});
 	}
 
-	set properties(properties: Property[]) {
-		this._properties = properties;
-	}
-
-	get id(): Subject<string> {
-		return this._id;
-	}
-
-	getPropertySelectedId(): Observable<string> {
-		return this._id;
+	getId(): Observable<any> {
+		return this.pleaseId.asObservable();
 	}
 
 	getPropertiesData(): Observable<object> {
-		return this._http.get('assets/datasets/users.json');
+		return this.http.get('assets/datasets/users.json');
 	}
 
 	public getPropertyById(id: string): Property {
-		for (const property of this._properties) {
+		for (const property of this.properties) {
 			if (property.id === id) {
 				return property;
 			}

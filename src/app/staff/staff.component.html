@@ -1,0 +1,18 @@
+<header class="staff-dashboard">
+	<nav class="container-fluid cf">
+		<span id="logo" appAbril><a routerLink="/">Find & Reserve</a></span>
+		<div>
+			<h6><a [routerLink]="['/staff', 'dashboard', 'rooms']" routerLinkActive="active"
+					[routerLinkActiveOptions]="{exact: true}">Available Rooms</a></h6>
+			<h6><a [routerLink]="['/staff', 'dashboard', 'enlist-room']" routerLinkActive="active">Add Room</a></h6>
+			<!-- <h6><a [routerLink]="['/']" [routerLinkActive]="active">Find & Reserve</a></h6> -->
+			<h6><a [routerLink]="['/staff', 'students']" routerLinkActive="active">View Students</a></h6>
+		</div>
+	</nav>
+</header>
+
+<router-outlet></router-outlet>
+
+<!-- <footer>
+	<span>All Rights Reserved &copy; 2018 - 2019 | <span appAbril>Find & Reserve</span>, Inc.</span>
+</footer> -->

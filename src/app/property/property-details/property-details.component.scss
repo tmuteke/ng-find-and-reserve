@@ -1,0 +1,301 @@
+@import '../../../assets/global-sass-files/colours';
+
+.property-hero {
+	width: 100%;
+	height: 70vh;
+	box-sizing: border-box;
+	text-align: center;
+	color: #fff;
+	background: url(../../../assets/images/image_03.jpg) no-repeat center;
+	background-size: cover;
+}
+
+.property-details-container {
+	padding: 1rem;
+
+	section {
+		padding-top: .5rem;
+		padding-bottom: .5rem;
+	}
+
+	.essential-info {
+		p {
+			font-weight: 600;
+
+			i {
+				margin-right: 5px;
+				font-size: 18px;
+				color: $teal400;
+			}
+		}
+	}
+
+	.usable-spaces,
+	.essential-amenities,
+	.safety-amenities,
+	.policies {
+
+		span:not(.heading) {
+			margin: 0 3px 6px;
+			padding: 6px 10px;
+			border-radius: 5px;
+			display: inline-block;
+		}
+	}
+
+	.usable-spaces {
+		span:not(.heading) {
+			background-color: $blue_gray50;
+			color: $blue_gray400;
+		}
+	}
+
+	.essential-amenities {
+		span:not(.heading) {
+			background-color: $teal50;
+			color: $teal400;
+		}
+	}
+
+	.safety-amenities {
+		span:not(.heading) {
+			background-color: $amber50;
+			color: $amber400;
+		}
+	}
+
+	.policies {
+		span:not(.heading) {
+			background-color: $red50;
+			color: $red400;
+		}
+	}
+
+	.address {
+		font-size: 36px;
+		font-family: "Gotham Medium";
+		display: block;
+	}
+
+	.location {
+		font-size: 16px;
+		color: $blue_gray300;
+		font-family: "Gotham Medium";
+		text-transform: uppercase;
+	}
+
+	.amenities {
+		span {
+			margin: 0.25rem 0.25rem 0.5rem;
+
+			i {
+				margin-right: 0.4rem;
+				font-size: 18px;
+				font-weight: 100;
+				color: $teal400;
+			}
+		}
+	}
+
+	.from-the-landlord {
+		display: block;
+	}
+
+	.map {
+		.map-feed {
+			&>div {
+				padding-top: .35rem;
+			}
+		}
+
+		.map-data {
+			font-weight: bolder;
+		}
+	}
+
+	.host-info {
+
+		img {
+			position: relative;
+			transform: translateY(-50%);
+			border-radius: 100px;
+			border: 5px solid $blue_gray50;
+			width: 100px;
+			height: 100px;
+			margin-right: 2rem;
+		}
+
+		div {
+			display: inline-block;
+
+			span {
+				display: block;
+				font-size: 18px;
+				color: $blue_gray300;
+
+				&.host-name {
+					color: $blue_gray700;
+					font-size: 24px;
+					font-weight: 600;
+				}
+			}
+		}
+	}
+
+
+	.reviews {
+		.add-comment-container {
+			img {
+				border: 2px solid $blue_gray50;
+				border-radius: 50px;
+			}
+		}
+
+		span {
+			font-size: 18px;
+
+			&.stars {
+				margin-bottom: 1.5rem;
+				margin-top: 1rem;
+
+				i {
+					margin-left: .15rem;
+					margin-right: .15rem;
+					color: $tealA700;
+				}
+			}
+		}
+
+		.review {
+			.avatar {
+				img {
+					width: 50px;
+					height: 50px;
+					border-radius: 50px;
+					border: 2px solid $blue_gray50;
+				}
+			}
+
+			.date {
+				margin-bottom: 1rem;
+				font-size: 14px;
+				font-weight: lighter;
+			}
+
+			.like-review {
+				span {
+					cursor: pointer;
+
+					i {
+						color: $blue_gray300;
+					}
+				}
+			}
+		}
+
+		.load-reviews {
+			text-align: center;
+
+			.see-more {
+				text-decoration: underline !important;
+				font-weight: 700;
+			}
+		}
+	}
+}
+
+.booking-form-container {
+	position: sticky;
+	top: 15px;
+	margin-bottom: 2rem;
+	font-size: 14px;
+
+	.booking-form {
+		padding: 1rem;
+		margin-top: 1rem;
+		background-color: #fdfdfd;
+		color: $blue_gray400;
+		border-radius: 3px;
+		border: 1px solid $blue_gray50;
+
+		.rent-like {
+			i {
+				cursor: pointer;
+				font-size: 18px;
+			}
+
+			.rent {
+				font-family: "Gotham Medium";
+				font-size: 18px;
+
+				i {
+					font-style: normal;
+					color: $blue_gray700;
+					font-size: 24px;
+				}
+			}
+		}
+
+		.property-rating-container {
+
+			span {
+				display: inline-block;
+
+				&.property-realtime-rating {
+					margin-right: 5px;
+				}
+
+				&.property-total-rating {
+					margin-left: 5px;
+				}
+			}
+
+			.property-rating {
+				position: relative;
+				display: inline-block;
+				padding: 0;
+
+				i {
+					color: $tealA700;
+				}
+			}
+		}
+
+		* {
+			display: block;
+			margin-top: .3rem;
+		}
+
+		.recommendation-container {
+			padding-top: 1rem;
+			padding-bottom: 1rem;
+
+			.recommended {
+				color: $tealA700;
+				margin-bottom: .5rem;
+
+				i {
+					display: inline;
+					margin-left: .5rem;
+					transform: rotateX(-15deg);
+				}
+			}
+		}
+
+		.line {
+			margin-top: 1rem;
+		}
+
+		.report {
+			color: $red400;
+			margin-bottom: .5rem;
+			text-align: center;
+
+			i {
+				display: inline;
+				margin-left: .5rem;
+				transform: rotateX(-15deg);
+			}
+		}
+	}
+}

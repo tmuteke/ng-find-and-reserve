@@ -1,0 +1,24 @@
+<a href="">
+	<section>
+		<span class="heading heading-pri">Room {{ room?.roomNumber }}, {{ room?.roomHostel }}</span>
+		<span class="heading heading-sec">${{ room?.roomFee }}.00 per semester</span>
+	</section>
+	<section class="data">
+		<div class="essentials" *ngIf="room?.amenities.essential.length > 0">
+			<span class="heading heading-ter">Essential amenities</span>
+			<span *ngFor="let ess of room?.amenities.essential">{{ ess }}</span>
+		</div>
+		<div class="safeties" *ngIf="room?.amenities.safety.length > 0">
+			<span class="heading heading-ter">Safety amenities</span>
+			<span *ngFor="let safe of room?.amenities.safety">{{ safe }}</span>
+		</div>
+		<div class="spaces" *ngIf="room?.spaces.length > 0">
+			<span class="heading heading-ter">Spaces to use</span>
+			<span *ngFor="let space of room?.spaces">{{ space }}</span>
+		</div>
+		<div class="policies" *ngIf="room?.policies.length > 0">
+			<span class="heading heading-ter">Policies</span>
+			<span *ngFor="let policy of room?.policies">{{ policy }}</span>
+		</div>
+	</section>
+</a>

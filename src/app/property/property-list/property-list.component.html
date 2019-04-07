@@ -1,10 +1,1 @@
-<div class="container">
-	<div class="row">
-		<app-property-item
-			class="app-property-item"
-			*ngFor="let propertyEl of properties"
-			[property]="propertyEl">
-		</app-property-item>
-	</div>
-</div>
-
+<app-property-item *ngFor="let property of properties" [property]="property"></app-property-item>

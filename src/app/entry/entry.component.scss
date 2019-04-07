@@ -4,11 +4,10 @@
 	width: 100%;
 	box-sizing: border-box;
 	padding: 0 0 15rem;
-	margin-bottom: 3rem;
 	text-align: center;
 	color: #fff;
 	background: linear-gradient(rgba(0, 0, 0, .25), rgba(0, 0, 0, .5)),
-				url(../../assets/images/image_04.jpg) no-repeat center;
+		url(../../assets/images/image_04.jpg) no-repeat center;
 	background-size: cover;
 
 	section {
@@ -28,6 +27,66 @@
 			line-height: 1.3;
 		}
 	}
+}
+
+.on-campus-section {
+	padding-bottom: 3rem;
+	background-color: $amber50;
+
+	.header {
+		padding-top: 5%;
+		padding-bottom: 2.5%;
+		width: 100%;
+		text-align: center;
+	}
+
+	.hostel {
+		border-radius: 3px;
+		padding: 2rem;
+		text-align: center;
+		float: left;
+		width: 49%;
+
+		span,
+		p {
+			color: white;
+		}
+
+		span {
+			text-transform: uppercase;
+		}
+
+		&.hostel-1 {
+			background: linear-gradient(rgba($color: black, $alpha: 0.5), rgba($color: black, $alpha: 0.5)),
+				url(../../assets/images/property_interior_02.jpg) no-repeat center;
+			background-size: cover;
+			margin-right: 1%;
+		}
+
+		&.hostel-2-4 {
+			background: linear-gradient(rgba($color: black, $alpha: 0.5), rgba($color: black, $alpha: 0.5)),
+				url(../../assets/images/image_02.jpg) no-repeat center;
+			background-size: cover;
+			margin-left: 1%;
+		}
+	}
+
+	.available-rooms {
+		margin: 3rem auto;
+	}
+}
+
+.off-campus-section {
+	padding-bottom: 3rem;
+	background-color: $teal50;
+
+	.header {
+		padding-top: 5%;
+		padding-bottom: 2.5%;
+		width: 100%;
+		text-align: center;
+	}
+
 }
 
 .show-more {
@@ -83,57 +142,6 @@
 	}
 }
 
-.on-campus-section {
-
-	.on-campus-header {
-		padding-top: 5%;
-		padding-bottom: 2.5%;
-		margin-bottom: 3rem;
-		width: 100%;
-		background-color: $amber400;
-		text-align: center;
-
-		span {
-			text-transform: uppercase;
-		}
-
-		p {
-			width: 50%;
-			margin: 0 auto 3rem;
-		}
-	}
-
-	.hostel {
-		border-radius: 3px;
-		padding: 4rem 2rem 2rem;
-		text-align: center;
-		float: left;
-		width: 49%;
-
-		span,
-		p {
-			color: white;
-		}
-
-		span {
-			text-transform: uppercase;
-		}
-
-		&.hostel-1 {
-			background: linear-gradient(rgba(0, 0, 0, .35), rgba(0, 0, 0, .25)),
-				url(../../assets/images/property_interior_02.jpg) no-repeat center;
-			background-size: cover;
-			margin-right: 1%;
-		}
-
-		&.hostel-2-4 {
-			background: linear-gradient(rgba(0, 0, 0, .35), rgba(0, 0, 0, .25)),
-				url(../../assets/images/image_02.jpg) no-repeat center;
-			background-size: cover;
-			margin-left: 1%;
-		}
-	}
-}
 
 /* MEDIA QUERIES ==================== */
 

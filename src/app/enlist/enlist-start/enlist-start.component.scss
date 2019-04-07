@@ -1,40 +1,46 @@
-@import '../../../assets/global-sass-files/colours';
+@import '../../../assets/global-sass-files/enlisting';
 @import '../../../assets/global-sass-files/header';
 
-section {
-	.enlist-nav {
-		a {
+.control-container {
+	.label-text {
+
+		div,
+		span {
 			float: left;
-			width: 11.11111%;
-			padding:.5rem 1rem;
-			font-family: "Gotham Medium";
-			color: $blue_gray700;
-			transition: background-color 300ms;
-			border-left: 1px solid $blue_gray100;
-	
-			&:first-child {
-				border-left: none;
-			}
-			
-			&:hover {
-				background-color: $blue_gray50;
-			}
-			
-			&.active {
-				background-color: $blue_gray700;
-				color: white;
-			}
-			
-			span {
-				display: block;
-				width: 100%;
+		}
+
+		div {
+			&.img {
+				width: 75px;
+				height: 75px;
+				border-radius: 3px;
+				background-image: url("../../../assets/images/image_03.jpg");
+				background-color: $teal50;
+				background-repeat: no-repeat;
+				background-size: cover;
+				background-position: 50% 50%;
 			}
 		}
+
+		span {
+			padding-left: 6px;
+			position: relative;
+			top: 24px;
+		}
+	}
+
+	.control-indicator {
+		position: absolute;
+		top: 28px;
 	}
 }
 
-.progress-bar {
-	height: 7px;
-	background-color: $blue_gray700;
-	width: 100%;
+.line {
+	margin-top: 0.5rem;
+	margin-bottom: 0.8rem;
+}
+
+.finish {
+	float: right !important;
+	color: white;
 }

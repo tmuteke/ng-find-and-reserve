@@ -1,0 +1,20 @@
+<app-login-header></app-login-header>
+
+<div class="form-container">
+	<form [formGroup]="loginForm" (ngSubmit)="onSubmitLogin()">
+		<!-- <a href="" class="alternative-login-signup facebook clearfix"><i class="fa fa-facebook"></i><span>Login with Facebook</span></a>
+		<a href="" class="alternative-login-signup google clearfix"><i class="fa fa-google"></i><span>Login with Google</span></a>
+		<div class="or clearfix"><i></i><span>or</span><i></i></div> -->
+		<span class="heading heading-ter email">Login with Email</span>
+		<!--<span class="input-warning" *ngIf="!isFieldsEmpty">*This field is required</span>-->
+		<!--<span class="input-warning" *ngIf="!isEmailValid">*Enter a valid email address</span>-->
+		<input type="email" name="email" placeholder="Email" formControlName="email">
+		<!--<span class="input-warning" *ngIf="!isFieldsEmpty">*This field is required</span>-->
+		<!--<span class="input-warning" *ngIf="!isPasswordMin">*Password should contain at least 6 characters</span>-->
+		<input type="password" name="password" placeholder="Password" formControlName="password">
+		<!-- <a href="" class="forgot-password">Forgot Password<i class="fa fa-external-link"></i></a> -->
+		<button class="button button-primary" type="submit">Login</button>
+		<span class="line line-75 line-75-c"></span>
+		<span class="no-account">Don't have a Find & Reserve account?<a routerLink="/signup"> Sign Up</a></span>
+	</form>
+</div>

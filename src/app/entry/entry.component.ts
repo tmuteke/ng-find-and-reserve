@@ -1,28 +1,29 @@
-import { Component, OnInit } from '@angular/core';
-import { PropertyService } from '../property/property.service';
-import { Property } from '../property/property.model';
-import { ActivatedRoute, Params } from '@angular/router';
+import { Component, OnInit } from "@angular/core";
+import { PropertyService } from "../property/property.service";
+import { Property } from "../property/property.model";
+import { ActivatedRoute } from "@angular/router";
 
 @Component({
-  selector: 'app-entry',
-  templateUrl: './entry.component.html',
-  styleUrls: ['./entry.component.scss']
+	selector: "app-entry",
+	templateUrl: "./entry.component.html",
+	styleUrls: ["./entry.component.scss"]
 })
 export class EntryComponent implements OnInit {
-	private _totalProperties: number;
+	public totalProperties: number;
+	public isLoading = false;
 
-  constructor(private propService: PropertyService, private route: ActivatedRoute) { }
+	constructor(
+		private propService: PropertyService,
+		private route: ActivatedRoute
+	) {}
 
-  ngOnInit() {
-	  this.propService.getPropertiesData()
+	ngOnInit() {
+		this.isLoading = true;
+		this.propService
+			.getPropertyUpdateListener()
 			.subscribe((properties: Property[]) => {
-				this._totalProperties = properties.length;
+				this.totalProperties = properties.length;
 			});
-		this.route.params.subscribe((params: Params) => { console.log(params); });
-  }
-
-  get totalProperties(): number {
-	  return this._totalProperties;
-  }
-
+		this.isLoading = false;
+	}
 }

@@ -1,0 +1,71 @@
+@import '../../../assets/global-sass-files/colours';
+
+a {
+	display: flex;
+	background-color: $white;
+	border-radius: 3px;
+	box-shadow: 4px 4px 10px $gray400;
+	margin-top: 8px;
+	margin-bottom: 8px;
+	transition: transform 300ms;
+
+	&:hover {
+		transform: scale(1.005);
+	}
+
+	section {
+		padding: 1rem;
+		width: 25%;
+
+		&.data {
+			width: 75%;
+			color: $blue_gray700;
+
+			.spaces,
+			.essentials,
+			.safeties,
+			.policies {
+
+				span:not(.heading) {
+					margin: 0 3px 6px;
+					padding: 6px 10px;
+					border-radius: 5px;
+					display: inline-block;
+				}
+			}
+
+			.spaces {
+				span:not(.heading) {
+					background-color: $blue_gray50;
+					color: $blue_gray400;
+				}
+			}
+
+			.essentials {
+				span:not(.heading) {
+					background-color: $teal50;
+					color: $teal400;
+				}
+			}
+
+			.safeties {
+				span:not(.heading) {
+					background-color: $amber50;
+					color: $amber400;
+				}
+			}
+
+			.policies {
+				span:not(.heading) {
+					background-color: $red50;
+					color: $red400;
+				}
+			}
+		}
+
+		section {
+			padding-left: 1rem;
+			padding-right: 1rem;
+		}
+	}
+}

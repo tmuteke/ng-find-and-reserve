@@ -1,27 +1,15 @@
-import { Component, Input, OnInit } from '@angular/core';
-
-import { Property } from '../property.model';
-import { ImagesService } from '../../shared/services/images.service';
-import { PropertyService } from '../property.service';
+import { Component, OnInit, Input } from "@angular/core";
+import { Property } from "../property.model";
 
 @Component({
-	selector: 'app-property-item',
-	templateUrl: './property-item.component.html',
-	styleUrls: ['./property-item.component.scss'],
-	providers: [ImagesService, PropertyService]
+	selector: "app-property-item",
+	templateUrl: "./property-item.component.html",
+	styleUrls: ["./property-item.component.scss"]
 })
-
 export class PropertyItemComponent implements OnInit {
-	@Input() property: Property;
-	private _imageUrl: string;
+	@Input() public property: Property;
 
-	constructor(private imagesService: ImagesService) {}
+	constructor() {}
 
-	ngOnInit(): void {
-		this._imageUrl = this.imagesService.images[0];
-	}
-
-	get imageUrl(): string {
-		return this._imageUrl;
-	}
+	public ngOnInit(): void {}
 }

@@ -1,18 +1,21 @@
-import {Component, OnInit} from '@angular/core';
-import {LoginService} from './login/login.service';
-import {ActivatedRoute, Router} from '@angular/router';
+import { Component, OnInit } from "@angular/core";
+import { LoginService } from "../auth/login/login.service";
+import { ActivatedRoute, Router } from "@angular/router";
 
 @Component({
-	selector: 'app-header',
-	templateUrl: './header.component.html',
-	styleUrls: ['./header.component.scss']
+	selector: "app-header",
+	templateUrl: "./header.component.html",
+	styleUrls: ["./header.component.scss"]
 })
-
 export class HeaderComponent implements OnInit {
 	private _isLoggedOn = false;
 	private _isLoggingIn = false;
 
-	constructor(private loginService: LoginService, private route: ActivatedRoute, private router: Router) { }
+	constructor(
+		private loginService: LoginService,
+		private route: ActivatedRoute,
+		private router: Router
+	) {}
 
 	ngOnInit(): void {
 		this._isLoggedOn = this.loginService.isLoggedIn;
@@ -31,8 +34,7 @@ export class HeaderComponent implements OnInit {
 	}
 
 	public onLogin(): void {
-		this.loginService.isLoggingIn.next('FUCK YOU!');
-		this.router.navigate(['/login']);
+		this.loginService.isLoggingIn.next("FUCK YOU!");
+		this.router.navigate(["/login"]);
 	}
-
 }

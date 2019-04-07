@@ -1,4 +1,3 @@
-
 @import './colours';
 
 .button {
@@ -51,13 +50,15 @@
 		}
 	}
 
-	&.button-primary, &.button-success {
+	&.button-primary,
+	&.button-success {
 		color: $white;
 		background-color: $tealA700;
 		border: 2px solid $tealA700;
 	}
 
-	&.button-primary-outline, &.button-success-outline {
+	&.button-primary-outline,
+	&.button-success-outline {
 		color: $teal400;
 		background-color: transparent;
 		border: 2px solid $tealA700;
@@ -74,18 +75,18 @@
 
 	&.button-warn {
 		color: $white;
-		background-color: $amber700;
-		border: 2px solid $amber700;
+		background-color: $amber400;
+		border: 2px solid $amber400;
 	}
 
 	&.button-warn-outline {
-		color: $amber700;
+		color: $amber400;
 		background-color: transparent;
-		border: 2px solid $amber700;
+		border: 2px solid $amber400;
 
 		&:hover {
 			color: $white;
-			background-color: $amber700;
+			background-color: $amber400;
 		}
 
 		&:not([href]):not([tabindex]):hover {

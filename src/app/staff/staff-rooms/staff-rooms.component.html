@@ -1,0 +1,19 @@
+<div class="container">
+	<table *ngIf="rooms.length > 0">
+		<tr class="headings">
+			<th class="heading heading-ter">Room Hostel</th>
+			<th class="heading heading-ter">Room Number</th>
+			<th class="heading heading-ter">Room Fee</th>
+			<th class="heading heading-ter">Actions</th>
+		</tr>
+		<tr *ngFor="let room of rooms">
+			<td>{{ room.roomHostel }}</td>
+			<td>{{ room.roomNumber }}</td>
+			<td>${{ room.roomFee }}.00</td>
+			<td class="actions">
+				<span class="edit">Edit</span>
+				<span class="delete">Delete</span>
+			</td>
+		</tr>
+	</table>
+</div>

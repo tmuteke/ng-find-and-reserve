@@ -1,55 +1,51 @@
-import { BrowserModule } from '@angular/platform-browser';
-import { NgModule } from '@angular/core';
-import { HttpClientModule } from '@angular/common/http';
+import { BrowserModule } from "@angular/platform-browser";
+import { BrowserAnimationsModule } from "@angular/platform-browser/animations";
+import { NgModule } from "@angular/core";
+import { HttpClientModule } from "@angular/common/http";
+import { ToastrModule } from "ngx-toastr";
+import { MatProgressSpinnerModule } from "@angular/material";
 
-import { AppComponent } from './app.component';
-import { HeaderComponent } from './header/header.component';
-import { PropertyItemComponent } from './property/property-item/property-item.component';
-import { PropertyDetailsComponent } from './property/property-item/property-details/property-details.component';
+import { AppComponent } from "./app.component";
+import { HeaderComponent } from "./header/header.component";
+import { PropertyDetailsComponent } from "./property/property-details/property-details.component";
+import { FooterComponent } from "./footer/footer.component";
+import { AbrilDirective } from "./shared/directives/abril.directive";
+import { AngularFontAwesomeModule } from "angular-font-awesome";
+import { AppRoutingModule } from "./app-routing.module";
+import { StudentHeaderComponent } from "./header/student-header/student-header.component";
+import { LandlordHeaderComponent } from "./header/landlord-header/landlord-header.component";
+import { LoginComponent } from "./auth/login/login.component";
+import { LikeDirective } from "./shared/directives/like.directive";
+import { EntryComponent } from "./entry/entry.component";
+import { LoginHeaderComponent } from "./auth/login/login-header/login-header.component";
+import { ReactiveFormsModule, FormsModule } from "@angular/forms";
+import { SignupComponent } from "./auth/signup/signup.component";
+import { SignUpHeaderComponent } from "./auth/signup/sign-up-header/sign-up-header.component";
+import { NotFoundComponent } from "./not-found/not-found.component";
+import { EnlistComponent } from "./enlist/enlist.component";
+import { EnlistStartComponent } from "./enlist/enlist-start/enlist-start.component";
+import { RatingDirective } from "./shared/directives/rating.directive";
+import { ReservationComponent } from "./reservation/reservation.component";
+import { ReservationDetailsComponent } from "./reservation/reservation-details/reservation-details.component";
+import { ReservationPoliciesComponent } from "./reservation/reservation-policies/reservation-policies.component";
+import { ReservationPaymentComponent } from "./reservation/reservation-payment/reservation-payment.component";
+import { PropertyService } from "./property/property.service";
+import { EnlistFinishComponent } from "./enlist/enlist-finish/enlist-finish.component";
+import { StaffComponent } from "./staff/staff.component";
+import { StaffLoginComponent } from "./staff/auth/staff-login/staff-login.component";
+import { StaffRoomsComponent } from "./staff/staff-rooms/staff-rooms.component";
+import { StaffEnlistRoomComponent } from "./staff/staff-enlist-room/staff-enlist-room.component";
+import { RoomItemComponent } from "./room/room-item/room-item.component";
+import { RoomListComponent } from "./room/room-list/room-list.component";
+import { PropertyItemComponent } from "./property/property-item/property-item.component";
 import { PropertyListComponent } from './property/property-list/property-list.component';
-import { FooterComponent } from './footer/footer.component';
-import { AbrilDirective } from './shared/directives/abril.directive';
-import { AngularFontAwesomeModule } from 'angular-font-awesome';
-import { AppRoutingModule } from './app-routing.module';
-import { StudentHeaderComponent } from './header/student-header/student-header.component';
-import { LandlordHeaderComponent } from './header/landlord-header/landlord-header.component';
-import { LoginComponent } from './header/login/login.component';
-import { LikeDirective } from './shared/directives/like.directive';
-import { EntryComponent } from './entry/entry.component';
-import { LoginHeaderComponent } from './header/login/login-header/login-header.component';
-import { ReactiveFormsModule, FormsModule } from '@angular/forms';
-import { SignUpComponent } from './header/sign-up/sign-up.component';
-import { SignUpHeaderComponent } from './header/sign-up/sign-up-header/sign-up-header.component';
-import { NotFoundComponent } from './not-found/not-found.component';
-import { EnlistComponent } from './enlist/enlist.component';
-import { EnlistStartComponent } from './enlist/enlist-start/enlist-start.component';
-import { EnlistRoomComponent } from './enlist/enlist-step-1/enlist-room/enlist-room.component';
-import { EnlistStudentsComponent } from './enlist/enlist-step-1/enlist-students/enlist-students.component';
-import { EnlistBathroomsComponent } from './enlist/enlist-step-1/enlist-bathrooms/enlist-bathrooms.component';
-import { EnlistLocationComponent } from './enlist/enlist-step-1/enlist-location/enlist-location.component';
-import { EnlistAmenitiesComponent } from './enlist/enlist-step-1/enlist-amenities/enlist-amenities.component';
-import { EnlistSpacesComponent } from './enlist/enlist-step-1/enlist-spaces/enlist-spaces.component';
-import { RatingDirective } from './shared/directives/rating.directive';
-import { PropertyListAllComponent } from './property/property-list/property-list-all/property-list-all.component';
-import { EnlistPicturesComponent } from './enlist/enlist-step-2/enlist-pictures/enlist-pictures.component';
-import { EnlistDescriptionComponent } from './enlist/enlist-step-2/enlist-description/enlist-description.component';
-import { EnlistPhoneComponent } from './enlist/enlist-step-2/enlist-phone/enlist-phone.component';
-import { EnlistPoliciesComponent } from './enlist/enlist-step-2/enlist-policies/enlist-policies.component';
-import { EnlistFinishComponent } from './enlist/enlist-step-2/enlist-finish/enlist-finish.component';
-import { ReservationComponent } from './reservation/reservation.component';
-import { ReservationDetailsComponent } from './reservation/reservation-details/reservation-details.component';
-import { ReservationPoliciesComponent } from './reservation/reservation-policies/reservation-policies.component';
-import { ReservationPaymentComponent } from './reservation/reservation-payment/reservation-payment.component';
-import { PropertyService } from './property/property.service';
 
 @NgModule({
 	declarations: [
 		AppComponent,
 		AbrilDirective,
 		HeaderComponent,
-		PropertyItemComponent,
 		PropertyDetailsComponent,
-		PropertyListComponent,
 		FooterComponent,
 		StudentHeaderComponent,
 		LandlordHeaderComponent,
@@ -57,28 +53,25 @@ import { PropertyService } from './property/property.service';
 		LikeDirective,
 		EntryComponent,
 		LoginHeaderComponent,
-		SignUpComponent,
+		SignupComponent,
 		SignUpHeaderComponent,
 		NotFoundComponent,
 		EnlistComponent,
 		EnlistStartComponent,
-		EnlistRoomComponent,
-		EnlistStudentsComponent,
-		EnlistBathroomsComponent,
-		EnlistLocationComponent,
-		EnlistAmenitiesComponent,
-		EnlistSpacesComponent,
 		RatingDirective,
-		PropertyListAllComponent,
-		EnlistPicturesComponent,
-		EnlistDescriptionComponent,
-		EnlistPhoneComponent,
-		EnlistPoliciesComponent,
 		EnlistFinishComponent,
 		ReservationComponent,
 		ReservationDetailsComponent,
 		ReservationPoliciesComponent,
-		ReservationPaymentComponent
+		ReservationPaymentComponent,
+		StaffComponent,
+		StaffLoginComponent,
+		StaffRoomsComponent,
+		StaffEnlistRoomComponent,
+		RoomItemComponent,
+		RoomListComponent,
+		PropertyItemComponent,
+		PropertyListComponent
 	],
 	imports: [
 		BrowserModule,
@@ -86,9 +79,12 @@ import { PropertyService } from './property/property.service';
 		AppRoutingModule,
 		ReactiveFormsModule,
 		FormsModule,
-		HttpClientModule
+		HttpClientModule,
+		BrowserAnimationsModule,
+		ToastrModule.forRoot(),
+		MatProgressSpinnerModule
 	],
 	providers: [PropertyService],
 	bootstrap: [AppComponent]
 })
-export class AppModule { }
+export class AppModule {}

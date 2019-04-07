@@ -1,0 +1,63 @@
+@import '../../../assets/global-sass-files/colours';
+
+table {
+	width: 80%;
+	margin: 2rem auto;
+
+	tr {
+		padding: .5rem 1rem;
+		display: flex;
+
+		&:nth-child(odd) {
+			background-color: $blue_gray50;
+		}
+
+		&.headings {
+			background-color: $amber50;
+
+			th {
+				color: $amber400;
+
+				&:nth-last-child(2),
+				&:nth-last-child(1) {
+					text-align: right;
+				}
+			}
+		}
+
+		th,
+		td {
+			width: 25%;
+		}
+
+		td {
+			margin: 4px 0;
+
+			&:nth-last-child(2) {
+				text-align: right;
+				padding-right: 0.5rem;
+			}
+
+			&.actions {
+				text-align: right;
+
+				span {
+					padding: .25rem .5rem;
+					border-radius: 3px;
+					margin: .1rem;
+					font-size: 14px;
+
+					&.edit {
+						background-color: $teal50;
+						color: $teal400;
+					}
+
+					&.delete {
+						background-color: $red50;
+						color: $red400;
+					}
+				}
+			}
+		}
+	}
+}

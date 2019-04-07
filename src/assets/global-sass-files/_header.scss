@@ -2,9 +2,12 @@
 
 header {
 	box-sizing: border-box;
-	padding: 1rem;
+	padding: .5rem 1rem;
 	background-color: $teal400;
-	// position: fixed;
+
+	&.staff-dashboard {
+		background-color: $amber400;
+	}
 
 	nav {
 		position: relative;
@@ -25,12 +28,13 @@ header {
 		div {
 			float: right !important;
 
-			span, h6 {
+			span,
+			h6 {
 				display: inline;
 				box-sizing: border-box;
 				border-radius: 3px;
 				padding: .8rem .1rem;
-				transition: background-color .1s ease-in;
+				transition: color 150ms ease-in;
 
 				a {
 					box-sizing: border-box;
@@ -38,34 +42,15 @@ header {
 					padding: .6rem 0;
 					margin-left: 0.6rem;
 					margin-right: 0.6rem;
-					color: white;
+					color: rgba($color: white, $alpha: 0.5);
 					cursor: pointer;
-					text-transform: uppercase;
 
 					&:hover {
 						color: $white;
 					}
 
 					&.active {
-						border-bottom: 3px solid white;
-					}
-				}
-
-				&.hover-white-bg {
-					&:hover {
-						background-color: $white;
-
-						a {
-							color: $teal400;
-						}
-					}
-				}
-
-				&.white-bg {
-					background-color: $white;
-
-					a {
-						color: $teal400;
+						color: white;
 					}
 				}
 			}

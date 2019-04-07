@@ -1,20 +1,71 @@
-<section>
-	<header>
-		<nav class="container-fluid clearfix">
-			<span id="logo" appAbril><a routerLink="/">Find & Reserve</a></span>
-		</nav>
-	</header>
-	<nav class="enlist-nav clearfix">
-		<a [routerLink]="['room']" routerLinkActive="active" [routerLinkActiveOptions]="{exact: true}"><span>Room</span></a>
-		<a [routerLink]="['students']" routerLinkActive="active"><span>Students</span></a>
-		<a [routerLink]="['location']" routerLinkActive="active"><span>Location</span></a>
-		<a [routerLink]="['amenities']" routerLinkActive="active"><span>Amenities</span></a>
-		<a [routerLink]="['spaces']" routerLinkActive="active"><span>Spaces</span></a>
-		<a [routerLink]="['pictures']" routerLinkActive="active"><span>Pictures</span></a>
-		<a [routerLink]="['description']" routerLinkActive="active"><span>Description</span></a>
-		<a [routerLink]="['phone']" routerLinkActive="active"><span>Phone</span></a>
-		<a [routerLink]="['policies']" routerLinkActive="active"><span>Policies</span></a>
+<header>
+	<nav class="container-fluid clearfix">
+		<span id="logo" appAbril><a routerLink="/">Find & Reserve</a></span>
 	</nav>
-</section>
-<div class="progress-bar"></div>
-<router-outlet></router-outlet>
+</header>
+<div class="container">
+	<div class="row">
+		<div class="col-lg-1"></div>
+		<div class="col-lg-6 col-md-8 col-xs-4">
+			<form>
+				<div class="details">
+					<h4>Select an option below</h4>
+					<div class="control-container">
+						<label class="control control-radio" for="new">
+							<div class="label-text clearfix">
+								<div>
+									<div class="img"></div>
+									<span class="heading heading-pri">Enlist a new house</span>
+								</div>
+							</div>
+							<input type="radio" id="new" value="new" name="enlistType" checked>
+							<div class="control-indicator"></div>
+						</label>
+					</div>
+					<span class="line"></span>
+					<!-- <div class="control-container">
+						<label class="control control-radio" for="continue">
+							<div class="label-text clearfix">
+								<div>
+									<div class="img"></div>
+									<span class="heading heading-pri">Continue from pending enlisting</span>
+								</div>
+							</div>
+							<input type="radio" id="continue" value="continue" name="enlistType" disabled
+								formControlName="enlistType">
+							<div class="control-indicator"></div>
+						</label>
+					</div>
+					<span class="line"></span>
+					<div class="control-container">
+						<label class="control control-radio" for="edit">
+							<div class="label-text clearfix">
+								<div>
+									<div class="img"></div>
+									<span class="heading heading-pri">Edit enlisting</span>
+								</div>
+							</div>
+							<input type="radio" id="edit" value="edit" name="enlistType" disabled formControlName="enlistType">
+							<div class="control-indicator"></div>
+						</label>
+					</div> -->
+				</div>
+				<nav>
+					<div class="container">
+						<div class="row">
+							<div class="col-lg-1"></div>
+							<div class="col-lg-6">
+								<span class="line"></span>
+								<section class="clearfix">
+									<button class="finish">
+										<a class="button button-dark" (click)="onProceed()">Proceed</a>
+									</button>
+								</section>
+							</div>
+						</div>
+					</div>
+				</nav>
+			</form>
+		</div>
+	</div>
+</div>

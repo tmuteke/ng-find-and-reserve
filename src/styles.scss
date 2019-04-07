@@ -1,5 +1,6 @@
 /* You can add global styles to this file, and also import other style files */
 
+@import url("https://fonts.googleapis.com/icon?family=Material+Icons");
 @import 'assets/global-sass-files/colours';
 @import 'assets/global-sass-files/selectors';
 @import 'assets/global-sass-files/buttons';
@@ -119,7 +120,7 @@ body {
 			border: 1px solid $teal50 !important;
 			outline: none !important;
 			box-shadow: inset 0 0 2px $tealA100,
-							0 0 2px $tealA100;
+				0 0 2px $tealA100;
 		}
 	}
 
@@ -134,14 +135,14 @@ body {
 			border: 1px solid $teal50 !important;
 			outline: none !important;
 			box-shadow: inset 0 0 2px $tealA100,
-							0 0 2px $tealA100;
+				0 0 2px $tealA100;
 		}
 
 		&.ng-invalid.ng-dirty {
 			border: 1px solid $red200 !important;
 			outline: none !important;
 			box-shadow: inset 0 0 2px $red400,
-							0 0 2px $red400;
+				0 0 2px $red400;
 		}
 	}
 
@@ -234,12 +235,13 @@ body {
 		display: block !important;
 		font-family: "Gotham Medium", sans-serif;
 		margin-top: 5px;
-		margin-bottom: 5px;	
+		margin-bottom: 5px;
 		font-weight: 400;
 
 
 		&.heading-pri {
 			font-size: 24px;
+			color: $blue_gray700;
 		}
 
 		&.heading-sec {
@@ -247,7 +249,7 @@ body {
 			color: $blue_gray500;
 		}
 
-		&.heading-ter{
+		&.heading-ter {
 			font-size: 16px;
 			color: $blue_gray300;
 		}

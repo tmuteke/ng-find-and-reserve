@@ -2,15 +2,60 @@
 
 form,
 .form {
-	padding: 1rem 1rem 0;
-	width: 600px;
-	margin: 0 auto;
+	padding: 3rem 3rem 0;
 
 	.details {
-		padding: 0 1rem 6rem;
+		width: 550px;
+		margin: 1rem auto 8rem;
+
+		.group {
+			background-color: $white;
+			border-radius: 3px;
+			box-shadow: 0 1px 2px $gray400;
+			margin: 8px 0;
+			transition: transform 300ms, box-shadow 300ms;
+			padding-bottom: 1rem;
+
+			&:hover {
+				transform: scale(1.005);
+				box-shadow: 2px 2px 4px rgba($color: $gray400, $alpha: 0.5);
+			}
+
+			.header {
+				padding: 1rem;
+				background-color: $teal400;
+				border-top-left-radius: 3px;
+				border-top-right-radius: 3px;
+
+				.heading-pri {
+					color: $white;
+				}
+
+				.heading-sec {
+					color: rgba($color: $white, $alpha: 0.75)
+				}
+			}
+
+			section {
+				padding-left: 1rem;
+				padding-right: 1rem;
+				margin: 2.5rem 0;
+			}
+
+			h6 {
+				color: $blue_gray300;
+			}
+
+			input[type="number"] {
+				width: 100px;
+			}
+
+			textarea {
+				width: 400px;
+			}
+		}
 
 		.policy-container {
-			width: 95%;
 
 			.policy,
 			.radio-controls-container {
@@ -31,54 +76,6 @@ form,
 				}
 			}
 		}
-
-		h4 {
-			font-family: "Gotham Medium";
-			margin: 2rem 0 3rem;
-		}
-
-		h6 {
-			color: $blue_gray300;
-		}
-
-		input[type="number"] {
-			width: 100px;
-		}
-
-		section {
-			margin: 2.5rem 0;
-
-			h3 {
-				background-color: $blue_gray50;
-				color: $blue_gray400;
-				text-align: center;
-				padding: 1rem;
-				border-radius: 5px;
-			}
-		}
-
-		i {
-			color: $blue_gray700;
-			font-size: 1.4rem;
-			font-weight: lighter;
-			cursor: pointer;
-			position: relative;
-			top: 3px;
-
-			&.fa-minus-square-o {
-				margin-right: 0.5rem;
-			}
-
-			&.fa-plus-square-o {
-				margin-left: 0.5rem;
-			}
-		}
-
-		.number {
-			display: inline-block;
-			width: 50px;
-			text-align: center;
-		}
 	}
 
 	nav {
@@ -87,10 +84,9 @@ form,
 		bottom: 0;
 		width: 650px;
 		margin: 0 auto;
-
-		.line {
-			margin-bottom: 0;
-		}
+		left: 50%;
+		transform: translateX(-50%);
+		box-shadow: 0px -1px 2px rgba($color: $gray400, $alpha: 0.5);
 
 		section {
 			padding: .50rem 1rem .75rem;

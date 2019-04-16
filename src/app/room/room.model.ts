@@ -1,4 +1,5 @@
 export class Room {
+	public id: string;
 	public roomHostel: string;
 	public roomNumber: number;
 	public roomFee: number;

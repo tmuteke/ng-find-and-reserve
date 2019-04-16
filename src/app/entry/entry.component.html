@@ -4,21 +4,16 @@
 		<app-header></app-header>
 		<section class="container-fluid">
 			<span>Student accommodation.</span>
-			<p>
-				Get student accommodation for as little as $90/month
-				<br>
-				Or, enlist your property and start earning today!
-			</p>
-			<div>
-				<a class="button button-primary" href="#explore">Explore Accommodation</a>
-				<a class="button button-light-outline" [routerLink]="['/select-enlisting']">Enlist to Accommodate</a>
+			<div class="links">
+				<a class="button button-warn" href="#on-campus">On-Campus Accommodation</a>
+				<a class="button button-primary" href="#off-campus">Off-Campus Accommodation</a>
 			</div>
 		</section>
 	</div>
-	<section class="on-campus-section">
+	<section class="on-campus-section" id="on-campus">
 		<div class="container">
 			<div class="header">
-				<h3>Hey, students...</h3>
+				<h3>Did You Know?</h3>
 				<span class="heading heading-sec">You can now make your applications for on-campus accommodation
 					here.</span>
 				<p></p>
@@ -43,22 +38,24 @@
 				</div>
 			</div>
 			<div class="available-rooms">
-				<span class="heading heading-sec">Available rooms</span>
-				<app-room-list></app-room-list>
+				<h4>Available Rooms</h4>
+				<section>
+					<app-room-list></app-room-list>
+				</section>
 			</div>
 		</div>
 	</section>
-	<section class="off-campus-section">
+	<section class="off-campus-section" id="off-campus">
 		<div class="container">
 			<div class="header">
-				<h3>Didn't manage to secure on campus accommodation?</h3>
+				<h3>Couldn't secure on campus accommodation?</h3>
 				<span class="heading heading-sec">Don't stress! You can also look for off-campus accommodation and make
 					reservations in your own
 					comfort...
 				</span>
 			</div>
 			<div class="available-rooms">
-				<span class="heading heading-sec">Available off-campus accommodation</span>
+				<h4>Explore Off-Campus Accommodation</h4>
 				<app-property-list></app-property-list>
 			</div>
 		</div>

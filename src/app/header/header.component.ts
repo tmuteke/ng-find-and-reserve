@@ -1,40 +1,27 @@
-import { Component, OnInit } from "@angular/core";
-import { LoginService } from "../auth/login/login.service";
-import { ActivatedRoute, Router } from "@angular/router";
+import { Component, OnInit, OnDestroy } from "@angular/core";
+import { AuthService } from "../auth/auth.service";
+import { Subscription } from "rxjs";
 
 @Component({
 	selector: "app-header",
 	templateUrl: "./header.component.html",
 	styleUrls: ["./header.component.scss"]
 })
-export class HeaderComponent implements OnInit {
-	private _isLoggedOn = false;
-	private _isLoggingIn = false;
+export class HeaderComponent implements OnInit, OnDestroy {
+	isAuthenticated = false;
+	private authSubscription: Subscription;
 
-	constructor(
-		private loginService: LoginService,
-		private route: ActivatedRoute,
-		private router: Router
-	) {}
+	constructor(private authService: AuthService) {}
 
 	ngOnInit(): void {
-		this._isLoggedOn = this.loginService.isLoggedIn;
-		// this.loginService.isLoggingIn
-		// 	.subscribe((loggingInStatus: boolean) => {
-		// 		this._isLoggingIn = loggingInStatus;
-		// 	});
+		this.authSubscription = this.authService.isAuthenticated.subscribe(
+			isAuthenticated => {
+				this.isAuthenticated = isAuthenticated;
+			}
+		);
 	}
 
-	get isLoggedOn(): boolean {
-		return this._isLoggedOn;
-	}
-
-	get isLoggingIn(): boolean {
-		return this._isLoggingIn;
-	}
-
-	public onLogin(): void {
-		this.loginService.isLoggingIn.next("FUCK YOU!");
-		this.router.navigate(["/login"]);
+	ngOnDestroy(): void {
+		this.authSubscription.unsubscribe();
 	}
 }

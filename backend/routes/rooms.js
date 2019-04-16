@@ -30,24 +30,24 @@ router.get('', (req, res, next) => {
 });
 
 router.get('/:id', (req, res, next) => {
-	Room.findById(req.params.id).then(property => {
-		if (property) {
-			res.status(200).json(property);
+	Room.findById(req.params.id).then(room => {
+		if (room) {
+			res.status(200).json(room);
 		} else {
 			res.status(404).json({
-				message: 'Property not found!'
+				message: 'Room not found!'
 			});
 		}
 	});
 });
 
-router.delete('/api/posts/:id', (req, res, next) => {
-	Post.deleteOne({
+router.delete('/:id', (req, res, next) => {
+	Room.deleteOne({
 		_id: req.params.id,
 	}).then((result) => {
 		console.log(result);
 		res.status(200).json({
-			message: 'Post deleted!',
+			message: 'Room deleted!',
 		});
 	});
 });

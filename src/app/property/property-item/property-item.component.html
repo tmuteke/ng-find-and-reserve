@@ -1,9 +1,10 @@
-<a href="">
+<a [routerLink]="['/property', property.id, 'details']">
 	<section class="image-container">
 		<img src="../../../assets/images/image_03.jpg" alt="preview" class="img-fluid">
 	</section>
 	<section class="data">
-		<span class="heading heading-sec address">{{ property.address.houseNumber }} {{ property.address.street }} &ndash;
+		<span class="heading heading-sec address">{{ property.address.houseNumber }}
+			{{ property.address.street }} &ndash;
 			{{ property.address.area }}, {{ property.address.city}}</span>
 		<span class="heading heading-pri">${{ property.rent }} per month</span>
 		<span class="line"></span>
@@ -13,5 +14,12 @@
 		<cite class="heading heading-ter">&mdash; {{ property.landlord.name.first }}
 			{{ property.landlord.name.last }}</cite>
 		<span class="line"></span>
+	</section>
+	<section class="rating">
+		<i class="fa" appRating [rating1]="property.rating"></i>
+		<i class="fa" appRating [rating2]="property.rating"></i>
+		<i class="fa" appRating [rating3]="property.rating"></i>
+		<i class="fa" appRating [rating4]="property.rating"></i>
+		<i class="fa" appRating [rating5]="property.rating"></i>
 	</section>
 </a>

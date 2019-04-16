@@ -66,6 +66,22 @@ export class RoomService {
 			});
 	}
 
+	public deleteRoom(id: string): void {
+		this.http.delete<{
+			_id: string;
+			roomHostel: string;
+			roomNumber: number;
+			roomFee: number;
+			genderAccommodated: string;
+			amenities: {
+				essential: Array<any>;
+				safety: Array<any>;
+			};
+			spaces: Array<any>;
+			policies: Array<any>;
+		}>("http://localhost:3000/api/rooms/" + id);
+	}
+
 	getRoomUpdateListener() {
 		return this.roomsUpdated.asObservable();
 	}

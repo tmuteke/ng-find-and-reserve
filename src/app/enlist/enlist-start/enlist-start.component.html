@@ -1,29 +1,21 @@
-<header>
-	<nav class="container-fluid clearfix">
-		<span id="logo" appAbril><a routerLink="/">Find & Reserve</a></span>
-	</nav>
-</header>
-<div class="container">
-	<div class="row">
-		<div class="col-lg-1"></div>
-		<div class="col-lg-6 col-md-8 col-xs-4">
-			<form>
-				<div class="details">
-					<h4>Select an option below</h4>
-					<div class="control-container">
-						<label class="control control-radio" for="new">
-							<div class="label-text clearfix">
-								<div>
-									<div class="img"></div>
-									<span class="heading heading-pri">Enlist a new house</span>
-								</div>
-							</div>
-							<input type="radio" id="new" value="new" name="enlistType" checked>
-							<div class="control-indicator"></div>
-						</label>
+<app-header></app-header>
+<form>
+	<div class="details">
+		<h4>Select an option below</h4>
+		<div class="control-container">
+			<label class="control control-radio" for="new">
+				<div class="label-text clearfix">
+					<div>
+						<div class="img"></div>
+						<span class="heading heading-pri">Enlist a new house</span>
 					</div>
-					<span class="line"></span>
-					<!-- <div class="control-container">
+				</div>
+				<input type="radio" id="new" value="new" name="enlistType" checked>
+				<div class="control-indicator"></div>
+			</label>
+		</div>
+		<span class="line"></span>
+		<!-- <div class="control-container">
 						<label class="control control-radio" for="continue">
 							<div class="label-text clearfix">
 								<div>
@@ -49,23 +41,12 @@
 							<div class="control-indicator"></div>
 						</label>
 					</div> -->
-				</div>
-				<nav>
-					<div class="container">
-						<div class="row">
-							<div class="col-lg-1"></div>
-							<div class="col-lg-6">
-								<span class="line"></span>
-								<section class="clearfix">
-									<button class="finish">
-										<a class="button button-dark" (click)="onProceed()">Proceed</a>
-									</button>
-								</section>
-							</div>
-						</div>
-					</div>
-				</nav>
-			</form>
-		</div>
 	</div>
-</div>
+	<nav>
+		<section class="clearfix">
+			<button class="finish">
+				<a class="button button-dark" (click)="onProceed()">Proceed</a>
+			</button>
+		</section>
+	</nav>
+</form>

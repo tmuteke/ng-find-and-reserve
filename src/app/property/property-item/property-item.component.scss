@@ -1,21 +1,29 @@
-@import '../../../assets/global-sass-files/colours';
+@import '../../../assets/sass/colours';
 
 a {
-	display: inline-flex;
-	flex-direction: column;
 	background-color: $white;
 	border-radius: 3px;
-	box-shadow: 4px 4px 10px $gray400;
-	margin: 1rem 1.6666666%;
-	transition: transform 300ms;
-	width: 30%;
+	box-shadow: 0 1px 2px $gray400;
+	margin: 8px 0;
+	transition: transform 300ms, box-shadow 300ms;
+	display: inline-block;
+	column-break-inside: avoid;
+	max-width: 360px;
 
 	&:hover {
 		transform: scale(1.005);
+		box-shadow: 2px 2px 4px rgba($color: $gray400, $alpha: 0.5);
+	}
+
+	.image-container {
+		img {
+			border-top-left-radius: 3px;
+			border-top-right-radius: 3px;
+		}
 	}
 
 	.data {
-		padding: 1rem;
+		padding: 1rem 1rem 0;
 
 		.address {
 			color: $teal400 !important;
@@ -38,6 +46,16 @@ a {
 
 		span {
 			display: block;
+		}
+	}
+
+	.rating {
+		padding: 0 4px 8px;
+		text-align: center;
+
+		i {
+			margin: 2px;
+			font-size: 20px;
 		}
 	}
 }

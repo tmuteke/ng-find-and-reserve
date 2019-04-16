@@ -1,5 +1,5 @@
-<a href="">
-	<section>
+<a [routerLink]="['/room', room?.id, 'reservation']">
+	<section class="header">
 		<span class="heading heading-pri">Room {{ room?.roomNumber }}, {{ room?.roomHostel }}</span>
 		<span class="heading heading-sec">${{ room?.roomFee }}.00 per semester</span>
 	</section>

@@ -1,8 +1,10 @@
 <form [formGroup]="enlistForm" (ngSubmit)="onEnlist()">
 	<div class="details">
 		<section class="group room" id="room">
-			<h3>Room Specifications</h3>
-			<h4>Specify room details</h4>
+			<div class="header">
+				<span class="heading heading-pri">Room Specifications</span>
+				<span class="heading heading-sec">Specify room details</span>
+			</div>
 			<section>
 				<h6>Room Hostel</h6>
 				<select formControlName="roomHostel">
@@ -49,7 +51,10 @@
 			</section>
 		</section>
 		<section class="group amenities" id="amenities">
-			<h3>Available Amenities</h3>
+			<div class="header">
+				<span class="heading heading-pri">Available Amenties</span>
+				<span class="heading heading-sec">Useful features or facilities at your place</span>
+			</div>
 			<section>
 				<h6>Essential & Convenient Amenities</h6>
 				<div formGroupName="essentials">
@@ -141,8 +146,10 @@
 			</section>
 		</section>
 		<section class="group spaces" id="spaces">
-			<h3>Usable Spaces</h3>
-			<h4>What other spaces can students use</h4>
+			<div class="header">
+				<span class="heading heading-pri">Usable Spaces</span>
+				<span class="heading heading-sec">What other spaces can students use</span>
+			</div>
 			<section>
 				<h6>Usable spaces</h6>
 				<div formGroupName="spaces">
@@ -192,8 +199,10 @@
 			</section>
 		</section>
 		<section class="group policies" id="policies">
-			<h3>Policies</h3>
-			<h4>Add policies for the students</h4>
+			<div class="header">
+				<span class="heading heading-pri">Policies</span>
+				<span class="heading heading-sec">Add policies for the students</span>
+			</div>
 			<div formGroupName="policies">
 				<section>
 					<div class="policy-container clearfix">
@@ -319,7 +328,6 @@
 		</section>
 	</div>
 	<nav>
-		<span class="line"></span>
 		<section>
 			<div class="cancel">
 				<a routerLink="/select-enlisting"><i class="fa fa-times"></i>Cancel</a>

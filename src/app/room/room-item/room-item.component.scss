@@ -1,24 +1,37 @@
-@import '../../../assets/global-sass-files/colours';
+@import '../../../assets/sass/colours';
 
 a {
-	display: flex;
 	background-color: $white;
 	border-radius: 3px;
-	box-shadow: 4px 4px 10px $gray400;
-	margin-top: 8px;
-	margin-bottom: 8px;
-	transition: transform 300ms;
+	box-shadow: 0 1px 2px $gray400;
+	margin: 8px 0;
+	transition: transform 300ms, box-shadow 300ms;
+	display: inline-block;
+	-webkit-column-break-inside: avoid;
 
 	&:hover {
 		transform: scale(1.005);
+		box-shadow: 2px 2px 4px rgba($color: $gray400, $alpha: 0.5);
 	}
 
 	section {
 		padding: 1rem;
-		width: 25%;
+
+		&.header {
+			background-color: $amber400;
+			border-top-left-radius: 3px;
+			border-top-right-radius: 3px;
+
+			.heading-sec {
+				color: rgba($color: $white, $alpha: 0.75);
+			}
+
+			.heading-pri {
+				color: $white;
+			}
+		}
 
 		&.data {
-			width: 75%;
 			color: $blue_gray700;
 
 			.spaces,

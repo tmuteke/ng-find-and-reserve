@@ -1,6 +1,5 @@
 import { Component, OnInit } from "@angular/core";
-import { LoginService } from "./login.service";
-import { FormControl, FormGroup, Validators } from "@angular/forms";
+import { FormControl, FormGroup } from "@angular/forms";
 import { Router } from "@angular/router";
 import { AuthService } from "../auth.service";
 import { User } from "../user.model";
@@ -11,26 +10,27 @@ import { User } from "../user.model";
 	styleUrls: ["./login.component.scss"]
 })
 export class LoginComponent implements OnInit {
-	public loginForm: FormGroup;
+	loginForm: FormGroup;
 	private email: string;
 	private password: string;
 
 	constructor(private authService: AuthService, private router: Router) {}
 
-	public ngOnInit(): void {
+	ngOnInit(): void {
 		this.loginForm = new FormGroup({
 			email: new FormControl(null),
 			password: new FormControl(null)
 		});
 	}
 
-	public onSubmitLogin(): void {
+	onSubmitLogin(): void {
 		this.populateFields();
 		if (this.loginForm.valid) {
 			const user: User = new User();
 			user.email = this.email;
 			user.password = this.password;
 			this.authService.login(user);
+			this.router.navigate(["/"]);
 		}
 	}
 

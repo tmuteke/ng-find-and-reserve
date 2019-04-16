@@ -42,7 +42,7 @@ export class EnlistComponent implements OnInit {
 		private toastr: ToastrService
 	) {}
 
-	ngOnInit(): void {
+	public ngOnInit(): void {
 		this.enlistForm = new FormGroup({
 			propertyType: new FormControl("Rooms", Validators.required),
 			roomType: new FormControl("shared rooms", Validators.required),
@@ -106,7 +106,7 @@ export class EnlistComponent implements OnInit {
 
 	public onEnlist(): void {
 		this.populateFormFields();
-		if (this.enlistForm.valid) {
+		if (this.enlistForm) {
 			const property = new Property();
 			property.landlord = {
 				name: { first: "Tafadzwa", last: "Muteke" },
@@ -137,12 +137,12 @@ export class EnlistComponent implements OnInit {
 			property.description = this.description;
 			property.rent = this.rent;
 			(property.rating = 0), (property.reviews = 0);
-			this.toastr.success(
-				"Your place has been enlisted successfully",
-				"Success!"
-			);
+			// this.toastr.success(
+			// 	"Your place has been enlisted successfully",
+			// 	"Success!"
+			// );
 			this.propertyService.addProperty(property);
-			this.router.navigate(["finish"], { relativeTo: this.route });
+			// this.router.navigate(["finish"], { relativeTo: this.route });
 		} else {
 			this.toastr.error("Make sure all fields are filled.", "Error!");
 		}

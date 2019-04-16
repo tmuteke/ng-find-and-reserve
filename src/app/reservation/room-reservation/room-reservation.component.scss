@@ -1,0 +1,20 @@
+@import "../../../assets/sass/enlisting";
+
+.header {
+	background-color: $amber400 !important;
+}
+
+.room-details {
+	h6 {
+		display: inline;
+	}
+}
+
+.policies {
+	ul {
+		li {
+			list-style-type: circle;
+			font-weight: 700;
+		}
+	}
+}

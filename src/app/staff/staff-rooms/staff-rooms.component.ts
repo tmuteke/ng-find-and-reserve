@@ -2,6 +2,7 @@ import { Component, OnInit, OnDestroy } from "@angular/core";
 import { RoomService } from "../../room/room.service";
 import { Room } from "../../room/room.model";
 import { Subscription } from "rxjs";
+import { Router, ActivatedRoute } from "@angular/router";
 
 @Component({
 	selector: "app-staff-rooms",
@@ -9,12 +10,16 @@ import { Subscription } from "rxjs";
 	styleUrls: ["./staff-rooms.component.scss"]
 })
 export class StaffRoomsComponent implements OnInit, OnDestroy {
-	public rooms: Room[] = [];
+	rooms: Room[] = [];
 	private roomsSub: Subscription;
 
-	constructor(private roomService: RoomService) {}
+	constructor(
+		private roomService: RoomService,
+		private router: Router,
+		private route: ActivatedRoute
+	) {}
 
-	public ngOnInit(): void {
+	ngOnInit(): void {
 		this.roomService.getRooms();
 		this.roomsSub = this.roomService
 			.getRoomUpdateListener()
@@ -23,7 +28,11 @@ export class StaffRoomsComponent implements OnInit, OnDestroy {
 			});
 	}
 
-	public ngOnDestroy(): void {
+	onEdit(id: string): void {
+		this.router.navigate([id, "edit"], { relativeTo: this.route });
+	}
+
+	ngOnDestroy(): void {
 		this.roomsSub.unsubscribe();
 	}
 }

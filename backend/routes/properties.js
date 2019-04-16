@@ -1,5 +1,6 @@
 const express = require("express");
 const multer = require("multer");
+const checkAuth = require("../middleware/check-auth");
 const Property = require('../models/property');
 const router = express.Router();
 const MIME_TYPE_MAP = {
@@ -23,7 +24,9 @@ const storage = multer.diskStorage({
 	}
 });
 
-router.post('', multer({storage: storage}).single("image"), (req, res, next) => {
+router.post('', checkAuth, multer({
+	storage: storage
+}).single("image"), (req, res, next) => {
 	const property = new Property({
 		landlord: req.body.landlord,
 		address: req.body.address,
@@ -71,7 +74,7 @@ router.get('/:id', (req, res, next) => {
 	});
 });
 
-router.delete('/api/posts/:id', (req, res, next) => {
+router.delete('/:id', checkAuth, (req, res, next) => {
 	Post.deleteOne({
 		_id: req.params.id,
 	}).then((result) => {

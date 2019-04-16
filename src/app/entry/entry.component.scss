@@ -1,9 +1,9 @@
-@import '../../assets/global-sass-files/colours';
+@import '../../assets/sass/colours';
 
 .hero {
 	width: 100%;
+	height: 75vh;
 	box-sizing: border-box;
-	padding: 0 0 15rem;
 	text-align: center;
 	color: #fff;
 	background: linear-gradient(rgba(0, 0, 0, .25), rgba(0, 0, 0, .5)),
@@ -11,7 +11,10 @@
 	background-size: cover;
 
 	section {
-		padding-top: 7rem;
+		position: relative;
+		top: 40%;
+		left: 50%;
+		transform: translate(-50%, -50%);
 
 		span {
 			font-size: 4.5rem;
@@ -21,17 +24,16 @@
 			letter-spacing: -1px;
 		}
 
-		p {
-			font-size: 2rem;
-			margin-top: 2.5rem;
-			line-height: 1.3;
+		div {
+			&.links {
+				margin-top: 3rem;
+			}
 		}
 	}
 }
 
 .on-campus-section {
 	padding-bottom: 3rem;
-	background-color: $amber50;
 
 	.header {
 		padding-top: 5%;
@@ -78,7 +80,7 @@
 
 .off-campus-section {
 	padding-bottom: 3rem;
-	background-color: $teal50;
+	background-color: $gray50;
 
 	.header {
 		padding-top: 5%;

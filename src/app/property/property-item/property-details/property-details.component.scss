@@ -1,4 +1,4 @@
-@import '../../../assets/global-sass-files/colours';
+@import '../../../../assets/sass/colours';
 
 .property-hero {
 	width: 100%;
@@ -6,7 +6,7 @@
 	box-sizing: border-box;
 	text-align: center;
 	color: #fff;
-	background: url(../../../assets/images/image_03.jpg) no-repeat center;
+	background: url(../../../../assets/images/image_03.jpg) no-repeat center;
 	background-size: cover;
 }
 

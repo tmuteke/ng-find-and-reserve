@@ -1,50 +1,26 @@
-<app-header></app-header>
-<form [formGroup]="enlistForm" (ngSubmit)="onEnlist()">
+<form [formGroup]="updateForm" (ngSubmit)="onEnlist()">
 	<div class="details">
 		<section class="group room" id="room">
 			<div class="header">
 				<span class="heading heading-pri">Room Specifications</span>
-				<span class="heading heading-sec">What are you offering students</span>
+				<span class="heading heading-sec">Specify room details</span>
 			</div>
 			<section>
-				<h6>Select your property type</h6>
-				<select formControlName="propertyType">
-					<option value="Apartment">Apartment</option>
-					<option value="Full House">Full House</option>
-					<option value="Rooms">Rooms</option>
+				<h6>Room Hostel</h6>
+				<select formControlName="roomHostel">
+					<option value="Hostel 1">Hostel 1</option>
+					<option value="Hostel 2">Hostel 2</option>
+					<option value="Hostel 3">Hostel 3</option>
+					<option value="Hostel 4">Hostel 4</option>
 				</select>
 			</section>
 			<section>
-				<h6>What is the student getting?</h6>
-				<select formControlName="roomType">
-					<option value="entire place">Entire Place</option>
-					<option value="private rooms">Private Rooms</option>
-					<option value="shared rooms">Shared Rooms</option>
-				</select>
+				<h6>Room Number</h6>
+				<input type="number" name="" id="" min="1" formControlName="roomNumber">
 			</section>
 			<section>
-				<h6>How much will the students be paying per month? ($)</h6>
-				<input type="number" name="" id="" min="1" formControlName="rent">
-			</section>
-			<section>
-				<h6>Is this set up as a dedicated student accommodation space?</h6>
-				<div class="control-container">
-					<label class="control control-radio" for="true">
-						<div class="label-text"><span>Yes, it's very much dedicated for student accommodation</span>
-						</div>
-						<input type="radio" id="true" value="true" name="isDedicatedSetup" checked
-							formControlName="isDedicatedSetup">
-						<div class="control-indicator"></div>
-					</label>
-				</div>
-				<div class="control-container">
-					<label class="control control-radio" for="false">
-						<div class="label-text"><span>No, this space is for other personal business</span></div>
-						<input type="radio" id="false" value="false" name="isDedicatedSetup"
-							formControlName="isDedicatedSetup">
-						<div class="control-indicator"></div>
-					</label>
-				</div>
+				<h6>How much will the students be paying per semester? ($)</h6>
+				<input type="number" name="" id="" min="1" formControlName="roomFee">
 			</section>
 			<section>
 				<h6>Gender accommodated</h6>
@@ -72,65 +48,6 @@
 						<div class="control-indicator"></div>
 					</label>
 				</div>
-			</section>
-		</section>
-		<section class="group students" id="students">
-			<div class="header">
-				<span class="heading heading-pri">Students</span>
-				<span class="heading heading-sec">How many students can your place accommodate</span>
-			</div>
-			<section>
-				<h6>Number of students</h6>
-				<input type="number" name="numberOfStudents" id="numberOfStudents" formControlName="numberOfStudents"
-					min="1">
-			</section>
-			<section>
-				<h6>How many rooms can students use?</h6>
-				<select formControlName="numberOfRooms">
-					<option value=1>1 room</option>
-					<option value=2>2 rooms</option>
-					<option value=3>3 rooms</option>
-					<option value=4>4 rooms</option>
-					<option value=5>5 rooms</option>
-					<option value=6>6 rooms</option>
-					<option value=7>7 rooms</option>
-					<option value=8>8 rooms</option>
-					<option value=9>9 rooms</option>
-					<option value=10>10 rooms</option>
-					<option value=11>11 rooms</option>
-					<option value=12>12 rooms</option>
-					<option value=13>13 rooms</option>
-					<option value=14>14 rooms</option>
-					<option value=15>15 rooms</option>
-				</select>
-			</section>
-			<section>
-				<h6>How many bathrooms are available?</h6>
-				<input type="number" name="numberOfBathrooms" id="numberOfBathrooms" formControlName="numberOfBathrooms"
-					min="1">
-			</section>
-		</section>
-		<section class="group address" id="address">
-			<div class="header">
-				<span class="heading heading-pri">Address</span>
-				<span class="heading heading-sec">Help
-					students locate you place, precisely</span>
-			</div>
-			<section>
-				<h6>House Number</h6>
-				<input type="number" name="houseNumber" id="houseNumber" formControlName="houseNumber" min="1">
-			</section>
-			<section>
-				<h6>Street/Road Name</h6>
-				<input type="text" name="street" id="street" formControlName="street" placeholder="e.g. Caledon Road">
-			</section>
-			<section>
-				<h6>Area</h6>
-				<input type="text" name="area" id="area" formControlName="area" placeholder="e.g. Belvedere">
-			</section>
-			<section>
-				<h6>City</h6>
-				<input type="text" name="city" id="city" formControlName="city" placeholder="e.g. Harare">
 			</section>
 		</section>
 		<section class="group amenities" id="amenities">
@@ -281,40 +198,6 @@
 				</div>
 			</section>
 		</section>
-		<section class="group pictures" id="pictures">
-			<div class="header">
-				<span class="heading heading-pri">Upload Photos</span>
-				<span class="heading heading-sec">Select some pictures to show what place looks like</span>
-			</div>
-			<button type="button" class="button button-dark" (click)="upload.click()"><i class="fa fa-camera right"></i>
-				Upload
-				Pictures</button>
-			<input multiple type="file" name="uploadImage" id="uploadImage" style="display: none" #upload
-				(change)="onImagePicked($event)">
-			<div class="image-preview" *ngIf="imagePreview !== '' && imagePreview && enlistForm.get('image').valid"><img
-					[src]="imagePreview" alt="Image upload"></div>
-		</section>
-		<section class="group description" id="description">
-			<div class="header">
-				<span class="heading heading-pri">Place Description</span>
-				<span class="heading heading-sec">Briefly describe your place</span>
-			</div>
-			<section>
-				<h6>Add brief description</h6>
-				<textarea name="description" id="description" formControlName="description" cols="30" rows="10"></textarea>
-			</section>
-		</section>
-		<section class="group phone" id="phone">
-			<div class="header">
-				<span class="heading heading-pri">Contact</span>
-				<span class="heading heading-sec">Add your phone number</span>
-			</div>
-			<section>
-				<h6>This phone number will enable students to contact you and probably make payments to. However,
-					you can always specify and modify them accordingly</h6>
-				<input type="text" name="phone" id="phone" formControlName="phone" placeholder="e.g. 07xxxxxxxx">
-			</section>
-		</section>
 		<section class="group policies" id="policies">
 			<div class="header">
 				<span class="heading heading-pri">Policies</span>
@@ -425,18 +308,10 @@
 						</label>
 					</div>
 					<div class="control-container">
-						<label class="control control-checkbox" for="eventsHosted">
-							<div class="label-text"><span>Landlord hosts events/parties</span></div>
-							<input type="checkbox" id="eventsHosted" value="Landlord hosts events/parties"
-								formControlName="eventsHosted">
-							<div class="control-indicator"></div>
-						</label>
-					</div>
-					<div class="control-container">
-						<label class="control control-checkbox" for="hostPets">
-							<div class="label-text"><span>Pet(s) live on the property</span></div>
-							<input type="checkbox" id="hostPets" value="Pet(s) live on the property"
-								formControlName="hostPets">
+						<label class="control control-checkbox" for="campusPets">
+							<div class="label-text"><span>Pet(s) live on campus</span></div>
+							<input type="checkbox" id="campusPets" value="Pet(s) live on the property"
+								formControlName="campusPets">
 							<div class="control-indicator"></div>
 						</label>
 					</div>
@@ -455,10 +330,10 @@
 	<nav>
 		<section>
 			<div class="cancel">
-				<a routerLink="/select-enlisting"><i class="fa fa-times"></i>Cancel</a>
+				<a routerLink="/select-enlisting"><i class="fa fa-times"></i>Delete Room</a>
 			</div>
 			<div class="enlist">
-				<button type="submit"><a>Finish<i class="fa fa-check"></i></a>
+				<button type="submit"><a>Update Room<i class="fa fa-check"></i></a>
 				</button>
 			</div>
 		</section>

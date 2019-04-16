@@ -1,7 +1,7 @@
 import { NgModule } from "@angular/core";
 import { RouterModule, Routes } from "@angular/router";
 
-import { PropertyDetailsComponent } from "./property/property-details/property-details.component";
+import { PropertyDetailsComponent } from "./property/property-item/property-details/property-details.component";
 import { LoginComponent } from "./auth/login/login.component";
 import { EntryComponent } from "./entry/entry.component";
 import { SignupComponent } from "./auth/signup/signup.component";
@@ -9,14 +9,13 @@ import { EnlistStartComponent } from "./enlist/enlist-start/enlist-start.compone
 import { NotFoundComponent } from "./not-found/not-found.component";
 import { EnlistComponent } from "./enlist/enlist.component";
 import { EnlistFinishComponent } from "./enlist/enlist-finish/enlist-finish.component";
-import { ReservationComponent } from "./reservation/reservation.component";
-import { ReservationDetailsComponent } from "./reservation/reservation-details/reservation-details.component";
-import { ReservationPoliciesComponent } from "./reservation/reservation-policies/reservation-policies.component";
-import { ReservationPaymentComponent } from "./reservation/reservation-payment/reservation-payment.component";
 import { StaffLoginComponent } from "./staff/auth/staff-login/staff-login.component";
 import { StaffRoomsComponent } from "./staff/staff-rooms/staff-rooms.component";
 import { StaffComponent } from "./staff/staff.component";
 import { StaffEnlistRoomComponent } from "./staff/staff-enlist-room/staff-enlist-room.component";
+import { PropertyReservationComponent } from "./reservation/property-reservation/property-reservation.component";
+import { RoomReservationComponent } from "./reservation/room-reservation/room-reservation.component";
+import { StaffRoomEditComponent } from "./staff/staff-room-edit/staff-room-edit.component";
 
 const routes: Routes = [
 	{
@@ -30,26 +29,11 @@ const routes: Routes = [
 	},
 	{
 		path: "property/:id/reservation",
-		component: ReservationComponent,
-		children: [
-			{
-				path: "details",
-				component: ReservationDetailsComponent
-			},
-			{
-				path: "policies",
-				component: ReservationPoliciesComponent
-			},
-			{
-				path: "payment",
-				component: ReservationPaymentComponent
-			},
-			{
-				path: "",
-				redirectTo: "details",
-				pathMatch: "full"
-			}
-		]
+		component: PropertyReservationComponent
+	},
+	{
+		path: "room/:id/reservation",
+		component: RoomReservationComponent
 	},
 	{
 		path: "login",
@@ -87,6 +71,10 @@ const routes: Routes = [
 			{
 				path: "rooms",
 				component: StaffRoomsComponent
+			},
+			{
+				path: "rooms/:id/edit",
+				component: StaffRoomEditComponent
 			},
 			{
 				path: "enlist-room",

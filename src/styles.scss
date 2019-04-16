@@ -1,9 +1,9 @@
 /* You can add global styles to this file, and also import other style files */
 
 @import url("https://fonts.googleapis.com/icon?family=Material+Icons");
-@import 'assets/global-sass-files/colours';
-@import 'assets/global-sass-files/selectors';
-@import 'assets/global-sass-files/buttons';
+@import 'assets/sass/colours';
+@import 'assets/sass/selectors';
+@import 'assets/sass/buttons';
 
 @font-face {
 	font-family: Ubuntu;
@@ -111,7 +111,6 @@ body {
 		transition: box-shadow 0.2s;
 		font-family: Ubuntu !important;
 		color: $blue_gray700;
-		width: 400px;
 		border: 1px solid $blue_gray100;
 		border-radius: 2px;
 		padding: 0 0.5rem;

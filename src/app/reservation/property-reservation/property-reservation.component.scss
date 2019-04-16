@@ -1,0 +1,16 @@
+@import "../../../assets/sass/enlisting";
+
+.place-details {
+	h6 {
+		display: inline;
+	}
+}
+
+.policies {
+	ul {
+		li {
+			list-style-type: circle;
+			font-weight: 700;
+		}
+	}
+}

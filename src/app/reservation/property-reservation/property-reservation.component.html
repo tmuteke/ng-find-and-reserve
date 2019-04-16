@@ -1,0 +1,113 @@
+<app-header></app-header>
+<form [formGroup]="propertyReservationForm" (ngSubmit)="onReserve()">
+	<div class="details">
+		<section class="group place-details" id="place-details">
+			<div class="header">
+				<span class="heading heading-pri">Place Details Specifications</span>
+				<span class="heading heading-sec">Essential details of the place you're booking</span>
+			</div>
+			<section>
+				<div>
+					<h6>Address: </h6><span>{{ property.address.houseNumber }} {{ property.address.street }}
+						{{ property.address.area }},
+						{{ property.address.city }}</span>
+				</div>
+				<div>
+					<h6>Rent: </h6><span>${{ property.rent }} per month</span>
+				</div>
+				<div>
+					<h6>Landlord: </h6><span>{{ property.landlord.name.first }} {{ property.landlord.name.last }}</span>
+				</div>
+			</section>
+		</section>
+		<section class="group student-details" id="student-details">
+			<div class="header">
+				<span class="heading heading-pri">Your Details</span>
+				<span class="heading heading-sec">Provide basic details about you below</span>
+			</div>
+			<section>
+				<h6>Registration Number</h6>
+				<input type="text" name="regNumber" id="regNumber" formControlName="regNumber" />
+			</section>
+			<section>
+				<h6>Fullname</h6>
+				<input type="text" name="name" id="name" formControlName="name" />
+			</section>
+			<section>
+				<h6>Academic Year</h6>
+				<div class="control-container">
+					<label class="control control-radio" for="one">
+						<div class="label-text">
+							<span>Part 1</span>
+						</div>
+						<input type="radio" id="one" value="Part 1" name="academicYear" formControlName="academicYear" />
+						<div class="control-indicator"></div>
+					</label>
+				</div>
+				<div class="control-container">
+					<label class="control control-radio" for="two">
+						<div class="label-text">
+							<span>Part 2</span>
+						</div>
+						<input type="radio" id="two" value="Part 2" name="academicYear" formControlName="academicYear" />
+						<div class="control-indicator"></div>
+					</label>
+				</div>
+				<div class="control-container">
+					<label class="control control-radio" for="three">
+						<div class="label-text"><span>Part 3</span></div>
+						<input type="radio" id="three" value="Part 3" name="academicYear" formControlName="academicYear" />
+						<div class="control-indicator"></div>
+					</label>
+				</div>
+				<div class="control-container">
+					<label class="control control-radio" for="four">
+						<div class="label-text"><span>Part 4</span></div>
+						<input type="radio" id="four" value="Part 4" name="academicYear" formControlName="academicYear" />
+						<div class="control-indicator"></div>
+					</label>
+				</div>
+			</section>
+			<section>
+				<h6>Gender</h6>
+				<div class="control-container">
+					<label class="control control-radio" for="female">
+						<div class="label-text"><span>Female</span></div>
+						<input type="radio" id="female" value="Female" name="gender" formControlName="gender" />
+						<div class="control-indicator"></div>
+					</label>
+				</div>
+				<div class="control-container">
+					<label class="control control-radio" for="male">
+						<div class="label-text"><span>Male</span></div>
+						<input type="radio" id="male" value="Male" name="gender" formControlName="gender" />
+						<div class="control-indicator"></div>
+					</label>
+				</div>
+			</section>
+		</section>
+		<section *ngIf="property.policies.length > 0" class="group policies" id="policies">
+			<div class="header">
+				<span class="heading heading-pri">Policies</span>
+				<span class="heading heading-sec">Policies to know about the place, by the landlord</span>
+			</div>
+			<section>
+				<ul>
+					<li *ngFor="let policy of property.policies">{{ policy }}</li>
+				</ul>
+			</section>
+		</section>
+	</div>
+	<nav>
+		<section>
+			<div class="cancel">
+				<a [routerLink]="['/property', property.id, 'details']"><i class="fa fa-times"></i>Cancel</a>
+			</div>
+			<div class="enlist">
+				<button type="submit">
+					<a>Sumbit<i class="fa fa-check"></i></a>
+				</button>
+			</div>
+		</section>
+	</nav>
+</form>

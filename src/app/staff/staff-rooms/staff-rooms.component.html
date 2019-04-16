@@ -11,8 +11,7 @@
 			<td>{{ room.roomNumber }}</td>
 			<td>${{ room.roomFee }}.00</td>
 			<td class="actions">
-				<span class="edit">Edit</span>
-				<span class="delete">Delete</span>
+				<span class="edit" (click)="onEdit(room.id)">Edit</span>
 			</td>
 		</tr>
 	</table>

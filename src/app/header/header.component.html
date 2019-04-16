@@ -1,14 +1,14 @@
-<header *ngIf="!isLoggedOn">
+<header>
 	<nav class="container-fluid cf">
 		<span id="logo" appAbril><a routerLink="/">Find & Reserve</a></span>
 		<div>
 			<h6><a [routerLink]="['/']" routerLinkActive="active" [routerLinkActiveOptions]="{exact: true}">Home</a></h6>
-			<h6><a [routerLink]="['/enlist']" routerLinkActive="active">Accommodate</a></h6>
-			<!-- <h6><a [routerLink]="['/']" [routerLinkActive]="active">Find & Reserve</a></h6> -->
-			<h6><a (click)="onLogin()" [routerLink]="['/login']" routerLinkActive="active">Login</a></h6>
+			<h6><a *ngIf="isAuthenticated" [routerLink]="['/select-enlisting']" routerLinkActive="active">Enlist to
+					Accommodate</a></h6>
+			<h6><a *ngIf="!isAuthenticated" [routerLink]="['/login']" routerLinkActive="active">Login</a></h6>
+			<h6><a *ngIf="!isAuthenticated" [routerLink]="['/signup']" [routerLinkActive]="active">Signup</a></h6>
+			<h6><a *ngIf="isAuthenticated">Profile</a></h6>
+			<h6><a *ngIf="isAuthenticated">Logout</a></h6>
 		</div>
 	</nav>
 </header>
-<app-student-header *ngIf="isLoggedOn"></app-student-header>
-<!--<app-login-header *ngIf="isLoggingIn"></app-login-header>-->
-<!--<app-landlord-header *ngIf="isLoggedOn"></app-landlord-header>-->

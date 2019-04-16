@@ -62,7 +62,7 @@
 					</div>
 				</section>
 				<section>
-					<section class="policies">
+					<section class="policies" *ngIf="property.policies.length > 0">
 						<span class="heading heading-ter">Rules and policies</span>
 						<span *ngFor="let policy of property?.policies">{{ policy }}</span>
 					</section>

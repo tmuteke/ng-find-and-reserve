@@ -1,4 +1,11 @@
-import { Component, OnInit, OnDestroy } from "@angular/core";
+import {
+	Component,
+	OnInit,
+	OnDestroy,
+	ViewChild,
+	ElementRef,
+	AfterViewInit
+} from "@angular/core";
 import { FormGroup, FormControl, Validators } from "@angular/forms";
 import { ToastrService } from "ngx-toastr";
 import { RoomService } from "src/app/room/room.service";
@@ -11,9 +18,10 @@ import { Subscription } from "rxjs";
 	templateUrl: "./staff-room-edit.component.html",
 	styleUrls: ["./staff-room-edit.component.scss"]
 })
-export class StaffRoomEditComponent implements OnInit, OnDestroy {
+export class StaffRoomEditComponent
+	implements OnInit, OnDestroy, AfterViewInit {
 	room: Room;
-	updateForm: FormGroup;
+	editForm: FormGroup;
 	private essentials = [];
 	private safeties = [];
 	private policies = [];
@@ -24,15 +32,15 @@ export class StaffRoomEditComponent implements OnInit, OnDestroy {
 	private genderAccommodated: string;
 	private id: string;
 	private roomSub: Subscription;
+	@ViewChild("roomHostel") private rh: ElementRef;
 
 	constructor(
 		private toastr: ToastrService,
 		private roomService: RoomService,
 		private router: Router,
 		private route: ActivatedRoute
-	) {}
-
-	ngOnInit(): void {
+	) {
+		console.log("construcrtor");
 		this.route.paramMap.subscribe((pm: ParamMap) => {
 			if (pm.has("id")) {
 				this.id = pm.get("id");
@@ -50,16 +58,16 @@ export class StaffRoomEditComponent implements OnInit, OnDestroy {
 				});
 			}
 		});
+	}
+
+	ngOnInit(): void {
 		console.log(this.id);
 		console.log(this.room);
-		this.updateForm = new FormGroup({
-			roomHostel: new FormControl(this.room.roomHostel, Validators.required),
-			roomNumber: new FormControl(this.room.roomNumber, Validators.required),
-			roomFee: new FormControl(this.room.roomFee, Validators.required),
-			genderAccommodated: new FormControl(
-				this.room.genderAccommodated,
-				Validators.required
-			),
+		this.editForm = new FormGroup({
+			roomHostel: new FormControl(null, Validators.required),
+			roomNumber: new FormControl(null, Validators.required),
+			roomFee: new FormControl(null, Validators.required),
+			genderAccommodated: new FormControl(null, Validators.required),
 			essentials: new FormGroup({
 				wifi: new FormControl(null),
 				tv: new FormControl(null),
@@ -98,115 +106,120 @@ export class StaffRoomEditComponent implements OnInit, OnDestroy {
 		this.toastr.toastrConfig.positionClass = "toast-top-center";
 	}
 
-	public onEnlist(): void {
-		this.populateFields();
-		if (this.updateForm.valid) {
-			const room: Room = new Room();
-			room.roomHostel = this.roomHostel;
-			room.roomNumber = this.roomNumber;
-			room.roomFee = this.roomFee;
-			room.genderAccommodated = this.genderAccommodated;
-			room.amenities = {
-				essential: this.essentials,
-				safety: this.safeties
-			};
-			room.spaces = this.spaces;
-			room.policies = this.policies;
+	ngAfterViewInit(): void {
+		console.log(this.rh.nativeElement.value);
+	}
 
-			this.toastr.success("Room has been added successfully", "Success!");
-			this.roomService.addRoom(room);
-			this.router.navigate(["staff", "dashboard"]);
-		} else {
-			this.toastr.success(
-				"Make sure all required fields are filled",
-				"Error!"
-			);
-		}
+	onUpdate(): void {
+		// this.populateFields();
+		// if (this.editForm.valid) {
+		// 	const room: Room = new Room();
+		// 	room.roomHostel = this.roomHostel;
+		// 	room.roomNumber = this.roomNumber;
+		// 	room.roomFee = this.roomFee;
+		// 	room.genderAccommodated = this.genderAccommodated;
+		// 	room.amenities = {
+		// 		essential: this.essentials,
+		// 		safety: this.safeties
+		// 	};
+		// 	room.spaces = this.spaces;
+		// 	room.policies = this.policies;
+
+		// 	this.toastr.success("Room has been added successfully", "Success!");
+		// 	this.roomService.addRoom(room);
+		// 	this.router.navigate(["staff", "dashboard"]);
+		// } else {
+		// 	this.toastr.success(
+		// 		"Make sure all required fields are filled",
+		// 		"Error!"
+		// 	);
+		// }
+		console.log(this.rh.nativeElement.value);
 	}
 
 	private populateFields(): void {
-		this.roomHostel = this.updateForm.get("roomHostel").value;
-		this.roomNumber = this.updateForm.get("roomNumber").value;
-		this.roomFee = this.updateForm.get("roomFee").value;
-		this.genderAccommodated = this.updateForm.get("genderAccommodated").value;
+		this.roomHostel = this.editForm.get("roomHostel").value;
+		this.roomNumber = this.editForm.get("roomNumber").value;
+		this.roomFee = this.editForm.get("roomFee").value;
+		this.genderAccommodated = this.editForm.get("genderAccommodated").value;
 
 		this.loadArrays();
 	}
 
 	private loadArrays(): void {
-		if (this.updateForm.get("essentials").get("wifi").value) {
+		if (this.editForm.get("essentials").get("wifi").value) {
 			this.essentials.push("WiFi");
 		}
-		if (this.updateForm.get("essentials").get("tv").value) {
+		if (this.editForm.get("essentials").get("tv").value) {
 			this.essentials.push("TV");
 		}
-		if (this.updateForm.get("essentials").get("study").value) {
+		if (this.editForm.get("essentials").get("study").value) {
 			this.essentials.push("Study area");
 		}
-		if (this.updateForm.get("essentials").get("toiletries").value) {
+		if (this.editForm.get("essentials").get("toiletries").value) {
 			this.essentials.push("Toiletries");
 		}
-		if (this.updateForm.get("essentials").get("closet").value) {
+		if (this.editForm.get("essentials").get("closet").value) {
 			this.essentials.push("Closet/wardrobe");
 		}
 
-		if (this.updateForm.get("safeties").get("firstAid").value) {
+		if (this.editForm.get("safeties").get("firstAid").value) {
 			this.safeties.push("First aid kit");
 		}
-		if (this.updateForm.get("safeties").get("fireExtinguisher").value) {
+		if (this.editForm.get("safeties").get("fireExtinguisher").value) {
 			this.safeties.push("Fire extinguisher");
 		}
-		if (this.updateForm.get("safeties").get("roomLock").value) {
+		if (this.editForm.get("safeties").get("roomLock").value) {
 			this.safeties.push("Room lock");
 		}
-		if (this.updateForm.get("safeties").get("gateLock").value) {
+		if (this.editForm.get("safeties").get("gateLock").value) {
 			this.safeties.push("Gate lock");
 		}
-		if (this.updateForm.get("safeties").get("securityFence").value) {
+		if (this.editForm.get("safeties").get("securityFence").value) {
 			this.safeties.push("Security fence");
 		}
-		if (this.updateForm.get("safeties").get("guardDogs").value) {
+		if (this.editForm.get("safeties").get("guardDogs").value) {
 			this.safeties.push("Security guard and watch dogs");
 		}
 
-		if (this.updateForm.get("spaces").get("commonRoom").value) {
+		if (this.editForm.get("spaces").get("commonRoom").value) {
 			this.spaces.push("Common room");
 		}
-		if (this.updateForm.get("spaces").get("kitchen").value) {
+		if (this.editForm.get("spaces").get("kitchen").value) {
 			this.spaces.push("Kitchen");
 		}
-		if (this.updateForm.get("spaces").get("laundryRoom").value) {
+		if (this.editForm.get("spaces").get("laundryRoom").value) {
 			this.spaces.push("Laundry room");
 		}
-		if (this.updateForm.get("spaces").get("washingLine").value) {
+		if (this.editForm.get("spaces").get("washingLine").value) {
 			this.spaces.push("Washing line");
 		}
-		if (this.updateForm.get("spaces").get("parking").value) {
+		if (this.editForm.get("spaces").get("parking").value) {
 			this.spaces.push("Parking");
 		}
-		if (this.updateForm.get("spaces").get("gym").value) {
+		if (this.editForm.get("spaces").get("gym").value) {
 			this.spaces.push("Gym");
 		}
 
-		this.policies.push(this.updateForm.get("policies").get("visitors").value);
+		this.policies.push(this.editForm.get("policies").get("visitors").value);
 		this.policies.push(
-			this.updateForm.get("policies").get("smokeAlcohol").value
+			this.editForm.get("policies").get("smokeAlcohol").value
 		);
 		this.policies.push(
-			this.updateForm.get("policies").get("eventsParties").value
+			this.editForm.get("policies").get("eventsParties").value
 		);
-		this.policies.push(this.updateForm.get("policies").get("pets").value);
+		this.policies.push(this.editForm.get("policies").get("pets").value);
 
-		if (this.updateForm.get("policies").get("gateTimetable").value) {
+		if (this.editForm.get("policies").get("gateTimetable").value) {
 			this.policies.push("Strict gate timetable");
 		}
-		if (this.updateForm.get("policies").get("appliances").value) {
+		if (this.editForm.get("policies").get("appliances").value) {
 			this.policies.push("Students can bring their own appliances");
 		}
-		if (this.updateForm.get("policies").get("campusPets").value) {
+		if (this.editForm.get("policies").get("campusPets").value) {
 			this.policies.push("Pets on campus");
 		}
-		if (this.updateForm.get("policies").get("limitedAmenities").value) {
+		if (this.editForm.get("policies").get("limitedAmenities").value) {
 			this.policies.push("Amenities can be limited");
 		}
 	}

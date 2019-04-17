@@ -62,7 +62,7 @@
 					</div>
 				</section>
 				<section>
-					<section class="policies" *ngIf="property.policies.length > 0">
+					<section class="policies" *ngIf="property?.policies.length > 0">
 						<span class="heading heading-ter">Rules and policies</span>
 						<span *ngFor="let policy of property?.policies">{{ policy }}</span>
 					</section>
@@ -116,20 +116,19 @@
 				<div class="booking-form">
 					<div class="rent-like row">
 						<div class="inline col-xs-10 col-md-10 col-lg-10">
-							<span class="rent"><i class="inline">{{property?.rent}}</i> per month</span>
+							<span class="rent"><i class="inline">{{ property?.rent }}</i> per month</span>
 						</div>
 						<div class="inline col-xs-1 col-md-1 col-lg-1">
 							<span><i appLike class="fa"></i></span>
 						</div>
 					</div>
 					<div class="property-rating-container">
-						<span class="property-realtime-rating">{{property?.rating}}</span>
 						<span class="property-rating"><i class="fa" appRating [rating1]="property?.rating"></i></span>
 						<span class="property-rating"><i class="fa" appRating [rating2]="property?.rating"></i></span>
 						<span class="property-rating"><i class="fa" appRating [rating3]="property?.rating"></i></span>
 						<span class="property-rating"><i class="fa" appRating [rating4]="property?.rating"></i></span>
 						<span class="property-rating"><i class="fa" appRating [rating5]="property?.rating"></i></span>
-						<span class="property-total-rating">{{property?.reviews}} reviews</span>
+						<span class="property-total-rating">{{ property?.reviews }} reviews</span>
 					</div>
 					<div class="recommendation-container">
 						<span href="" class="recommended">Property recommended<i class="fa fa-thumbs-o-up"></i></span>

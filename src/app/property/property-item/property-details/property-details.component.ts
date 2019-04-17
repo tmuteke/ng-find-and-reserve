@@ -46,5 +46,7 @@ export class PropertyDetailsComponent implements OnInit {
 				});
 			}
 		});
+		console.log(this.id);
+		console.log(this.property);
 	}
 }

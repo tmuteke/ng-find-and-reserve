@@ -2,11 +2,11 @@
 	<nav class="container-fluid cf">
 		<span id="logo" appAbril><a routerLink="/">Find & Reserve</a></span>
 		<div>
-			<h6><a [routerLink]="['/']" routerLinkActive="active" [routerLinkActiveOptions]="{exact: true}">Home</a></h6>
-			<h6><a *ngIf="isAuthenticated" [routerLink]="['/select-enlisting']" routerLinkActive="active">Enlist to
+			<h6><a routerLink="/" routerLinkActive="active" [routerLinkActiveOptions]="{exact: true}">Home</a></h6>
+			<h6><a *ngIf="isAuthenticated" routerLink="/select-enlisting" routerLinkActive="active">Enlist to
 					Accommodate</a></h6>
-			<h6><a *ngIf="!isAuthenticated" [routerLink]="['/login']" routerLinkActive="active">Login</a></h6>
-			<h6><a *ngIf="!isAuthenticated" [routerLink]="['/signup']" [routerLinkActive]="active">Signup</a></h6>
+			<h6><a *ngIf="!isAuthenticated" routerLink="/login" routerLinkActive="active">Login</a></h6>
+			<h6><a *ngIf="!isAuthenticated" routerLink="/signup" routerLinkActive="active">Signup</a></h6>
 			<h6><a *ngIf="isAuthenticated">Profile</a></h6>
 			<h6><a *ngIf="isAuthenticated">Logout</a></h6>
 		</div>

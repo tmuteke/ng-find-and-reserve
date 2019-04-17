@@ -1,9 +1,13 @@
-<form [formGroup]="updateForm" (ngSubmit)="onEnlist()">
+<div>
+	<span #roomHostel>okay</span>
+</div>
+
+<form [formGroup]="editForm" (ngSubmit)="onUpdate()">
 	<div class="details">
 		<section class="group room" id="room">
 			<div class="header">
 				<span class="heading heading-pri">Room Specifications</span>
-				<span class="heading heading-sec">Specify room details</span>
+				<span class="heading heading-sec">Specify room details {{ room?.roomHostel }}</span>
 			</div>
 			<section>
 				<h6>Room Hostel</h6>

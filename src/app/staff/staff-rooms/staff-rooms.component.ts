@@ -32,6 +32,16 @@ export class StaffRoomsComponent implements OnInit, OnDestroy {
 		this.router.navigate([id, "edit"], { relativeTo: this.route });
 	}
 
+	onDelete(id: string): void {
+		this.roomService.deleteRoom(id);
+		this.roomService.getRooms();
+		this.roomsSub = this.roomService
+			.getRoomUpdateListener()
+			.subscribe((rooms: Room[]) => {
+				this.rooms = rooms;
+			});
+	}
+
 	ngOnDestroy(): void {
 		this.roomsSub.unsubscribe();
 	}

@@ -1,11 +1,8 @@
 import {
 	Component,
 	OnInit,
-	OnDestroy,
-	ViewChild,
-	ElementRef,
-	AfterViewInit
-} from "@angular/core";
+	OnDestroy, DoCheck
+} from '@angular/core';
 import { FormGroup, FormControl, Validators } from "@angular/forms";
 import { ToastrService } from "ngx-toastr";
 import { RoomService } from "src/app/room/room.service";
@@ -19,7 +16,7 @@ import { Subscription } from "rxjs";
 	styleUrls: ["./staff-room-edit.component.scss"]
 })
 export class StaffRoomEditComponent
-	implements OnInit, OnDestroy, AfterViewInit {
+	implements OnInit, OnDestroy, DoCheck {
 	room: Room;
 	editForm: FormGroup;
 	private essentials = [];
@@ -32,15 +29,15 @@ export class StaffRoomEditComponent
 	private genderAccommodated: string;
 	private id: string;
 	private roomSub: Subscription;
-	@ViewChild("roomHostel") private rh: ElementRef;
 
 	constructor(
 		private toastr: ToastrService,
 		private roomService: RoomService,
 		private router: Router,
 		private route: ActivatedRoute
-	) {
-		console.log("construcrtor");
+	) {}
+
+	ngOnInit(): void {
 		this.route.paramMap.subscribe((pm: ParamMap) => {
 			if (pm.has("id")) {
 				this.id = pm.get("id");
@@ -58,16 +55,16 @@ export class StaffRoomEditComponent
 				});
 			}
 		});
+
+		this.toastr.toastrConfig.positionClass = "toast-top-center";
 	}
 
-	ngOnInit(): void {
-		console.log(this.id);
-		console.log(this.room);
+	ngDoCheck(): void {
 		this.editForm = new FormGroup({
-			roomHostel: new FormControl(null, Validators.required),
-			roomNumber: new FormControl(null, Validators.required),
-			roomFee: new FormControl(null, Validators.required),
-			genderAccommodated: new FormControl(null, Validators.required),
+			roomHostel: new FormControl(this.room.roomHostel, Validators.required),
+			roomNumber: new FormControl(this.room.roomNumber, Validators.required),
+			roomFee: new FormControl(this.room.roomFee, Validators.required),
+			genderAccommodated: new FormControl(this.room.genderAccommodated, Validators.required),
 			essentials: new FormGroup({
 				wifi: new FormControl(null),
 				tv: new FormControl(null),
@@ -102,39 +99,32 @@ export class StaffRoomEditComponent
 				limitedAmenities: new FormControl(null)
 			})
 		});
-
-		this.toastr.toastrConfig.positionClass = "toast-top-center";
-	}
-
-	ngAfterViewInit(): void {
-		console.log(this.rh.nativeElement.value);
 	}
 
 	onUpdate(): void {
-		// this.populateFields();
-		// if (this.editForm.valid) {
-		// 	const room: Room = new Room();
-		// 	room.roomHostel = this.roomHostel;
-		// 	room.roomNumber = this.roomNumber;
-		// 	room.roomFee = this.roomFee;
-		// 	room.genderAccommodated = this.genderAccommodated;
-		// 	room.amenities = {
-		// 		essential: this.essentials,
-		// 		safety: this.safeties
-		// 	};
-		// 	room.spaces = this.spaces;
-		// 	room.policies = this.policies;
+		this.populateFields();
+		if (this.editForm.valid) {
+			const room: Room = new Room();
+			room.roomHostel = this.roomHostel;
+			room.roomNumber = this.roomNumber;
+			room.roomFee = this.roomFee;
+			room.genderAccommodated = this.genderAccommodated;
+			room.amenities = {
+				essential: this.essentials,
+				safety: this.safeties
+			};
+			room.spaces = this.spaces;
+			room.policies = this.policies;
 
-		// 	this.toastr.success("Room has been added successfully", "Success!");
-		// 	this.roomService.addRoom(room);
-		// 	this.router.navigate(["staff", "dashboard"]);
-		// } else {
-		// 	this.toastr.success(
-		// 		"Make sure all required fields are filled",
-		// 		"Error!"
-		// 	);
-		// }
-		console.log(this.rh.nativeElement.value);
+			this.toastr.success("Room has been updated successfully", "Success!");
+			this.roomService.updateRoom(room);
+			this.router.navigate(["staff", "dashboard"]);
+		} else {
+			this.toastr.success(
+				"Make sure all required fields are filled",
+				"Error!"
+			);
+		}
 	}
 
 	private populateFields(): void {

@@ -1,7 +1,3 @@
-<div>
-	<span #roomHostel>okay</span>
-</div>
-
 <form [formGroup]="editForm" (ngSubmit)="onUpdate()">
 	<div class="details">
 		<section class="group room" id="room">
@@ -334,10 +330,10 @@
 	<nav>
 		<section>
 			<div class="cancel">
-				<a routerLink="/select-enlisting"><i class="fa fa-times"></i>Delete Room</a>
+				<a [routerLink]="['/staff', 'dashboard']"><i class="fa fa-times"></i>Cancel</a>
 			</div>
 			<div class="enlist">
-				<button type="submit"><a>Update Room<i class="fa fa-check"></i></a>
+				<button type="submit"><a>Update<i class="fa fa-check"></i></a>
 				</button>
 			</div>
 		</section>

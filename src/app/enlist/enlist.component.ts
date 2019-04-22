@@ -13,7 +13,6 @@ import { mimeType } from "./mime-type.validator";
 })
 export class EnlistComponent implements OnInit {
 	public enlistForm: FormGroup;
-	public bathrooms = 0;
 	public numberOfStudents = 5;
 	private imagePreview: string;
 	private essentials = [];
@@ -94,10 +93,6 @@ export class EnlistComponent implements OnInit {
 				eventsHosted: new FormControl(null),
 				hostPets: new FormControl(null),
 				limitedAmenities: new FormControl(null)
-			}),
-			image: new FormControl(null, {
-				validators: [Validators.required],
-				asyncValidators: [mimeType]
 			})
 		});
 
@@ -106,7 +101,7 @@ export class EnlistComponent implements OnInit {
 
 	public onEnlist(): void {
 		this.populateFormFields();
-		if (this.enlistForm) {
+		if (this.enlistForm.valid) {
 			const property = new Property();
 			property.landlord = {
 				name: { first: "Tafadzwa", last: "Muteke" },
@@ -136,19 +131,20 @@ export class EnlistComponent implements OnInit {
 			property.policies = this.policies;
 			property.description = this.description;
 			property.rent = this.rent;
-			(property.rating = 0), (property.reviews = 0);
-			// this.toastr.success(
-			// 	"Your place has been enlisted successfully",
-			// 	"Success!"
-			// );
+			property.rating = 0;
+			property.reviews = 0;
+			this.toastr.success(
+				"Your place has been enlisted successfully",
+				"Success!"
+			);
 			this.propertyService.addProperty(property);
-			// this.router.navigate(["finish"], { relativeTo: this.route });
+			this.router.navigate(["finish"], { relativeTo: this.route });
 		} else {
 			this.toastr.error("Make sure all fields are filled.", "Error!");
 		}
 	}
 
-	public onImagePicked(event: Event): void {
+	private onImagePicked(event: Event): void {
 		const file = (event.target as HTMLInputElement).files[0];
 		this.enlistForm.patchValue({
 			image: file
@@ -161,7 +157,7 @@ export class EnlistComponent implements OnInit {
 		reader.readAsDataURL(file);
 	}
 
-	public populateFormFields(): void {
+	private populateFormFields(): void {
 		this.propertyType = this.enlistForm.get("propertyType").value;
 		this.roomType = this.enlistForm.get("roomType").value;
 		this.rent = this.enlistForm.get("rent").value;
@@ -177,10 +173,10 @@ export class EnlistComponent implements OnInit {
 		this.description = this.enlistForm.get("description").value;
 		this.phone = this.enlistForm.get("phone").value;
 
-		this.loadAmenitesAndSpaces();
+		this.loadAmenitiesAndSpaces();
 	}
 
-	public loadAmenitesAndSpaces(): void {
+	private loadAmenitiesAndSpaces(): void {
 		if (this.enlistForm.get("essentials").get("wifi").value) {
 			this.essentials.push("WiFi");
 		}

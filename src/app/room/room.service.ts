@@ -56,8 +56,7 @@ export class RoomService {
 		}>("http://localhost:3000/api/rooms/" + id);
 	}
 
-	public addRoom(newRoom: Room) {
-		const room: Room = newRoom;
+	public addRoom(room: Room) {
 		this.http
 			.post<{ message: string }>("http://localhost:3000/api/rooms", room)
 			.subscribe(() => {
@@ -67,22 +66,28 @@ export class RoomService {
 	}
 
 	public deleteRoom(id: string): void {
-		this.http.delete<{
-			_id: string;
-			roomHostel: string;
-			roomNumber: number;
-			roomFee: number;
-			genderAccommodated: string;
-			amenities: {
-				essential: Array<any>;
-				safety: Array<any>;
-			};
-			spaces: Array<any>;
-			policies: Array<any>;
-		}>("http://localhost:3000/api/rooms/" + id);
+		this.http
+			.delete("http://localhost:3000/api/rooms/" + id)
+			.subscribe(() => {
+				const rooms = this.rooms.filter(room => room.id !== id);
+				this.rooms = rooms;
+				this.roomsUpdated.next([...this.rooms]);
+			});
 	}
 
-	getRoomUpdateListener() {
+	public updateRoom(room: Room): void {
+		this.http
+			.put("http://localhost:3000/api/rooms/" + room.id, room)
+			.subscribe(res => {
+				const rooms = [...this.rooms];
+				const roomIndex = rooms.findIndex(r => r.id === room.id);
+				rooms[roomIndex] = room;
+				this.rooms = rooms;
+				this.roomsUpdated.next([...this.rooms]);
+			})
+	}
+
+	public getRoomUpdateListener() {
 		return this.roomsUpdated.asObservable();
 	}
 }

@@ -8,7 +8,7 @@
 			<h6><a *ngIf="!isAuthenticated" routerLink="/login" routerLinkActive="active">Login</a></h6>
 			<h6><a *ngIf="!isAuthenticated" routerLink="/signup" routerLinkActive="active">Signup</a></h6>
 			<h6><a *ngIf="isAuthenticated">Profile</a></h6>
-			<h6><a *ngIf="isAuthenticated">Logout</a></h6>
+			<h6><a *ngIf="isAuthenticated" (click)="onLogout()">Logout</a></h6>
 		</div>
 	</nav>
 </header>

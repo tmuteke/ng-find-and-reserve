@@ -41,7 +41,8 @@ export class PropertyDetailsComponent implements OnInit {
 						description: property.description,
 						rent: property.rent,
 						rating: property.rating,
-						reviews: property.reviews
+						reviews: property.reviews,
+						creator: property.creator
 					};
 				});
 			}

@@ -16,6 +16,7 @@ import { StaffEnlistRoomComponent } from "./staff/staff-enlist-room/staff-enlist
 import { PropertyReservationComponent } from "./reservation/property-reservation/property-reservation.component";
 import { RoomReservationComponent } from "./reservation/room-reservation/room-reservation.component";
 import { StaffRoomEditComponent } from "./staff/staff-room-edit/staff-room-edit.component";
+import {AuthGuard} from './auth/auth.guard';
 
 const routes: Routes = [
 	{
@@ -29,11 +30,13 @@ const routes: Routes = [
 	},
 	{
 		path: "property/:id/reservation",
-		component: PropertyReservationComponent
+		component: PropertyReservationComponent,
+		canActivate: [AuthGuard]
 	},
 	{
 		path: "room/:id/reservation",
-		component: RoomReservationComponent
+		component: RoomReservationComponent,
+		canActivate: [AuthGuard]
 	},
 	{
 		path: "login",
@@ -45,15 +48,18 @@ const routes: Routes = [
 	},
 	{
 		path: "select-enlisting",
-		component: EnlistStartComponent
+		component: EnlistStartComponent,
+		canActivate: [AuthGuard]
 	},
 	{
 		path: "enlist-new",
-		component: EnlistComponent
+		component: EnlistComponent,
+		canActivate: [AuthGuard]
 	},
 	{
 		path: "enlist-new/finish",
-		component: EnlistFinishComponent
+		component: EnlistFinishComponent,
+		canActivate: [AuthGuard]
 	},
 	{
 		path: "staff/login",
@@ -80,7 +86,8 @@ const routes: Routes = [
 				path: "enlist-room",
 				component: StaffEnlistRoomComponent
 			}
-		]
+		],
+		canActivate: [AuthGuard]
 	},
 	{
 		path: "page-not-found",
@@ -94,6 +101,7 @@ const routes: Routes = [
 
 @NgModule({
 	imports: [RouterModule.forRoot(routes)],
-	exports: [RouterModule]
+	exports: [RouterModule],
+	providers: [AuthGuard]
 })
 export class AppRoutingModule {}

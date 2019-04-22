@@ -4,7 +4,6 @@ import { ToastrService } from "ngx-toastr";
 import { Room } from "../../room/room.model";
 import { RoomService } from "../../room/room.service";
 import { Router } from "@angular/router";
-import { Subscription } from "rxjs";
 
 @Component({
 	selector: "app-staff-enlist-room",

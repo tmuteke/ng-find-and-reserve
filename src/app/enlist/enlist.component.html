@@ -281,20 +281,20 @@
 				</div>
 			</section>
 		</section>
-		<section class="group pictures" id="pictures">
-			<div class="header">
-				<span class="heading heading-pri">Upload Photos</span>
-				<span class="heading heading-sec">Select some pictures to show what place looks like</span>
-			</div>
-			<button type="button" class="button button-dark" (click)="upload.click()"><i class="fa fa-camera right"></i>
-				Upload
-				Pictures</button>
-			<input multiple type="file" name="uploadImage" id="uploadImage" style="display: none" #upload
-				(change)="onImagePicked($event)">
-			<div class="image-preview" *ngIf="imagePreview !== '' && imagePreview && enlistForm.get('image').valid"><img
-					[src]="imagePreview" alt="Image upload"></div>
-		</section>
-		<section class="group description" id="description">
+<!--		<section class="group pictures" id="pictures">-->
+<!--			<div class="header">-->
+<!--				<span class="heading heading-pri">Upload Photos</span>-->
+<!--				<span class="heading heading-sec">Select some pictures to show what place looks like</span>-->
+<!--			</div>-->
+<!--			<button type="button" class="button button-dark" (click)="upload.click()"><i class="fa fa-camera right"></i>-->
+<!--				Upload-->
+<!--				Pictures</button>-->
+<!--			<input multiple type="file" name="uploadImage" id="uploadImage" style="display: none" #upload-->
+<!--				(change)="onImagePicked($event)">-->
+<!--			<div class="image-preview" *ngIf="imagePreview !== '' && imagePreview && enlistForm.get('image').valid"><img-->
+<!--					[src]="imagePreview" alt="Image upload"></div>-->
+<!--		</section>-->
+		<section class="group description" id="group-description">
 			<div class="header">
 				<span class="heading heading-pri">Place Description</span>
 				<span class="heading heading-sec">Briefly describe your place</span>
@@ -304,7 +304,7 @@
 				<textarea name="description" id="description" formControlName="description" cols="30" rows="10"></textarea>
 			</section>
 		</section>
-		<section class="group phone" id="phone">
+		<section class="group phone" id="group-phone">
 			<div class="header">
 				<span class="heading heading-pri">Contact</span>
 				<span class="heading heading-sec">Add your phone number</span>

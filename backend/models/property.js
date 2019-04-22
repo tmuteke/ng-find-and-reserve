@@ -1,6 +1,10 @@
 const mongoose = require('mongoose');
 
 const propertySchema = mongoose.Schema({
+	creator: {
+		type: mongoose.Schema.Types.ObjectId,
+		ref: "User"
+	},
 	landlord: {
 		name: {
 			first: {

@@ -38,7 +38,8 @@ export class PropertyService {
 							description: property.description,
 							rent: property.rent,
 							rating: property.rating,
-							reviews: property.reviews
+							reviews: property.reviews,
+							creator: property.creator
 						};
 					});
 				})
@@ -88,11 +89,11 @@ export class PropertyService {
 			rent: number;
 			rating: number;
 			reviews: number;
+			creator: string
 		}>("http://localhost:3000/api/properties/" + id);
 	}
 
-	public addProperty(newProperty: Property) {
-		const property: Property = newProperty;
+	public addProperty(property: Property) {
 		this.http
 			.post<{ message: string }>(
 				"http://localhost:3000/api/properties",
@@ -102,6 +103,7 @@ export class PropertyService {
 				this.properties.push(property);
 				this.propertiesUpdated.next([...this.properties]);
 			});
+		console.log(property);
 	}
 
 	getPropertyUpdateListener() {

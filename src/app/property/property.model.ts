@@ -36,4 +36,5 @@ export class Property {
 	public rent: number;
 	public rating: number;
 	public reviews: number;
+	public creator: string;
 }

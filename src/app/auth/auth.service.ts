@@ -67,13 +67,20 @@ export class AuthService {
 					this._userId = res.userId;
 					this._authStatusListener.next(true);
 					const now = new Date();
-					const expiration = new Date(
-						now.getTime() + expiresIn * 1000
-					);
+					const expiration = new Date(now.getTime() + expiresIn * 1000);
 					this.saveAuthData(token, expiration, this.userId);
 					this.router.navigate(["/"]);
 				}
 			});
+	}
+
+	public getUser(id: string) {
+		return this.http.get<{
+			_id: string;
+			email: string;
+			name: { first: string; last: string };
+			password: string;
+		}>("http://localhost:3000/api/users/" + id);
 	}
 
 	public autoAuthUser(): void {
@@ -120,7 +127,7 @@ export class AuthService {
 		localStorage.removeItem("userId");
 	}
 
-	private getAuthData(): { token: string; expiration: Date, userId: string } {
+	private getAuthData(): { token: string; expiration: Date; userId: string } {
 		const token = localStorage.getItem("token");
 		const expiration = localStorage.getItem("expiration");
 		const userId = localStorage.getItem("userId");

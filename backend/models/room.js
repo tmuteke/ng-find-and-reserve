@@ -1,4 +1,4 @@
-const mongoose = require('mongoose');
+const mongoose = require("mongoose");
 
 const roomSchema = mongoose.Schema({
 	roomHostel: {
@@ -26,7 +26,32 @@ const roomSchema = mongoose.Schema({
 	},
 	policies: {
 		type: Array
+	},
+	student: {
+		name: {
+			first: {
+				type: String
+			},
+			last: {
+				type: String
+			}
+		},
+		email: {
+			type: String
+		},
+		registration: {
+			type: String
+		},
+		academicYear: {
+			type: String
+		},
+		gender: {
+			type: String
+		}
+	},
+	isReserved: {
+		type: Boolean
 	}
 });
 
-module.exports = mongoose.model('Room', roomSchema);
+module.exports = mongoose.model("Room", roomSchema);

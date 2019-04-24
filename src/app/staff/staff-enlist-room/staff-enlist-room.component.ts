@@ -88,6 +88,17 @@ export class StaffEnlistRoomComponent implements OnInit {
 			};
 			room.spaces = this.spaces;
 			room.policies = this.policies;
+			room.student = {
+				name: {
+					first: "",
+					last: ""
+				},
+				registration: "",
+				academicYear: "",
+				gender: "",
+				email: ""
+			};
+			room.isReserved = false;
 
 			this.toastr.success("Room has been added successfully", "Success!");
 			this.roomService.addRoom(room);

@@ -1,27 +1,27 @@
-import { Component, OnInit, OnDestroy } from "@angular/core";
-import { RoomService } from "../room.service";
-import { Room } from "../room.model";
+import { Component, OnDestroy, OnInit } from "@angular/core";
+import { Room } from "../../room/room.model";
+import { RoomService } from "../../room/room.service";
 import { Subscription } from "rxjs";
 
 @Component({
-	selector: "app-room-list",
-	templateUrl: "./room-list.component.html",
-	styleUrls: ["./room-list.component.scss"]
+	selector: "app-staff-students",
+	templateUrl: "./staff-students.component.html",
+	styleUrls: ["./staff-students.component.scss"]
 })
-export class RoomListComponent implements OnInit, OnDestroy {
+export class StaffStudentsComponent implements OnInit, OnDestroy {
 	rooms: Room[] = [];
 	private roomsSub: Subscription;
 
 	constructor(private roomService: RoomService) {}
 
-	ngOnInit(): void {
+	ngOnInit() {
 		this.roomService.getRooms();
 		this.roomsSub = this.roomService
 			.getRoomUpdateListener()
-			.subscribe(rooms => {
+			.subscribe((rooms: Room[]) => {
 				const tempRooms: Room[] = [];
 				rooms.filter(room => {
-					if (!room.isReserved) {
+					if (room.isReserved) {
 						tempRooms.push(room);
 					}
 				});

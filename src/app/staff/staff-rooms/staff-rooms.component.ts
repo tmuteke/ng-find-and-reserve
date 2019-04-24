@@ -24,7 +24,13 @@ export class StaffRoomsComponent implements OnInit, OnDestroy {
 		this.roomsSub = this.roomService
 			.getRoomUpdateListener()
 			.subscribe((rooms: Room[]) => {
-				this.rooms = rooms;
+				const tempRooms: Room[] = [];
+				rooms.filter(room => {
+					if (!room.isReserved) {
+						tempRooms.push(room);
+					}
+				});
+				this.rooms = tempRooms;
 			});
 	}
 
@@ -38,7 +44,13 @@ export class StaffRoomsComponent implements OnInit, OnDestroy {
 		this.roomsSub = this.roomService
 			.getRoomUpdateListener()
 			.subscribe((rooms: Room[]) => {
-				this.rooms = rooms;
+				const tempRooms: Room[] = [];
+				rooms.filter(room => {
+					if (!room.isReserved) {
+						tempRooms.push(room);
+					}
+				});
+				this.rooms = tempRooms;
 			});
 	}
 

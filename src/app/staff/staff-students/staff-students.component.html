@@ -1,0 +1,40 @@
+<div class="container-fluid">
+	<table *ngIf="rooms.length > 0" class="on-campus">
+		<th class="heading heading-ter">On-Campus Students</th>
+		<tr class="headings">
+			<th class="heading heading-ter">Student Number</th>
+			<th class="heading heading-ter">Student Name</th>
+			<th class="heading heading-ter">Gender</th>
+			<th class="heading heading-ter">Academic Year</th>
+			<th class="heading heading-ter">Room Hostel</th>
+			<th class="heading heading-ter">Room Number</th>
+		</tr>
+		<tr *ngFor="let room of rooms">
+			<td>{{ room.student.registration }}</td>
+			<td>{{ room.student.name.first }} {{ room.student.name.last }}</td>
+			<td>{{ room.student.gender }}</td>
+			<td>{{ room.student.academicYear }}</td>
+			<td>{{ room.roomHostel }}</td>
+			<td>{{ room.roomNumber }}</td>
+		</tr>
+	</table>
+	<table *ngIf="rooms.length > 0" class="off-campus">
+		<th class="heading heading-ter">Off-Campus Students</th>
+		<tr class="headings">
+			<th class="heading heading-ter">Student Number</th>
+			<th class="heading heading-ter">Student Name</th>
+			<th class="heading heading-ter">Gender</th>
+			<th class="heading heading-ter">Academic Year</th>
+			<th class="heading heading-ter">Room Hostel</th>
+			<th class="heading heading-ter">Room Number</th>
+		</tr>
+		<tr *ngFor="let room of rooms">
+			<td>{{ room.student.registration }}</td>
+			<td>{{ room.student.name.first }} {{ room.student.name.last }}</td>
+			<td>{{ room.student.gender }}</td>
+			<td>{{ room.student.academicYear }}</td>
+			<td>{{ room.roomHostel }}</td>
+			<td>{{ room.roomNumber }}</td>
+		</tr>
+	</table>
+</div>

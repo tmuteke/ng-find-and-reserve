@@ -1,4 +1,5 @@
 <div class="container">
+	<p *ngIf="rooms.length === 0">*No rooms available or have been enlisted. <a [routerLink]="['/staff', 'dashboard', 'enlist-room']">Add a new room</a></p>
 	<table *ngIf="rooms.length > 0">
 		<tr class="headings">
 			<th class="heading heading-ter">Room Hostel</th>

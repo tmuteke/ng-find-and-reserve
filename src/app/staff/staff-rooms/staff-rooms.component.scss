@@ -1,5 +1,15 @@
 @import '../../../assets/sass/colours';
 
+p {
+	text-align: center;
+	padding: 1rem;
+
+	a {
+		color: $amber400;
+		font-style: italic;
+		text-decoration: underline !important;
+	}
+}
 table {
 	width: 80%;
 	margin: 2rem auto;

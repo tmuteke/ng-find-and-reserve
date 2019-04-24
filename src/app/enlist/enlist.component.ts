@@ -1,19 +1,20 @@
-import { Component, OnInit } from "@angular/core";
+import { Component, DoCheck, OnInit } from "@angular/core";
 import { ActivatedRoute, Router } from "@angular/router";
 import { FormGroup, FormControl, Validators } from "@angular/forms";
 import { Property } from "../property/property.model";
 import { PropertyService } from "../property/property.service";
 import { ToastrService } from "ngx-toastr";
 import { mimeType } from "./mime-type.validator";
+import { User } from "../auth/user.model";
+import { AuthService } from "../auth/auth.service";
 
 @Component({
 	selector: "app-enlist",
 	templateUrl: "./enlist.component.html",
 	styleUrls: ["./enlist.component.scss"]
 })
-export class EnlistComponent implements OnInit {
-	public enlistForm: FormGroup;
-	public numberOfStudents = 5;
+export class EnlistComponent implements OnInit, DoCheck {
+	enlistForm: FormGroup;
 	private imagePreview: string;
 	private essentials = [];
 	private safeties = [];
@@ -24,7 +25,7 @@ export class EnlistComponent implements OnInit {
 	private rent: number;
 	private isDedicatedSetup: boolean;
 	private genderAccommodated: string;
-	private fNumberOfStudents: number;
+	private numberOfStudents: number;
 	private numberOfRooms: number;
 	private numberOfBathrooms: number;
 	private houseNumber: string;
@@ -33,15 +34,18 @@ export class EnlistComponent implements OnInit {
 	private city: string;
 	private description: string;
 	private phone: string;
+	private userId: string;
+	private user: User;
 
 	constructor(
 		private route: ActivatedRoute,
 		private router: Router,
 		private propertyService: PropertyService,
-		private toastr: ToastrService
+		private toastr: ToastrService,
+		private authService: AuthService
 	) {}
 
-	public ngOnInit(): void {
+	ngOnInit(): void {
 		this.enlistForm = new FormGroup({
 			propertyType: new FormControl("Rooms", Validators.required),
 			roomType: new FormControl("shared rooms", Validators.required),
@@ -99,13 +103,29 @@ export class EnlistComponent implements OnInit {
 		this.toastr.toastrConfig.positionClass = "toast-top-center";
 	}
 
+	ngDoCheck(): void {
+		this.userId = this.authService.userId;
+		this.authService.getUser(this.userId).subscribe(user => {
+			this.user = {
+				id: user._id,
+				email: user.email,
+				name: {
+					first: user.name.first,
+					last: user.name.last
+				},
+				password: user.password
+			};
+		});
+		console.log(this.user);
+	}
+
 	public onEnlist(): void {
 		this.populateFormFields();
 		if (this.enlistForm.valid) {
 			const property = new Property();
 			property.landlord = {
-				name: { first: "Tafadzwa", last: "Muteke" },
-				email: "muteket@gmail.com",
+				name: { first: this.user.name.first, last: this.user.name.last },
+				email: this.user.email,
 				phone: this.phone,
 				avatar: "http://i.pravatar.cc/300"
 			};
@@ -120,7 +140,7 @@ export class EnlistComponent implements OnInit {
 			property.roomType = this.roomType;
 			property.isDedicatedSetup = this.isDedicatedSetup;
 			property.genderAccommodated = this.genderAccommodated;
-			property.numberOfStudents = this.fNumberOfStudents;
+			property.numberOfStudents = this.numberOfStudents;
 			property.numberOfRooms = this.numberOfRooms;
 			property.numberOfBathrooms = this.numberOfBathrooms;
 			property.amenities = {
@@ -163,7 +183,7 @@ export class EnlistComponent implements OnInit {
 		this.rent = this.enlistForm.get("rent").value;
 		this.isDedicatedSetup = this.enlistForm.get("isDedicatedSetup").value;
 		this.genderAccommodated = this.enlistForm.get("genderAccommodated").value;
-		this.fNumberOfStudents = this.enlistForm.get("numberOfStudents").value;
+		this.numberOfStudents = this.enlistForm.get("numberOfStudents").value;
 		this.numberOfRooms = this.enlistForm.get("numberOfRooms").value;
 		this.numberOfBathrooms = this.enlistForm.get("numberOfBathrooms").value;
 		this.houseNumber = this.enlistForm.get("houseNumber").value;

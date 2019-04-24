@@ -35,6 +35,7 @@ import { RoomReservationComponent } from "./reservation/room-reservation/room-re
 import { AuthInterceptor } from "./auth/auth-interceptor";
 import { AuthService } from "./auth/auth.service";
 import { StaffRoomEditComponent } from './staff/staff-room-edit/staff-room-edit.component';
+import { StaffStudentsComponent } from './staff/staff-students/staff-students.component';
 
 @NgModule({
 	declarations: [
@@ -62,7 +63,8 @@ import { StaffRoomEditComponent } from './staff/staff-room-edit/staff-room-edit.
 		PropertyListComponent,
 		PropertyReservationComponent,
 		RoomReservationComponent,
-		StaffRoomEditComponent
+		StaffRoomEditComponent,
+		StaffStudentsComponent
 	],
 	imports: [
 		BrowserModule,

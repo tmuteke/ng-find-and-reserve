@@ -10,4 +10,15 @@ export class Room {
 	};
 	public spaces: Array<any>;
 	public policies: Array<any>;
+	public student: {
+		name: {
+			first: string;
+			last: string;
+		};
+		email: string;
+		registration: string;
+		academicYear: string;
+		gender: string;
+	};
+	public isReserved: boolean;
 }

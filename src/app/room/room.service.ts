@@ -29,7 +29,9 @@ export class RoomService {
 							genderAccommodated: room.genderAccommodated,
 							amenities: room.amenities,
 							spaces: room.spaces,
-							policies: room.policies
+							policies: room.policies,
+							student: room.student,
+							isReserved: room.isReserved
 						};
 					});
 				})
@@ -53,6 +55,17 @@ export class RoomService {
 			};
 			spaces: Array<any>;
 			policies: Array<any>;
+			student: {
+				name: {
+					first: string;
+					last: string;
+				};
+				email: string;
+				registration: string;
+				academicYear: string;
+				gender: string;
+			};
+			isReserved: boolean;
 		}>("http://localhost:3000/api/rooms/" + id);
 	}
 
@@ -69,22 +82,21 @@ export class RoomService {
 		this.http
 			.delete("http://localhost:3000/api/rooms/" + id)
 			.subscribe(() => {
-				const rooms = this.rooms.filter(room => room.id !== id);
-				this.rooms = rooms;
+				this.rooms = this.rooms.filter(room => room.id !== id);
 				this.roomsUpdated.next([...this.rooms]);
 			});
 	}
 
-	public updateRoom(room: Room): void {
+	public updateRoom(id: string, room: Room): void {
 		this.http
-			.put("http://localhost:3000/api/rooms/" + room.id, room)
+			.put("http://localhost:3000/api/rooms/" + id, room)
 			.subscribe(res => {
 				const rooms = [...this.rooms];
 				const roomIndex = rooms.findIndex(r => r.id === room.id);
 				rooms[roomIndex] = room;
 				this.rooms = rooms;
 				this.roomsUpdated.next([...this.rooms]);
-			})
+			});
 	}
 
 	public getRoomUpdateListener() {

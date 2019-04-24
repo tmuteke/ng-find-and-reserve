@@ -1,7 +1,7 @@
 <app-header></app-header>
 
 <div class="form-container">
-	<form [formGroup]="signupForm" (ngSubmit)="onSignUp()">
+	<form [formGroup]="signUpForm" (ngSubmit)="onSignUp()">
 		<!-- <a href="" class="alternative-login-signup facebook clearfix"><i class="fa fa-facebook"></i><span>Continue with Facebook</span></a>
 			<a href="" class="alternative-login-signup google clearfix"><i class="fa fa-google"></i><span>Continue with Google</span></a>
 			<div class="or clearfix"><i></i><span>or</span><i></i></div> -->
@@ -9,8 +9,8 @@
 		<!--<span class="input-warning" *ngIf="!isFieldsEmpty">*This field is required</span>-->
 		<!--<span class="input-warning" *ngIf="!isEmailValid">*Enter a valid email address</span>-->
 		<input type="email" name="email" placeholder="Email" formControlName="email">
-		<input type="text" name="firstname" placeholder="First Name" formControlName="firstname">
-		<input type="text" name="lastname" placeholder="Last Name" formControlName="lastname">
+		<input type="text" name="firstName" placeholder="First Name" formControlName="firstName">
+		<input type="text" name="lastName" placeholder="Last Name" formControlName="lastName">
 		<!--<span class="input-warning" *ngIf="!isFieldsEmpty">*This field is required</span>-->
 		<!--<span class="input-warning" *ngIf="!isPasswordMin">*Password should contain at least 6 characters</span>-->
 		<input type="password" name="password" placeholder="Password" formControlName="password">

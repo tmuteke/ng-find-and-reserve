@@ -50,7 +50,9 @@ export class StaffRoomEditComponent
 						genderAccommodated: room.genderAccommodated,
 						amenities: room.amenities,
 						spaces: room.spaces,
-						policies: room.policies
+						policies: room.policies,
+						student: room.student,
+						isReserved: room.isReserved
 					};
 				});
 			}
@@ -117,7 +119,7 @@ export class StaffRoomEditComponent
 			room.policies = this.policies;
 
 			this.toastr.success("Room has been updated successfully", "Success!");
-			this.roomService.updateRoom(room);
+			// this.roomService.updateRoom(room);
 			this.router.navigate(["staff", "dashboard"]);
 		} else {
 			this.toastr.success(

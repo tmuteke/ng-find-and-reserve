@@ -3,31 +3,33 @@ import { FormControl, FormGroup, Validators } from "@angular/forms";
 import { AuthService } from "../auth.service";
 import { User } from "../user.model";
 import { ToastrService } from "ngx-toastr";
+import {Router} from '@angular/router';
 
 @Component({
 	templateUrl: "./signup.component.html",
 	styleUrls: ["./signup.component.scss"]
 })
 export class SignupComponent implements OnInit {
-	public signupForm: FormGroup;
+	public signUpForm: FormGroup;
 	private email: string;
-	private firstname: string;
-	private lastname: string;
+	private firstName: string;
+	private lastName: string;
 	private password: string;
 
 	constructor(
 		public authService: AuthService,
-		private toastr: ToastrService
+		private toastr: ToastrService,
+		private router: Router
 	) {}
 
 	public ngOnInit(): void {
-		this.signupForm = new FormGroup({
+		this.signUpForm = new FormGroup({
 			email: new FormControl(null, [Validators.required, Validators.email]),
-			firstname: new FormControl(null, [
+			firstName: new FormControl(null, [
 				Validators.required,
 				Validators.maxLength(20)
 			]),
-			lastname: new FormControl(null, [
+			lastName: new FormControl(null, [
 				Validators.required,
 				Validators.maxLength(20)
 			]),
@@ -41,26 +43,27 @@ export class SignupComponent implements OnInit {
 
 	onSignUp(): void {
 		this.populateFields();
-		if (this.signupForm.valid) {
+		if (this.signUpForm.valid) {
 			const user = new User();
 			user.email = this.email;
 			user.name = {
-				first: this.firstname,
-				last: this.lastname
+				first: this.firstName,
+				last: this.lastName
 			};
 			user.password = this.password;
 
-			this.toastr.success("You've been signed up successfully", "Success!");
 			this.authService.createUser(user);
+			this.toastr.success("You've been signed up successfully", "Success!");
+			this.router.navigate(['/login']);
 		} else {
-			console.log("enter valid data you bitch!");
+			this.toastr.error("Provide valid data", "Error!");
 		}
 	}
 
 	public populateFields(): void {
-		this.email = this.signupForm.get("email").value;
-		this.firstname = this.signupForm.get("firstname").value;
-		this.lastname = this.signupForm.get("lastname").value;
-		this.password = this.signupForm.get("password").value;
+		this.email = this.signUpForm.get("email").value;
+		this.firstName = this.signUpForm.get("firstName").value;
+		this.lastName = this.signUpForm.get("lastName").value;
+		this.password = this.signUpForm.get("password").value;
 	}
 }

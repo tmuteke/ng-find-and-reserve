@@ -17,6 +17,7 @@ import { PropertyReservationComponent } from "./reservation/property-reservation
 import { RoomReservationComponent } from "./reservation/room-reservation/room-reservation.component";
 import { StaffRoomEditComponent } from "./staff/staff-room-edit/staff-room-edit.component";
 import {AuthGuard} from './auth/auth.guard';
+import {StaffStudentsComponent} from './staff/staff-students/staff-students.component';
 
 const routes: Routes = [
 	{
@@ -85,6 +86,10 @@ const routes: Routes = [
 			{
 				path: "enlist-room",
 				component: StaffEnlistRoomComponent
+			},
+			{
+				path: "students",
+				component: StaffStudentsComponent
 			}
 		],
 		canActivate: [AuthGuard]

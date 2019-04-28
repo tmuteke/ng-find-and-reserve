@@ -1,81 +1,97 @@
-<mat-spinner *ngIf="isLoading"></mat-spinner>
-<main *ngIf="!isLoading">
-	<div class="hero">
-		<app-header></app-header>
-		<section class="container-fluid">
-			<span>Student accommodation.</span>
-			<div class="links">
-				<a class="button button-warn" href="#on-campus">On-Campus Accommodation</a>
-				<a class="button button-primary" href="#off-campus">Off-Campus Accommodation</a>
-			</div>
-		</section>
-	</div>
-	<section class="on-campus-section" id="on-campus">
-		<div class="container">
-			<div class="header">
-				<h3>Did You Know?</h3>
-				<span class="heading heading-sec">You can now make your applications for on-campus accommodation
-					here.</span>
-				<p></p>
-			</div>
-			<div class="clearfix">
-				<div class="hostel hostel-1">
-					<span class="heading heading-pri">hostel 1&mdash;$850/semester</span>
-					<p>This hostel is premium priced; due to it's high quality of service and is more spacious. Consequuntur
-						sint
-						nihil nulla est qui, ducimus expedita voluptate animi officia culpa placeat veniam excepturi doloribus
-						iusto
-						maxime fugit autem ad pariatur.</p>
-					<a href="" class="button button-warn">Place Your Application</a>
-				</div>
-				<div class="hostel hostel-2-4">
-					<span class="heading heading-pri">hostels 2 to 4&mdash;$650/semester</span>
-					<p>Hostels 2 to 4 are less priced than Hostel 1. They're for the average student. Eum, laboriosam, unde
-						quibusdam repellat fugiat perferendis id, maiores fugit modi illum ut labore eos impedit officia
-						incidunt
-						natus tenetur esse vero.</p>
-					<a href="" class="button button-warn">Place Your Application</a>
-				</div>
-			</div>
-			<div class="available-rooms">
-				<h4>Available Rooms</h4>
-				<section>
-					<app-room-list></app-room-list>
-				</section>
-			</div>
+<div class="hero">
+	<app-header></app-header>
+	<section class="container-fluid">
+		<span>Student accommodation.</span>
+		<div class="links">
+			<a class="button button-warn" href="#on-campus"
+				>On-Campus Accommodation</a
+			>
+			<a class="button button-primary" href="#off-campus"
+				>Off-Campus Accommodation</a
+			>
 		</div>
 	</section>
-	<section class="off-campus-section" id="off-campus">
-		<div class="container">
-			<div class="header">
-				<h3>Couldn't secure on campus accommodation?</h3>
-				<span class="heading heading-sec">Don't stress! You can also look for off-campus accommodation and make
-					reservations in your own
-					comfort...
-				</span>
-			</div>
-			<div class="available-rooms">
-				<h4>Explore Off-Campus Accommodation</h4>
-				<app-property-list></app-property-list>
-			</div>
-		</div>
-	</section>
+</div>
+<section class="on-campus-section" id="on-campus">
 	<div class="container">
-		<div class="curated-section">
+		<div class="header">
+			<h3>Did You Know?</h3>
+			<span class="heading heading-sec"
+				>You can now make your applications for on-campus accommodation
+				here.</span
+			>
+			<p></p>
+		</div>
+		<div id="chart"></div>
+		<div class="clearfix">
+			<div class="hostel hostel-1">
+				<span class="heading heading-pri"
+					>hostel 1&mdash;$850/semester</span
+				>
+				<p>
+					This hostel is premium priced; due to it's high quality of
+					service and is more spacious. Consequuntur sint nihil nulla est
+					qui, ducimus expedita voluptate animi officia culpa placeat
+					veniam excepturi doloribus iusto maxime fugit autem ad pariatur.
+				</p>
+				<a href="" class="button button-warn">Place Your Application</a>
+			</div>
+			<div class="hostel hostel-2-4">
+				<span class="heading heading-pri"
+					>hostels 2 to 4&mdash;$650/semester</span
+				>
+				<p>
+					Hostels 2 to 4 are less priced than Hostel 1. They're for the
+					average student. Eum, laboriosam, unde quibusdam repellat fugiat
+					perferendis id, maiores fugit modi illum ut labore eos impedit
+					officia incidunt natus tenetur esse vero.
+				</p>
+				<a href="" class="button button-warn">Place Your Application</a>
+			</div>
+		</div>
+		<div class="available-rooms">
+			<h4>Available Rooms</h4>
 			<section>
-				<a href="" class="start-earning">
-					<span class="heading heading-pri">start earning up to $200/month today</span>
-					<p>Enlist your house today on <span appAbril style="text-transform: capitalize;">Find & Reserve</span>
-						and
-						start
-						earning money each month. Lorem, ipsum dolor sit amet consectetur adipisicing elit. Eius est provident
-						ipsa in ab,
-						earum veritatis quibusdam. Dolore, nesciunt! Amet ullam iure, qui eius ut quibusdam excepturi mollitia
-						quis a.</p>
-					<a href="" class="button button-light">Learn How</a>
-				</a>
+				<app-room-list></app-room-list>
 			</section>
 		</div>
 	</div>
-</main>
+</section>
+<section class="off-campus-section" id="off-campus">
+	<div class="container">
+		<div class="header">
+			<h3>Couldn't secure on campus accommodation?</h3>
+			<span class="heading heading-sec"
+				>Don't stress! You can also look for off-campus accommodation and
+				make reservations in your own comfort...
+			</span>
+		</div>
+		<div class="available-rooms">
+			<h4>Explore Off-Campus Accommodation</h4>
+			<app-property-list></app-property-list>
+		</div>
+	</div>
+</section>
+<div class="container">
+	<div class="curated-section">
+		<section>
+			<a href="" class="start-earning">
+				<span class="heading heading-pri"
+					>start earning up to $200/month today</span
+				>
+				<p>
+					Enlist your house today on
+					<span appAbril style="text-transform: capitalize;"
+						>Find & Reserve</span
+					>
+					and start earning money each month. Lorem, ipsum dolor sit amet
+					consectetur adipisicing elit. Eius est provident ipsa in ab,
+					earum veritatis quibusdam. Dolore, nesciunt! Amet ullam iure, qui
+					eius ut quibusdam excepturi mollitia quis a.
+				</p>
+				<a href="" class="button button-light">Learn How</a>
+			</a>
+		</section>
+	</div>
+</div>
 <app-footer></app-footer>

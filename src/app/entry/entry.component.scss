@@ -1,4 +1,4 @@
-@import '../../assets/sass/colours';
+@import "../../assets/sass/colours";
 
 .hero {
 	width: 100%;
@@ -6,7 +6,7 @@
 	box-sizing: border-box;
 	text-align: center;
 	color: #fff;
-	background: linear-gradient(rgba(0, 0, 0, .25), rgba(0, 0, 0, .5)),
+	background: linear-gradient(rgba(0, 0, 0, 0.25), rgba(0, 0, 0, 0.5)),
 		url(../../assets/images/image_04.jpg) no-repeat center;
 	background-size: cover;
 
@@ -42,6 +42,12 @@
 		text-align: center;
 	}
 
+	#chart {
+		height: 470px;
+		width: 100%;
+		margin: 1rem auto 2rem;
+	}
+
 	.hostel {
 		border-radius: 3px;
 		padding: 2rem;
@@ -59,14 +65,20 @@
 		}
 
 		&.hostel-1 {
-			background: linear-gradient(rgba($color: black, $alpha: 0.5), rgba($color: black, $alpha: 0.5)),
+			background: linear-gradient(
+					rgba($color: black, $alpha: 0.5),
+					rgba($color: black, $alpha: 0.5)
+				),
 				url(../../assets/images/property_interior_02.jpg) no-repeat center;
 			background-size: cover;
 			margin-right: 1%;
 		}
 
 		&.hostel-2-4 {
-			background: linear-gradient(rgba($color: black, $alpha: 0.5), rgba($color: black, $alpha: 0.5)),
+			background: linear-gradient(
+					rgba($color: black, $alpha: 0.5),
+					rgba($color: black, $alpha: 0.5)
+				),
 				url(../../assets/images/image_02.jpg) no-repeat center;
 			background-size: cover;
 			margin-left: 1%;
@@ -88,7 +100,6 @@
 		width: 100%;
 		text-align: center;
 	}
-
 }
 
 .show-more {
@@ -131,31 +142,35 @@
 		}
 
 		.top-rated-curate {
-			background: linear-gradient(rgba(0, 0, 0, .5), rgba(0, 0, 0, .5)),
+			background: linear-gradient(rgba(0, 0, 0, 0.5), rgba(0, 0, 0, 0.5)),
 				url(../../assets/images/image_07.jpg) no-repeat center;
 			background-size: cover;
 		}
 
 		.start-earning {
-			background: linear-gradient(rgba(0, 0, 0, .25), rgba(0, 0, 0, .25)),
+			background: linear-gradient(rgba(0, 0, 0, 0.25), rgba(0, 0, 0, 0.25)),
 				url(../../assets/images/image_09.jpg) no-repeat center;
 			background-size: cover;
 		}
 	}
 }
 
-
 /* MEDIA QUERIES ==================== */
 
-@media all and (min-width:1200px) {}
+@media all and (min-width: 1200px) {
+}
 
-@media all and (min-width: 960px) and (max-width: 1199px) {}
+@media all and (min-width: 960px) and (max-width: 1199px) {
+}
 
-@media all and (min-width: 768px) and (max-width: 959px) {}
+@media all and (min-width: 768px) and (max-width: 959px) {
+}
 
-@media all and (min-width: 480px) and (max-width: 767px) {}
+@media all and (min-width: 480px) and (max-width: 767px) {
+}
 
-@media all and (max-width: 599px) {}
+@media all and (max-width: 599px) {
+}
 
 @media all and (max-width: 479px) {
 	.hero {
@@ -183,9 +198,7 @@
 		padding-right: 2.5%;
 
 		.curated-section {
-
 			section {
-
 				.top-rated-curate,
 				.start-earning {
 					padding: 5%;

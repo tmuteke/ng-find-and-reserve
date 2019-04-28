@@ -92,6 +92,31 @@ const propertySchema = mongoose.Schema({
 	},
 	reviews: {
 		type: Number,
+	},
+	student: {
+		name: {
+			first: {
+				type: String
+			},
+			last: {
+				type: String
+			}
+		},
+		email: {
+			type: String
+		},
+		registration: {
+			type: String
+		},
+		academicYear: {
+			type: String
+		},
+		gender: {
+			type: String
+		}
+	},
+	isReserved: {
+		type: Boolean
 	}
 });
 

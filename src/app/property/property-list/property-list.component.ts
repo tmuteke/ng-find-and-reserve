@@ -19,7 +19,13 @@ export class PropertyListComponent implements OnInit, OnDestroy {
 		this.propertySub = this.propertyService
 			.getPropertyUpdateListener()
 			.subscribe(properties => {
-				this.properties = properties;
+				const tempProperties: Property[] = [];
+				properties.filter(property => {
+					if (!property.isReserved) {
+						tempProperties.push(property);
+					}
+				});
+				this.properties = tempProperties;
 			});
 	}
 

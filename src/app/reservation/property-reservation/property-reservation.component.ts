@@ -1,25 +1,41 @@
-import { Component, OnInit } from "@angular/core";
+import { Component, DoCheck, OnInit } from "@angular/core";
 import { Property } from "src/app/property/property.model";
 import { PropertyService } from "src/app/property/property.service";
-import { ActivatedRoute, ParamMap } from "@angular/router";
+import {ActivatedRoute, ParamMap, Router} from '@angular/router';
 import { FormGroup, FormControl } from "@angular/forms";
+import { AuthService } from "../../auth/auth.service";
+import { User } from "../../auth/user.model";
+import { ToastrService } from "ngx-toastr";
 
 @Component({
 	selector: "app-property-reservation",
 	templateUrl: "./property-reservation.component.html",
 	styleUrls: ["./property-reservation.component.scss"]
 })
-export class PropertyReservationComponent implements OnInit {
-	public property: Property;
+export class PropertyReservationComponent implements OnInit, DoCheck {
+	property: Property;
+	propertyReservationForm: FormGroup;
 	private id: string;
-	public propertyReservationForm: FormGroup;
+	private student: {
+		name: {
+			first: string;
+			last: string;
+		};
+		registration: string;
+		academicYear: string;
+		gender: string;
+	};
+	private user: User;
 
 	constructor(
 		private propertyService: PropertyService,
-		private route: ActivatedRoute
+		private route: ActivatedRoute,
+		private authService: AuthService,
+		private toastr: ToastrService,
+		private router: Router
 	) {}
 
-	public ngOnInit(): void {
+	ngOnInit(): void {
 		this.route.paramMap.subscribe((pm: ParamMap) => {
 			if (pm.has("id")) {
 				this.id = pm.get("id");
@@ -42,22 +58,71 @@ export class PropertyReservationComponent implements OnInit {
 						rent: property.rent,
 						rating: property.rating,
 						reviews: property.reviews,
-						creator: property.creator
+						creator: property.creator,
+						student: property.student,
+						isReserved: property.isReserved
 					};
 				});
 			}
 		});
-		console.log(this.id);
-		console.log(this.property);
+
 		this.propertyReservationForm = new FormGroup({
-			regNumber: new FormControl(null),
-			name: new FormControl(null),
+			registration: new FormControl(null),
+			firstName: new FormControl(null),
+			lastName: new FormControl(null),
 			academicYear: new FormControl("Part 1"),
 			gender: new FormControl("Female")
 		});
+
+		this.toastr.toastrConfig.positionClass = "toast-top-center";
 	}
 
-	public onReserve(): void {
-		console.log("Hello World!");
+	ngDoCheck(): void {
+		this.authService.getUser(this.authService.userId).subscribe(user => {
+			this.user = {
+				id: user._id,
+				email: user.email,
+				name: {
+					first: user.name.first,
+					last: user.name.last
+				},
+				password: user.password
+			};
+		});
+	}
+
+	onReserve(): void {
+		this.populateFields();
+		if (this.propertyReservationForm.valid) {
+			this.property.student = {
+				name: {
+					first: this.student.name.first,
+					last: this.student.name.last
+				},
+				registration: this.student.registration,
+				academicYear: this.student.academicYear,
+				gender: this.student.gender,
+				email: this.user.email
+			};
+			this.property.isReserved = true;
+
+			this.propertyService.updateProperty(this.id, this.property);
+			this.toastr.success("Your reservation was successful", "Success!");
+			this.router.navigate(['/']);
+		} else {
+			this.toastr.error("Make you provide all information", "Error!");
+		}
+	}
+
+	private populateFields(): void {
+		this.student = {
+			name: {
+				first: this.propertyReservationForm.get("firstName").value,
+				last: this.propertyReservationForm.get("lastName").value
+			},
+			registration: this.propertyReservationForm.get("registration").value,
+			academicYear: this.propertyReservationForm.get("academicYear").value,
+			gender: this.propertyReservationForm.get("gender").value
+		};
 	}
 }

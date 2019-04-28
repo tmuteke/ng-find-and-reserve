@@ -43,7 +43,8 @@ router.post("", checkAuth, (req, res, next) => {
 		amenities: req.body.amenities,
 		spaces: req.body.spaces,
 		policies: req.body.policies,
-		creator: req.userData.userId
+		creator: req.userData.userId,
+		student: req.body.student
 	});
 	property.save().then(createdProperty => {
 		res.status(201).json({
@@ -71,6 +72,36 @@ router.get("/:id", (req, res, next) => {
 				message: "Property not found!"
 			});
 		}
+	});
+});
+
+router.put("/:id", checkAuth, (req, res, next) => {
+	const property = new Property({
+		_id: req.body.id,
+		landlord: req.body.landlord,
+		address: req.body.address,
+		apartmentType: req.body.apartmentType,
+		roomType: req.body.roomType,
+		isDedicatedSetup: req.body.isDedicatedSetup,
+		genderAccommodated: req.body.genderAccommodated,
+		numberOfStudents: req.body.numberOfStudents,
+		numberOfRooms: req.body.numberOfRooms,
+		numberOfBathrooms: req.body.numberOfBathrooms,
+		description: req.body.description,
+		rent: req.body.rent,
+		rating: req.body.rating,
+		reviews: req.body.reviews,
+		amenities: req.body.amenities,
+		spaces: req.body.spaces,
+		policies: req.body.policies,
+		creator: req.userData.userId,
+		student: req.body.student,
+		isReserved: req.body.isReserved
+	});
+	Property.updateOne({ _id: req.params.id }, property).then(result => {
+		res.status(200).json({
+			message: "PUT Success"
+		});
 	});
 });
 

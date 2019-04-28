@@ -42,12 +42,12 @@ export class PropertyDetailsComponent implements OnInit {
 						rent: property.rent,
 						rating: property.rating,
 						reviews: property.reviews,
-						creator: property.creator
+						creator: property.creator,
+						student: property.student,
+						isReserved: property.isReserved
 					};
 				});
 			}
 		});
-		console.log(this.id);
-		console.log(this.property);
 	}
 }

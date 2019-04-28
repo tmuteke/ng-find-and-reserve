@@ -8,15 +8,15 @@
 			</div>
 			<section>
 				<div>
-					<h6>Address: </h6><span>{{ property.address.houseNumber }} {{ property.address.street }}
-						{{ property.address.area }},
-						{{ property.address.city }}</span>
+					<h6>Address: </h6><span>{{ property?.address.houseNumber }} {{ property?.address.street }}
+						{{ property?.address.area }},
+						{{ property?.address.city }}</span>
 				</div>
 				<div>
-					<h6>Rent: </h6><span>${{ property.rent }} per month</span>
+					<h6>Rent: </h6><span>${{ property?.rent }} per month</span>
 				</div>
 				<div>
-					<h6>Landlord: </h6><span>{{ property.landlord.name.first }} {{ property.landlord.name.last }}</span>
+					<h6>Landlord: </h6><span>{{ property?.landlord.name.first }} {{ property?.landlord.name.last }}</span>
 				</div>
 			</section>
 		</section>
@@ -27,11 +27,15 @@
 			</div>
 			<section>
 				<h6>Registration Number</h6>
-				<input type="text" name="regNumber" id="regNumber" formControlName="regNumber" />
+				<input type="text" name="registration" id="registration" formControlName="registration" />
 			</section>
 			<section>
-				<h6>Fullname</h6>
-				<input type="text" name="name" id="name" formControlName="name" />
+				<h6>First Name</h6>
+				<input type="text" name="firstName" id="firstName" formControlName="firstName" />
+			</section>
+			<section>
+				<h6>Last Name</h6>
+				<input type="text" name="lastName" id="lastName" formControlName="lastName" />
 			</section>
 			<section>
 				<h6>Academic Year</h6>
@@ -86,14 +90,14 @@
 				</div>
 			</section>
 		</section>
-		<section *ngIf="property.policies.length > 0" class="group policies" id="policies">
+		<section *ngIf="property?.policies.length > 0" class="group policies" id="policies">
 			<div class="header">
 				<span class="heading heading-pri">Policies</span>
 				<span class="heading heading-sec">Policies to know about the place, by the landlord</span>
 			</div>
 			<section>
 				<ul>
-					<li *ngFor="let policy of property.policies">{{ policy }}</li>
+					<li *ngFor="let policy of property?.policies">{{ policy }}</li>
 				</ul>
 			</section>
 		</section>
@@ -101,7 +105,7 @@
 	<nav>
 		<section>
 			<div class="cancel">
-				<a [routerLink]="['/property', property.id, 'details']"><i class="fa fa-times"></i>Cancel</a>
+				<a [routerLink]="['/property', property?.id, 'details']"><i class="fa fa-times"></i>Cancel</a>
 			</div>
 			<div class="enlist">
 				<button type="submit">

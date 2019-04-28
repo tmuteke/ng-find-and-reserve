@@ -153,11 +153,22 @@ export class EnlistComponent implements OnInit, DoCheck {
 			property.rent = this.rent;
 			property.rating = 0;
 			property.reviews = 0;
+			property.student = {
+				name: {
+					first: "",
+					last: ""
+				},
+				registration: "",
+				academicYear: "",
+				gender: "",
+				email: ""
+			};
+			property.isReserved = false;
+			this.propertyService.addProperty(property);
 			this.toastr.success(
 				"Your place has been enlisted successfully",
 				"Success!"
 			);
-			this.propertyService.addProperty(property);
 			this.router.navigate(["finish"], { relativeTo: this.route });
 		} else {
 			this.toastr.error("Make sure all fields are filled.", "Error!");

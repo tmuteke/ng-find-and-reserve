@@ -16,8 +16,9 @@ import { StaffEnlistRoomComponent } from "./staff/staff-enlist-room/staff-enlist
 import { PropertyReservationComponent } from "./reservation/property-reservation/property-reservation.component";
 import { RoomReservationComponent } from "./reservation/room-reservation/room-reservation.component";
 import { StaffRoomEditComponent } from "./staff/staff-room-edit/staff-room-edit.component";
-import {AuthGuard} from './auth/auth.guard';
-import {StaffStudentsComponent} from './staff/staff-students/staff-students.component';
+import { AuthGuard } from "./auth/auth.guard";
+import { StaffStudentsComponent } from "./staff/staff-students/staff-students.component";
+import { ProfileComponent } from "./profile/profile.component";
 
 const routes: Routes = [
 	{
@@ -93,6 +94,10 @@ const routes: Routes = [
 			}
 		],
 		canActivate: [AuthGuard]
+	},
+	{
+		path: "user/:id/profile",
+		component: ProfileComponent
 	},
 	{
 		path: "page-not-found",

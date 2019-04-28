@@ -18,23 +18,30 @@
 			<td>{{ room.roomNumber }}</td>
 		</tr>
 	</table>
-	<table *ngIf="rooms.length > 0" class="off-campus">
+	<table *ngIf="properties.length > 0" class="off-campus">
 		<th class="heading heading-ter">Off-Campus Students</th>
 		<tr class="headings">
 			<th class="heading heading-ter">Student Number</th>
 			<th class="heading heading-ter">Student Name</th>
 			<th class="heading heading-ter">Gender</th>
 			<th class="heading heading-ter">Academic Year</th>
-			<th class="heading heading-ter">Room Hostel</th>
-			<th class="heading heading-ter">Room Number</th>
+			<th class="heading heading-ter">House Address</th>
+			<th class="heading heading-ter">Landlord Name</th>
+			<th class="heading heading-ter">Landlord Contact</th>
 		</tr>
-		<tr *ngFor="let room of rooms">
-			<td>{{ room.student.registration }}</td>
-			<td>{{ room.student.name.first }} {{ room.student.name.last }}</td>
-			<td>{{ room.student.gender }}</td>
-			<td>{{ room.student.academicYear }}</td>
-			<td>{{ room.roomHostel }}</td>
-			<td>{{ room.roomNumber }}</td>
+		<tr *ngFor="let property of properties">
+			<td>{{ property.student.registration }}</td>
+			<td>
+				{{ property.student.name.first }} {{ property.student.name.last }}
+			</td>
+			<td>{{ property.student.gender }}</td>
+			<td>{{ property.student.academicYear }}</td>
+			<td>
+				{{ property.address.houseNumber }} {{ property.address.street }} <br>
+				{{ property.address.area }}, {{ property.address.city }}
+			</td>
+			<td>{{ property.landlord.name.first }} {{ property.landlord.name.last }}</td>
+			<td>{{ property.landlord.phone }} <br> {{ property.landlord.email }}</td>
 		</tr>
 	</table>
 </div>

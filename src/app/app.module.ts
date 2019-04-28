@@ -36,6 +36,7 @@ import { AuthInterceptor } from "./auth/auth-interceptor";
 import { AuthService } from "./auth/auth.service";
 import { StaffRoomEditComponent } from './staff/staff-room-edit/staff-room-edit.component';
 import { StaffStudentsComponent } from './staff/staff-students/staff-students.component';
+import { ProfileComponent } from './profile/profile.component';
 
 @NgModule({
 	declarations: [
@@ -64,7 +65,8 @@ import { StaffStudentsComponent } from './staff/staff-students/staff-students.co
 		PropertyReservationComponent,
 		RoomReservationComponent,
 		StaffRoomEditComponent,
-		StaffStudentsComponent
+		StaffStudentsComponent,
+		ProfileComponent
 	],
 	imports: [
 		BrowserModule,

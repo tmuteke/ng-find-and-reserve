@@ -39,7 +39,9 @@ export class PropertyService {
 							rent: property.rent,
 							rating: property.rating,
 							reviews: property.reviews,
-							creator: property.creator
+							creator: property.creator,
+							student: property.student,
+							isReserved: property.isReserved
 						};
 					});
 				})
@@ -89,7 +91,18 @@ export class PropertyService {
 			rent: number;
 			rating: number;
 			reviews: number;
-			creator: string
+			creator: string;
+			student: {
+				name: {
+					first: string;
+					last: string;
+				};
+				email: string;
+				registration: string;
+				academicYear: string;
+				gender: string;
+			};
+			isReserved: boolean;
 		}>("http://localhost:3000/api/properties/" + id);
 	}
 
@@ -103,7 +116,18 @@ export class PropertyService {
 				this.properties.push(property);
 				this.propertiesUpdated.next([...this.properties]);
 			});
-		console.log(property);
+	}
+
+	public updateProperty(id: string, property: Property): void {
+		this.http
+			.put("http://localhost:3000/api/properties/" + id, property)
+			.subscribe(res => {
+				const properties = [...this.properties];
+				const propertyIndex = properties.findIndex(p => p.id === property.id);
+				properties[propertyIndex] = property;
+				this.properties = properties;
+				this.propertiesUpdated.next([...this.properties]);
+			});
 	}
 
 	getPropertyUpdateListener() {

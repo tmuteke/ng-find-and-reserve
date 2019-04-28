@@ -37,4 +37,15 @@ export class Property {
 	public rating: number;
 	public reviews: number;
 	public creator: string;
+	public student: {
+		name: {
+			first: string;
+			last: string;
+		};
+		email: string;
+		registration: string;
+		academicYear: string;
+		gender: string;
+	};
+	public isReserved: boolean;
 }

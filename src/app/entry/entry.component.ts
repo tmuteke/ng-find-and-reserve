@@ -1,71 +1,92 @@
-import { Component, DoCheck, OnInit } from "@angular/core";
+import {
+	AfterContentChecked,
+	AfterContentInit,
+	AfterViewChecked,
+	AfterViewInit,
+	Component,
+	DoCheck,
+	OnChanges,
+	OnInit,
+	SimpleChanges
+} from "@angular/core";
 import { PropertyService } from "../property/property.service";
-import { Property } from "../property/property.model";
-import * as CanvasJS from "../../assets/js/canvasjs.min";
 import { RoomService } from "../room/room.service";
-import { Room } from "../room/room.model";
+import { Chart } from "chart.js";
 
 @Component({
 	selector: "app-entry",
 	templateUrl: "./entry.component.html",
 	styleUrls: ["./entry.component.scss"]
 })
-export class EntryComponent implements OnInit, DoCheck {
-	public totalProperties: number;
+export class EntryComponent
+	implements
+		OnChanges,
+		OnInit,
+		DoCheck,
+		AfterContentInit,
+		AfterContentChecked,
+		AfterViewInit,
+		AfterViewChecked {
+	chart = [];
 
 	constructor(
 		private propService: PropertyService,
 		private roomService: RoomService
 	) {}
 
+	ngOnChanges(changes: SimpleChanges): void {
+		console.log(changes);
+		console.log("ngOnChanges");
+	}
+
 	ngOnInit() {
-		this.propService
-			.getPropertyUpdateListener()
-			.subscribe((properties: Property[]) => {
-				this.totalProperties = properties.length;
+		this.roomService.getRoomUpdateListener().subscribe(rooms => {
+			const ar = [];
+			const rr = [];
+			rooms.forEach(room => {
+				if (room.isReserved) {
+					ar.push(room);
+				} else {
+					rr.push(room)
+				}
 			});
+			this.chart = new Chart("ctx", {
+				type: "doughnut",
+				data: {
+					labels: ["Reserved Rooms", "Available Rooms"],
+					datasets: [
+						{
+							label: "# of Votes",
+							data: [ar.length, rr.length],
+							backgroundColor: [
+								"rgba(255, 202, 40, 0.75)",
+								"rgba(38, 166, 154, 0.75)"
+							],
+							borderColor: [
+								"rgba(255, 202, 40, 1)",
+								"rgba(38, 166, 154, 1)"
+							],
+							borderWidth: 3
+						}
+					]
+				}
+			});
+		});
 	}
 
 	ngDoCheck(): void {
-		this.roomService.getRoomUpdateListener().subscribe(rooms => {
-			const reservedRooms: Room[] = [];
-			const nReservedRooms: Room[] = [];
-			rooms.filter(room => {
-				if (room.isReserved) {
-					reservedRooms.push(room);
-				} else {
-					nReservedRooms.push(room);
-				}
-			});
-
-			CanvasJS.addColorSet("chartColorSet", ["#26A69A", "#FFCA28"]);
-			let chart = new CanvasJS.Chart("chart", {
-				theme: "light2",
-				animationEnabled: true,
-				// exportEnabled: true,
-				creditText: " ",
-				colorSet: "chartColorSet",
-				// title: {
-				// 	text: "On-Campus Residence"
-				// },
-				data: [
-					{
-						type: "doughnut",
-						showInLegend: true,
-						toolTipContent: "<b>{name}</b>: {y} rooms (#percent%)",
-						indexLabel: "{name} - #percent%",
-						dataPoints: [
-							{ y: reservedRooms.length, name: "Reserved Rooms" },
-							{
-								y: nReservedRooms.length,
-								name: "Available Rooms"
-							}
-						]
-					}
-				]
-			});
-
-			chart.render();
-		});
+		// console.log("ngDoCheck");
+	}
+	ngAfterContentInit(): void {
+		// console.log("ngAfterContentInit");
+	}
+	ngAfterContentChecked(): void {
+		// console.log("ngAfterContentChecked");
+	}
+	ngAfterViewInit(): void {
+		// console.log("ngAfterViewInit");
+	}
+	ngAfterViewChecked(): void {
+		// console.log("ngAfterViewChecked");
 	}
 }

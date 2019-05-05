@@ -28,7 +28,7 @@ export class EnlistComponent implements OnInit, DoCheck {
 	private numberOfStudents: number;
 	private numberOfRooms: number;
 	private numberOfBathrooms: number;
-	private houseNumber: string;
+	private houseNumber: number;
 	private street: string;
 	private area: string;
 	private city: string;
@@ -49,21 +49,33 @@ export class EnlistComponent implements OnInit, DoCheck {
 		this.enlistForm = new FormGroup({
 			propertyType: new FormControl("Rooms", Validators.required),
 			roomType: new FormControl("shared rooms", Validators.required),
-			rent: new FormControl(100, Validators.required),
+			rent: new FormControl(100, [Validators.required, Validators.min(1)]),
 			isDedicatedSetup: new FormControl("true", Validators.required),
 			genderAccommodated: new FormControl(
 				"female and male",
 				Validators.required
 			),
-			numberOfStudents: new FormControl(5, Validators.required),
+			numberOfStudents: new FormControl(5, [
+				Validators.required,
+				Validators.min(1)
+			]),
 			numberOfRooms: new FormControl(5, Validators.required),
-			numberOfBathrooms: new FormControl(3, Validators.required),
-			houseNumber: new FormControl(1, Validators.required),
+			numberOfBathrooms: new FormControl(3, [
+				Validators.required,
+				Validators.min(1)
+			]),
+			houseNumber: new FormControl(1, [
+				Validators.required,
+				Validators.min(1)
+			]),
 			street: new FormControl(null, Validators.required),
 			area: new FormControl(null, Validators.required),
 			city: new FormControl(null, Validators.required),
 			description: new FormControl(null, Validators.required),
-			phone: new FormControl(null, Validators.required),
+			phone: new FormControl(null, [
+				Validators.required,
+				Validators.pattern("^\\d{10}$")
+			]),
 			essentials: new FormGroup({
 				wifi: new FormControl(null),
 				tv: new FormControl(null),
@@ -116,7 +128,6 @@ export class EnlistComponent implements OnInit, DoCheck {
 				password: user.password
 			};
 		});
-		console.log(this.user);
 	}
 
 	public onEnlist(): void {
@@ -130,7 +141,7 @@ export class EnlistComponent implements OnInit, DoCheck {
 				avatar: "http://i.pravatar.cc/300"
 			};
 			property.address = {
-				houseNumber: this.houseNumber,
+				houseNumber: "" + this.houseNumber,
 				street: this.street,
 				city: this.city,
 				area: this.area,
@@ -171,7 +182,10 @@ export class EnlistComponent implements OnInit, DoCheck {
 			);
 			this.router.navigate(["finish"], { relativeTo: this.route });
 		} else {
-			this.toastr.error("Make sure all fields are filled.", "Error!");
+			this.toastr.error(
+				"Incorrect data may have been entered. Make sure all fields with a * are filled, as they're required.",
+				"Form Invalid!"
+			);
 		}
 	}
 

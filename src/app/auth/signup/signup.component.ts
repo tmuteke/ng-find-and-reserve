@@ -3,7 +3,7 @@ import { FormControl, FormGroup, Validators } from "@angular/forms";
 import { AuthService } from "../auth.service";
 import { User } from "../user.model";
 import { ToastrService } from "ngx-toastr";
-import {Router} from '@angular/router';
+import { Router } from "@angular/router";
 
 @Component({
 	templateUrl: "./signup.component.html",
@@ -54,7 +54,7 @@ export class SignupComponent implements OnInit {
 
 			this.authService.createUser(user);
 			this.toastr.success("You've been signed up successfully", "Success!");
-			this.router.navigate(['/login']);
+			this.router.navigate(["/login"]);
 		} else {
 			this.toastr.error("Provide valid data", "Error!");
 		}

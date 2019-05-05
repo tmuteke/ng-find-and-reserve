@@ -1,8 +1,8 @@
 import { Component, DoCheck, OnInit } from "@angular/core";
 import { Property } from "src/app/property/property.model";
 import { PropertyService } from "src/app/property/property.service";
-import {ActivatedRoute, ParamMap, Router} from '@angular/router';
-import { FormGroup, FormControl } from "@angular/forms";
+import { ActivatedRoute, ParamMap, Router } from "@angular/router";
+import { FormGroup, FormControl, Validators } from "@angular/forms";
 import { AuthService } from "../../auth/auth.service";
 import { User } from "../../auth/user.model";
 import { ToastrService } from "ngx-toastr";
@@ -67,9 +67,18 @@ export class PropertyReservationComponent implements OnInit, DoCheck {
 		});
 
 		this.propertyReservationForm = new FormGroup({
-			registration: new FormControl(null),
-			firstName: new FormControl(null),
-			lastName: new FormControl(null),
+			registration: new FormControl(null, [
+				Validators.required,
+				Validators.pattern("^((H|h)[1])\\d{5}([A-Z]|[a-z]){1}$")
+			]),
+			firstName: new FormControl(null, [
+				Validators.required,
+				Validators.pattern("^([A-Z])([a-z]+)$")
+			]),
+			lastName: new FormControl(null, [
+				Validators.required,
+				Validators.pattern("^([A-Z])([a-z]+)$")
+			]),
 			academicYear: new FormControl("Part 1"),
 			gender: new FormControl("Female")
 		});
@@ -99,7 +108,7 @@ export class PropertyReservationComponent implements OnInit, DoCheck {
 					first: this.student.name.first,
 					last: this.student.name.last
 				},
-				registration: this.student.registration,
+				registration: this.student.registration.toUpperCase(),
 				academicYear: this.student.academicYear,
 				gender: this.student.gender,
 				email: this.user.email
@@ -108,7 +117,7 @@ export class PropertyReservationComponent implements OnInit, DoCheck {
 
 			this.propertyService.updateProperty(this.id, this.property);
 			this.toastr.success("Your reservation was successful", "Success!");
-			this.router.navigate(['/']);
+			this.router.navigate(["/"]);
 		} else {
 			this.toastr.error("Make you provide all information", "Error!");
 		}

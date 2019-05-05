@@ -67,7 +67,6 @@ router.put("/:id", (req, res, next) => {
 		isReserved: req.body.isReserved
 	});
 	Room.updateOne({ _id: req.params.id }, room).then(result => {
-		console.log(result);
 		res.status(200).json({
 			message: "PUT Success"
 		});

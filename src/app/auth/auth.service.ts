@@ -4,6 +4,8 @@ import { HttpClient } from "@angular/common/http";
 import { AuthData } from "./auth-data.model";
 import { Subject, Observable } from "rxjs";
 import { Router } from "@angular/router";
+import { map } from "rxjs/operators";
+import { ToastrService } from "ngx-toastr";
 
 @Injectable({
 	providedIn: "root"
@@ -15,7 +17,11 @@ export class AuthService {
 	private _userId: string;
 	private tokenTimer: any;
 
-	constructor(private http: HttpClient, private router: Router) {}
+	constructor(
+		private http: HttpClient,
+		private router: Router,
+		private toastr: ToastrService
+	) {}
 
 	get token(): string {
 		return this._token;
@@ -41,12 +47,10 @@ export class AuthService {
 		};
 		this.http
 			.post("http://localhost:3000/api/users/signup ", authData)
-			.subscribe(res => {
-				console.log(res);
-			});
+			.subscribe(res => res);
 	}
 
-	public login(user: User): void {
+	public login(user: User): any {
 		const authData: AuthData = {
 			email: user.email,
 			name: user.name,
@@ -70,6 +74,12 @@ export class AuthService {
 					const expiration = new Date(now.getTime() + expiresIn * 1000);
 					this.saveAuthData(token, expiration, this.userId);
 					this.router.navigate(["/"]);
+				} else {
+					this.toastr.toastrConfig.positionClass = "toast-top-center";
+					this.toastr.error(
+						"Incorrect email or password.",
+						"Login failed!"
+					);
 				}
 			});
 	}

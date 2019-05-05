@@ -1,11 +1,11 @@
 import { Component, DoCheck, OnInit } from "@angular/core";
-import { FormGroup, FormControl } from "@angular/forms";
+import { FormGroup, FormControl, Validators } from "@angular/forms";
 import { Room } from "src/app/room/room.model";
 import { RoomService } from "src/app/room/room.service";
-import {ActivatedRoute, ParamMap, Router} from '@angular/router';
+import { ActivatedRoute, ParamMap, Router } from "@angular/router";
 import { AuthService } from "../../auth/auth.service";
 import { User } from "../../auth/user.model";
-import {ToastrService} from 'ngx-toastr';
+import { ToastrService } from "ngx-toastr";
 
 @Component({
 	selector: "app-room-reservation",
@@ -55,9 +55,18 @@ export class RoomReservationComponent implements OnInit, DoCheck {
 		});
 
 		this.roomReservationForm = new FormGroup({
-			registration: new FormControl(null),
-			firstName: new FormControl(null),
-			lastName: new FormControl(null),
+			registration: new FormControl(null, [
+				Validators.required,
+				Validators.pattern("^((H|h)[1])\\d{5}([A-Z]|[a-z]){1}$")
+			]),
+			firstName: new FormControl(null, [
+				Validators.required,
+				Validators.pattern("^([A-Z])([a-z]+)$")
+			]),
+			lastName: new FormControl(null, [
+				Validators.required,
+				Validators.pattern("^([A-Z])([a-z]+)$")
+			]),
 			academicYear: new FormControl("Part 1"),
 			gender: new FormControl("Female"),
 			activities: new FormGroup({
@@ -90,7 +99,7 @@ export class RoomReservationComponent implements OnInit, DoCheck {
 		this.populateFields();
 		if (this.roomReservationForm.valid) {
 			this.room.student = {
-				registration: this.student.registration,
+				registration: this.student.registration.toUpperCase(),
 				name: {
 					first: this.student.firstName,
 					last: this.student.lastName
@@ -102,10 +111,13 @@ export class RoomReservationComponent implements OnInit, DoCheck {
 			this.room.isReserved = true;
 
 			this.roomService.updateRoom(this.id, this.room);
-			this.toastr.success("Your room reservation was successful", "Success!");
-			this.router.navigate(['/']);
+			this.toastr.success(
+				"Your room reservation was successful",
+				"Success!"
+			);
+			this.router.navigate(["/"]);
 		} else {
-			this.toastr.error("Make sure you provide all information", "Error!");
+			this.toastr.error("Make sure you provide all information", "Invalid Form!");
 		}
 	}
 

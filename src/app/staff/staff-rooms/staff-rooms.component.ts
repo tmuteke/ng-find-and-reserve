@@ -3,6 +3,7 @@ import { RoomService } from "../../room/room.service";
 import { Room } from "../../room/room.model";
 import { Subscription } from "rxjs";
 import { Router, ActivatedRoute } from "@angular/router";
+import { Chart } from "chart.js";
 
 @Component({
 	selector: "app-staff-rooms",
@@ -11,6 +12,7 @@ import { Router, ActivatedRoute } from "@angular/router";
 })
 export class StaffRoomsComponent implements OnInit, OnDestroy {
 	rooms: Room[] = [];
+	chart = [];
 	private roomsSub: Subscription;
 
 	constructor(
@@ -23,14 +25,40 @@ export class StaffRoomsComponent implements OnInit, OnDestroy {
 		this.roomService.getRooms();
 		this.roomsSub = this.roomService
 			.getRoomUpdateListener()
-			.subscribe((rooms: Room[]) => {
-				const tempRooms: Room[] = [];
-				rooms.filter(room => {
-					if (!room.isReserved) {
-						tempRooms.push(room);
+			.subscribe(rooms => {
+				const tr: Room[] = [];
+				const ar = [];
+				const rr = [];
+				rooms.forEach(room => {
+					if (room.isReserved) {
+						ar.push(room);
+					} else {
+						rr.push(room);
+						tr.push(room);
 					}
 				});
-				this.rooms = tempRooms;
+				this.rooms = tr;
+				this.chart = new Chart("ctx", {
+					type: "doughnut",
+					data: {
+						labels: ["Reserved Rooms", "Available Rooms"],
+						datasets: [
+							{
+								label: "# of Votes",
+								data: [ar.length, rr.length],
+								backgroundColor: [
+									"rgba(255, 202, 40, 0.75)",
+									"rgba(38, 166, 154, 0.75)"
+								],
+								borderColor: [
+									"rgba(255, 202, 40, 1)",
+									"rgba(38, 166, 154, 1)"
+								],
+								borderWidth: 3
+							}
+						]
+					}
+				});
 			});
 	}
 

@@ -1,9 +1,9 @@
 /* You can add global styles to this file, and also import other style files */
 
 @import url("https://fonts.googleapis.com/icon?family=Material+Icons");
-@import 'assets/sass/colours';
-@import 'assets/sass/selectors';
-@import 'assets/sass/buttons';
+@import "assets/sass/colours";
+@import "assets/sass/selectors";
+@import "assets/sass/buttons";
 
 @font-face {
 	font-family: Ubuntu;
@@ -12,12 +12,12 @@
 
 @font-face {
 	font-family: "Abril Fat Face";
-	src: url("assets/fonts/abril-fat-face.ttf")
+	src: url("assets/fonts/abril-fat-face.ttf");
 }
 
 @font-face {
 	font-family: "Gotham Medium";
-	src: url("assets/fonts/gotham-medium.ttf")
+	src: url("assets/fonts/gotham-medium.ttf");
 }
 
 body {
@@ -73,7 +73,7 @@ body {
 		&.line {
 			display: block;
 			height: 5px;
-			margin: .5rem 0;
+			margin: 0.5rem 0;
 			border-bottom: 1px solid $blue_gray50;
 
 			&.line-75 {
@@ -106,8 +106,8 @@ body {
 	}
 
 	textarea {
-		margin-top: .75rem;
-		margin-bottom: .5rem;
+		margin-top: 0.75rem;
+		margin-bottom: 0.5rem;
 		transition: box-shadow 0.2s;
 		font-family: Ubuntu !important;
 		color: $blue_gray700;
@@ -118,14 +118,19 @@ body {
 		&:focus {
 			border: 1px solid $teal50 !important;
 			outline: none !important;
-			box-shadow: inset 0 0 2px $tealA100,
-				0 0 2px $tealA100;
+			box-shadow: inset 0 0 2px $tealA100, 0 0 2px $tealA100;
+		}
+
+		&.ng-invalid.ng-dirty {
+			border: 1px solid $red200 !important;
+			outline: none !important;
+			box-shadow: inset 0 0 2px $red400, 0 0 2px $red400;
 		}
 	}
 
 	input {
-		margin-top: .75rem;
-		margin-bottom: .5rem;
+		margin-top: 0.75rem;
+		margin-bottom: 0.5rem;
 		transition: box-shadow 0.2s;
 		font-family: Ubuntu !important;
 		color: $blue_gray700;
@@ -133,15 +138,13 @@ body {
 		&:focus {
 			border: 1px solid $teal50 !important;
 			outline: none !important;
-			box-shadow: inset 0 0 2px $tealA100,
-				0 0 2px $tealA100;
+			box-shadow: inset 0 0 2px $tealA100, 0 0 2px $tealA100;
 		}
 
 		&.ng-invalid.ng-dirty {
 			border: 1px solid $red200 !important;
 			outline: none !important;
-			box-shadow: inset 0 0 2px $red400,
-				0 0 2px $red400;
+			box-shadow: inset 0 0 2px $red400, 0 0 2px $red400;
 		}
 	}
 
@@ -170,8 +173,8 @@ body {
 		}
 
 		option {
-			padding-top: .75rem;
-			padding-bottom: .75rem;
+			padding-top: 0.75rem;
+			padding-bottom: 0.75rem;
 			height: 50px;
 			color: $blue_gray700;
 		}
@@ -186,11 +189,11 @@ body {
 			visibility: hidden;
 			margin: 0.5rem 0 0;
 
-			&:checked+label:after {
+			&:checked + label:after {
 				left: 16px;
 			}
 
-			&:checked+label {
+			&:checked + label {
 				background-color: $tealA700;
 			}
 		}
@@ -206,7 +209,7 @@ body {
 			border-radius: 60px;
 
 			&:after {
-				content: '';
+				content: "";
 				width: 13px;
 				height: 13px;
 				border-radius: 50px;
@@ -237,7 +240,6 @@ body {
 		margin-bottom: 5px;
 		font-weight: 400;
 
-
 		&.heading-pri {
 			font-size: 24px;
 			color: $blue_gray700;
@@ -254,9 +256,15 @@ body {
 		}
 	}
 
+	.required {
+		color: $red400;
+		font-size: 0.7em;
+		font-weight: 700;
+	}
+
 	/* Clearfix ------------------ */
 	.cf:after {
-		content: '';
+		content: "";
 		display: table;
 		clear: both;
 	}

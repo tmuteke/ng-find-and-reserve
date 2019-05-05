@@ -121,15 +121,15 @@
 				<input type="number" name="houseNumber" id="houseNumber" formControlName="houseNumber" min="1">
 			</section>
 			<section>
-				<h6>Street/Road Name</h6>
-				<input type="text" name="street" id="street" formControlName="street" placeholder="e.g. Caledon Road">
+				<h6><span class="required">&#9913;</span> Street/Road Name</h6>
+				<input type="text" name="street" id="street" formControlName="street" placeholder="e.g. Caledon Road" #street>
 			</section>
 			<section>
-				<h6>Area</h6>
+				<h6><span class="required">&#9913;</span> Area</h6>
 				<input type="text" name="area" id="area" formControlName="area" placeholder="e.g. Belvedere">
 			</section>
 			<section>
-				<h6>City</h6>
+				<h6><span class="required">&#9913;</span> City</h6>
 				<input type="text" name="city" id="city" formControlName="city" placeholder="e.g. Harare">
 			</section>
 		</section>
@@ -300,7 +300,7 @@
 				<span class="heading heading-sec">Briefly describe your place</span>
 			</div>
 			<section>
-				<h6>Add brief description</h6>
+				<h6><span class="required">&#9913;</span> Add brief description</h6>
 				<textarea name="description" id="description" formControlName="description" cols="30" rows="10"></textarea>
 			</section>
 		</section>
@@ -310,9 +310,9 @@
 				<span class="heading heading-sec">Add your phone number</span>
 			</div>
 			<section>
-				<h6>This phone number will enable students to contact you and probably make payments to. However,
+				<h6><span class="required">&#9913;</span> This phone number will enable students to contact you and probably make payments to. However,
 					you can always specify and modify them accordingly</h6>
-				<input type="text" name="phone" id="phone" formControlName="phone" placeholder="e.g. 07xxxxxxxx">
+				<input type="text" name="phone" id="phone" formControlName="phone" placeholder="e.g. 0771234567">
 			</section>
 		</section>
 		<section class="group policies" id="policies">

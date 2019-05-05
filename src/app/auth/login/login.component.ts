@@ -1,4 +1,4 @@
-import { Component, OnInit } from "@angular/core";
+import { Component, HostListener, OnInit } from "@angular/core";
 import { FormControl, FormGroup } from "@angular/forms";
 import { AuthService } from "../auth.service";
 import { User } from "../user.model";
@@ -21,6 +21,9 @@ export class LoginComponent implements OnInit {
 			password: new FormControl(null)
 		});
 	}
+
+	@HostListener("window:enter", ["$event"])
+	keyEvent(event: KeyboardEvent) {}
 
 	onSubmitLogin(): void {
 		this.populateFields();

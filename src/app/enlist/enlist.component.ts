@@ -175,6 +175,7 @@ export class EnlistComponent implements OnInit, DoCheck {
 				email: ""
 			};
 			property.isReserved = false;
+			property.reports = [];
 			this.propertyService.addProperty(property);
 			this.toastr.success(
 				"Your place has been enlisted successfully",

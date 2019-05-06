@@ -41,7 +41,8 @@ export class PropertyService {
 							reviews: property.reviews,
 							creator: property.creator,
 							student: property.student,
-							isReserved: property.isReserved
+							isReserved: property.isReserved,
+							reports: property.reports
 						};
 					});
 				})
@@ -103,6 +104,7 @@ export class PropertyService {
 				gender: string;
 			};
 			isReserved: boolean;
+			reports: Array<any>;
 		}>("http://localhost:3000/api/properties/" + id);
 	}
 
@@ -123,7 +125,9 @@ export class PropertyService {
 			.put("http://localhost:3000/api/properties/" + id, property)
 			.subscribe(res => {
 				const properties = [...this.properties];
-				const propertyIndex = properties.findIndex(p => p.id === property.id);
+				const propertyIndex = properties.findIndex(
+					p => p.id === property.id
+				);
 				properties[propertyIndex] = property;
 				this.properties = properties;
 				this.propertiesUpdated.next([...this.properties]);

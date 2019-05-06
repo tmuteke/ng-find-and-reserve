@@ -30,8 +30,14 @@ export class StaffEnlistRoomComponent implements OnInit {
 	public ngOnInit(): void {
 		this.enlistForm = new FormGroup({
 			roomHostel: new FormControl("Hostel 1", Validators.required),
-			roomNumber: new FormControl(1, Validators.required),
-			roomFee: new FormControl(850, Validators.required),
+			roomNumber: new FormControl(1, [
+				Validators.required,
+				Validators.min(1)
+			]),
+			roomFee: new FormControl(850, [
+				Validators.required,
+				Validators.min(1)
+			]),
 			genderAccommodated: new FormControl(
 				"female and male",
 				Validators.required
@@ -104,7 +110,7 @@ export class StaffEnlistRoomComponent implements OnInit {
 			this.roomService.addRoom(room);
 			this.router.navigate(["staff", "dashboard"]);
 		} else {
-			this.toastr.success(
+			this.toastr.error(
 				"Make sure all required fields are filled",
 				"Error!"
 			);

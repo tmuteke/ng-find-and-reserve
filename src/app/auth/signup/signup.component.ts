@@ -17,7 +17,7 @@ export class SignupComponent implements OnInit {
 	private password: string;
 
 	constructor(
-		public authService: AuthService,
+		private authService: AuthService,
 		private toastr: ToastrService,
 		private router: Router
 	) {}
@@ -27,10 +27,12 @@ export class SignupComponent implements OnInit {
 			email: new FormControl(null, [Validators.required, Validators.email]),
 			firstName: new FormControl(null, [
 				Validators.required,
+				Validators.pattern("^([A-Z])([a-z]+)$"),
 				Validators.maxLength(20)
 			]),
 			lastName: new FormControl(null, [
 				Validators.required,
+				Validators.pattern("^([A-Z])([a-z]+)$"),
 				Validators.maxLength(20)
 			]),
 			password: new FormControl(null, [
@@ -56,7 +58,10 @@ export class SignupComponent implements OnInit {
 			this.toastr.success("You've been signed up successfully", "Success!");
 			this.router.navigate(["/login"]);
 		} else {
-			this.toastr.error("Provide valid data", "Error!");
+			this.toastr.error(
+				"Provide valid data. Names should start with capitals.",
+				"Error!"
+			);
 		}
 	}
 

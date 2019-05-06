@@ -1,4 +1,4 @@
-@import '../../../assets/sass/colours';
+@import "../../../assets/sass/colours";
 
 a {
 	background-color: $white;
@@ -49,13 +49,43 @@ a {
 		}
 	}
 
-	.rating {
+	.rating,
+	.experience {
 		padding: 0 4px 8px;
 		text-align: center;
 
 		i {
 			margin: 2px;
 			font-size: 20px;
+
+			&.green-icon {
+				color: $teal400;
+			}
+
+			&.warn-icon {
+				color: $amber400;
+			}
+
+			&.red-icon {
+				color: $red400;
+			}
+		}
+	}
+
+	.flag-bar {
+		padding: 2px 0;
+		border-radius: 0 0 3px 3px;
+
+		&.green {
+			background-color: $teal400;
+		}
+
+		&.warn {
+			background-color: $amber400;
+		}
+
+		&.red {
+			background-color: $red400;
 		}
 	}
 }

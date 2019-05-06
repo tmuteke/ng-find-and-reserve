@@ -19,6 +19,7 @@ import { StaffRoomEditComponent } from "./staff/staff-room-edit/staff-room-edit.
 import { AuthGuard } from "./auth/auth.guard";
 import { StaffStudentsComponent } from "./staff/staff-students/staff-students.component";
 import { ProfileComponent } from "./profile/profile.component";
+import {PropertyReportComponent} from './property/property-item/property-details/property-report/property-report.component';
 
 const routes: Routes = [
 	{
@@ -33,6 +34,11 @@ const routes: Routes = [
 	{
 		path: "property/:id/reservation",
 		component: PropertyReservationComponent,
+		canActivate: [AuthGuard]
+	},
+	{
+		path: "property/:id/report-property",
+		component: PropertyReportComponent,
 		canActivate: [AuthGuard]
 	},
 	{

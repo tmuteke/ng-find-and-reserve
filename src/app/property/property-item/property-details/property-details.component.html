@@ -8,17 +8,35 @@
 		<div class="col-lg-7">
 			<div class="property-details-container">
 				<section>
-					<span class="address">{{ property?.address.houseNumber }} {{ property?.address.street }}</span>
-					<span class="location">{{property?.address.area }} · {{ property?.address.city }}</span>
+					<span class="address"
+						>{{ property?.address.houseNumber }}
+						{{ property?.address.street }}</span
+					>
+					<span class="location"
+						>{{ property?.address.area }} ·
+						{{ property?.address.city }}</span
+					>
 				</section>
 				<span class="line"></span>
 				<section class="essential-info">
-					<p><i class="fa fa-home"></i>{{ property?.apartmentType }}&mdash;students use {{ property?.roomType }}
+					<p>
+						<i class="fa fa-home"></i
+						>{{ property?.apartmentType }}&mdash;students use
+						{{ property?.roomType }}
 					</p>
-					<p><i class="fa fa-venus-mars"></i>Accommodates {{ property?.genderAccommodated }} students</p>
-					<p><i class="fa fa-group"></i>Accommodates up to {{ property?.numberOfStudents }} students, using
-						{{ property?.numberOfRooms }} rooms</p>
-					<p><i class="fa fa-bathtub"></i>{{ property?.numberOfBathrooms }} bathrooms available</p>
+					<p>
+						<i class="fa fa-venus-mars"></i>Accommodates
+						{{ property?.genderAccommodated }} students
+					</p>
+					<p>
+						<i class="fa fa-group"></i>Accommodates up to
+						{{ property?.numberOfStudents }} students, using
+						{{ property?.numberOfRooms }} rooms
+					</p>
+					<p>
+						<i class="fa fa-bathtub"></i
+						>{{ property?.numberOfBathrooms }} bathrooms available
+					</p>
 				</section>
 				<span class="line"></span>
 				<section *ngIf="property?.spaces.length > 0" class="usable-spaces">
@@ -26,19 +44,37 @@
 					<span *ngFor="let space of property?.spaces">{{ space }}</span>
 				</section>
 				<span *ngIf="property?.spaces.length > 0" class="line"></span>
-				<section *ngIf="property?.amenities.essential.length > 0" class="essential-amenities">
+				<section
+					*ngIf="property?.amenities.essential.length > 0"
+					class="essential-amenities"
+				>
 					<span class="heading heading-ter">Essential amenities</span>
-					<span *ngFor="let ess of property?.amenities.essential">{{ ess }}</span>
+					<span *ngFor="let ess of property?.amenities.essential">{{
+						ess
+					}}</span>
 				</section>
-				<span *ngIf="property?.amenities.essential.length > 0" class="line"></span>
-				<section *ngIf="property?.amenities.safety.length > 0" class="safety-amenities">
+				<span
+					*ngIf="property?.amenities.essential.length > 0"
+					class="line"
+				></span>
+				<section
+					*ngIf="property?.amenities.safety.length > 0"
+					class="safety-amenities"
+				>
 					<span class="heading heading-ter">Safety amenities</span>
-					<span *ngFor="let ess of property?.amenities.safety">{{ ess }}</span>
+					<span *ngFor="let ess of property?.amenities.safety">{{
+						ess
+					}}</span>
 				</section>
-				<span *ngIf="property?.amenities.safety.length > 0" class="line"></span>
+				<span
+					*ngIf="property?.amenities.safety.length > 0"
+					class="line"
+				></span>
 				<section>
 					<span class="heading heading-ter">From the landlord</span>
-					<span class="from-the-landlord">{{ property?.description }}</span>
+					<span class="from-the-landlord">{{
+						property?.description
+					}}</span>
 				</section>
 				<span class="line"></span>
 				<!-- <section class="map">
@@ -51,20 +87,53 @@
 				<section class="host-info">
 					<span class="heading heading-ter">Your landlord</span>
 					<div>
-						<img [src]="property?.landlord.avatar" alt="host avatar">
+						<img [src]="property?.landlord.avatar" alt="host avatar" />
 					</div>
 					<div>
-						<span class="host-name">{{ property?.landlord.name.first }} {{ property?.landlord.name.last }}</span>
-						<span class="host-address">{{ property?.address.houseNumber }} {{ property?.address.street }}, {{
-							property?.address.area }}, {{ property?.address.city }}</span>
+						<span class="host-name"
+							>{{ property?.landlord.name.first }}
+							{{ property?.landlord.name.last }}</span
+						>
+						<span class="host-address"
+							>{{ property?.address.houseNumber }}
+							{{ property?.address.street }},
+							{{ property?.address.area }},
+							{{ property?.address.city }}</span
+						>
 						<span class="host-email">{{ property?.landlord.email }}</span>
 						<span class="host-phone">{{ property?.landlord.phone }}</span>
 					</div>
 				</section>
+				<span *ngIf="property?.policies.length > 0" class="line"></span>
 				<section>
 					<section class="policies" *ngIf="property?.policies.length > 0">
 						<span class="heading heading-ter">Rules and policies</span>
-						<span *ngFor="let policy of property?.policies">{{ policy }}</span>
+						<span *ngFor="let policy of property?.policies">{{
+							policy
+						}}</span>
+					</section>
+				</section>
+				<span *ngIf="property?.reports.length > 2" class="line"></span>
+				<section>
+					<section class="reports" *ngIf="property?.reports.length > 2">
+						<span class="heading heading-ter"
+							>Reports about property enlisting</span
+						>
+						<div *ngFor="let report of property.reports" class="report">
+							<p>
+								<b>{{ report.report }}</b
+								><span *ngIf="report.description !== null">
+									&bull; {{ report.description }}</span
+								>
+							</p>
+							<p style="text-align: right;">
+								<span
+									style="font-size: 14px;font-weight: bold; font-style: italic; text-transform: capitalize;"
+									>&mdash; {{ report.creator.name.first }}
+									{{ report.creator.name.last }}</span
+								>
+							</p>
+						</div>
 					</section>
 				</section>
 				<!-- <span class="line"></span> -->
@@ -116,34 +185,78 @@
 				<div class="booking-form">
 					<div class="rent-like row">
 						<div class="inline col-xs-10 col-md-10 col-lg-10">
-							<span class="rent"><i class="inline">{{ property?.rent }}</i> per month</span>
-						</div>
-						<div class="inline col-xs-1 col-md-1 col-lg-1">
-							<span><i appLike class="fa"></i></span>
+							<span class="rent"
+								><i class="inline">${{ property?.rent }}</i> per
+								month</span
+							>
 						</div>
 					</div>
-					<div class="property-rating-container">
-						<span class="property-rating"><i class="fa" appRating [rating1]="property?.rating"></i></span>
-						<span class="property-rating"><i class="fa" appRating [rating2]="property?.rating"></i></span>
-						<span class="property-rating"><i class="fa" appRating [rating3]="property?.rating"></i></span>
-						<span class="property-rating"><i class="fa" appRating [rating4]="property?.rating"></i></span>
-						<span class="property-rating"><i class="fa" appRating [rating5]="property?.rating"></i></span>
-						<span class="property-total-rating">{{ property?.reviews }} reviews</span>
-					</div>
+					<!--					<div class="property-rating-container">-->
+					<!--						<span class="property-rating"><i class="fa" appRating [rating1]="property?.rating"></i></span>-->
+					<!--						<span class="property-rating"><i class="fa" appRating [rating2]="property?.rating"></i></span>-->
+					<!--						<span class="property-rating"><i class="fa" appRating [rating3]="property?.rating"></i></span>-->
+					<!--						<span class="property-rating"><i class="fa" appRating [rating4]="property?.rating"></i></span>-->
+					<!--						<span class="property-rating"><i class="fa" appRating [rating5]="property?.rating"></i></span>-->
+					<!--						<span class="property-total-rating">{{ property?.reviews }} reviews</span>-->
+					<!--					</div>-->
 					<div class="recommendation-container">
-						<span href="" class="recommended">Property recommended<i class="fa fa-thumbs-o-up"></i></span>
-						<p>Lorem ipsum dolor, sit amet consectetur adipisicing elit. Reiciendis asperiores expedita nesciunt
-							optio ea
-							explicabo, voluptas perferendis maxime adipisci magnam voluptatum, aut architecto tenetur ipsa
-							dignissimos minus
-							labore laudantium pariatur.</p>
+						<div *ngIf="property?.reports.length < 3">
+							<span
+								class="recommended"
+								style="color: #26A69A;font-weight: bold;"
+								>Property recommended<i class="fa fa-smile-o"></i
+							></span>
+							<p>
+								This property enlisting has no issues and it seems most
+								students that used the place liked it.
+							</p>
+						</div>
+						<div
+							*ngIf="
+								property?.reports.length > 2 &&
+								property?.reports.length < 5
+							"
+						>
+							<span
+								class="recommended"
+								style="color: #FFCA28;font-weight: bold;"
+								>Property has reported issues<i class="fa fa-meh-o"></i
+							></span>
+							<p>
+								Some issues were found for this property enlisting, that
+								were reported by other students. You're advised to check
+								out these complaints before you proceed to make a
+								reservation.
+							</p>
+						</div>
+						<div *ngIf="property?.reports.length > 4">
+							<span
+								class="recommended"
+								style="color: #EF5350;font-weight: bold;"
+								>Property red flagged<i class="fa fa-frown-o"></i
+							></span>
+							<p>
+								This property enlisting has been red flagged. Multiple
+								and serious complains were made for this property
+								enlisting. You're therefore, advised to carefully
+								consider making a reservation or at least make
+								reservation once issues have been resolved.
+							</p>
+						</div>
 					</div>
 					<div>
-						<a class="button button-primary-outline" [routerLink]="['/property', property?.id, 'reservation']"><i
-								class="fa fa-bookmark-o right"></i>Place Reservation</a>
+						<a
+							class="button button-primary-outline"
+							[routerLink]="['/property', property?.id, 'reservation']"
+							><i class="fa fa-bookmark-o right"></i>Place Reservation</a
+						>
 					</div>
 					<span class="line line-75 line-75-c"></span>
-					<a href="" class="report">Report this property<i class="fa fa-flag-o"></i></a>
+					<a
+						[routerLink]="['/property', property?.id, 'report-property']"
+						class="report"
+						>Report this property<i class="fa fa-flag-o"></i
+					></a>
 				</div>
 			</div>
 		</div>

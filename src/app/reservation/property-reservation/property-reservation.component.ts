@@ -60,7 +60,8 @@ export class PropertyReservationComponent implements OnInit, DoCheck {
 						reviews: property.reviews,
 						creator: property.creator,
 						student: property.student,
-						isReserved: property.isReserved
+						isReserved: property.isReserved,
+						reports: property.reports
 					};
 				});
 			}

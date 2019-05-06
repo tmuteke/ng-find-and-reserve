@@ -44,7 +44,8 @@ export class PropertyDetailsComponent implements OnInit {
 						reviews: property.reviews,
 						creator: property.creator,
 						student: property.student,
-						isReserved: property.isReserved
+						isReserved: property.isReserved,
+						reports: property.reports
 					};
 				});
 			}

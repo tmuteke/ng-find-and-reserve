@@ -48,4 +48,12 @@ export class Property {
 		gender: string;
 	};
 	public isReserved: boolean;
+	public reports: Array<{
+		creator: {
+			name: { first: string; last: string };
+			email: string;
+		};
+		report: string;
+		description: string;
+	}>;
 }

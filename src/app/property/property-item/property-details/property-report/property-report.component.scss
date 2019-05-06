@@ -1,0 +1,37 @@
+@import '../../../../../assets/sass/enlisting';
+
+form {
+	.details {
+		img {
+			margin-bottom: 3rem;
+		}
+
+		.congrats {
+			font-family: "Gotham Medium", serif;
+			font-size: 4rem;
+			margin-bottom: 1rem;
+		}
+
+		p {
+			a {
+				color: inherit !important;
+				text-decoration: underline !important;
+			}
+		}
+
+		.group {
+			.header {
+				background-color: $red400;
+			}
+
+			.details-header {
+				background-color: $blue_gray400;
+			}
+		}
+	}
+
+	.finish {
+		float: right !important;
+		color: white;
+	}
+}

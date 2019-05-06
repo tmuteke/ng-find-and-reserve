@@ -61,11 +61,13 @@ export class RoomReservationComponent implements OnInit, DoCheck {
 			]),
 			firstName: new FormControl(null, [
 				Validators.required,
-				Validators.pattern("^([A-Z])([a-z]+)$")
+				Validators.pattern("^([A-Z])([a-z]+)$"),
+				Validators.max(20)
 			]),
 			lastName: new FormControl(null, [
 				Validators.required,
-				Validators.pattern("^([A-Z])([a-z]+)$")
+				Validators.pattern("^([A-Z])([a-z]+)$"),
+				Validators.max(20)
 			]),
 			academicYear: new FormControl("Part 1"),
 			gender: new FormControl("Female"),

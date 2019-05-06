@@ -37,6 +37,7 @@ import { AuthService } from "./auth/auth.service";
 import { StaffRoomEditComponent } from './staff/staff-room-edit/staff-room-edit.component';
 import { StaffStudentsComponent } from './staff/staff-students/staff-students.component';
 import { ProfileComponent } from './profile/profile.component';
+import { PropertyReportComponent } from './property/property-item/property-details/property-report/property-report.component';
 
 @NgModule({
 	declarations: [
@@ -66,7 +67,8 @@ import { ProfileComponent } from './profile/profile.component';
 		RoomReservationComponent,
 		StaffRoomEditComponent,
 		StaffStudentsComponent,
-		ProfileComponent
+		ProfileComponent,
+		PropertyReportComponent
 	],
 	imports: [
 		BrowserModule,

@@ -44,7 +44,8 @@ router.post("", checkAuth, (req, res, next) => {
 		spaces: req.body.spaces,
 		policies: req.body.policies,
 		creator: req.userData.userId,
-		student: req.body.student
+		student: req.body.student,
+		reports: []
 	});
 	property.save().then(createdProperty => {
 		res.status(201).json({
@@ -96,7 +97,8 @@ router.put("/:id", checkAuth, (req, res, next) => {
 		policies: req.body.policies,
 		creator: req.userData.userId,
 		student: req.body.student,
-		isReserved: req.body.isReserved
+		isReserved: req.body.isReserved,
+		reports: req.body.reports
 	});
 	Property.updateOne({ _id: req.params.id }, property).then(result => {
 		res.status(200).json({

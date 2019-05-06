@@ -1,0 +1,151 @@
+<app-header></app-header>
+<form [formGroup]="reportForm" (ngSubmit)="onSubmit()">
+	<div class="details">
+		<section>
+			<img src="../../../../../assets/images/warning.svg" alt="warning" />
+			<span class="heading heading-sec"
+				>You're about to make a report on a property. Therefore, you're
+				obliged to provide true and accurate information herein.</span
+			>
+		</section>
+		<section class="group">
+			<div class="header details-header">
+				<span class="heading heading-pri">Complainant</span>
+				<span class="heading heading-sec"
+					>{{ user?.name.first }} {{ user?.name.last }}</span
+				>
+				<span class="heading heading-sec">{{ user?.email }}</span>
+			</div>
+		</section>
+		<section class="group">
+			<div class="header">
+				<span class="heading heading-pri"
+					>Why are you reporting this listing?</span
+				>
+				<span class="heading heading-sec"
+					>State reason(s) for your complaint</span
+				>
+			</div>
+			<section>
+				<h6>What is your complaint?</h6>
+				<div class="control-container">
+					<label class="control control-radio" for="inaccurate-incorrect">
+						<div class="label-text">
+							<span>It's inaccurate and incorrect</span>
+						</div>
+						<input
+							type="radio"
+							id="inaccurate-incorrect"
+							value="It's inaccurate and incorrect"
+							name="complaint"
+							formControlName="complaint"
+						/>
+						<div class="control-indicator"></div>
+					</label>
+				</div>
+				<div class="control-container">
+					<label class="control control-radio" for="high-rental">
+						<div class="label-text">
+							<span>Rentals are too high and unjustified</span>
+						</div>
+						<input
+							type="radio"
+							id="high-rental"
+							value="Rentals are too high and unjustified"
+							name="complaint"
+							formControlName="complaint"
+						/>
+						<div class="control-indicator"></div>
+					</label>
+				</div>
+				<div class="control-container">
+					<label class="control control-radio" for="limited-amenities">
+						<div class="label-text">
+							<span>Amenities are extremely limited</span>
+						</div>
+						<input
+							type="radio"
+							id="limited-amenities"
+							value="Amenities are extremely limited"
+							name="complaint"
+							formControlName="complaint"
+						/>
+						<div class="control-indicator"></div>
+					</label>
+				</div>
+				<div class="control-container">
+					<label class="control control-radio" for="unreal">
+						<div class="label-text">
+							<span>It's not a real place to stay</span>
+						</div>
+						<input
+							type="radio"
+							id="unreal"
+							value="It's not a real place to stay"
+							name="complaint"
+							formControlName="complaint"
+						/>
+						<div class="control-indicator"></div>
+					</label>
+				</div>
+				<div class="control-container">
+					<label class="control control-radio" for="scam">
+						<div class="label-text">
+							<span>It's a scam</span>
+						</div>
+						<input
+							type="radio"
+							id="scam"
+							value="It's a scam"
+							name="complaint"
+							formControlName="complaint"
+						/>
+						<div class="control-indicator"></div>
+					</label>
+				</div>
+				<div class="control-container">
+					<label class="control control-radio" for="other">
+						<div class="label-text">
+							<span>Other</span>
+						</div>
+						<input
+							type="radio"
+							id="other"
+							value="Other reason"
+							name="complaint"
+							formControlName="complaint"
+						/>
+						<div class="control-indicator"></div>
+					</label>
+				</div>
+			</section>
+			<section>
+				<h6>
+					If you option was 'other' or if you need to add more to your
+					compliant, add comment below
+				</h6>
+				<textarea
+					name="description"
+					id="description"
+					formControlName="description"
+					cols="30"
+					rows="10"
+				></textarea>
+			</section>
+		</section>
+	</div>
+	<nav>
+		<section>
+			<div class="cancel">
+				<a [routerLink]="['/property', id, 'details']"
+					><i class="fa fa-times"></i>Cancel</a
+				>
+			</div>
+			<div class="enlist">
+				<button type="submit">
+					<a>Sumbit<i class="fa fa-check"></i></a>
+				</button>
+			</div>
+		</section>
+	</nav>
+</form>

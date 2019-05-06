@@ -117,6 +117,9 @@ const propertySchema = mongoose.Schema({
 	},
 	isReserved: {
 		type: Boolean
+	},
+	reports: {
+		type: Array
 	}
 });
 

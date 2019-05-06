@@ -7,9 +7,9 @@ import { Property } from "../property.model";
 	styleUrls: ["./property-item.component.scss"]
 })
 export class PropertyItemComponent implements OnInit {
-	@Input() public property: Property;
+	@Input() property: Property;
 
 	constructor() {}
 
-	public ngOnInit(): void {}
+	ngOnInit(): void {}
 }

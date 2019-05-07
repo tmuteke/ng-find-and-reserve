@@ -111,7 +111,6 @@ router.delete("/:id", checkAuth, (req, res, next) => {
 	Post.deleteOne({
 		_id: req.params.id
 	}).then(result => {
-		console.log(result);
 		res.status(200).json({
 			message: "Post deleted!"
 		});

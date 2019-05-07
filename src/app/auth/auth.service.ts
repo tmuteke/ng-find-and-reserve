@@ -46,8 +46,27 @@ export class AuthService {
 			password: user.password
 		};
 		this.http
-			.post("http://localhost:3000/api/users/signup ", authData)
-			.subscribe(res => res);
+			.post<{ message: string; result: string }>(
+				"http://localhost:3000/api/users/signup ",
+				authData
+			)
+			.subscribe(res => {
+				if (!res.result) {
+					this.toastr.toastrConfig.positionClass = "toast-top-center";
+					this.toastr.error(
+						"User " +
+							authData.email +
+							" already exists. Use another email to sign up.",
+						"Duplicate Account"
+					);
+				} else {
+					this.toastr.success(
+						"You've been signed up successfully",
+						"Success!"
+					);
+					this.router.navigate(["/login"]);
+				}
+			});
 	}
 
 	public login(user: User): any {

@@ -15,6 +15,7 @@ export class SignupComponent implements OnInit {
 	private firstName: string;
 	private lastName: string;
 	private password: string;
+	private confirmPassword: string;
 
 	constructor(
 		private authService: AuthService,
@@ -38,6 +39,10 @@ export class SignupComponent implements OnInit {
 			password: new FormControl(null, [
 				Validators.required,
 				Validators.minLength(6)
+			]),
+			confirmPassword: new FormControl(null, [
+				Validators.required,
+				Validators.minLength(6)
 			])
 		});
 		this.toastr.toastrConfig.positionClass = "toast-top-center";
@@ -54,9 +59,14 @@ export class SignupComponent implements OnInit {
 			};
 			user.password = this.password;
 
-			this.authService.createUser(user);
-			this.toastr.success("You've been signed up successfully", "Success!");
-			this.router.navigate(["/login"]);
+			if (this.password === this.confirmPassword) {
+				this.authService.createUser(user);
+			} else {
+				this.toastr.error(
+					"Password and confirmation password do not match.",
+					"Password Mismatch!"
+				);
+			}
 		} else {
 			this.toastr.error(
 				"Provide valid data. Names should start with capitals.",
@@ -70,5 +80,6 @@ export class SignupComponent implements OnInit {
 		this.firstName = this.signUpForm.get("firstName").value;
 		this.lastName = this.signUpForm.get("lastName").value;
 		this.password = this.signUpForm.get("password").value;
+		this.confirmPassword = this.signUpForm.get("confirmPassword").value;
 	}
 }

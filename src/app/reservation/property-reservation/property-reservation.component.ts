@@ -26,6 +26,7 @@ export class PropertyReservationComponent implements OnInit, DoCheck {
 		gender: string;
 	};
 	private user: User;
+	private properties: Property[];
 
 	constructor(
 		private propertyService: PropertyService,
@@ -65,6 +66,11 @@ export class PropertyReservationComponent implements OnInit, DoCheck {
 					};
 				});
 			}
+		});
+
+		this.propertyService.getProperties();
+		this.propertyService.getPropertyUpdateListener().subscribe(properties => {
+			this.properties = properties;
 		});
 
 		this.propertyReservationForm = new FormGroup({
@@ -116,9 +122,21 @@ export class PropertyReservationComponent implements OnInit, DoCheck {
 			};
 			this.property.isReserved = true;
 
-			this.propertyService.updateProperty(this.id, this.property);
-			this.toastr.success("Your reservation was successful", "Success!");
-			this.router.navigate(["/"]);
+			if (this.isDuplicateStudent(this.properties)) {
+				this.toastr.error(
+					"Student " +
+						this.student.registration +
+						" has already made a reservation, therefore, reservation cannot be processed.",
+					"Duplicate Room Reservation"
+				);
+			} else {
+				this.propertyService.updateProperty(this.id, this.property);
+				this.toastr.success(
+					"Your room reservation was successful",
+					"Success!"
+				);
+				this.router.navigate(["/"]);
+			}
 		} else {
 			this.toastr.error("Make you provide all information", "Error!");
 		}
@@ -134,5 +152,17 @@ export class PropertyReservationComponent implements OnInit, DoCheck {
 			academicYear: this.propertyReservationForm.get("academicYear").value,
 			gender: this.propertyReservationForm.get("gender").value
 		};
+	}
+
+	private isDuplicateStudent(properties: Property[]): boolean {
+		for (const property of properties) {
+			if (
+				property.student.registration ===
+				this.student.registration.toUpperCase()
+			) {
+				return true;
+			}
+		}
+		return false;
 	}
 }

@@ -24,6 +24,7 @@ export class RoomReservationComponent implements OnInit, DoCheck {
 		gender: string;
 	};
 	private user: User;
+	private rooms: Room[];
 
 	constructor(
 		private roomService: RoomService,
@@ -54,6 +55,11 @@ export class RoomReservationComponent implements OnInit, DoCheck {
 			}
 		});
 
+		this.roomService.getRooms();
+		this.roomService.getRoomUpdateListener().subscribe(rooms => {
+			this.rooms = rooms;
+		});
+
 		this.roomReservationForm = new FormGroup({
 			registration: new FormControl(null, [
 				Validators.required,
@@ -70,7 +76,7 @@ export class RoomReservationComponent implements OnInit, DoCheck {
 				Validators.max(20)
 			]),
 			academicYear: new FormControl("Part 1"),
-			gender: new FormControl("Female"),
+			gender: new FormControl(null),
 			activities: new FormGroup({
 				src: new FormControl(null),
 				trainee: new FormControl(null),
@@ -112,14 +118,26 @@ export class RoomReservationComponent implements OnInit, DoCheck {
 			};
 			this.room.isReserved = true;
 
-			this.roomService.updateRoom(this.id, this.room);
-			this.toastr.success(
-				"Your room reservation was successful",
-				"Success!"
-			);
-			this.router.navigate(["/"]);
+			if (this.isDuplicateStudent(this.rooms)) {
+				this.toastr.error(
+					"Student " +
+						this.student.registration +
+						" has already made a reservation, therefore, reservation cannot be processed.",
+					"Duplicate Room Reservation"
+				);
+			} else {
+				this.roomService.updateRoom(this.id, this.room);
+				this.toastr.success(
+					"Your room reservation was successful",
+					"Success!"
+				);
+				this.router.navigate(["/"]);
+			}
 		} else {
-			this.toastr.error("Make sure you provide all information", "Invalid Form!");
+			this.toastr.error(
+				"Make sure you provide all information",
+				"Invalid Form!"
+			);
 		}
 	}
 
@@ -131,5 +149,17 @@ export class RoomReservationComponent implements OnInit, DoCheck {
 			academicYear: this.roomReservationForm.get("academicYear").value,
 			gender: this.roomReservationForm.get("gender").value
 		};
+	}
+
+	private isDuplicateStudent(rooms: Room[]): boolean {
+		for (const room of rooms) {
+			if (
+				room.student.registration ===
+				this.student.registration.toUpperCase()
+			) {
+				return true;
+			}
+		}
+		return false;
 	}
 }

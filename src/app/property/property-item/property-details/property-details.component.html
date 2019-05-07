@@ -128,7 +128,7 @@
 							</p>
 							<p style="text-align: right;">
 								<span
-									style="font-size: 14px;font-weight: bold; font-style: italic; text-transform: capitalize;"
+									style="font-size: 14px; font-style: italic; text-transform: capitalize;"
 									>&mdash; {{ report.creator.name.first }}
 									{{ report.creator.name.last }}</span
 								>
@@ -202,8 +202,8 @@
 					<div class="recommendation-container">
 						<div *ngIf="property?.reports.length < 3">
 							<span
-								class="recommended"
-								style="color: #26A69A;font-weight: bold;"
+								class="recommended heading heading-sec"
+								style="color: #26A69A;"
 								>Property recommended<i class="fa fa-smile-o"></i
 							></span>
 							<p>
@@ -218,8 +218,8 @@
 							"
 						>
 							<span
-								class="recommended"
-								style="color: #FFCA28;font-weight: bold;"
+								class="recommended heading heading-sec"
+								style="color: #FFCA28;"
 								>Property has reported issues<i class="fa fa-meh-o"></i
 							></span>
 							<p>
@@ -231,8 +231,8 @@
 						</div>
 						<div *ngIf="property?.reports.length > 4">
 							<span
-								class="recommended"
-								style="color: #EF5350;font-weight: bold;"
+								class="recommended heading heading-sec"
+								style="color: #EF5350;"
 								>Property red flagged<i class="fa fa-frown-o"></i
 							></span>
 							<p>

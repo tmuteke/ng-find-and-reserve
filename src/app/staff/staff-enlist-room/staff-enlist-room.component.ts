@@ -20,6 +20,7 @@ export class StaffEnlistRoomComponent implements OnInit {
 	private roomNumber: number;
 	private roomFee: number;
 	private genderAccommodated: string;
+	private rooms: Room[];
 
 	constructor(
 		private toastr: ToastrService,
@@ -28,6 +29,10 @@ export class StaffEnlistRoomComponent implements OnInit {
 	) {}
 
 	public ngOnInit(): void {
+		this.roomService.getRooms();
+		this.roomService.getRoomUpdateListener().subscribe(rooms => {
+			this.rooms = rooms;
+		});
 		this.enlistForm = new FormGroup({
 			roomHostel: new FormControl("Hostel 1", Validators.required),
 			roomNumber: new FormControl(1, [
@@ -106,9 +111,20 @@ export class StaffEnlistRoomComponent implements OnInit {
 			};
 			room.isReserved = false;
 
-			this.toastr.success("Room has been added successfully", "Success!");
-			this.roomService.addRoom(room);
-			this.router.navigate(["staff", "dashboard"]);
+			if (this.isDuplicateRoom(this.rooms)) {
+				this.toastr.error(
+					"Room " +
+						this.roomNumber +
+						", " +
+						this.roomHostel +
+						" has already been added. Try adding another different room.",
+					"Duplicate Room!"
+				);
+			} else {
+				this.toastr.success("Room has been added successfully", "Success!");
+				this.roomService.addRoom(room);
+				this.router.navigate(["staff", "dashboard"]);
+			}
 		} else {
 			this.toastr.error(
 				"Make sure all required fields are filled",
@@ -202,5 +218,17 @@ export class StaffEnlistRoomComponent implements OnInit {
 		if (this.enlistForm.get("policies").get("limitedAmenities").value) {
 			this.policies.push("Amenities can be limited");
 		}
+	}
+
+	private isDuplicateRoom(rooms: Room[]): boolean {
+		for (const room of rooms) {
+			if (
+				room.roomHostel === this.roomHostel &&
+				room.roomNumber === this.roomNumber
+			) {
+				return true;
+			}
+		}
+		return false;
 	}
 }

@@ -1,0 +1,21 @@
+<div class="container">
+	<p *ngIf="users?.length === 0">
+		*No users found.
+	</p>
+	<table *ngIf="users?.length > 0">
+		<tr class="headings">
+			<th class="heading heading-ter">User Email</th>
+			<th class="heading heading-ter">First Name</th>
+			<th class="heading heading-ter">Last Name</th>
+			<th class="heading heading-ter">Actions</th>
+		</tr>
+		<tr *ngFor="let user of users">
+			<td>{{ user.email }}</td>
+			<td>{{ user.name.first }}</td>
+			<td>{{ user.name.last }}</td>
+			<td class="actions">
+				<span class="delete" (click)="onDelete(user.id)">Delete</span>
+			</td>
+		</tr>
+	</table>
+</div>

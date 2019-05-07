@@ -1,0 +1,35 @@
+<div class="container-fluid">
+	<p *ngIf="properties?.length === 0">
+		*No rooms available or have been enlisted.
+	</p>
+	<table *ngIf="properties?.length > 0">
+		<tr class="headings">
+			<th class="heading heading-ter">House Address</th>
+			<th class="heading heading-ter">Rent per month</th>
+			<th class="heading heading-ter">Landlord Name</th>
+			<th class="heading heading-ter">Landlord Contact</th>
+			<th class="heading heading-ter">Actions</th>
+		</tr>
+		<tr *ngFor="let property of properties">
+			<td>
+				{{ property.address.houseNumber }} {{ property.address.street }}
+				{{ property.address.area }}, {{ property.address.area }}
+			</td>
+			<td style="text-align: center;">${{ property.rent }}</td>
+			<td>
+				{{ property.landlord.name.first }} {{ property.landlord.name.last }}
+			</td>
+			<td>
+				{{ property.landlord.phone }} <br />
+				{{ property.landlord.email }}
+			</td>
+			<td class="actions">
+				<span *ngIf="property.reports.length > 4" class="unflag" (click)="onUnflag(property.id)">Unflag</span>
+				<span *ngIf="property.isReserved" class="cancel-reservation" (click)="onCancelReservation(property.id)"
+					>Cancel Reservation</span
+				>
+				<span class="delete" (click)="onDelete(property.id)">Delete</span>
+			</td>
+		</tr>
+	</table>
+</div>

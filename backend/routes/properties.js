@@ -108,7 +108,7 @@ router.put("/:id", checkAuth, (req, res, next) => {
 });
 
 router.delete("/:id", checkAuth, (req, res, next) => {
-	Post.deleteOne({
+	Property.deleteOne({
 		_id: req.params.id
 	}).then(result => {
 		res.status(200).json({

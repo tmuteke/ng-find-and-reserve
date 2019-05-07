@@ -1,0 +1,16 @@
+@import '../../assets/sass/header';
+@import '../../assets/sass/colours';
+
+footer {
+	position: absolute;
+	box-sizing: border-box;
+	left: 0;
+	bottom: 0;
+	padding: 1.6rem;
+	margin-top: 1rem;
+	width: 100%;
+	overflow: hidden;
+	text-align: center !important;
+	background-color: $amber400;
+	color: $white;
+}

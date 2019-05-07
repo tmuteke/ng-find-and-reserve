@@ -16,6 +16,8 @@ export class AuthService {
 	private _isAuthenticated = false;
 	private _userId: string;
 	private tokenTimer: any;
+	private users: User[] = [];
+	private usersUpdated: Subject<User[]> = new Subject();
 
 	constructor(
 		private http: HttpClient,
@@ -101,6 +103,42 @@ export class AuthService {
 					);
 				}
 			});
+	}
+
+	public getUsers() {
+		return this.http
+			.get<{ message: string; users: any }>(
+				"http://localhost:3000/api/users"
+			)
+			.pipe(
+				map(userData => {
+					return userData.users.map(user => {
+						return {
+							id: user._id,
+							email: user.email,
+							name: user.name,
+							password: user.password
+						};
+					});
+				})
+			)
+			.subscribe(users => {
+				this.users = users;
+				this.usersUpdated.next([...this.users]);
+			});
+	}
+
+	public deleteUser(id: string): void {
+		this.http
+			.delete("http://localhost:3000/api/users/" + id)
+			.subscribe(() => {
+				this.users = this.users.filter(user => user.id !== id);
+				this.usersUpdated.next([...this.users]);
+			});
+	}
+
+	public getUsersUpdateListener(): Observable<User[]> {
+		return this.usersUpdated.asObservable();
 	}
 
 	public getUser(id: string) {

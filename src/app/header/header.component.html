@@ -2,13 +2,48 @@
 	<nav class="container-fluid cf">
 		<span id="logo" appAbril><a routerLink="/">Find & Reserve</a></span>
 		<div>
-			<h6><a routerLink="/" routerLinkActive="active" [routerLinkActiveOptions]="{exact: true}">Home</a></h6>
-			<h6><a *ngIf="isAuthenticated" routerLink="/select-enlisting" routerLinkActive="active">Enlist to
-					Accommodate</a></h6>
-			<h6><a *ngIf="!isAuthenticated" routerLink="/login" routerLinkActive="active">Login</a></h6>
-			<h6><a *ngIf="!isAuthenticated" routerLink="/signup" routerLinkActive="active">Signup</a></h6>
-			<h6><a *ngIf="isAuthenticated" [routerLink]="['/user', userId, 'profile']" routerLinkActive="active">Profile</a></h6>
+			<h6>
+				<a
+					routerLink="/"
+					routerLinkActive="active"
+					[routerLinkActiveOptions]="{ exact: true }"
+					>Home</a
+				>
+			</h6>
+			<h6>
+				<a
+					*ngIf="isAuthenticated"
+					routerLink="/select-enlisting"
+					routerLinkActive="active"
+					>Enlist to Accommodate</a
+				>
+			</h6>
+			<h6>
+				<a
+					*ngIf="!isAuthenticated"
+					routerLink="/login"
+					routerLinkActive="active"
+					>Login</a
+				>
+			</h6>
+			<h6>
+				<a
+					*ngIf="!isAuthenticated"
+					routerLink="/signup"
+					routerLinkActive="active"
+					>Signup</a
+				>
+			</h6>
+			<h6>
+				<a
+					*ngIf="isAuthenticated"
+					[routerLink]="['/user', userId, 'profile']"
+					routerLinkActive="active"
+					>Profile</a
+				>
+			</h6>
 			<h6><a *ngIf="isAuthenticated" (click)="onLogout()">Logout</a></h6>
+			<h6 *ngIf="isAuthenticated" class="tag">USER</h6>
 		</div>
 	</nav>
 </header>

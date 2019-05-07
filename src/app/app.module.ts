@@ -38,6 +38,12 @@ import { StaffRoomEditComponent } from './staff/staff-room-edit/staff-room-edit.
 import { StaffStudentsComponent } from './staff/staff-students/staff-students.component';
 import { ProfileComponent } from './profile/profile.component';
 import { PropertyReportComponent } from './property/property-item/property-details/property-report/property-report.component';
+import { SuperuserComponent } from './superuser/superuser.component';
+import { SuperuserUsersComponent } from './superuser/superuser-users/superuser-users.component';
+import { SuperuserRoomsComponent } from './superuser/superuser-rooms/superuser-rooms.component';
+import { SuperuserPropertiesComponent } from './superuser/superuser-properties/superuser-properties.component';
+import { SuperuserStaffComponent } from './superuser/superuser-staff/superuser-staff.component';
+import { SuperuserReservationsComponent } from './superuser/superuser-reservations/superuser-reservations.component';
 
 @NgModule({
 	declarations: [
@@ -68,7 +74,13 @@ import { PropertyReportComponent } from './property/property-item/property-detai
 		StaffRoomEditComponent,
 		StaffStudentsComponent,
 		ProfileComponent,
-		PropertyReportComponent
+		PropertyReportComponent,
+		SuperuserComponent,
+		SuperuserUsersComponent,
+		SuperuserRoomsComponent,
+		SuperuserPropertiesComponent,
+		SuperuserStaffComponent,
+		SuperuserReservationsComponent
 	],
 	imports: [
 		BrowserModule,

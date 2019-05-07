@@ -1,7 +1,7 @@
 import { Property } from "./property.model";
 import { Injectable } from "@angular/core";
 import { HttpClient } from "@angular/common/http";
-import { Subject } from "rxjs";
+import {Observable, Subject} from 'rxjs';
 import { map } from "rxjs/operators";
 
 @Injectable({
@@ -134,7 +134,16 @@ export class PropertyService {
 			});
 	}
 
-	getPropertyUpdateListener() {
+	public deleteProperty(id: string): void {
+		this.http
+			.delete("http://localhost:3000/api/properties/" + id)
+			.subscribe(() => {
+				this.properties = this.properties.filter(property => property.id !== id);
+				this.propertiesUpdated.next([...this.properties]);
+			});
+	}
+
+	public getPropertyUpdateListener(): Observable<Property[]> {
 		return this.propertiesUpdated.asObservable();
 	}
 }

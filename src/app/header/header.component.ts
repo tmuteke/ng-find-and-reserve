@@ -1,6 +1,7 @@
 import { Component, OnInit, OnDestroy } from "@angular/core";
 import { AuthService } from "../auth/auth.service";
 import { Subscription } from "rxjs";
+import { User } from "../auth/user.model";
 
 @Component({
 	selector: "app-header",
@@ -10,6 +11,7 @@ import { Subscription } from "rxjs";
 export class HeaderComponent implements OnInit, OnDestroy {
 	isAuthenticated = false;
 	userId: string;
+	user: User;
 	private authSubscription: Subscription;
 
 	constructor(private authService: AuthService) {}

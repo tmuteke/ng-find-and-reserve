@@ -20,6 +20,12 @@ import { AuthGuard } from "./auth/auth.guard";
 import { StaffStudentsComponent } from "./staff/staff-students/staff-students.component";
 import { ProfileComponent } from "./profile/profile.component";
 import {PropertyReportComponent} from './property/property-item/property-details/property-report/property-report.component';
+import {SuperuserComponent} from './superuser/superuser.component';
+import {SuperuserUsersComponent} from './superuser/superuser-users/superuser-users.component';
+import {SuperuserRoomsComponent} from './superuser/superuser-rooms/superuser-rooms.component';
+import {SuperuserStaffComponent} from './superuser/superuser-staff/superuser-staff.component';
+import {SuperuserPropertiesComponent} from './superuser/superuser-properties/superuser-properties.component';
+import {SuperuserReservationsComponent} from './superuser/superuser-reservations/superuser-reservations.component';
 
 const routes: Routes = [
 	{
@@ -97,6 +103,38 @@ const routes: Routes = [
 			{
 				path: "students",
 				component: StaffStudentsComponent
+			}
+		],
+		canActivate: [AuthGuard]
+	},
+	{
+		path: "superuser/dashboard",
+		component: SuperuserComponent,
+		children: [
+			{
+				path: "",
+				pathMatch: "full",
+				redirectTo: "users"
+			},
+			{
+				path: "users",
+				component: SuperuserUsersComponent
+			},
+			{
+				path: "rooms",
+				component: SuperuserRoomsComponent
+			},
+			{
+				path: "properties",
+				component: SuperuserPropertiesComponent
+			},
+			{
+				path: "staff",
+				component: SuperuserStaffComponent
+			},
+			{
+				path: "reservations",
+				component: SuperuserReservationsComponent
 			}
 		],
 		canActivate: [AuthGuard]

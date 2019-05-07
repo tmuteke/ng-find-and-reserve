@@ -9,7 +9,7 @@ export class EnlistFinishComponent implements OnInit {
    constructor() {}
 
    ngOnInit(): void {
-      //Called after the constructor, initializing input properties, and the first call to ngOnChanges.
+      //Called after the constructor, initializing input users, and the first call to ngOnChanges.
       //Add 'implements OnInit' to the class.
       
    }

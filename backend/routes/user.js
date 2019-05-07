@@ -79,4 +79,23 @@ router.get("/:id", (req, res, next) => {
 	});
 });
 
+router.get("", (req, res, next) => {
+	User.find().then(documents => {
+		res.status(200).json({
+			message: "GET Success",
+			users: documents
+		});
+	});
+});
+
+router.delete("/:id", (req, res, next) => {
+	User.deleteOne({
+		_id: req.params.id
+	}).then(result => {
+		res.status(200).json({
+			message: "Room deleted!"
+		});
+	});
+});
+
 module.exports = router;

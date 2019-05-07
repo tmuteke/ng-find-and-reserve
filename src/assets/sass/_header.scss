@@ -1,12 +1,24 @@
-@import './colours';
+@import "./colours";
 
 header {
 	box-sizing: border-box;
-	padding: .5rem 1rem;
+	padding: 0.5rem 1rem;
 	background-color: $teal400;
 
 	&.staff-dashboard {
 		background-color: $amber400;
+
+		.tag {
+			color: $amber400 !important;
+		}
+	}
+
+	&.superuser-dashboard {
+		background-color: $red400;
+
+		.tag {
+			color: $red400 !important;
+		}
 	}
 
 	nav {
@@ -33,13 +45,20 @@ header {
 				display: inline;
 				box-sizing: border-box;
 				border-radius: 3px;
-				padding: .8rem .1rem;
+				padding: 0.8rem 0.1rem;
 				transition: color 150ms ease-in;
+
+				&.tag {
+					background-color: $white;
+					padding-left: 1rem;
+					padding-right: 1rem;
+					color: $teal400;
+				}
 
 				a {
 					box-sizing: border-box;
 					display: inline-block;
-					padding: .6rem 0;
+					padding: 0.6rem 0;
 					margin-left: 0.6rem;
 					margin-right: 0.6rem;
 					color: rgba($color: white, $alpha: 0.5);

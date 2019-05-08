@@ -15,6 +15,10 @@ import { ToastrService } from "ngx-toastr";
 export class RoomReservationComponent implements OnInit, DoCheck {
 	roomReservationForm: FormGroup;
 	room: Room;
+	isPart1Enabled = true;
+	isPart2Enabled = true;
+	isPart3Enabled = true;
+	isPart4Enabled = true;
 	private id: string;
 	private student: {
 		registration: string;
@@ -76,7 +80,7 @@ export class RoomReservationComponent implements OnInit, DoCheck {
 				Validators.max(20)
 			]),
 			academicYear: new FormControl("Part 1"),
-			gender: new FormControl(null),
+			gender: new FormControl(null, Validators.required),
 			activities: new FormGroup({
 				src: new FormControl(null),
 				trainee: new FormControl(null),
@@ -85,6 +89,11 @@ export class RoomReservationComponent implements OnInit, DoCheck {
 				club: new FormControl(null)
 			})
 		});
+
+		this.isPart1Enabled = localStorage.getItem("isPart1Enabled") == "true";
+		this.isPart2Enabled = localStorage.getItem("isPart2Enabled") == "true";
+		this.isPart3Enabled = localStorage.getItem("isPart3Enabled") == "true";
+		this.isPart4Enabled = localStorage.getItem("isPart4Enabled") == "true";
 
 		this.toastr.toastrConfig.positionClass = "toast-top-center";
 	}

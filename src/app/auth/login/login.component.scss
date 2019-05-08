@@ -1,4 +1,4 @@
-@import '../../../assets/sass/forms';
+@import "../../../assets/sass/forms";
 
 .form-container {
 	background: url(../../../assets/images/image_07.jpg) no-repeat center;
@@ -17,13 +17,21 @@
 		width: 85%;
 	}
 
-	.no-account {
-		font-size: .85rem;
+	.no-account,
+	.superuser,
+	.staff {
+		font-size: 0.85rem;
+	}
 
-		.button {
-			width: 150px;
-			margin-left: auto;
-			margin-right: auto;
+	.superuser {
+		a {
+			color: $red400 !important;
+		}
+	}
+
+	.staff {
+		a {
+			color: $amber400 !important;
 		}
 	}
 }

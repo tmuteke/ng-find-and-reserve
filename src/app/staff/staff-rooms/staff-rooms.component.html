@@ -1,4 +1,33 @@
 <div class="container">
+	<main>
+		<h6 class="heading heading-sec"
+			>You can toggle reservation access for particular academic years. If an
+			academic year is disabled for reservation, students of this academic
+			year cannot make reservation.</h6
+		>
+		<section>
+			<div>
+				<span class="heading heading-ter">Part 1</span>
+				<span *ngIf="!isPart1Enabled" class="enable" (click)="onEnablePart1()">Enable Reservation</span>
+				<span *ngIf="isPart1Enabled" class="disable" (click)="onDisablePart1()">Disable Reservation</span>
+			</div>
+			<div>
+				<span class="heading heading-ter">Part 2</span>
+				<span *ngIf="!isPart2Enabled" class="enable" (click)="onEnablePart2()">Enable Reservation</span>
+				<span *ngIf="isPart2Enabled" class="disable" (click)="onDisablePart2()">Disable Reservation</span>
+			</div>
+			<div>
+				<span class="heading heading-ter">Part 3</span>
+				<span *ngIf="!isPart3Enabled" class="enable" (click)="onEnablePart3()">Enable Reservation</span>
+				<span *ngIf="isPart3Enabled" class="disable" (click)="onDisablePart3()">Disable Reservation</span>
+			</div>
+			<div>
+				<span class="heading heading-ter">Part 4</span>
+				<span *ngIf="!isPart4Enabled" class="enable" (click)="onEnablePart4()">Enable Reservation</span>
+				<span *ngIf="isPart4Enabled" class="disable" (click)="onDisablePart4()">Disable Reservation</span>
+			</div>
+		</section>
+	</main>
 	<canvas id="ctx" style="margin-bottom: 4rem;margin-top: 4rem;"></canvas>
 	<p *ngIf="rooms.length === 0">
 		*No rooms available or have been enlisted.
@@ -15,7 +44,7 @@
 			<td>{{ room.roomNumber }}</td>
 			<td>${{ room.roomFee }}.00</td>
 			<td class="actions">
-<!--				<span class="edit" (click)="onEdit(room.id)">Edit</span>-->
+				<!--				<span class="edit" (click)="onEdit(room.id)">Edit</span>-->
 				<span class="delete" (click)="onDelete(room.id)">Delete</span>
 			</td>
 		</tr>

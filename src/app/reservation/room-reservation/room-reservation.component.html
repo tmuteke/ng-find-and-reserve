@@ -11,15 +11,15 @@
 			<section>
 				<div>
 					<h6>Room Hostel:</h6>
-					<span>{{ room.roomHostel }}</span>
+					<span>{{ room?.roomHostel }}</span>
 				</div>
 				<div>
 					<h6>Room Number:</h6>
-					<span>{{ room.roomNumber }}</span>
+					<span>{{ room?.roomNumber }}</span>
 				</div>
 				<div>
 					<h6>Room Price:</h6>
-					<span>${{ room.roomFee }} per semester</span>
+					<span>${{ room?.roomFee }} per semester</span>
 				</div>
 			</section>
 		</section>
@@ -59,7 +59,7 @@
 			</section>
 			<section>
 				<h6>Academic Year</h6>
-				<div class="control-container">
+				<div *ngIf="isPart1Enabled" class="control-container">
 					<label class="control control-radio" for="one">
 						<div class="label-text">
 							<span>Part 1</span>
@@ -74,7 +74,7 @@
 						<div class="control-indicator"></div>
 					</label>
 				</div>
-				<div class="control-container">
+				<div *ngIf="isPart2Enabled" class="control-container">
 					<label class="control control-radio" for="two">
 						<div class="label-text">
 							<span>Part 2</span>
@@ -89,7 +89,7 @@
 						<div class="control-indicator"></div>
 					</label>
 				</div>
-				<div class="control-container">
+				<div *ngIf="isPart3Enabled" class="control-container">
 					<label class="control control-radio" for="three">
 						<div class="label-text"><span>Part 3</span></div>
 						<input
@@ -102,7 +102,7 @@
 						<div class="control-indicator"></div>
 					</label>
 				</div>
-				<div class="control-container">
+				<div *ngIf="isPart4Enabled" class="control-container">
 					<label class="control control-radio" for="four">
 						<div class="label-text"><span>Part 4</span></div>
 						<input
@@ -118,7 +118,13 @@
 			</section>
 			<section>
 				<h6>Gender</h6>
-				<div class="control-container">
+				<div
+					*ngIf="
+						room?.genderAccommodated === 'female' ||
+						room?.genderAccommodated === 'female and male'
+					"
+					class="control-container"
+				>
 					<label class="control control-radio" for="female">
 						<div class="label-text"><span>Female</span></div>
 						<input
@@ -131,7 +137,13 @@
 						<div class="control-indicator"></div>
 					</label>
 				</div>
-				<div class="control-container">
+				<div
+					*ngIf="
+						room?.genderAccommodated === 'male' ||
+						room?.genderAccommodated === 'female and male'
+					"
+					class="control-container"
+				>
 					<label class="control control-radio" for="male">
 						<div class="label-text"><span>Male</span></div>
 						<input
@@ -231,7 +243,7 @@
 			</section>
 		</section>
 		<section
-			*ngIf="room.policies.length > 0"
+			*ngIf="room?.policies.length > 0"
 			class="group policies"
 			id="policies"
 		>

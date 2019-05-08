@@ -1,5 +1,47 @@
-@import '../../../assets/sass/colours';
+@import "../../../assets/sass/colours";
 
+main {
+	padding: 3rem 1rem;
+
+	h6 {
+		text-align: center;
+	}
+
+	section {
+		margin-top: 1rem;
+		display: flex;
+
+		div {
+			width: 25%;
+
+			.enable,
+			.disable {
+				padding: 0.25rem 0.5rem;
+				border-radius: 3px;
+				margin: 0.1rem;
+				font-size: 14px;
+				cursor: pointer;
+				box-shadow: 0 1px 2px $gray300;
+				transition: transform 300ms, box-shadow 300ms;
+
+				&:hover {
+					transform: scale(1.005);
+					box-shadow: 2px 2px 4px rgba($color: $gray300, $alpha: 0.5);
+				}
+			}
+
+			.enable {
+				background-color: $teal50;
+				color: $teal400;
+			}
+
+			.disable {
+				background-color: $red50;
+				color: $red400;
+			}
+		}
+	}
+}
 p {
 	text-align: center;
 	padding: 1rem;
@@ -10,12 +52,13 @@ p {
 		text-decoration: underline !important;
 	}
 }
+
 table {
 	width: 80%;
 	margin: 2rem auto;
 
 	tr {
-		padding: .5rem 1rem;
+		padding: 0.5rem 1rem;
 		display: flex;
 
 		&:nth-child(odd) {
@@ -52,11 +95,18 @@ table {
 				text-align: right;
 
 				span {
-					padding: .25rem .5rem;
+					padding: 0.25rem 0.5rem;
 					border-radius: 3px;
-					margin: .1rem;
+					margin: 0.1rem;
 					font-size: 14px;
 					cursor: pointer;
+					box-shadow: 0 1px 2px $gray300;
+					transition: transform 300ms, box-shadow 300ms;
+
+					&:hover {
+						transform: scale(1.005);
+						box-shadow: 2px 2px 4px rgba($color: $gray300, $alpha: 0.5);
+					}
 
 					&.edit {
 						background-color: $teal50;

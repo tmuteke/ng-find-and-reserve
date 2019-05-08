@@ -6,13 +6,13 @@ import {
 } from "@angular/router";
 import { Observable } from "rxjs";
 import { Injectable } from "@angular/core";
-import { AuthService } from "./auth.service";
+import { SuperuserAuthService } from "./superuser-auth.service";
 import { ToastrService } from "ngx-toastr";
 
 @Injectable()
-export class AuthGuard implements CanActivate {
+export class SuperuserAuthGuard implements CanActivate {
 	constructor(
-		private authService: AuthService,
+		private superuserAuthService: SuperuserAuthService,
 		private router: Router,
 		private toastr: ToastrService
 	) {}
@@ -21,14 +21,14 @@ export class AuthGuard implements CanActivate {
 		route: ActivatedRouteSnapshot,
 		state: RouterStateSnapshot
 	): Observable<boolean> | Promise<boolean> | boolean {
-		const authStatus = this.authService.isAuthenticated;
+		const authStatus = this.superuserAuthService.isSuperuserAuthenticated;
 		if (!authStatus) {
 			this.toastr.toastrConfig.positionClass = "toast-top-center";
-			this.toastr.warning(
-				"You need to login to do that.",
-				"Login Required!"
+			this.toastr.error(
+				"You need Superuser access to do that.",
+				"Superuser Login Required!"
 			);
-			this.router.navigate(["/login"]);
+			this.router.navigate(["/superuser/login"]);
 		}
 		return authStatus;
 	}

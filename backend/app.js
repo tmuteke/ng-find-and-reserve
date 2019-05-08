@@ -6,6 +6,7 @@ const cors = require("cors");
 const propertiesRoutes = require("./routes/properties");
 const userRoutes = require("./routes/user");
 const roomsRoutes = require("./routes/rooms");
+const superuserRouters = require("./routes/superuser");
 
 const app = express();
 
@@ -44,5 +45,6 @@ app.use((req, res, next) => {
 app.use("/api/properties", propertiesRoutes);
 app.use("/api/users", userRoutes);
 app.use("/api/rooms", roomsRoutes);
+app.use("/api/superuser", superuserRouters);
 
 module.exports = app;

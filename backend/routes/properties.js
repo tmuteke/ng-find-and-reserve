@@ -43,7 +43,7 @@ router.post("", checkAuth, (req, res, next) => {
 		amenities: req.body.amenities,
 		spaces: req.body.spaces,
 		policies: req.body.policies,
-		creator: req.userData.userId,
+		creator: req.userData.superuserId,
 		student: req.body.student,
 		reports: []
 	});
@@ -95,7 +95,7 @@ router.put("/:id", checkAuth, (req, res, next) => {
 		amenities: req.body.amenities,
 		spaces: req.body.spaces,
 		policies: req.body.policies,
-		creator: req.userData.userId,
+		creator: req.userData.superuserId,
 		student: req.body.student,
 		isReserved: req.body.isReserved,
 		reports: req.body.reports

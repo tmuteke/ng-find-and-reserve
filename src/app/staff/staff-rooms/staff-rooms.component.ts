@@ -13,6 +13,10 @@ import { Chart } from "chart.js";
 export class StaffRoomsComponent implements OnInit, OnDestroy {
 	rooms: Room[] = [];
 	chart = [];
+	isPart1Enabled: boolean;
+	isPart2Enabled: boolean;
+	isPart3Enabled: boolean;
+	isPart4Enabled: boolean;
 	private roomsSub: Subscription;
 
 	constructor(
@@ -60,6 +64,11 @@ export class StaffRoomsComponent implements OnInit, OnDestroy {
 					}
 				});
 			});
+
+		this.isPart1Enabled = localStorage.getItem("isPart1Enabled") == "true";
+		this.isPart2Enabled = localStorage.getItem("isPart2Enabled") == "true";
+		this.isPart3Enabled = localStorage.getItem("isPart3Enabled") == "true";
+		this.isPart4Enabled = localStorage.getItem("isPart4Enabled") == "true";
 	}
 
 	onEdit(id: string): void {
@@ -80,6 +89,46 @@ export class StaffRoomsComponent implements OnInit, OnDestroy {
 				});
 				this.rooms = tempRooms;
 			});
+	}
+
+	onEnablePart1(): void {
+		this.isPart1Enabled = true;
+		localStorage.setItem("isPart1Enabled", "true");
+	}
+
+	onDisablePart1(): void {
+		this.isPart1Enabled = false;
+		localStorage.setItem("isPart1Enabled", "false");
+	}
+
+	onEnablePart2(): void {
+		this.isPart2Enabled = true;
+		localStorage.setItem("isPart2Enabled", "true");
+	}
+
+	onDisablePart2(): void {
+		this.isPart2Enabled = false;
+		localStorage.setItem("isPart2Enabled", "false");
+	}
+
+	onEnablePart3(): void {
+		this.isPart3Enabled = true;
+		localStorage.setItem("isPart3Enabled", "true");
+	}
+
+	onDisablePart3(): void {
+		this.isPart3Enabled = false;
+		localStorage.setItem("isPart3Enabled", "false");
+	}
+
+	onEnablePart4(): void {
+		this.isPart4Enabled = true;
+		localStorage.setItem("isPart4Enabled", "true");
+	}
+
+	onDisablePart4(): void {
+		this.isPart4Enabled = false;
+		localStorage.setItem("isPart4Enabled", "false");
 	}
 
 	ngOnDestroy(): void {

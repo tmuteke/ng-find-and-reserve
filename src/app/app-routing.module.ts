@@ -19,13 +19,15 @@ import { StaffRoomEditComponent } from "./staff/staff-room-edit/staff-room-edit.
 import { AuthGuard } from "./auth/auth.guard";
 import { StaffStudentsComponent } from "./staff/staff-students/staff-students.component";
 import { ProfileComponent } from "./profile/profile.component";
-import {PropertyReportComponent} from './property/property-item/property-details/property-report/property-report.component';
-import {SuperuserComponent} from './superuser/superuser.component';
-import {SuperuserUsersComponent} from './superuser/superuser-users/superuser-users.component';
-import {SuperuserRoomsComponent} from './superuser/superuser-rooms/superuser-rooms.component';
-import {SuperuserStaffComponent} from './superuser/superuser-staff/superuser-staff.component';
-import {SuperuserPropertiesComponent} from './superuser/superuser-properties/superuser-properties.component';
-import {SuperuserReservationsComponent} from './superuser/superuser-reservations/superuser-reservations.component';
+import { PropertyReportComponent } from "./property/property-item/property-details/property-report/property-report.component";
+import { SuperuserComponent } from "./superuser/superuser.component";
+import { SuperuserUsersComponent } from "./superuser/superuser-users/superuser-users.component";
+import { SuperuserRoomsComponent } from "./superuser/superuser-rooms/superuser-rooms.component";
+import { SuperuserStaffComponent } from "./superuser/superuser-staff/superuser-staff.component";
+import { SuperuserPropertiesComponent } from "./superuser/superuser-properties/superuser-properties.component";
+import { SuperuserReservationsComponent } from "./superuser/superuser-reservations/superuser-reservations.component";
+import { SuperuserAuthGuard } from "./superuser/superuser-auth/superuser-auth.guard";
+import {SuperuserLoginComponent} from './superuser/superuser-auth/superuser-login/superuser-login.component';
 
 const routes: Routes = [
 	{
@@ -108,6 +110,10 @@ const routes: Routes = [
 		canActivate: [AuthGuard]
 	},
 	{
+		path: "superuser/login",
+		component: SuperuserLoginComponent
+	},
+	{
 		path: "superuser/dashboard",
 		component: SuperuserComponent,
 		children: [
@@ -137,7 +143,7 @@ const routes: Routes = [
 				component: SuperuserReservationsComponent
 			}
 		],
-		canActivate: [AuthGuard]
+		canActivate: [SuperuserAuthGuard]
 	},
 	{
 		path: "user/:id/profile",
@@ -156,6 +162,6 @@ const routes: Routes = [
 @NgModule({
 	imports: [RouterModule.forRoot(routes)],
 	exports: [RouterModule],
-	providers: [AuthGuard]
+	providers: [AuthGuard, SuperuserAuthGuard]
 })
 export class AppRoutingModule {}

@@ -1,5 +1,4 @@
-
-@import './colours';
+@import "./colours";
 
 .form-container {
 	position: relative;
@@ -17,7 +16,7 @@
 		background-color: #fdfdfd;
 		border-radius: 3px;
 		border: 1px solid $blue_gray100;
-		transition: box-shadow .15s;
+		transition: box-shadow 0.15s;
 
 		.alternative-login-signup {
 			border: 1px solid;
@@ -26,13 +25,14 @@
 			transition: background-color 150ms ease-in;
 
 			&:hover {
-
-				i, span {
+				i,
+				span {
 					color: white !important;
 				}
 			}
 
-			i, span {
+			i,
+			span {
 				float: left;
 			}
 
@@ -50,7 +50,7 @@
 
 			&.facebook {
 				border-color: $blueA700;
-				
+
 				i {
 					color: $blueA700;
 				}
@@ -80,7 +80,8 @@
 			margin-right: auto;
 			margin-left: auto;
 
-			i, span {
+			i,
+			span {
 				float: left;
 			}
 
@@ -101,13 +102,13 @@
 		.input-warning {
 			color: $red400;
 			text-align: left;
-			font-size: .75em;
+			font-size: 0.75em;
 			font-family: "Product Sans Regular", sans-serif;
 		}
 
 		* {
 			display: block;
-			margin-top: .3rem;
+			margin-top: 0.3rem;
 		}
 
 		h3 {
@@ -117,7 +118,7 @@
 		.forgot-password {
 			display: inline-block;
 			color: $red400;
-			margin-bottom: .6rem;
+			margin-bottom: 0.6rem;
 			font-size: 14px;
 
 			i {
@@ -133,17 +134,22 @@
 			margin-right: auto;
 		}
 
-		.email, .forgot-password, .no-account, .already-have-account {
+		.email,
+		.forgot-password,
+		.no-account,
+		.already-have-account {
 			font-family: Ubuntu;
 		}
 
-		.no-account, .already-have-account {
+		.no-account,
+		.already-have-account,
+		.superuser,
+		.staff {
 			a {
 				display: inline;
 				color: $teal400;
 				text-decoration: underline !important;
 			}
 		}
-
 	}
 }

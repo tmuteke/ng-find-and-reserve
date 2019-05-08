@@ -33,6 +33,16 @@ export class SuperuserPropertiesComponent implements OnInit, OnDestroy {
 			property => property.id === id
 		);
 		properties[0].isReserved = false;
+		properties[0].student = {
+			name: {
+				first: "",
+				last: ""
+			},
+			email: "",
+			registration: "",
+			gender: "",
+			academicYear: ""
+		};
 		this.propertyService.updateProperty(id, properties[0]);
 		this.loadProperties();
 	}

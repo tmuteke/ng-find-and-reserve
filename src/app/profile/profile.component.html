@@ -1,4 +1,80 @@
 <app-header></app-header>
-<h1>Your Profile</h1>
-<p class="heading heading-ter">{{ user?.name.first }} {{ user?.name.last }}</p>
-<p class="heading heading-ter">{{ user?.email }}</p>
+<div class="container-fluid">
+	<span class="heading heading-sec"
+		>Logged in as {{ user?.name.first }} {{ user?.name.last }} &mdash;
+		{{ user?.email }}</span
+	>
+	<p *ngIf="propertyEnlistings === undefined || propertyEnlistings?.length === 0">
+		*No property enlistings found
+	</p>
+	<table *ngIf="propertyEnlistings?.length > 0" class="off-campus">
+		<th class="heading heading-ter">Account Property Enlistings</th>
+		<tr class="headings">
+			<th class="heading heading-ter">House Address</th>
+			<th class="heading heading-ter">Rent</th>
+			<th class="heading heading-ter">Actions</th>
+		</tr>
+		<tr *ngFor="let property of propertyEnlistings">
+			<td><i *ngIf="property.reports.length > 4" class="fa fa-flag-o"></i>{{ property.address.houseNumber }} {{ property.address.street }}, {{ property.address.city }}</td>
+			<td>${{ property.rent }}.00 per month</td>
+			<td class="actions">
+				<!--				<span class="edit" (click)="onEdit(room.id)">Edit</span>-->
+				<span class="delete" (click)="onDeleteProperty(property.id)"
+				>Delete</span
+				>
+			</td>
+		</tr>
+	</table>
+	<p *ngIf="propertyReservations === undefined || propertyReservations?.length === 0">
+		*Your account hasn't made any off-campus reservations.
+	</p>
+	<table *ngIf="propertyReservations?.length > 0" class="off-campus">
+		<th class="heading heading-ter">Off-campus Reservations</th>
+		<tr class="headings">
+			<th class="heading heading-ter">House Address</th>
+			<th class="heading heading-ter">Rent</th>
+			<th class="heading heading-ter">Student Name</th>
+			<th class="heading heading-ter">Student Registration Number</th>
+			<th class="heading heading-ter">Actions</th>
+		</tr>
+		<tr *ngFor="let property of propertyReservations">
+			<td><i *ngIf="property.reports.length > 4" class="fa fa-flag-o"></i>{{ property.address.houseNumber }} {{ property.address.street }}, {{ property.address.city }}</td>
+			<td>${{ property.rent }}.00 per month</td>
+			<td>{{ property.student.name.first }} {{ property.student.name.last }}</td>
+			<td>{{ property.student.registration }}</td>
+			<td class="actions">
+				<!--				<span class="edit" (click)="onEdit(room.id)">Edit</span>-->
+				<span class="cancel" (click)="onCancelPropertyReservation(property.id)"
+				>Cancel Reservation</span
+				>
+			</td>
+		</tr>
+	</table>
+	<p *ngIf="roomReservations === undefined || roomReservations?.length === 0">
+		*Your account hasn't made any on-campus reservations.
+	</p>
+	<table *ngIf="roomReservations?.length > 0" class="on-campus">
+		<th class="heading heading-ter">On-Campus Reservations</th>
+		<tr class="headings">
+			<th class="heading heading-ter">Room Hostel</th>
+			<th class="heading heading-ter">Room Number</th>
+			<th class="heading heading-ter">Room Fee</th>
+			<th class="heading heading-ter">Student Name</th>
+			<th class="heading heading-ter">Student Registration Number</th>
+			<th class="heading heading-ter">Actions</th>
+		</tr>
+		<tr *ngFor="let room of roomReservations">
+			<td>{{ room.roomHostel }}</td>
+			<td>{{ room.roomNumber }}</td>
+			<td>${{ room.roomFee }}.00 per semester</td>
+			<td>{{ room.student.name.first }} {{ room.student.name.last}}</td>
+			<td>{{ room.student.registration }}</td>
+			<td class="actions">
+				<!--				<span class="edit" (click)="onEdit(room.id)">Edit</span>-->
+				<span class="cancel" (click)="onCancelRoomReservation(room.id)"
+					>Cancel Reservation</span
+				>
+			</td>
+		</tr>
+	</table>
+</div>

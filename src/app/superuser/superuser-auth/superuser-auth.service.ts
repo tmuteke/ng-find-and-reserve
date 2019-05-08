@@ -6,6 +6,7 @@ import { Subject, Observable } from "rxjs";
 import { Router } from "@angular/router";
 import { map } from "rxjs/operators";
 import { ToastrService } from "ngx-toastr";
+import {AuthService} from '../../auth/auth.service';
 
 @Injectable({
 	providedIn: "root"
@@ -22,7 +23,8 @@ export class SuperuserAuthService {
 	constructor(
 		private http: HttpClient,
 		private router: Router,
-		private toastr: ToastrService
+		private toastr: ToastrService,
+		private authService: AuthService
 	) {}
 
 	get superuserToken(): string {
@@ -169,6 +171,7 @@ export class SuperuserAuthService {
 		this._superuserId = null;
 		clearTimeout(this.tokenTimer);
 		this.clearSuperuserAuthData();
+		this.authService.logout();
 		this.router.navigate(["/"]);
 	}
 

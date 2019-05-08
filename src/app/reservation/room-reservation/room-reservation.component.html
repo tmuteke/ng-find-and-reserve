@@ -158,90 +158,90 @@
 				</div>
 			</section>
 		</section>
-		<section class="group activities" id="activities">
-			<div class="header">
-				<span class="heading heading-pri">Co-curricular Activities</span>
-				<span class="heading heading-sec"
-					>Do you participate in any co-curricular activities at
-					school</span
-				>
-			</div>
-			<section>
-				<h6>Co-curricular activities</h6>
-				<div formGroupName="activities">
-					<div class="control-container">
-						<label for="src" class="control control-checkbox">
-							<div class="label-text">
-								<span>Member of the SRC</span>
-							</div>
-							<input
-								type="checkbox"
-								id="src"
-								value="Member of the SRC"
-								formControlName="src"
-							/>
-							<div class="control-indicator"></div>
-						</label>
-					</div>
-					<div class="control-container">
-						<label for="trainee" class="control control-checkbox">
-							<div class="label-text">
-								<span>Leadership trainee</span>
-							</div>
-							<input
-								type="checkbox"
-								id="trainee"
-								value="Leadership trainee"
-								formControlName="trainee"
-							/>
-							<div class="control-indicator"></div>
-						</label>
-					</div>
-					<div class="control-container">
-						<label for="choir" class="control control-checkbox">
-							<div class="label-text"><span>Choir member</span></div>
-							<input
-								type="checkbox"
-								id="choir"
-								value="Choir member"
-								formControlName="choir"
-							/>
-							<div class="control-indicator"></div>
-						</label>
-					</div>
-					<div class="control-container">
-						<label for="sport" class="control control-checkbox">
-							<div class="label-text">
-								<span>Partcipate in sports (captian)</span>
-							</div>
-							<input
-								type="checkbox"
-								id="sport"
-								value=">Partcipate in sports (captian)"
-								formControlName="sport"
-							/>
-							<div class="control-indicator"></div>
-						</label>
-					</div>
-					<div class="control-container">
-						<label for="club" class="control control-checkbox">
-							<div class="label-text">
-								<span
-									>Participate in club (patron/committee member)</span
-								>
-							</div>
-							<input
-								type="checkbox"
-								id="club"
-								value="Participate in club (patron/committee member)"
-								formControlName="club"
-							/>
-							<div class="control-indicator"></div>
-						</label>
-					</div>
-				</div>
-			</section>
-		</section>
+<!--		<section class="group activities" id="activities">-->
+<!--			<div class="header">-->
+<!--				<span class="heading heading-pri">Co-curricular Activities</span>-->
+<!--				<span class="heading heading-sec"-->
+<!--					>Do you participate in any co-curricular activities at-->
+<!--					school</span-->
+<!--				>-->
+<!--			</div>-->
+<!--			<section>-->
+<!--				<h6>Co-curricular activities</h6>-->
+<!--				<div formGroupName="activities">-->
+<!--					<div class="control-container">-->
+<!--						<label for="src" class="control control-checkbox">-->
+<!--							<div class="label-text">-->
+<!--								<span>Member of the SRC</span>-->
+<!--							</div>-->
+<!--							<input-->
+<!--								type="checkbox"-->
+<!--								id="src"-->
+<!--								value="Member of the SRC"-->
+<!--								formControlName="src"-->
+<!--							/>-->
+<!--							<div class="control-indicator"></div>-->
+<!--						</label>-->
+<!--					</div>-->
+<!--					<div class="control-container">-->
+<!--						<label for="trainee" class="control control-checkbox">-->
+<!--							<div class="label-text">-->
+<!--								<span>Leadership trainee</span>-->
+<!--							</div>-->
+<!--							<input-->
+<!--								type="checkbox"-->
+<!--								id="trainee"-->
+<!--								value="Leadership trainee"-->
+<!--								formControlName="trainee"-->
+<!--							/>-->
+<!--							<div class="control-indicator"></div>-->
+<!--						</label>-->
+<!--					</div>-->
+<!--					<div class="control-container">-->
+<!--						<label for="choir" class="control control-checkbox">-->
+<!--							<div class="label-text"><span>Choir member</span></div>-->
+<!--							<input-->
+<!--								type="checkbox"-->
+<!--								id="choir"-->
+<!--								value="Choir member"-->
+<!--								formControlName="choir"-->
+<!--							/>-->
+<!--							<div class="control-indicator"></div>-->
+<!--						</label>-->
+<!--					</div>-->
+<!--					<div class="control-container">-->
+<!--						<label for="sport" class="control control-checkbox">-->
+<!--							<div class="label-text">-->
+<!--								<span>Partcipate in sports (captian)</span>-->
+<!--							</div>-->
+<!--							<input-->
+<!--								type="checkbox"-->
+<!--								id="sport"-->
+<!--								value=">Partcipate in sports (captian)"-->
+<!--								formControlName="sport"-->
+<!--							/>-->
+<!--							<div class="control-indicator"></div>-->
+<!--						</label>-->
+<!--					</div>-->
+<!--					<div class="control-container">-->
+<!--						<label for="club" class="control control-checkbox">-->
+<!--							<div class="label-text">-->
+<!--								<span-->
+<!--									>Participate in club (patron/committee member)</span-->
+<!--								>-->
+<!--							</div>-->
+<!--							<input-->
+<!--								type="checkbox"-->
+<!--								id="club"-->
+<!--								value="Participate in club (patron/committee member)"-->
+<!--								formControlName="club"-->
+<!--							/>-->
+<!--							<div class="control-indicator"></div>-->
+<!--						</label>-->
+<!--					</div>-->
+<!--				</div>-->
+<!--			</section>-->
+<!--		</section>-->
 		<section
 			*ngIf="room?.policies.length > 0"
 			class="group policies"

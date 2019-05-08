@@ -107,7 +107,7 @@ const routes: Routes = [
 				component: StaffStudentsComponent
 			}
 		],
-		canActivate: [AuthGuard]
+		canActivate: [SuperuserAuthGuard]
 	},
 	{
 		path: "superuser/login",

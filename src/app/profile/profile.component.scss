@@ -1,0 +1,110 @@
+@import "../../assets/sass/colours";
+
+p {
+	text-align: center;
+	padding: 1rem;
+
+	a {
+		color: $amber400;
+		font-style: italic;
+		text-decoration: underline !important;
+	}
+}
+
+table {
+	width: 80%;
+	margin: 2rem auto;
+
+	tr {
+		padding: 0.5rem 1rem;
+		display: flex;
+
+		&:nth-child(odd) {
+			background-color: $blue_gray50;
+		}
+
+		&.headings {
+			background-color: $amber50;
+
+			th {
+				color: $amber400;
+
+				&:nth-last-child(1) {
+					text-align: right;
+				}
+			}
+		}
+
+		th,
+		td {
+			width: 25%;
+		}
+
+		td {
+			margin: 4px 0;
+
+			i {
+				margin-right: 1rem;
+				color: $red400;
+			}
+
+			&.actions {
+				text-align: right;
+
+				span {
+					padding: 0.25rem 0.5rem;
+					border-radius: 3px;
+					margin: 0.1rem;
+					font-size: 14px;
+					cursor: pointer;
+					box-shadow: 0 1px 2px $gray300;
+					transition: transform 300ms, box-shadow 300ms;
+
+					&:hover {
+						transform: scale(1.005);
+						box-shadow: 2px 2px 4px rgba($color: $gray300, $alpha: 0.5);
+					}
+
+					&.edit {
+						background-color: $teal50;
+						color: $teal400;
+					}
+
+					&.delete {
+						background-color: $red50;
+						color: $red400;
+					}
+
+					&.cancel {
+						background-color: $amber50;
+						color: $amber400;
+					}
+				}
+			}
+		}
+	}
+
+	&.on-campus {
+		tr {
+			&.headings {
+				background-color: $amber50;
+
+				th {
+					color: $amber400;
+				}
+			}
+		}
+	}
+
+	&.off-campus {
+		tr {
+			&.headings {
+				background-color: $teal50;
+
+				th {
+					color: $teal400;
+				}
+			}
+		}
+	}
+}

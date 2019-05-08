@@ -1,6 +1,7 @@
 const express = require("express");
 const multer = require("multer");
 const checkAuth = require("../middleware/check-auth");
+const checkSuperuserAuth = require("../middleware/check-superuser-auth");
 const Property = require("../models/property");
 const router = express.Router();
 const MIME_TYPE_MAP = {
@@ -43,7 +44,7 @@ router.post("", checkAuth, (req, res, next) => {
 		amenities: req.body.amenities,
 		spaces: req.body.spaces,
 		policies: req.body.policies,
-		creator: req.userData.superuserId,
+		creator: req.userData.userId,
 		student: req.body.student,
 		reports: []
 	});
@@ -76,7 +77,7 @@ router.get("/:id", (req, res, next) => {
 	});
 });
 
-router.put("/:id", checkAuth, (req, res, next) => {
+router.put("/:id", (req, res, next) => {
 	const property = new Property({
 		_id: req.body.id,
 		landlord: req.body.landlord,
@@ -95,7 +96,7 @@ router.put("/:id", checkAuth, (req, res, next) => {
 		amenities: req.body.amenities,
 		spaces: req.body.spaces,
 		policies: req.body.policies,
-		creator: req.userData.superuserId,
+		// creator: req.userData.userId,
 		student: req.body.student,
 		isReserved: req.body.isReserved,
 		reports: req.body.reports
@@ -107,7 +108,7 @@ router.put("/:id", checkAuth, (req, res, next) => {
 	});
 });
 
-router.delete("/:id", checkAuth, (req, res, next) => {
+router.delete("/:id", (req, res, next) => {
 	Property.deleteOne({
 		_id: req.params.id
 	}).then(result => {

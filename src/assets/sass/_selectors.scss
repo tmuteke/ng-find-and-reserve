@@ -79,12 +79,6 @@
 				transition: background-color 150ms;
 			}
 
-			&:focus {
-				&~.control-indicator {
-					// background: #ccc;
-				}
-			}
-
 			&:checked {
 				&~.control-indicator {
 					background: $blue_gray700;
@@ -125,7 +119,6 @@
 			width: 16px;
 			border: 2px solid $blue_gray700;
 			border-radius: 2px;
-			// background: #e6e6e6;
 
 			&:after {
 				content: '';
@@ -136,10 +129,6 @@
 
 		&:hover {
 			input {
-				&~.control-indicator {
-					// background: #ccc;
-				}
-
 				&:not([disabled]) {
 					&:checked {
 						&~.control-indicator {

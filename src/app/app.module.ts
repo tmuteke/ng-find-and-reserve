@@ -3,7 +3,7 @@ import { BrowserAnimationsModule } from "@angular/platform-browser/animations";
 import { NgModule } from "@angular/core";
 import { ReactiveFormsModule, FormsModule } from "@angular/forms";
 import { HttpClientModule, HTTP_INTERCEPTORS } from "@angular/common/http";
-import { MatProgressSpinnerModule } from "@angular/material";
+import { MatProgressSpinnerModule } from "@angular/material/progress-spinner";
 import { ToastrModule } from "ngx-toastr";
 
 import { AppComponent } from "./app.component";
@@ -11,7 +11,6 @@ import { HeaderComponent } from "./header/header.component";
 import { PropertyDetailsComponent } from "./property/property-item/property-details/property-details.component";
 import { FooterComponent } from "./footer/footer.component";
 import { AbrilDirective } from "./shared/directives/abril.directive";
-import { AngularFontAwesomeModule } from "angular-font-awesome";
 import { AppRoutingModule } from "./app-routing.module";
 import { LoginComponent } from "./auth/login/login.component";
 import { LikeDirective } from "./shared/directives/like.directive";
@@ -86,7 +85,6 @@ import { SuperuserLoginComponent } from "./superuser/superuser-auth/superuser-lo
 	],
 	imports: [
 		BrowserModule,
-		AngularFontAwesomeModule,
 		AppRoutingModule,
 		ReactiveFormsModule,
 		FormsModule,

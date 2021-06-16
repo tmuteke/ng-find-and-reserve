@@ -138,7 +138,8 @@ export class EnlistComponent implements OnInit, DoCheck {
 				name: { first: this.user.name.first, last: this.user.name.last },
 				email: this.user.email,
 				phone: this.phone,
-				avatar: "http://i.pravatar.cc/300"
+				avatar:
+					"https://s3.amazonaws.com/uifaces/faces/twitter/jwalter14/128.jpg"
 			};
 			property.address = {
 				houseNumber: "" + this.houseNumber,

@@ -7,6 +7,7 @@ const propertiesRoutes = require("./routes/properties");
 const userRoutes = require("./routes/user");
 const roomsRoutes = require("./routes/rooms");
 const superuserRouters = require("./routes/superuser");
+const remitAgentRoutes = require("./routes/remit-agent-users");
 
 const app = express();
 
@@ -46,5 +47,6 @@ app.use("/api/properties", propertiesRoutes);
 app.use("/api/users", userRoutes);
 app.use("/api/rooms", roomsRoutes);
 app.use("/api/superuser", superuserRouters);
+app.use("/api/remit-agent", remitAgentRoutes);
 
 module.exports = app;

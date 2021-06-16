@@ -1,4 +1,4 @@
-@import '../../../../assets/sass/colours';
+@import "../../../../assets/sass/colours";
 
 .property-hero {
 	width: 100%;
@@ -6,7 +6,8 @@
 	box-sizing: border-box;
 	text-align: center;
 	color: #fff;
-	background: url(../../../../assets/images/image_03.jpg) no-repeat center;
+	background: url("https://images.unsplash.com/photo-1553444862-65de13a9e728?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=1350&q=80")
+		no-repeat center;
 	background-size: cover;
 }
 
@@ -14,8 +15,8 @@
 	padding: 1rem;
 
 	section {
-		padding-top: .5rem;
-		padding-bottom: .5rem;
+		padding-top: 0.5rem;
+		padding-bottom: 0.5rem;
 	}
 
 	.essential-info {
@@ -34,7 +35,6 @@
 	.essential-amenities,
 	.safety-amenities,
 	.policies {
-
 		span:not(.heading) {
 			margin: 0 3px 6px;
 			padding: 6px 10px;
@@ -119,8 +119,8 @@
 
 	.map {
 		.map-feed {
-			&>div {
-				padding-top: .35rem;
+			& > div {
+				padding-top: 0.35rem;
 			}
 		}
 
@@ -130,7 +130,6 @@
 	}
 
 	.host-info {
-
 		img {
 			position: relative;
 			transform: translateY(-50%);
@@ -158,7 +157,6 @@
 		}
 	}
 
-
 	.reviews {
 		.add-comment-container {
 			img {
@@ -175,8 +173,8 @@
 				margin-top: 1rem;
 
 				i {
-					margin-left: .15rem;
-					margin-right: .15rem;
+					margin-left: 0.15rem;
+					margin-right: 0.15rem;
 					color: $tealA700;
 				}
 			}
@@ -253,7 +251,6 @@
 		}
 
 		.property-rating-container {
-
 			span {
 				display: inline-block;
 
@@ -279,7 +276,7 @@
 
 		* {
 			display: block;
-			margin-top: .3rem;
+			margin-top: 0.3rem;
 		}
 
 		.recommendation-container {
@@ -288,11 +285,11 @@
 
 			.recommended {
 				color: $tealA700;
-				margin-bottom: .5rem;
+				margin-bottom: 0.5rem;
 
 				i {
 					display: inline;
-					margin-left: .5rem;
+					margin-left: 0.5rem;
 					transform: rotateX(-15deg);
 				}
 			}
@@ -304,12 +301,12 @@
 
 		.report {
 			color: $red400;
-			margin-bottom: .5rem;
+			margin-bottom: 0.5rem;
 			text-align: center;
 
 			i {
 				display: inline;
-				margin-left: .5rem;
+				margin-left: 0.5rem;
 				transform: rotateX(-15deg);
 			}
 		}

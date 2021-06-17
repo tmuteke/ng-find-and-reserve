@@ -10,7 +10,6 @@
 		left: 50%;
 		top: 45%;
 		transform: translate(-50%, -40%);
-		font-family: "Gotham Medium", sans-serif;
 		padding: 1rem;
 		text-align: center;
 		background-color: #fdfdfd;
@@ -75,7 +74,6 @@
 
 		.or {
 			color: $blue_gray300;
-			font-family: Ubuntu;
 			width: 90%;
 			margin-right: auto;
 			margin-left: auto;
@@ -103,7 +101,6 @@
 			color: $red400;
 			text-align: left;
 			font-size: 0.75em;
-			font-family: "Product Sans Regular", sans-serif;
 		}
 
 		* {
@@ -132,13 +129,6 @@
 			width: 200px;
 			margin-left: auto;
 			margin-right: auto;
-		}
-
-		.email,
-		.forgot-password,
-		.no-account,
-		.already-have-account {
-			font-family: Ubuntu;
 		}
 
 		.no-account,

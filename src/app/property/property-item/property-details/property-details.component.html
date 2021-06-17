@@ -9,11 +9,11 @@
 			<div class="property-details-container">
 				<section>
 					<span class="address"
-						>{{ property?.address.houseNumber }}
+					>{{ property?.address.houseNumber }}
 						{{ property?.address.street }}</span
 					>
 					<span class="location"
-						>{{ property?.address.area }} ·
+					>{{ property?.address.area }} ·
 						{{ property?.address.city }}</span
 					>
 				</section>
@@ -51,7 +51,7 @@
 					<span class="heading heading-ter">Essential amenities</span>
 					<span *ngFor="let ess of property?.amenities.essential">{{
 						ess
-					}}</span>
+						}}</span>
 				</section>
 				<span
 					*ngIf="property?.amenities.essential.length > 0"
@@ -64,7 +64,7 @@
 					<span class="heading heading-ter">Safety amenities</span>
 					<span *ngFor="let ess of property?.amenities.safety">{{
 						ess
-					}}</span>
+						}}</span>
 				</section>
 				<span
 					*ngIf="property?.amenities.safety.length > 0"
@@ -74,7 +74,7 @@
 					<span class="heading heading-ter">From the landlord</span>
 					<span class="from-the-landlord">{{
 						property?.description
-					}}</span>
+						}}</span>
 				</section>
 				<span class="line"></span>
 				<!-- <section class="map">
@@ -87,15 +87,17 @@
 				<section class="host-info">
 					<span class="heading heading-ter">Your landlord</span>
 					<div>
-						<img [src]="property?.landlord.avatar" alt="host avatar" />
+						<img
+							src="https://images.unsplash.com/photo-1597223557154-721c1cecc4b0?ixid=MnwxMjA3fDB8MHxzZWFyY2h8Mnx8ZmFjZXxlbnwwfDJ8MHx8&ixlib=rb-1.2.1&auto=format&fit=crop&w=500&q=60"
+							alt="host avatar"/>
 					</div>
 					<div>
 						<span class="host-name"
-							>{{ property?.landlord.name.first }}
+						>{{ property?.landlord.name.first }}
 							{{ property?.landlord.name.last }}</span
 						>
 						<span class="host-address"
-							>{{ property?.address.houseNumber }}
+						>{{ property?.address.houseNumber }}
 							{{ property?.address.street }},
 							{{ property?.address.area }},
 							{{ property?.address.city }}</span
@@ -110,26 +112,26 @@
 						<span class="heading heading-ter">Rules and policies</span>
 						<span *ngFor="let policy of property?.policies">{{
 							policy
-						}}</span>
+							}}</span>
 					</section>
 				</section>
 				<span *ngIf="property?.reports.length > 2" class="line"></span>
 				<section>
 					<section class="reports" *ngIf="property?.reports.length > 2">
 						<span class="heading heading-ter"
-							>Reports about property enlisting</span
+						>Reports about property enlisting</span
 						>
 						<div *ngFor="let report of property.reports" class="report">
 							<p>
 								<b>{{ report.report }}</b
 								><span *ngIf="report.description !== null">
 									&bull; {{ report.description }}</span
-								>
+							>
 							</p>
 							<p style="text-align: right;">
 								<span
 									style="font-size: 14px; font-style: italic; text-transform: capitalize;"
-									>&mdash; {{ report.creator.name.first }}
+								>&mdash; {{ report.creator.name.first }}
 									{{ report.creator.name.last }}</span
 								>
 							</p>
@@ -186,7 +188,7 @@
 					<div class="rent-like row">
 						<div class="inline col-xs-10 col-md-10 col-lg-10">
 							<span class="rent"
-								><i class="inline">${{ property?.rent }}</i> per
+							><i class="inline">${{ property?.rent }}</i> per
 								month</span
 							>
 						</div>
@@ -204,7 +206,7 @@
 							<span
 								class="recommended heading heading-sec"
 								style="color: #26A69A;"
-								>Property recommended<i class="fa fa-smile-o"></i
+							>Property recommended<i class="fa fa-smile-o"></i
 							></span>
 							<p>
 								This property enlisting has no issues and it seems most
@@ -220,7 +222,7 @@
 							<span
 								class="recommended heading heading-sec"
 								style="color: #FFCA28;"
-								>Property has reported issues<i class="fa fa-meh-o"></i
+							>Property has reported issues<i class="fa fa-meh-o"></i
 							></span>
 							<p>
 								Some issues were found for this property enlisting, that
@@ -233,7 +235,7 @@
 							<span
 								class="recommended heading heading-sec"
 								style="color: #EF5350;"
-								>Property red flagged<i class="fa fa-frown-o"></i
+							>Property red flagged<i class="fa fa-frown-o"></i
 							></span>
 							<p>
 								This property enlisting has been red flagged. Multiple
@@ -248,14 +250,14 @@
 						<a
 							class="button button-primary-outline"
 							[routerLink]="['/property', property?.id, 'reservation']"
-							><i class="fa fa-bookmark-o right"></i>Place Reservation</a
+						><i class="fa fa-bookmark-o right"></i>Place Reservation</a
 						>
 					</div>
 					<span class="line line-75 line-75-c"></span>
 					<a
 						[routerLink]="['/property', property?.id, 'report-property']"
 						class="report"
-						>Report this property<i class="fa fa-flag-o"></i
+					>Report this property<i class="fa fa-flag-o"></i
 					></a>
 				</div>
 			</div>

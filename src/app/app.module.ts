@@ -10,7 +10,6 @@ import { AppComponent } from "./app.component";
 import { HeaderComponent } from "./header/header.component";
 import { PropertyDetailsComponent } from "./property/property-item/property-details/property-details.component";
 import { FooterComponent } from "./footer/footer.component";
-import { AbrilDirective } from "./shared/directives/abril.directive";
 import { AppRoutingModule } from "./app-routing.module";
 import { LoginComponent } from "./auth/login/login.component";
 import { LikeDirective } from "./shared/directives/like.directive";
@@ -48,7 +47,6 @@ import { SuperuserLoginComponent } from "./superuser/superuser-auth/superuser-lo
 @NgModule({
 	declarations: [
 		AppComponent,
-		AbrilDirective,
 		HeaderComponent,
 		PropertyDetailsComponent,
 		FooterComponent,
@@ -81,7 +79,7 @@ import { SuperuserLoginComponent } from "./superuser/superuser-auth/superuser-lo
 		SuperuserPropertiesComponent,
 		SuperuserStaffComponent,
 		SuperuserReservationsComponent,
-		SuperuserLoginComponent
+		SuperuserLoginComponent,
 	],
 	imports: [
 		BrowserModule,
@@ -91,12 +89,12 @@ import { SuperuserLoginComponent } from "./superuser/superuser-auth/superuser-lo
 		HttpClientModule,
 		BrowserAnimationsModule,
 		ToastrModule.forRoot(),
-		MatProgressSpinnerModule
+		MatProgressSpinnerModule,
 	],
 	providers: [
 		AuthService,
-		{ provide: HTTP_INTERCEPTORS, useClass: AuthInterceptor, multi: true }
+		{ provide: HTTP_INTERCEPTORS, useClass: AuthInterceptor, multi: true },
 	],
-	bootstrap: [AppComponent]
+	bootstrap: [AppComponent],
 })
 export class AppModule {}

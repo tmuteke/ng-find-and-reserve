@@ -1,17 +1,16 @@
 import { Component, DoCheck, OnInit } from "@angular/core";
 import { ActivatedRoute, Router } from "@angular/router";
-import { FormGroup, FormControl, Validators } from "@angular/forms";
+import { FormControl, FormGroup, Validators } from "@angular/forms";
 import { Property } from "../property/property.model";
 import { PropertyService } from "../property/property.service";
 import { ToastrService } from "ngx-toastr";
-import { mimeType } from "./mime-type.validator";
 import { User } from "../auth/user.model";
 import { AuthService } from "../auth/auth.service";
 
 @Component({
 	selector: "app-enlist",
 	templateUrl: "./enlist.component.html",
-	styleUrls: ["./enlist.component.scss"]
+	styleUrls: ["./enlist.component.scss"],
 })
 export class EnlistComponent implements OnInit, DoCheck {
 	enlistForm: FormGroup;
@@ -46,6 +45,19 @@ export class EnlistComponent implements OnInit, DoCheck {
 	) {}
 
 	ngOnInit(): void {
+		this.userId = this.authService.userId;
+		this.authService.getUser(this.userId).subscribe((user) => {
+			this.user = {
+				id: user._id,
+				email: user.email,
+				name: {
+					first: user.name.first,
+					last: user.name.last,
+				},
+				password: user.password,
+			};
+		});
+
 		this.enlistForm = new FormGroup({
 			propertyType: new FormControl("Rooms", Validators.required),
 			roomType: new FormControl("shared rooms", Validators.required),
@@ -57,16 +69,16 @@ export class EnlistComponent implements OnInit, DoCheck {
 			),
 			numberOfStudents: new FormControl(5, [
 				Validators.required,
-				Validators.min(1)
+				Validators.min(1),
 			]),
 			numberOfRooms: new FormControl(5, Validators.required),
 			numberOfBathrooms: new FormControl(3, [
 				Validators.required,
-				Validators.min(1)
+				Validators.min(1),
 			]),
 			houseNumber: new FormControl(1, [
 				Validators.required,
-				Validators.min(1)
+				Validators.min(1),
 			]),
 			street: new FormControl(null, Validators.required),
 			area: new FormControl(null, Validators.required),
@@ -74,14 +86,14 @@ export class EnlistComponent implements OnInit, DoCheck {
 			description: new FormControl(null, Validators.required),
 			phone: new FormControl(null, [
 				Validators.required,
-				Validators.pattern("^\\d{10}$")
+				Validators.pattern("^\\d{10}$"),
 			]),
 			essentials: new FormGroup({
 				wifi: new FormControl(null),
 				tv: new FormControl(null),
 				study: new FormControl(null),
 				toiletries: new FormControl(null),
-				closet: new FormControl(null)
+				closet: new FormControl(null),
 			}),
 			safeties: new FormGroup({
 				firstAid: new FormControl(null),
@@ -89,7 +101,7 @@ export class EnlistComponent implements OnInit, DoCheck {
 				roomLock: new FormControl(null),
 				gateLock: new FormControl(null),
 				securityFence: new FormControl(null),
-				guardDogs: new FormControl(null)
+				guardDogs: new FormControl(null),
 			}),
 			spaces: new FormGroup({
 				commonRoom: new FormControl(null),
@@ -97,7 +109,7 @@ export class EnlistComponent implements OnInit, DoCheck {
 				laundryRoom: new FormControl(null),
 				washingLine: new FormControl(null),
 				parking: new FormControl(null),
-				gym: new FormControl(null)
+				gym: new FormControl(null),
 			}),
 			policies: new FormGroup({
 				visitors: new FormControl("No visitors allowed"),
@@ -108,26 +120,26 @@ export class EnlistComponent implements OnInit, DoCheck {
 				appliances: new FormControl(null),
 				eventsHosted: new FormControl(null),
 				hostPets: new FormControl(null),
-				limitedAmenities: new FormControl(null)
-			})
+				limitedAmenities: new FormControl(null),
+			}),
 		});
 
 		this.toastr.toastrConfig.positionClass = "toast-top-center";
 	}
 
 	ngDoCheck(): void {
-		this.userId = this.authService.userId;
-		this.authService.getUser(this.userId).subscribe(user => {
-			this.user = {
-				id: user._id,
-				email: user.email,
-				name: {
-					first: user.name.first,
-					last: user.name.last
-				},
-				password: user.password
-			};
-		});
+		// this.userId = this.authService.userId;
+		// this.authService.getUser(this.userId).subscribe(user => {
+		// 	this.user = {
+		// 		id: user._id,
+		// 		email: user.email,
+		// 		name: {
+		// 			first: user.name.first,
+		// 			last: user.name.last
+		// 		},
+		// 		password: user.password
+		// 	};
+		// });
 	}
 
 	public onEnlist(): void {
@@ -139,14 +151,14 @@ export class EnlistComponent implements OnInit, DoCheck {
 				email: this.user.email,
 				phone: this.phone,
 				avatar:
-					"https://s3.amazonaws.com/uifaces/faces/twitter/jwalter14/128.jpg"
+					"https://s3.amazonaws.com/uifaces/faces/twitter/jwalter14/128.jpg",
 			};
 			property.address = {
 				houseNumber: "" + this.houseNumber,
 				street: this.street,
 				city: this.city,
 				area: this.area,
-				geo: { lat: 9.8987898, lng: 88486 }
+				geo: { lat: 9.8987898, lng: 88486 },
 			};
 			property.apartmentType = this.propertyType;
 			property.roomType = this.roomType;
@@ -157,7 +169,7 @@ export class EnlistComponent implements OnInit, DoCheck {
 			property.numberOfBathrooms = this.numberOfBathrooms;
 			property.amenities = {
 				essential: this.essentials,
-				safety: this.safeties
+				safety: this.safeties,
 			};
 			property.spaces = this.spaces;
 			property.policies = this.policies;
@@ -168,12 +180,12 @@ export class EnlistComponent implements OnInit, DoCheck {
 			property.student = {
 				name: {
 					first: "",
-					last: ""
+					last: "",
 				},
 				registration: "",
 				academicYear: "",
 				gender: "",
-				email: ""
+				email: "",
 			};
 			property.isReserved = false;
 			property.reports = [];
@@ -194,7 +206,7 @@ export class EnlistComponent implements OnInit, DoCheck {
 	private onImagePicked(event: Event): void {
 		const file = (event.target as HTMLInputElement).files[0];
 		this.enlistForm.patchValue({
-			image: file
+			image: file,
 		});
 		this.enlistForm.get("image").updateValueAndValidity();
 		const reader = new FileReader();

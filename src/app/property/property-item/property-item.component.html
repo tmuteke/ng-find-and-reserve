@@ -1,14 +1,14 @@
 <a [routerLink]="['/property', property?.id, 'details']">
 	<section class="image-container">
 		<img
-			src="../../../assets/images/image_03.jpg"
+			src="https://images.unsplash.com/photo-1480074568708-e7b720bb3f09?ixid=MnwxMjA3fDB8MHxzZWFyY2h8NHx8aG9tZXxlbnwwfHwwfHw%3D&ixlib=rb-1.2.1&auto=format&fit=crop&w=500&q=60"
 			alt="preview"
 			class="img-fluid"
 		/>
 	</section>
 	<section class="data">
 		<span class="heading heading-sec"
-			>{{ property?.address.houseNumber }}
+		>{{ property?.address.houseNumber }}
 			{{ property?.address.street }} &ndash; {{ property?.address.area }},
 			{{ property?.address.city }}</span
 		>
@@ -18,7 +18,7 @@
 			<q class="description">{{ property?.description }}</q>
 		</blockquote>
 		<cite class="heading heading-ter"
-			>&mdash; {{ property?.landlord.name.first }}
+		>&mdash; {{ property?.landlord.name.first }}
 			{{ property?.landlord.name.last }}</cite
 		>
 		<span class="line"></span>

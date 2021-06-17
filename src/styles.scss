@@ -1,28 +1,14 @@
 /* You can add global styles to this file, and also import other style files */
 
 @import url("https://fonts.googleapis.com/icon?family=Material+Icons");
+@import url('https://fonts.googleapis.com/css2?family=Roboto:ital,wght@0,100;0,300;0,400;0,500;0,700;0,900;1,100;1,300;1,400;1,500;1,700;1,900&display=swap');
 @import "assets/sass/colours";
 @import "assets/sass/selectors";
 @import "assets/sass/buttons";
 
-@font-face {
-	font-family: Ubuntu;
-	src: url("assets/fonts/ubuntu.ttf");
-}
-
-@font-face {
-	font-family: "Abril Fat Face";
-	src: url("assets/fonts/abril-fat-face.ttf");
-}
-
-@font-face {
-	font-family: "Gotham Medium";
-	src: url("assets/fonts/gotham-medium.ttf");
-}
-
 body {
 	color: $blue_gray700;
-	font-family: Ubuntu, sans-serif;
+	font-family: '--apple-system', 'BlinkMacSystemFont', 'Segoe UI', Roboto, 'Helvetica Neue', Arial, 'Noto Sans', sans-serif, 'Apple Color Emoji', 'Segoe UI Emoji', 'Segoe UI Symbol', 'Noto Color Emoji';
 	font-weight: 400;
 	font-size: 16px;
 
@@ -30,15 +16,6 @@ body {
 		&:focus {
 			outline: none;
 		}
-	}
-
-	h1,
-	h2,
-	h3,
-	h4,
-	h5,
-	h6 {
-		font-family: "Gotham Medium", sans-serif;
 	}
 
 	a {
@@ -109,7 +86,6 @@ body {
 		margin-top: 0.75rem;
 		margin-bottom: 0.5rem;
 		transition: box-shadow 0.2s;
-		font-family: Ubuntu !important;
 		color: $blue_gray700;
 		border: 1px solid $blue_gray100;
 		border-radius: 2px;
@@ -132,7 +108,6 @@ body {
 		margin-top: 0.75rem;
 		margin-bottom: 0.5rem;
 		transition: box-shadow 0.2s;
-		font-family: Ubuntu !important;
 		color: $blue_gray700;
 
 		&:focus {
@@ -235,7 +210,6 @@ body {
 
 	.heading {
 		display: block !important;
-		font-family: "Gotham Medium", sans-serif;
 		margin-top: 5px;
 		margin-bottom: 5px;
 		font-weight: 400;
@@ -269,6 +243,3 @@ body {
 		clear: both;
 	}
 }
-
-html, body { height: 100%; }
-body { margin: 0; font-family: Roboto, "Helvetica Neue", sans-serif; }

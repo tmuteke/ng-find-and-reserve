@@ -18,7 +18,6 @@
 
 		span {
 			font-size: 4.5rem;
-			font-family: "Gotham Medium", sans-serif;
 			font-weight: 700;
 			line-height: 1.2;
 			letter-spacing: -1px;
@@ -26,6 +25,7 @@
 
 		div {
 			&.links {
+				display: none;
 				margin-top: 3rem;
 			}
 		}
@@ -33,6 +33,7 @@
 }
 
 .on-campus-section {
+	display: none;
 	padding-bottom: 3rem;
 
 	.header {

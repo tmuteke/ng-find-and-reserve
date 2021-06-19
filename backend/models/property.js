@@ -120,6 +120,12 @@ const propertySchema = mongoose.Schema({
 	},
 	reports: {
 		type: Array
+	},
+	deposit: {
+		type: Number
+	},
+	reference: {
+		type: String
 	}
 });
 

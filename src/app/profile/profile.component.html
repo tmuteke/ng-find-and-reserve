@@ -12,11 +12,17 @@
 		<tr class="headings">
 			<th class="heading heading-ter">House Address</th>
 			<th class="heading heading-ter">Rent</th>
+			<th class="heading heading-ter">Reservation Status</th>
+			<th class="heading heading-ter">Deposit</th>
+			<th class="heading heading-ter">Reference</th>
 			<th class="heading heading-ter">Actions</th>
 		</tr>
 		<tr *ngFor="let property of propertyEnlistings">
 			<td><i *ngIf="property.reports.length > 4" class="fa fa-flag-o"></i>{{ property.address.houseNumber }} {{ property.address.street }}, {{ property.address.city }}</td>
 			<td>${{ property.rent }}.00 per month</td>
+			<td><span *ngIf="property.isReserved">Reserved</span><span *ngIf="!property.isReserved">Not Reserved</span></td>
+			<td><span *ngIf="property.deposit">${{ property.deposit }}.00</span><span></span></td>
+			<td><span *ngIf="property.reference">{{ property.reference }}</span><span></span></td>
 			<td class="actions">
 				<!--				<span class="edit" (click)="onEdit(room.id)">Edit</span>-->
 				<span class="delete" (click)="onDeleteProperty(property.id)"
@@ -26,15 +32,15 @@
 		</tr>
 	</table>
 	<p *ngIf="propertyReservations === undefined || propertyReservations?.length === 0">
-		*Your account hasn't made any off-campus reservations.
+		*Your account hasn't made any reservations.
 	</p>
 	<table *ngIf="propertyReservations?.length > 0" class="off-campus">
-		<th class="heading heading-ter">Off-campus Reservations</th>
+		<th class="heading heading-ter">Reservations</th>
 		<tr class="headings">
 			<th class="heading heading-ter">House Address</th>
 			<th class="heading heading-ter">Rent</th>
-			<th class="heading heading-ter">Student Name</th>
-			<th class="heading heading-ter">Student Registration Number</th>
+			<th class="heading heading-ter">Tenant Name</th>
+			<th class="heading heading-ter">Tenant Registration Number</th>
 			<th class="heading heading-ter">Actions</th>
 		</tr>
 		<tr *ngFor="let property of propertyReservations">
@@ -50,7 +56,7 @@
 			</td>
 		</tr>
 	</table>
-	<p *ngIf="roomReservations === undefined || roomReservations?.length === 0">
+	<!-- <p *ngIf="roomReservations === undefined || roomReservations?.length === 0">
 		*Your account hasn't made any on-campus reservations.
 	</p>
 	<table *ngIf="roomReservations?.length > 0" class="on-campus">
@@ -70,11 +76,11 @@
 			<td>{{ room.student.name.first }} {{ room.student.name.last}}</td>
 			<td>{{ room.student.registration }}</td>
 			<td class="actions">
-				<!--				<span class="edit" (click)="onEdit(room.id)">Edit</span>-->
+								<span class="edit" (click)="onEdit(room.id)">Edit</span>
 				<span class="cancel" (click)="onCancelRoomReservation(room.id)"
 					>Cancel Reservation</span
 				>
 			</td>
 		</tr>
-	</table>
+	</table> -->
 </div>

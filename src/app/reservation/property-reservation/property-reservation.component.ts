@@ -75,6 +75,8 @@ export class PropertyReservationComponent implements OnInit, DoCheck {
 						student: property.student,
 						isReserved: property.isReserved,
 						reports: property.reports,
+						deposit: property.deposit,
+						reference: property.reference
 					};
 				});
 			}
@@ -90,7 +92,7 @@ export class PropertyReservationComponent implements OnInit, DoCheck {
 		this.propertyReservationForm = new FormGroup({
 			registration: new FormControl(null, [
 				Validators.required,
-				Validators.pattern("^((H|h)[1])\\d{5}([A-Z]|[a-z]){1}$"),
+				Validators.pattern("^\\d{7,9}([A-Z]|[a-z])\\d{2}$"),
 			]),
 			firstName: new FormControl(null, [
 				Validators.required,
@@ -102,6 +104,8 @@ export class PropertyReservationComponent implements OnInit, DoCheck {
 			]),
 			academicYear: new FormControl("Part 1"),
 			gender: new FormControl("Female"),
+			deposit: new FormControl(null, Validators.required),
+			reference: new FormControl(null, Validators.required)
 		});
 
 		this.toastr.toastrConfig.positionClass = "toast-top-center";
@@ -135,10 +139,12 @@ export class PropertyReservationComponent implements OnInit, DoCheck {
 				email: this.user.email,
 			};
 			this.property.isReserved = true;
+			this.property.deposit = this.propertyReservationForm.get('deposit').value;
+			this.property.reference = this.propertyReservationForm.get('reference').value;
 
 			if (this.isDuplicateStudent(this.properties)) {
 				this.toastr.error(
-					"Student " +
+					"Tenant " +
 						this.student.registration +
 						" has already made a reservation, therefore, reservation cannot be processed.",
 					"Duplicate Room Reservation"

@@ -1,4 +1,4 @@
-import { Component, OnInit } from "@angular/core";
+import { Component, OnInit, AfterViewInit } from "@angular/core";
 import { User } from "../auth/user.model";
 import { AuthService } from "../auth/auth.service";
 import { Subscription } from "rxjs";
@@ -12,7 +12,7 @@ import { RoomService } from "../room/room.service";
 	templateUrl: "./profile.component.html",
 	styleUrls: ["./profile.component.scss"]
 })
-export class ProfileComponent implements OnInit {
+export class ProfileComponent implements OnInit, AfterViewInit {
 	user: User;
 	roomReservations: Room[];
 	propertyReservations: Property[];
@@ -27,6 +27,25 @@ export class ProfileComponent implements OnInit {
 	) {}
 
 	ngOnInit(): void {
+		// this.userSub = this.authService
+		// 	.getUser(this.authService.userId)
+		// 	.subscribe(user => {
+		// 		this.user = {
+		// 			id: user._id,
+		// 			email: user.email,
+		// 			name: {
+		// 				first: user.name.first,
+		// 				last: user.name.last
+		// 			},
+		// 			password: user.password
+		// 		};
+		// 	});
+
+		// this.loadRooms();
+		// this.loadProperties();
+	}
+
+	ngAfterViewInit(): void {
 		this.userSub = this.authService
 			.getUser(this.authService.userId)
 			.subscribe(user => {
@@ -42,7 +61,7 @@ export class ProfileComponent implements OnInit {
 			});
 
 		this.loadRooms();
-		this.loadProperties();
+		this.loadProperties();	
 	}
 
 	onCancelRoomReservation(id: string): void {
@@ -77,6 +96,8 @@ export class ProfileComponent implements OnInit {
 			gender: "",
 			academicYear: ""
 		};
+		properties[0].deposit = null;
+		properties[0].reference = null;
 		this.propertyService.updateProperty(id, properties[0]);
 		this.loadProperties();
 	}
@@ -105,6 +126,7 @@ export class ProfileComponent implements OnInit {
 			this.propertyEnlistings = properties.filter(
 				property => property.landlord.email === this.user.email
 			);
+			console.log(this.propertyEnlistings)
 		});
 	}
 }

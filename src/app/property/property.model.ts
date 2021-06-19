@@ -56,4 +56,6 @@ export class Property {
 		report: string;
 		description: string;
 	}>;
+	public deposit: number;
+	public reference: string;
 }

@@ -99,11 +99,14 @@ router.put("/:id", (req, res, next) => {
 		// creator: req.userData.userId,
 		student: req.body.student,
 		isReserved: req.body.isReserved,
-		reports: req.body.reports
+		reports: req.body.reports,
+		deposit: req.body.deposit,
+		reference: req.body.reference
 	});
 	Property.updateOne({ _id: req.params.id }, property).then(result => {
 		res.status(200).json({
-			message: "PUT Success"
+			message: "PUT Success",
+			result
 		});
 	});
 });

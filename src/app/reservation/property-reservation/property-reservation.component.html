@@ -8,15 +8,15 @@
 			</div>
 			<section>
 				<div>
-					<h6>Address: </h6><span>{{ property?.address.houseNumber }} {{ property?.address.street }}
+					<span>Address: </span><span>{{ property?.address.houseNumber }} {{ property?.address.street }}
 						{{ property?.address.area }},
 						{{ property?.address.city }}</span>
 				</div>
 				<div>
-					<h6>Rent: </h6><span>${{ property?.rent }} per month</span>
+					<span>Rent: </span><span>${{ property?.rent }} per month</span>
 				</div>
 				<div>
-					<h6>Landlord: </h6><span>{{ property?.landlord.name.first }} {{ property?.landlord.name.last }}</span>
+					<span>Landlord: </span><span>{{ property?.landlord.name.first }} {{ property?.landlord.name.last }}</span>
 				</div>
 			</section>
 		</section>
@@ -26,54 +26,19 @@
 				<span class="heading heading-sec">Provide basic details about you below</span>
 			</div>
 			<section>
-				<h6><span class="required">&#9913;</span> Registration Number</h6>
-				<input type="text" name="registration" id="registration" formControlName="registration" />
+				<label><span class="required">&#9913;</span> Registration Number</label><br>
+				<input type="text" name="registration" id="registration" formControlName="registration" placeholder="001234567A00" />
 			</section>
 			<section>
-				<h6><span class="required">&#9913;</span> First Name</h6>
+				<label><span class="required">&#9913;</span> First Name</label><br>
 				<input type="text" name="firstName" id="firstName" formControlName="firstName" />
 			</section>
 			<section>
-				<h6><span class="required">&#9913;</span> Last Name</h6>
+				<label><span class="required">&#9913;</span> Last Name</label><br>
 				<input type="text" name="lastName" id="lastName" formControlName="lastName" />
 			</section>
 			<section>
-				<h6>Academic Year</h6>
-				<div class="control-container">
-					<label class="control control-radio" for="one">
-						<div class="label-text">
-							<span>Part 1</span>
-						</div>
-						<input type="radio" id="one" value="Part 1" name="academicYear" formControlName="academicYear" />
-						<div class="control-indicator"></div>
-					</label>
-				</div>
-				<div class="control-container">
-					<label class="control control-radio" for="two">
-						<div class="label-text">
-							<span>Part 2</span>
-						</div>
-						<input type="radio" id="two" value="Part 2" name="academicYear" formControlName="academicYear" />
-						<div class="control-indicator"></div>
-					</label>
-				</div>
-				<div class="control-container">
-					<label class="control control-radio" for="three">
-						<div class="label-text"><span>Part 3</span></div>
-						<input type="radio" id="three" value="Part 3" name="academicYear" formControlName="academicYear" />
-						<div class="control-indicator"></div>
-					</label>
-				</div>
-				<div class="control-container">
-					<label class="control control-radio" for="four">
-						<div class="label-text"><span>Part 4</span></div>
-						<input type="radio" id="four" value="Part 4" name="academicYear" formControlName="academicYear" />
-						<div class="control-indicator"></div>
-					</label>
-				</div>
-			</section>
-			<section>
-				<h6>Gender</h6>
+				<span>Gender</span>
 				<div class="control-container">
 					<label class="control control-radio" for="female">
 						<div class="label-text"><span>Female</span></div>
@@ -88,6 +53,23 @@
 						<div class="control-indicator"></div>
 					</label>
 				</div>
+			</section>
+		</section>		
+		<section class="group place-details" id="place-details">
+			<div class="header">
+				<span class="heading heading-pri">Deposit Payment</span>
+				<span class="heading heading-sec">Amount paid and proof reference</span>
+			</div>		
+			<section>
+				<span>Deposit Payment</span>				
+				<section>
+					<label><span class="required">&#9913;</span> Amount</label><br>
+					<input type="text" id="deposit" formControlName="deposit" />
+				</section>
+				<section>
+					<label><span class="required">&#9913;</span> Transaction reference</label><br>
+					<input type="text" id="reference" formControlName="reference" />
+				</section>
 			</section>
 		</section>
 		<section *ngIf="property?.policies.length > 0" class="group policies" id="policies">

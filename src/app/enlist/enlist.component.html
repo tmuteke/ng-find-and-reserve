@@ -4,10 +4,10 @@
 		<section class="group room" id="room">
 			<div class="header">
 				<span class="heading heading-pri">Room Specifications</span>
-				<span class="heading heading-sec">What are you offering students</span>
+				<span class="heading heading-sec">What are you offering tenants</span>
 			</div>
 			<section>
-				<h6>Select your property type</h6>
+				<h3>Select your property type</h3>
 				<select formControlName="propertyType">
 					<option value="Apartment">Apartment</option>
 					<option value="Full House">Full House</option>
@@ -15,7 +15,7 @@
 				</select>
 			</section>
 			<section>
-				<h6>What is the student getting?</h6>
+				<h3>What is the tenant getting?</h3>
 				<select formControlName="roomType">
 					<option value="entire place">Entire Place</option>
 					<option value="private rooms">Private Rooms</option>
@@ -23,14 +23,14 @@
 				</select>
 			</section>
 			<section>
-				<h6>How much will the students be paying per month? ($)</h6>
+				<h3>How much will the tenants be paying per month? ($)</h3>
 				<input type="number" name="" id="" min="1" formControlName="rent">
 			</section>
 			<section>
-				<h6>Is this set up as a dedicated student accommodation space?</h6>
+				<h3>Is this set up as a dedicated tenant accommodation space?</h3>
 				<div class="control-container">
 					<label class="control control-radio" for="true">
-						<div class="label-text"><span>Yes, it's very much dedicated for student accommodation</span>
+						<div class="label-text"><span>Yes, it's very much dedicated for tenant accommodation</span>
 						</div>
 						<input type="radio" id="true" value="true" name="isDedicatedSetup" checked
 							formControlName="isDedicatedSetup">
@@ -47,7 +47,7 @@
 				</div>
 			</section>
 			<section>
-				<h6>Gender accommodated</h6>
+				<h3>Gender accommodated</h3>
 				<div class="control-container">
 					<label class="control control-radio" for="both">
 						<div class="label-text"><span>Both females and males</span></div>
@@ -58,7 +58,7 @@
 				</div>
 				<div class="control-container">
 					<label class="control control-radio" for="female">
-						<div class="label-text"><span>Female students only</span></div>
+						<div class="label-text"><span>Female tenants only</span></div>
 						<input type="radio" id="female" value="female" name="genderAccommodated"
 							formControlName="genderAccommodated">
 						<div class="control-indicator"></div>
@@ -66,7 +66,7 @@
 				</div>
 				<div class="control-container">
 					<label class="control control-radio" for="male">
-						<div class="label-text"><span>Male students only</span></div>
+						<div class="label-text"><span>Male tenants only</span></div>
 						<input type="radio" id="male" value="male" name="genderAccommodated"
 							formControlName="genderAccommodated">
 						<div class="control-indicator"></div>
@@ -74,18 +74,18 @@
 				</div>
 			</section>
 		</section>
-		<section class="group students" id="students">
+		<section class="group tenants" id="tenants">
 			<div class="header">
-				<span class="heading heading-pri">Students</span>
-				<span class="heading heading-sec">How many students can your place accommodate</span>
+				<span class="heading heading-pri">tenants</span>
+				<span class="heading heading-sec">How many tenants can your place accommodate</span>
 			</div>
 			<section>
-				<h6>Number of students</h6>
-				<input type="number" name="numberOfStudents" id="numberOfStudents" formControlName="numberOfStudents"
+				<h3>Number of tenants</h3>
+				<input type="number" name="numberOftenants" id="numberOftenants" formControlName="numberOftenants"
 					min="1">
 			</section>
 			<section>
-				<h6>How many rooms can students use?</h6>
+				<h3>How many rooms can tenants use?</h3>
 				<select formControlName="numberOfRooms">
 					<option value=1>1 room</option>
 					<option value=2>2 rooms</option>
@@ -105,7 +105,7 @@
 				</select>
 			</section>
 			<section>
-				<h6>How many bathrooms are available?</h6>
+				<h3>How many bathrooms are available?</h3>
 				<input type="number" name="numberOfBathrooms" id="numberOfBathrooms" formControlName="numberOfBathrooms"
 					min="1">
 			</section>
@@ -114,22 +114,22 @@
 			<div class="header">
 				<span class="heading heading-pri">Address</span>
 				<span class="heading heading-sec">Help
-					students locate you place, precisely</span>
+					tenants locate you place, precisely</span>
 			</div>
 			<section>
-				<h6>House Number</h6>
+				<h3>House Number</h3>
 				<input type="number" name="houseNumber" id="houseNumber" formControlName="houseNumber" min="1">
 			</section>
 			<section>
-				<h6><span class="required">&#9913;</span> Street/Road Name</h6>
+				<h3><span class="required">&#9913;</span> Street/Road Name</h3>
 				<input type="text" name="street" id="street" formControlName="street" placeholder="e.g. Caledon Road" #street>
 			</section>
 			<section>
-				<h6><span class="required">&#9913;</span> Area</h6>
+				<h3><span class="required">&#9913;</span> Area</h3>
 				<input type="text" name="area" id="area" formControlName="area" placeholder="e.g. Belvedere">
 			</section>
 			<section>
-				<h6><span class="required">&#9913;</span> City</h6>
+				<h3><span class="required">&#9913;</span> City</h3>
 				<input type="text" name="city" id="city" formControlName="city" placeholder="e.g. Harare">
 			</section>
 		</section>
@@ -139,7 +139,7 @@
 				<span class="heading heading-sec">Useful features or facilities at your place</span>
 			</div>
 			<section>
-				<h6>Essential & Convenient Amenities</h6>
+				<h3>Essential & Convenient Amenities</h3>
 				<div formGroupName="essentials">
 					<div class="control-container">
 						<label class="control control-checkbox" for="wifi">
@@ -179,7 +179,7 @@
 				</div>
 			</section>
 			<section>
-				<h6>Safety & Security Amenities</h6>
+				<h3>Safety & Security Amenities</h3>
 				<div formGroupName="safeties">
 					<div class="control-container">
 						<label class="control control-checkbox" for="firstAid">
@@ -231,10 +231,10 @@
 		<section class="group spaces" id="spaces">
 			<div class="header">
 				<span class="heading heading-pri">Usable Spaces</span>
-				<span class="heading heading-sec">What other spaces can students use</span>
+				<span class="heading heading-sec">What other spaces can tenants use</span>
 			</div>
 			<section>
-				<h6>Usable spaces</h6>
+				<h3>Usable spaces</h3>
 				<div formGroupName="spaces">
 					<div class="control-container">
 						<label for="commonRoom" class="control control-checkbox">
@@ -300,7 +300,7 @@
 				<span class="heading heading-sec">Briefly describe your place</span>
 			</div>
 			<section>
-				<h6><span class="required">&#9913;</span> Add brief description</h6>
+				<h3><span class="required">&#9913;</span> Add brief description</h3>
 				<textarea name="description" id="description" formControlName="description" cols="30" rows="10"></textarea>
 			</section>
 		</section>
@@ -310,15 +310,15 @@
 				<span class="heading heading-sec">Add your phone number</span>
 			</div>
 			<section>
-				<h6><span class="required">&#9913;</span> This phone number will enable students to contact you and probably make payments to. However,
-					you can always specify and modify them accordingly</h6>
+				<h3><span class="required">&#9913;</span> This phone number will enable tenants to contact you and probably make payments to. However,
+					you can always specify and modify them accordingly</h3>
 				<input type="text" name="phone" id="phone" formControlName="phone" placeholder="e.g. 0771234567">
 			</section>
 		</section>
 		<section class="group policies" id="policies">
 			<div class="header">
 				<span class="heading heading-pri">Policies</span>
-				<span class="heading heading-sec">Add policies for the students</span>
+				<span class="heading heading-sec">Add policies for the tenants</span>
 			</div>
 			<div formGroupName="policies">
 				<section>
@@ -407,7 +407,7 @@
 					</div>
 				</section>
 				<section>
-					<h6>Other policies and information students should know</h6>
+					<h3>Other policies and information tenants should know</h3>
 					<div class="control-container">
 						<label class="control control-checkbox" for="gateTimetable">
 							<div class="label-text"><span>Strict gate timetable</span></div>
@@ -418,8 +418,8 @@
 					</div>
 					<div class="control-container">
 						<label class="control control-checkbox" for="appliances">
-							<div class="label-text"><span>Students can bring personal appliances</span></div>
-							<input type="checkbox" id="appliances" value="Students can bring personal appliances"
+							<div class="label-text"><span>tenants can bring personal appliances</span></div>
+							<input type="checkbox" id="appliances" value="tenants can bring personal appliances"
 								formControlName="appliances">
 							<div class="control-indicator"></div>
 						</label>

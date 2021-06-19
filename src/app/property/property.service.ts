@@ -42,7 +42,9 @@ export class PropertyService {
 							creator: property.creator,
 							student: property.student,
 							isReserved: property.isReserved,
-							reports: property.reports
+							reports: property.reports,
+							deposit: property.deposit,
+							reference: property.reference
 						};
 					});
 				})
@@ -105,6 +107,8 @@ export class PropertyService {
 			};
 			isReserved: boolean;
 			reports: Array<any>;
+			deposit: number;
+			reference: string;
 		}>("http://localhost:3000/api/properties/" + id);
 	}
 
